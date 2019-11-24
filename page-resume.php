@@ -6,11 +6,11 @@
 get_header(); ?>
 
 		<div class="wrapper">
-		<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-			the_post();
+	<?php 
+		if ( get_the_content() ) : 
 			the_content();
-		endwhile; endif; ?>
-		<?php wp_reset_query(); ?>			
+		endif;
+	?>			
 
 		<?php
 			$args = array( 
