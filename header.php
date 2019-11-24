@@ -158,7 +158,7 @@
 			$backgroundMode = 'no-repeat top center/cover;';
 			if ( has_post_thumbnail() ) : 
 				// use featured image
-				$background = wp_get_attachment_image_src( get_post_thumbnail_id($page->ID), 'full', false, '' );
+				$background = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
 			elseif ( is_404() ) : 
 				// use 404 image
 				$background[0] = '/mmclean/wp-content/themes/mmclean/img/mmclean-404.jpg';
