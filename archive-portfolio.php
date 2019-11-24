@@ -20,7 +20,7 @@ get_header(); ?>
 			$the_query = new WP_Query( $args );
 		?>
 		<?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); 
-			$background = wp_get_attachment_image_src( get_post_thumbnail_id( $page->ID ), 'full' ); ?>
+			$background = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
 			
 				<div class="content-item" style="background: url('<?php echo $background[0]; ?>') no-repeat center center/cover;">
 					<a href="<?php the_permalink(); ?>">
