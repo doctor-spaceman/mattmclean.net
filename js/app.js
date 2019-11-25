@@ -94,3 +94,84 @@ jQuery(document).ready( function($){
 	});
 	
 });
+
+// Tracking Notice
+jQuery(document).ready(function($) {
+	var trackOptOutStr = 'mmtrackingoptout',
+		trackOptInStr = 'mmtrackingoptin',
+		trackOptOut = mmmGetCookie( trackOptOutStr );
+		trackOptIn = mmmGetCookie( trackOptInStr );
+
+	// If the user has interacted with the banner before, remove it.
+    if ( trackOptOut || trackOptIn ) {
+        removeCookieBanner();
+    }
+
+    $('#cookieNotice .button').on('click', function() {
+		if ( $(this).attr('data-track') == 'opt-out' ) {
+			if ( trackOptIn ) {
+				mmmRemoveCookie(trackOptInStr);
+			}
+			mmmSetCookie(trackOptOutStr, 1, 10950);
+			removeCookieBanner();
+			window.location.reload(); // Reload page so tracking scripts will get added
+		}
+        if ( $(this).attr('data-track') == 'opt-in' ) {
+			if ( trackOptOut ) {
+				mmmRemoveCookie(trackOptOutStr);
+			}
+			mmmSetCookie(trackOptInStr, 1, 10950);
+			removeCookieBanner();
+		}
+    });
+});
+// END / Tracking Notice
+
+// Cookie Helpers
+function removeCookieBanner() {
+	jQuery('#cookieNotice').remove();
+	jQuery('body').removeClass('has-cookie-msg');
+	//jQuery('body').css('padding-bottom', 0);
+}
+function mmmGetCookie(cname) {
+    var name = cname + "=";
+    var decodedCookie = decodeURIComponent(document.cookie);
+    var ca = decodedCookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return '';
+}
+
+function mmmSetCookie(cname, cvalue, exdays, path) {
+    if (undefined === path) {
+      path = '/'
+    }
+
+    var expires = 'expires=';
+
+    if (-1 === exdays) {
+      expires += null;
+    } else {
+      var d = new Date();
+      d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));
+      expires += d.toUTCString();
+    }
+
+    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=" + path;
+}
+
+// This function deletes a cookie.
+function mmmRemoveCookie( cname ) {
+    if( mmmGetCookie( cname ) ) {
+        var expires = "expires=Thu, 01 Jan 1970 00:00:01 GMT";
+        document.cookie = cname + "=;" + expires + ";" + "path=/";
+    }
+}
+// END / Cookie Helpers

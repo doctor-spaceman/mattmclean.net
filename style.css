@@ -36,6 +36,8 @@ p {padding: .5em 0;}
 
 .cta {
 	background: #363636;
+	cursor: pointer;
+	text-transform: uppercase;
 	padding: .5em;
 	margin: .5em 0;
 	display: inline-block;
@@ -680,6 +682,7 @@ footer {
     height: 4em;
     margin-top: 4em;
 	width: 100%;
+	position: relative;
 }
 .attribution {
     font-size: .8em;
@@ -700,6 +703,47 @@ footer {
 	z-index: 39;
 }
 #footerSocial {font-size: 1.8em;}
+
+/*----------TRACKING NOTICE----------*/
+#cookieNotice {
+	background-color: #000;
+	font-size: .8em;
+	padding: 1rem;
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+}
+#cookieNotice .wrapper {
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+	align-items: center;
+}
+#cookieNotice .banner__copy {
+	padding-right: 2rem;
+}
+.banner__copy a {
+	text-decoration: underline;
+}
+#cookieNotice .banner__options {
+	display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+	align-items: center;
+	-webkit-justify-content: space-between;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+	-ms-flex: 0 0 auto;
+	-webkit-flex: 0 0 auto;
+	flex: 0 0 auto;
+}
+#cookieNotice .button {
+	margin: .5em;
+}
 
 /*----------CHANGE PLUGIN STYLING----------*/
 /*-----Contact Form-----*/
@@ -1026,6 +1070,19 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label {
 	}	
 	#mg_overlay_content	{
 		padding: 40px 4px 20px;
+	}
+
+	/*Tracking Notice*/
+	#cookieNotice .wrapper {
+		-webkit-flex-direction: column;
+        -ms-flex-direction: column;
+		flex-direction: column;
+		-webkit-align-items: flex-start;
+		-ms-flex-align: flex-start;
+		align-items: flex-start;
+	}
+	#cookieNotice .button {
+		margin: .5em .5em .5em 0;
 	}
 }
 @media only screen and (min-width: 640px) {
