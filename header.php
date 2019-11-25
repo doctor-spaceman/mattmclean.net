@@ -1,12 +1,13 @@
-<?php
-/**
- * The template for displaying the header
- */
-
-?>
-
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<!--[if IE 7]>
+<html class="ie ie7" <? language_attributes(); ?>>
+<![endif]-->
+<!--[if IE 8]>
+<html class="ie ie8" <? language_attributes(); ?>>
+<![endif]-->
+<!--[if !(IE 7) & !(IE 8)]><!-->
+<html <? language_attributes(); ?>>
+<!--<![endif]-->
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
@@ -15,8 +16,10 @@
 		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 		<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
 	<?php 
+		global $tracking_notice_enable;		
 		$gtm_id = get_field('gtm_id','option');
-		if ( $gtm_id ) :
+
+		if ( $gtm_id && $tracking_notice_enable ) :
 	?>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -28,6 +31,7 @@
 	<?php 
 		endif; 
 	?>
+	<?php if ( is_page_template('page-photography.php') ) : ?>
 		<style type="text/css">
 			#mc_embed_signup {
 				background: #363636;
@@ -50,6 +54,7 @@
 				font-weight: normal;
 			}
 		</style>
+	<?php endif; ?>
 	    <noscript>
 	        <style>
 	            .hero {min-height: 100vh;}
@@ -99,112 +104,12 @@
 	    </noscript>
 		<?php wp_head(); ?>
 	</head>
-	<body <?php body_class(); ?>>
-	<?php if ( $gtm_id ) : ?>
+	<?php $cookie_class = $tracking_notice_enable ? 'has-cookie-msg' : ''; ?>
+	<body <?php body_class( $cookie_class ); ?>>
+	<?php if ( $gtm_id && $tracking_notice_enable ) : ?>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_id; ?>"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
 	<?php endif; ?>
-		<header>
-		<?php 
-			if ( is_page_template('page-photography.php') ) : ?>
-			<div id="navContainer" class="sidebar-nav-container past-hero">
-				<?php if ( $post->post_parent ) : //is a child page ?>
-				<nav id="mainNav" class="sidebar-nav sidebar-wrapper">
-				<?php else : ?>
-				<nav id="mainNav" class="sidebar-nav sidebar-wrapper top-level">
-				<?php endif; ?>
-					<div id="navIcon">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					
-					<?php
-					wp_nav_menu(
-					array(
-						'menu' => 'Photo Menu', 
-						'container_class' => 'main-menu--vertical'
-					)); ?>
-					
-						<div id="brand" class="monogram"><a href="<?php bloginfo('url'); ?>/photography/">MM</a>
-							<div class="monogram-sub"><a href="<?php bloginfo('url'); ?>/photography/">Photography</a></div>
-						</div>
-			<?php else : ?>
-			
-			<div id="navContainer" class="nav-container">
-				<nav id="mainNav" class="nav wrapper">
-					<div id="navIcon">
-						<span></span>
-						<span></span>
-						<span></span>
-						<span></span>
-					</div>
-					
-					<?php 
-					wp_nav_menu(
-					array(
-						'menu' => 'Main Menu', 
-						'container_class' => 'main-menu'
-					)); ?>
-								
-					<div id="brand" class="monogram">
-						<a href="<?php bloginfo('url'); ?>">MM</a>
-					</div>
-			<?php endif; ?>	
-				</nav>
-			</div>
-			<div class="screen-overlay"></div>
-		<?php
-		if ( is_page_template('page-photography.php') && ($post->post_parent) ) : //is a child page?>
-		</header>
-		<content>
-			<?php else : 
-			// Select background image
-			$backgroundMode = 'no-repeat top center/cover;';
-			if ( has_post_thumbnail() ) : 
-				// use featured image
-				$background = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
-			elseif ( is_404() ) : 
-				// use 404 image
-				$background[0] = '/mmclean/wp-content/themes/mmclean/img/mmclean-404.jpg';
-			else : 
-				// use fallback image
-				$background[0] = '/mmclean/wp-content/themes/mmclean/img/fallback.jpg';					
-			endif; ?>
-			<div class="hero" style="background: url('<?php echo $background[0]; ?>') <?php echo $backgroundMode ?>">
-				<div id="main" class="copy-panel<?php if (is_page_template('page-photography.php')) : ?>--photo<?php else : endif; ?> wrapper">
-				<?php
-				  // Get title
-				  if ( is_404() ) : ?>
-					<h1 class="title">Page Not Found</h1>
-				  <?php elseif ( is_tag() ) : ?>
-					<h1 class="title"><?php single_tag_title(); ?></h1>
-				  <?php else : ?>
-					<h1 class="title"><?php the_title(); ?></h1>
-				<?php endif; ?>
-				<?php 
-				  // Get subtitle
-				  if ( is_404() ) : ?>
-					<h2 class="subtitle">Sorry about that! Please try again.<br/><a class="cta" href="<?php bloginfo('url'); ?>"><span class="fa fa-refresh"></span>  Go Home</a></h2>
-				  <?php elseif ( is_tag() ) : ?>
-					<h2 class="subtitle">Tag Archive</h2>
-				  <?php elseif ( has_excerpt() ) : ?> 
-					<h2 class="subtitle"><?php echo get_the_excerpt(); ?></h2>
-				  <?php else : 
-					echo '';
-				endif; ?>
-				</div>
-			<?php if ( is_page_template('page-photography.php' ) ) : ?>
-			</div>
-		</header>
-		<content>
-			<?php else : ?>
-				<span id="goDown" class="fas fa-chevron-down bounce"><a href="#contentAnchor"></a></span>
-			</div>
-		</header>
-		<content><a name="contentAnchor" id="contentAnchor"><span>Jump to Page Content</span></a>
-			<?php endif; ?>
-		<?php endif; ?>
+		<?php get_template_part('inc/header');?>

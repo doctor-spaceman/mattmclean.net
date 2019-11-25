@@ -8,7 +8,7 @@
 ?>
 			<div class="clearfix"></div>
 		</div>
-	</content>
+	</main>
 	<?php if ( is_page_template('page-photography.php') && ($post->post_parent) ) : //is a child page?>
 	<footer class="sidebar-footer--under-content">
 	<?php elseif ( is_page_template('page-photography.php') ) : ?>
@@ -16,20 +16,7 @@
 	<?php else : ?>
 	<footer>
 	<?php endif; ?>
-		<div class ="attribution wrapper">
-			<div>
-				<ul id="footerSocial" class="social">
-				<?php 
-					if ( is_page_template('page-photography.php') ) : dynamic_sidebar('footer-social-photo');
-					else : dynamic_sidebar('footer-social');
-					endif;
-				?>
-				</ul>
-			</div>
-			<div id="footerAttribution">
-				<?php dynamic_sidebar('footer-attribution'); ?>
-			</div>
-		</div>
+		<?php get_template_part('inc/footer'); ?>
 	</footer>
 
 <?php wp_footer(); ?>

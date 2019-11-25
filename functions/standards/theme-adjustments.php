@@ -1,8 +1,9 @@
 <?php
 // Theme Support
     function std_theme_setup() {
-        add_theme_support( 'post-thumbnails' );
+        add_theme_support( 'custom-logo' );
         add_theme_support( 'menus' );
+        add_theme_support( 'post-thumbnails' );
         add_theme_support( 'title-tag' );
         add_theme_support( 'widgets' );
         add_post_type_support( 'page', 'excerpt' );
