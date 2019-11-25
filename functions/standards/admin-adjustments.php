@@ -1,4 +1,16 @@
 <?php
+// ACF Options Page
+    if ( function_exists('acf_add_options_page') ) {
+        acf_add_options_page(array(
+            'page_title' 	=> 'Site Options',
+            'menu_title'	=> 'Site Options',
+            'menu_slug' 	=> 'site-options-general',
+            'capability'	=> 'edit_posts',
+            'redirect'		=> false
+        ));	
+    }
+// END / ACF Options Page
+
 // Login Page Logo
     function std_admin_login_style() {
         wp_enqueue_style( 'core', get_stylesheet_directory_uri() . '/css/admin.css', false );

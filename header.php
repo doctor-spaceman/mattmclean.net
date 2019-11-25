@@ -10,17 +10,24 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=0.86">
+		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
+		<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+	<?php 
+		$gtm_id = get_field('gtm_id','option');
+		if ( $gtm_id ) :
+	?>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-		})(window,document,'script','dataLayer','GTM-PSNB85P');</script>
+		})(window,document,'script','dataLayer','<?php echo $gtm_id; ?>');</script>
 		<!-- End Google Tag Manager -->
-		<meta name="viewport" content="width=device-width, initial-scale=0.86">
-		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
-		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
-		<link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
+	<?php 
+		endif; 
+	?>
 		<style type="text/css">
 			#mc_embed_signup {
 				background: #363636;
@@ -43,7 +50,6 @@
 				font-weight: normal;
 			}
 		</style>
-		<title><?php wp_title(); ?></title>
 	    <noscript>
 	        <style>
 	            .hero {min-height: 100vh;}
@@ -94,10 +100,12 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+	<?php if ( $gtm_id ) : ?>
 		<!-- Google Tag Manager (noscript) -->
-		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PSNB85P"
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_id; ?>"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 		<!-- End Google Tag Manager (noscript) -->
+	<?php endif; ?>
 		<header>
 		<?php 
 			if ( is_page_template('page-photography.php') ) : ?>
