@@ -23,8 +23,8 @@ if ( $tracking_notice_enable ) :
             <?php echo get_field('tracking_notice_msg','option'); ?>
         </div>
         <div class="banner__options">
-            <span class="cta close button" data-track="opt-out" aria-label="Opt-in">Opt Out</span>
-            <span class="cta close button" data-track="opt-in" aria-label="Close">Accept</span>
+            <span class="cta close button" data-track="opt-out" aria-label="Opt Out">Opt Out</span>
+            <span class="cta close button" data-track="opt-in" aria-label="Opt In">Opt In</span>
         </div>
     </div>
 </div>

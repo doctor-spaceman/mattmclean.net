@@ -80,9 +80,9 @@
 
     // Tracking Notice
     $tracking_notice_enable = true;
-    // If the cookie notice was accepted, don't show the cookie notice banner.
-    // When it was accepted, the cookie should have been set via js.
-    if ( isset( $_COOKIE['mmtrackingoptout'] ) ) {
+    // If the user opted in or out, don't show the cookie notice banner.
+    // When the user made their selection, the cookie should have been set via js.
+    if ( isset( $_COOKIE['mmtrackingoptout'] ) || isset( $_COOKIE['mmtrackingoptin'] ) ) {
         $tracking_notice_enable = false;
     }
     // If there's no cookie message set in the admin, don't show the cookie notice banner at all.
