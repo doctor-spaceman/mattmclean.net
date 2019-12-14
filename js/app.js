@@ -102,6 +102,11 @@ jQuery(document).ready(function($) {
 		trackOptOut = mmmGetCookie( trackOptOutStr );
 		trackOptIn = mmmGetCookie( trackOptInStr );
 
+	// If the user has interacted with the banner before, remove it.
+	if ( trackOptOut || trackOptIn ) {
+		removeCookieBanner();
+	}
+
     $('#cookieNotice .button').on('click', function() {
 		// Opted out
 		if ( $(this).attr('data-track') == 'opt-out' ) {
