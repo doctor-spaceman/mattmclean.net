@@ -102,26 +102,25 @@ jQuery(document).ready(function($) {
 		trackOptOut = mmmGetCookie( trackOptOutStr );
 		trackOptIn = mmmGetCookie( trackOptInStr );
 
-	// If the user has interacted with the banner before, remove it.
-    if ( trackOptOut || trackOptIn ) {
-        removeCookieBanner();
-    }
-
     $('#cookieNotice .button').on('click', function() {
+		// Opted out
 		if ( $(this).attr('data-track') == 'opt-out' ) {
 			if ( trackOptIn ) {
 				mmmRemoveCookie(trackOptInStr);
 			}
 			mmmSetCookie(trackOptOutStr, 1, 10950);
 			removeCookieBanner();
-			window.location.reload(); // Reload page so tracking scripts will get added
 		}
+		// Opted In
         if ( $(this).attr('data-track') == 'opt-in' ) {
 			if ( trackOptOut ) {
 				mmmRemoveCookie(trackOptOutStr);
 			}
 			mmmSetCookie(trackOptInStr, 1, 10950);
 			removeCookieBanner();
+			setTimeout(function(){
+				window.location.reload(); // Reload page so tracking scripts will get added
+			});
 		}
     });
 });
@@ -131,8 +130,8 @@ jQuery(document).ready(function($) {
 function removeCookieBanner() {
 	jQuery('#cookieNotice').remove();
 	jQuery('body').removeClass('has-cookie-msg');
-	//jQuery('body').css('padding-bottom', 0);
 }
+
 function mmmGetCookie(cname) {
     var name = cname + "=";
     var decodedCookie = decodeURIComponent(document.cookie);

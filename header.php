@@ -19,7 +19,7 @@
 		global $tracking_notice_enable;		
 		$gtm_id = get_field('gtm_id','option');
 
-		if ( $gtm_id && $tracking_notice_enable ) :
+		if ( $gtm_id && isset( $_COOKIE['mmtrackingoptin'] ) ) :
 	?>
 		<!-- Google Tag Manager -->
 		<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -106,7 +106,7 @@
 	</head>
 	<?php $cookie_class = $tracking_notice_enable ? 'has-cookie-msg' : ''; ?>
 	<body <?php body_class( $cookie_class ); ?>>
-	<?php if ( $gtm_id && $tracking_notice_enable ) : ?>
+	<?php if ( $gtm_id && isset( $_COOKIE['mmtrackingoptin'] ) ) : ?>
 		<!-- Google Tag Manager (noscript) -->
 		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?php echo $gtm_id; ?>"
 		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
