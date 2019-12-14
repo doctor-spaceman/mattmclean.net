@@ -34,8 +34,10 @@ p {padding: .5em 0;}
 /*Clear floats or elements that are out of flow*/
 .clearfix {content: ""; display: table; clear: both;}
 
-.cta {
+.cta,
+button.cta {
 	background: #363636;
+	color: #fff;
 	cursor: pointer;
 	text-transform: uppercase;
 	padding: .5em;
@@ -43,7 +45,8 @@ p {padding: .5em 0;}
 	display: inline-block;
 	border: 2px solid #fff;
 }
-.cta:hover {
+.cta:hover,
+button.cta:hover {
 	color: #fbb33d;
 }
 
@@ -742,7 +745,8 @@ footer {
 	flex: 0 0 auto;
 }
 #cookieNotice .button {
-	margin: .5em;
+	font-size: 1em;
+	margin: .5em;	
 }
 
 /*----------CHANGE PLUGIN STYLING----------*/
