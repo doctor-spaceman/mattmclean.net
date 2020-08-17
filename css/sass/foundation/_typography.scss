@@ -1,3 +1,9 @@
+body {
+  color: c('black');
+  font-family: $font--main;
+  font-size: $font__size--base;
+  line-height: 1.2;
+}
 p {
   padding: .5em 0;
 }
@@ -7,12 +13,14 @@ button {
 }
 
 /* Headings */
-h1,h2,h3,h4,h5,h6, .monogram {
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font--heading;
+  letter-spacing: 1px;
+}
+.monogram {
   font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   line-height: 1em;
-}
-.monogram {
   font-size: 1.8em;
   font-weight: 700;
 }
@@ -23,7 +31,7 @@ h1,h2,h3,h4,h5,h6, .monogram {
 }
 .monogram a:hover,
 .monogram a:visited {
-  color: #fff;
+  color: c('black');
 }
 .title {
   font-size: 1.5em;
@@ -60,19 +68,10 @@ ol li ul {
 
 /* Blockquote */
 blockquote {
-  margin: 1em;
-  padding: .5em;
-  font-size: 1.15em;
-  line-height: 1.2em;
-	text-align: center;
-  border-left: .2em solid #a2a2a2;
-	border-right: .2em solid #a2a2a2;
-	border-radius: .5em;
-  color: #a2a2a2;
-}
-blockquote span {
-  font-style: italic;
-  font-size: .8em;
+  border-left: 4px solid c('aqua');
+  font-size: 125%;
+  margin: 0;
+  padding: 0 $spacing * 2;
 }
 
 /* Captions */

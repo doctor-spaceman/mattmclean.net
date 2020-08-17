@@ -1,0 +1,12 @@
+/*-----Sass Functions-----*/
+// Get color value from color map
+// Allows color variables to be used anywhere, e.g. c('blue')
+@function c($value) {
+  @if variable-exists('colors') {
+      @if map-has-key($colors, $value) {
+          @return map-get($colors, $value);
+      }
+      @error ('Specified color "'+ $value + '" is not defined in $colors list');
+  }
+  @error ('$colors list not defined');
+}

@@ -1,0 +1,253 @@
+#hero {
+    height: 60vh;
+    min-height: 400px;
+    padding: $navbarHeight + 20px $spacing * 2 $spacing $spacing * 2;
+    box-sizing: border-box;
+
+    @include breakpoint--small {
+        height: 50vh;
+        min-height: 300px;
+        padding: $navbarHeight + 20px 0px 0px 0px;
+    }
+}
+.hero-bg {
+  background-blend-mode: multiply;
+  background-color: c('cream');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: block;
+  overflow: hidden;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  opacity: .75;
+
+  &:before, 
+  &:after {
+    content: '';
+    display: block;
+    mix-blend-mode: overlay;
+    opacity: 0;
+    transform: scale(1.02);
+    position: absolute;
+    transform-origin: right bottom;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+  }
+  &:before {
+    // background-color: c('magenta');
+    background-image: url('../img/bw-landscape-alt-2.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: 6px;
+    right: 6px;
+    bottom: -6px;
+    left: -6px;
+    animation-name: sizzle1;
+  }
+  &:after {
+    // background-color: c('aqua');
+    background-image: url('../img/bw-landscape-alt-1.png');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    top: -6px;
+    right: -6px;
+    bottom: 6px;
+    left: 6px;
+    animation-name: sizzle2;
+  }
+}
+.hero-content {
+    position: relative;
+    height: 100%;
+}
+.hero-menu {
+    height: 100%;
+    width: 424px;
+    position: relative;
+    z-index: 30;
+
+    @include breakpoint--small {
+        width: 252px;
+    }
+}
+.hero-menu-bar {
+    box-sizing: border-box; 
+    color: c('white');
+    height: 100px;
+    width: 60vh;
+    min-width: 400px;
+    opacity: 1;
+    padding: 0px 40px;
+    position: absolute;
+    transform: rotateZ(90deg) translateX(-50px) translateY(-25px);
+    transform-origin: center left;
+    
+    &:hover {
+        animation-duration: .5s;
+        animation-iteration-count: 1;
+        animation-name: shakeZ;
+        animation-timing-function: linear;
+    }
+
+    @include breakpoint--small {
+        height: 60px;
+        width: 50vh;
+        min-width: 300px;
+        transform: rotateZ(90deg) translateX(-30px) translateY(-60px);
+
+        &:hover {
+            animation-duration: .5s;
+            animation-iteration-count: 1;
+            animation-name: shakeZmobile;
+            animation-timing-function: linear;
+        }
+    }
+
+    &:nth-child(1) {
+        background-color: c('burgundy');
+        top: 5%;
+        left: 0px;
+    }
+    &:nth-child(2) {
+        background-color: c('magenta');
+        top: 15%;
+        left: 108px;
+    
+        @include breakpoint--small {
+            left: 64px;
+        }
+    }
+    &:nth-child(3) {
+        background-color: c('aqua');
+        top: 0;
+        left: 216px;
+    
+        @include breakpoint--small {
+            left: 128px;
+        }
+    }
+    &:nth-child(4) {
+        background-color: c('yellow');
+        top: 20%;
+        left: 324px;
+    
+        @include breakpoint--small {
+            left: 192px;
+        }
+    }
+}
+.hero-menu-bar__text {
+    font-size: 3rem;
+    font-family: $font--heading;
+    font-weight: 300;
+    letter-spacing: 1px;
+    padding: 10px 0px;
+    text-align: right;
+    text-transform: uppercase;
+
+    @include breakpoint--small {
+        padding: 5px 0px;
+        font-size: 2.4rem;
+    }
+}
+.hero-graphic {
+    height: 34vw;
+    width: 34vw;
+    max-height: 400px;
+    max-width: 400px;
+    position: absolute;
+    top: 12%;
+    left: 36%;
+    z-index: 20;
+
+    @include breakpoint--large {
+        height: 42vw;
+        width: 42vw;
+    }
+    @include breakpoint--small {
+        height: 50vw;
+        width: 50vw;
+    }
+
+    &__morph {
+        border: 1px solid c('black');
+        border-radius: 50%;
+        height: 100%;
+        width: 100%;
+        transition: all .1s ease;
+        transition-delay: 2s;
+
+        &--clicked {
+            background-color: rgba(255,255,255,.4);
+            border-radius: 20px;
+            height: 40px;
+            transition-delay: 0s;
+
+            @include breakpoint--small {
+                height: 24px;
+            }
+        }
+    }
+    
+}
+
+@keyframes sizzle1 {
+  0% { opacity: 0; }
+  33% { opacity: 0; }
+  34% { opacity: 1; }
+  35% { opacity: 0; }
+  40% { opacity: 0; }
+  41% { opacity: 1; }
+  55% { opacity: 1; }
+  56% { opacity: 0; }
+  66% { opacity: 0; }
+  67% { opacity: 1; }
+  68% { opacity: 0; }
+  80% { opacity: 0; }
+  81% { opacity: 1; }
+  82% { opacity: 0; }
+  83% { opacity: 1; }
+  84% { opacity: 0; }
+  100% { opacity: 0; }
+}
+@keyframes sizzle2 {
+  0% { opacity: 0; }
+  32% { opacity: 0; }
+  33% { opacity: 1; }
+  34% { opacity: 0; }
+  65% { opacity: 0; }
+  66% { opacity: 1; }
+  67% { opacity: 0; }
+  79% { opacity: 0; }
+  80% { opacity: 1; }
+  81% { opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes shakeZ {
+  0% { transform: rotateZ(90deg) translateX(-50px) translateY(-25px); }
+  15% { transform: rotateZ(90.75deg) translateX(-50px) translateY(-25px); }
+  30% { transform: rotateZ(89.25deg) translateX(-50px) translateY(-25px); }
+  45% { transform: rotateZ(90.5deg) translateX(-50px) translateY(-25px); }
+  60% { transform: rotateZ(89.5deg) translateX(-50px) translateY(-25px); }
+  75% { transform: rotateZ(90.25deg) translateX(-50px) translateY(-25px); }
+  90% { transform: rotateZ(89.75deg) translateX(-50px) translateY(-25px); }
+  100% { transform: rotateZ(90deg) translateX(-50px) translateY(-25px); }
+}
+@keyframes shakeZmobile {
+  0% { transform: rotateZ(90deg) translateX(-30px) translateY(-60px); }
+  15% { transform: rotateZ(90.75deg) translateX(-30px) translateY(-60px); }
+  30% { transform: rotateZ(89.25deg) translateX(-30px) translateY(-60px); }
+  45% { transform: rotateZ(90.5deg) translateX(-30px) translateY(-60px); }
+  60% { transform: rotateZ(89.5deg) translateX(-30px) translateY(-60px); }
+  75% { transform: rotateZ(90.25deg) translateX(-30px) translateY(-60px); }
+  90% { transform: rotateZ(89.75deg) translateX(-30px) translateY(-60px); }
+  100% { transform: rotateZ(90deg) translateX(-30px) translateY(-60px); }
+}

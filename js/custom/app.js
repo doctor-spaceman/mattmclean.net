@@ -1,3 +1,13 @@
+var heroGraphic = document.querySelector('.hero-graphic__morph');
+
+heroGraphic.addEventListener('click', function(e) {
+  var el = e.target;
+  el.classList.add('hero-graphic__morph--clicked');
+  setTimeout(function() {
+    el.classList.remove('hero-graphic__morph--clicked');
+  },200);
+});
+
 jQuery(document).ready( function($){
     // Set hero height to browser height
 	$('.hero').css( 'height', $(window).height() );

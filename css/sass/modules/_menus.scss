@@ -1,5 +1,14 @@
 /*----------NAVIGATION----------*/
-.menu {list-style: none;}
+#mainNav {
+  position: fixed;
+  top: 0;
+  z-index: 1000;
+  transition-duration: .25s;
+}
+
+.menu {
+  list-style: none;
+}
 .current-menu-item a, .current_page_parent a {border-bottom: 2px solid #fff;}
 .current-menu-item a:hover {color: #fff;}
 .main-menu--vertical a:link,
@@ -37,12 +46,6 @@
 	box-shadow:
 		0 10px 20px rgba(0,0,0,0.19),
 		0 6px 6px rgba(0,0,0,0.23);
-}
-#mainNav {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    position: relative;
 }
 .nav,
 .sidebar-nav {

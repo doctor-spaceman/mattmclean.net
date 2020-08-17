@@ -1,20 +1,22 @@
-/* Utilities */
 @import 'utilities/functions';
+@import 'utilities/queries';
+@import 'foundation/normalize';
+@import 'foundation/variables';
 
 /* Foundation */
-@import 'foundation/variables';
 @import 'foundation/classes';
 @import 'foundation/structure';
 @import 'foundation/theme';
 @import 'foundation/typography';
 
 /* Layout */
-@import 'layout/home';
+@import 'layout/homepage';
 @import 'layout/portfolio';
 @import 'layout/resume';
 @import 'layout/journal';
 
 /* Modules */
+@import 'modules/links';
 @import 'modules/menus';
 @import 'modules/header';
 @import 'modules/footer';

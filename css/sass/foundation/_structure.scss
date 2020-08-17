@@ -1,26 +1,56 @@
 /*----------GENERAL----------*/
-/*Prevent user agent spacing*/
-* {
-  margin: 0; 
-  padding: 0;
-}
-
-/*Don't zoom in on device rotate*/
 html {
-  -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
 }
-/*The basics*/
 body {
-	color: #ffffff;
-	background-color: #363636;
-	font-family: 'Poppins', sans-serif;
-	font-size: 1.1em;
+  background-color: c('white');
+  -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
 }
 content {
   margin-top: 2em;
   line-height: 1.4em;
 }
-.wrapper, 
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &--center {
+    align-items: center;
+    justify-content: center;
+  }
+  &--space {
+    justify-content: space-between;
+  }
+}
+.col-1-2 {
+  width: 50%;
+
+  @include breakpoint--small {
+    width: 100%;
+  }
+}
+.wrapper {
+  margin: 0 auto;
+  padding: 0px $spacing * 2;
+
+  @include breakpoint--small {
+    padding: 0px $spacing;
+  }
+
+  &--large {
+    @extend .wrapper;
+    max-width: 960px;
+  }
+  &--xlarge {
+    @extend .wrapper;
+    max-width: 800px;
+  }
+}
+
+
+
+
+
 .sidebar-wrapper {
     margin: 0 auto;
     width: 300px;
