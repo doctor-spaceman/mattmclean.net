@@ -12,20 +12,3 @@
         <?php dynamic_sidebar('footer-attribution'); ?>
     </div>
 </div>
-<?php
-global $tracking_notice_enable;
-
-if ( $tracking_notice_enable ) : 
-?>
-<div id="cookieNotice" class="banner">
-    <div class="wrapper">
-        <div class="banner__copy">
-            <?php echo get_field('tracking_notice_msg','option'); ?>
-        </div>
-        <div class="banner__options">
-            <button class="cta close button" data-track="opt-out" aria-label="Opt Out">Opt Out</button>
-            <button class="cta close button" data-track="opt-in" aria-label="Opt In">Opt In</button>
-        </div>
-    </div>
-</div>
-<?php endif; ?>
