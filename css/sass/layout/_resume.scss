@@ -1,0 +1,40 @@
+/*----------RESUME----------*/
+.resume-block {
+	padding-left: 1em;
+	margin: 1em 0;
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+	-webkit-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+.resume-block p {padding: 0; margin: 0;}
+.resume-block div {margin-top: 1em;}
+.resume-block ul {margin: .6em 1em;}
+.date {color: #a2a2a2; font-size: .85em;}
+.list-title {margin-left: 2.2em !important; text-transform: uppercase;}
+.project-list {margin-left: 3.6em !important;}
+.project-list,
+.content-panel ul,
+.content-panel ol {list-style-position: inside; margin: 1em 0;}
+.project-list li,
+.content-panel ul li,
+.content-panel ol li {margin-top: .25em; margin-bottom: .25em;}
+.project-list li {color: #a2a2a2;}
+.fa-li {color: #a2a2a2;}
+.flex-list {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-flex-direction: column;
+	-ms-flex-direction: column;
+	flex-direction: column;
+}
+.resume-block a:link,
+.resume-block a:visited {color: #ffffff !important;}
+.resume-block a:hover,
+.resume-block a:active {color: #a2a2a2 !important;}
