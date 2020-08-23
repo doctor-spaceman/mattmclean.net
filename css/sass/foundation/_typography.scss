@@ -1,3 +1,4 @@
+/*---------- TYPOGRAPHY ----------*/
 body {
   color: c('black');
   font-family: $font--main;
@@ -8,8 +9,12 @@ p {
   padding: .5em 0;
 }
 
-button {
-	font-family: 'Poppins', sans-serif;
+/* Blockquote */
+blockquote {
+  border-left: 4px solid c('aqua');
+  font-size: 125%;
+  margin: 0;
+  padding: 0 $spacing * 2;
 }
 
 /* Headings */
@@ -64,14 +69,6 @@ ul li ol,
 ol li ol,
 ol li ul {
 	margin: .25em 0 .25em 1em !important;
-}
-
-/* Blockquote */
-blockquote {
-  border-left: 4px solid c('aqua');
-  font-size: 125%;
-  margin: 0;
-  padding: 0 $spacing * 2;
 }
 
 /* Captions */

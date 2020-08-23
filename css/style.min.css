@@ -338,7 +338,7 @@ iframe:not(.mg_video_iframe):not(.exposure):not(.video) {
 }
 */
 
-/*----------GENERAL----------*/
+/*---------- GENERAL ----------*/
 
 html {
 	overflow-x: hidden;
@@ -439,21 +439,19 @@ content {
 	padding: 0 1em;
 }
 
-/*Use when you know the page has a Media Grid*/
-
 .content-panel.row {
-	display: -ms-flexbox;
 	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
-	-ms-flex-pack: justify;
 	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
-	-ms-flex-align: center;
 	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 }
 
@@ -480,8 +478,6 @@ content {
 #imageGrid .mgi_elems_wrap {
 	border-top: none;
 }
-
-/* Single images in a grid do not have a top border */
 
 .mgi_elems_wrap {
 	border-top: .3em solid #db1c45;
@@ -527,9 +523,9 @@ content {
 }
 
 .mgi_overlays::before,
-.content-item a::after { /*On hover, change background to this gradient by changing its opacity (see next rule)*/ /* For Safari 5.1 to 6.0 */ /* For Opera 11.1 to 12.0 */ /* For Firefox 3.6 to 15 */
+.content-item a::after {
 	background: -webkit-gradient(linear, left bottom, left top, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 0.2))) !important;
-	background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)) !important; /* Standard syntax (must be last) */
+	background: linear-gradient(to top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2)) !important;
 	opacity: 0;
 	-webkit-transition: .5s !important;
 	transition: .5s !important;
@@ -582,7 +578,7 @@ content {
 	text-align: center;
 	font-size: 1.1em !important;
 	font-weight: 700;
-	padding: .25em !important; /*border-radius: 0 !important; box-shadow: none !important;*/
+	padding: .25em !important;
 	-webkit-box-sizing: border-box !important;
 	box-sizing: border-box !important;
 }
@@ -591,8 +587,10 @@ content {
 	margin-top: .5em;
 }
 
+/*---------- TYPOGRAPHY ----------*/
+
 body {
-	color: #484848;
+	color: #363636;
 	font-family: "Archivo", "Helvetica", sans-serif;
 	font-size: 1.2rem;
 	line-height: 1.2;
@@ -602,8 +600,13 @@ p {
 	padding: .5em 0;
 }
 
-button {
-	font-family: 'Poppins', sans-serif;
+/* Blockquote */
+
+blockquote {
+	border-left: 4px solid #03A696;
+	font-size: 125%;
+	margin: 0;
+	padding: 0 3.2rem;
 }
 
 /* Headings */
@@ -634,7 +637,7 @@ h6 {
 
 .monogram a:hover,
 .monogram a:visited {
-	color: #484848;
+	color: #363636;
 }
 
 .title {
@@ -673,15 +676,6 @@ ul li ol,
 ol li ol,
 ol li ul {
 	margin: .25em 0 .25em 1em !important;
-}
-
-/* Blockquote */
-
-blockquote {
-	border-left: 4px solid #03A696;
-	font-size: 125%;
-	margin: 0;
-	padding: 0 3.2rem;
 }
 
 /* Captions */
@@ -851,22 +845,26 @@ blockquote {
 }
 
 .hero-graphic__morph {
-	border: 1px solid #484848;
+	border: 1px solid #363636;
 	border-radius: 50%;
+	cursor: pointer;
 	height: 100%;
 	width: 100%;
 	-webkit-transition: all .1s ease;
 	transition: all .1s ease;
-	-webkit-transition-delay: 2s;
-	transition-delay: 2s;
 }
 
 .hero-graphic__morph--clicked {
 	background-color: rgba(255, 255, 255, 0.4);
 	border-radius: 20px;
+	cursor: initial;
 	height: 40px;
-	-webkit-transition-delay: 0s;
-	transition-delay: 0s;
+}
+
+.hero-graphic__morph p {
+	margin: 0;
+	padding-right: 1em;
+	text-align: right;
 }
 
 /*----------STORE----------*/
@@ -1209,7 +1207,7 @@ button.cta:hover {
 	padding: 0 1em;
 }
 
-/*----------NAVIGATION----------*/
+/*---------- NAVIGATION ----------*/
 
 #mainNav {
 	position: fixed;
@@ -1277,11 +1275,11 @@ button.cta:hover {
 
 .nav,
 .sidebar-nav {
-	-ms-flex-pack: justify;
 	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
 	justify-content: space-between;
-	-ms-flex-align: center;
 	-webkit-box-align: center;
+	-ms-flex-align: center;
 	align-items: center;
 	height: 100%;
 }
@@ -1325,12 +1323,12 @@ button.cta:hover {
 }
 
 .mobile-menu ul {
-	display: -ms-flexbox;
 	display: -webkit-box;
+	display: -ms-flexbox;
 	display: flex;
-	-ms-flex-direction: column;
 	-webkit-box-orient: vertical;
 	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
 	flex-direction: column;
 }
 
@@ -1441,12 +1439,12 @@ button.cta:hover {
 
 header {
 	font-family: "Khand", "Helvetica", sans-serif;
-	color: #484848;
+	color: #363636;
 	position: relative;
 }
 
 .header-content {
-	border-bottom: 1px solid #484848;
+	border-bottom: 1px solid #363636;
 	height: 60px;
 	position: fixed;
 	top: 0;

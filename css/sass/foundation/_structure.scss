@@ -1,4 +1,4 @@
-/*----------GENERAL----------*/
+/*---------- GENERAL ----------*/
 html {
   overflow-x: hidden;
 }
@@ -52,8 +52,8 @@ content {
 
 
 .sidebar-wrapper {
-    margin: 0 auto;
-    width: 300px;
+  margin: 0 auto;
+  width: 300px;
 }
 .wrapper--gallery {
 	margin-top: 4em;
@@ -64,100 +64,100 @@ content {
 .content-panel a:visited,
 .mg_item_content a:link,
 .mg_item_content a:visited {
-    color: #db1c45;
-    text-decoration: none;
-    transition-duration: .25s;
+  color: #db1c45;
+  text-decoration: none;
+  transition-duration: .25s;
 }
 .content-panel a:hover,
 .content-panel a:active,
 .mg_item_content a:hover,
-.mg_item_content a:active {color: #a2a2a2;}
+.mg_item_content a:active {
+  color: #a2a2a2;
+}
 
 /*----------CONTENT-----------*/
-.content-panel {margin-top: 2em;}
-#photoPortfolio .content-panel {margin-top: 0; padding-top: 5em;}
-.content-panel.has-grid {padding: 0 1em;} /*Use when you know the page has a Media Grid*/
+.content-panel {
+  margin-top: 2em;
+}
+#photoPortfolio .content-panel {
+  margin-top: 0; 
+  padding-top: 5em;
+}
+.content-panel.has-grid { // Use when you know the page has a Media Grid
+  padding: 0 1em;
+} 
 .content-panel.row {
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-flex-direction: column;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -webkit-justify-content: space-between;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    -webkit-align-items: center;
-    -ms-flex-align: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
 }
 .content-panel .content-item:first-child {
-    /*Style first post in loop*/
-    width: 100%;
+  /*Style first post in loop*/
+  width: 100%;
 }
 .content-item {
-    position: relative;
-    height: 200px;
-    padding-top: 16px;
-    width: 100%;
-    margin-bottom: 2em;	
-    border-top: .3em solid #7a133e;	
+  position: relative;
+  height: 200px;
+  padding-top: 16px;
+  width: 100%;
+  margin-bottom: 2em;	
+  border-top: .3em solid #7a133e;	
 }
 .content-item, .mgi_elems_wrap {
-    transition-duration: .25s;
+  transition-duration: .25s;
 }
 #photoPortfolio .mgi_elems_wrap,
-#imageGrid .mgi_elems_wrap {border-top:none;} /* Single images in a grid do not have a top border */
+#imageGrid .mgi_elems_wrap {
+  border-top:none; // Single images in a grid do not have a top border
+}
 .mgi_elems_wrap {
-	border-top: .3em solid #db1c45;
+  border-top: .3em solid #db1c45;
 }
 .mg_inl_text .mgi_elems_wrap {
 	border-top: .3em solid #363636 !important;
 }
 .content-item.post-block {
-    border-top: .3em solid #fbb33d;
+  border-top: .3em solid #fbb33d;
 }
 .content-item a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 10;
-    overflow: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10;
+  overflow: hidden;
 }
 .post-block a {
 	background: rgba(0,0,0,.2) !important;
 }
 .content-item a,
 .mgi_overlays {
-   /*Set bg for content items and Media Grid items*/
-   background: none;
-   background: rgba(0,0,0,0);
+  /*Set bg for content items and Media Grid items*/
+  background: none;
+  background: rgba(0,0,0,0);
 }
 .mgi_overlays::before,
 .content-item a::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 11;  
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 11;  
 }
 .mgi_overlays::before,
 .content-item a::after {
-    /*On hover, change background to this gradient by changing its opacity (see next rule)*/
-	background: -webkit-linear-gradient(bottom, rgba(0,0,0,0), rgba(0,0,0,0.2)) !important; /* For Safari 5.1 to 6.0 */
-    background: -o-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2)) !important; /* For Opera 11.1 to 12.0 */
-    background: -moz-linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.2)) !important; /* For Firefox 3.6 to 15 */
-    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.2)) !important; /* Standard syntax (must be last) */
-    opacity: 0;
-    transition: .5s !important;    
+  // On hover, change background to this gradient by changing its opacity (see next rule)
+  background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.2)) !important;
+  opacity: 0;
+  transition: .5s !important;    
 }
 .mgi_overlays:hover::before,
 .content-item a:hover::after {
-    opacity: 1  !important;
+  opacity: 1  !important;
 }
 /*Content item and media grid item link styling*/
 .content-item a:link,
@@ -172,28 +172,26 @@ content {
 .content-item a > p,
 .post-date,
 .post-preview {
-    z-index: 12;
-    position: relative;
+  z-index: 12;
+  position: relative;
 }
 .content-item-title {
-    width: 100%;
-    text-align: center;
-    font-size: 1.1em;
-    font-weight: 700;
-    padding: .5em ;
-    background: #363636;
-    background: rgba(0,0,0,.3);
-    box-sizing: border-box;
+  width: 100%;
+  text-align: center;
+  font-size: 1.1em;
+  font-weight: 700;
+  padding: .5em ;
+  background: #363636;
+  background: rgba(0,0,0,.3);
+  box-sizing: border-box;
 }
 .mg_overlay_tit {
 	display: block !important;
 	width: 100%;
-    text-align: center;
-    font-size: 1.1em !important;
-    font-weight: 700;
-    padding: .25em !important;
-	/*border-radius: 0 !important;
-	box-shadow: none !important;*/
-    box-sizing: border-box !important;
+  text-align: center;
+  font-size: 1.1em !important;
+  font-weight: 700;
+  padding: .25em !important;
+  box-sizing: border-box !important;
 }
 .content-item a > p {margin-top: .5em;}

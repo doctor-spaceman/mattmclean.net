@@ -90,5 +90,6 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
-
+    <a class="screen-reader-text" href="#pageContent">Jump to Page Content</a>
+    
 		<?php get_template_part('inc/header');?>

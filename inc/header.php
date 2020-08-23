@@ -48,11 +48,12 @@
         </div>
       </nav>
       <div class="hero-graphic grid grid--center">
-        <div class="hero-graphic__morph"></div>
+        <div class="hero-graphic__morph">
+          <p class="typed"></p>
+        </div>
       </div>
     </div>
   </section>
   <div class="screen-overlay"></div>
 </header>
-<main>
-  <a class="screen-reader-text" name="contentAnchor" id="contentAnchor"><span>Jump to Page Content</span></a>
+<main id="pageContent">

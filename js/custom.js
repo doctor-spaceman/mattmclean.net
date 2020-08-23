@@ -1,13 +1,34 @@
 "use strict";
 
+// Homepage hero interactive element
 var heroGraphic = document.querySelector('.hero-graphic__morph');
-heroGraphic.addEventListener('click', function (e) {
+
+function heroClickResponder(e) {
   var el = e.target;
-  el.classList.add('hero-graphic__morph--clicked');
+  var typed;
+  var typedStrings = ['I only have time for coffee.', 'String 2', 'String 3'];
+  var typedString; // Don't allow subsequent clicks while the response is being displayed
+
+  heroGraphic.removeEventListener('click', heroClickResponder);
+  el.classList.add('hero-graphic__morph--clicked'); // Select a string at random
+
+  typedString = typedStrings[Math.floor(Math.random() * typedStrings.length)]; // Create typed.js instance
+
+  typed = new Typed('.typed', {
+    showCursor: false,
+    strings: [typedString],
+    typeSpeed: 40
+  });
   setTimeout(function () {
-    el.classList.remove('hero-graphic__morph--clicked');
-  }, 200);
-});
+    typed.destroy();
+    el.classList.remove('hero-graphic__morph--clicked'); // Re-enable click listener
+
+    heroGraphic.addEventListener('click', heroClickResponder);
+  }, 2000);
+}
+
+heroGraphic.addEventListener('click', heroClickResponder); // END / Homepage hero interactive element
+
 jQuery(document).ready(function ($) {
   // Set hero height to browser height
   $('.hero').css('height', $(window).height()); // Re-set hero height to new browser height after window is resized.
@@ -108,3 +129,4 @@ jQuery(document).ready(function ($) {
     });
   });
 });
+"use strict";
