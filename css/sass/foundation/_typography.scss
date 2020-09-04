@@ -5,38 +5,28 @@ body {
   font-size: $font__size--base;
   line-height: 1.2;
 }
-p {
-  padding: .5em 0;
-}
 
 /* Blockquote */
 blockquote {
   border-left: 4px solid c('aqua');
   font-size: 125%;
-  margin: 0;
-  padding: 0 $spacing * 2;
+  margin: $spacing 0;
+  padding: 0 0 0 $spacing * 2;
+
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+p {
+  margin-top: 0;
 }
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: $font--heading;
   letter-spacing: 1px;
-}
-.monogram {
-  font-family: 'Montserrat', sans-serif;
-  text-transform: uppercase;
-  line-height: 1em;
-  font-size: 1.8em;
-  font-weight: 700;
-}
-.monogram-sub {
-  line-height: .5em;
-  font-size: .22em;
-  text-align:center;
-}
-.monogram a:hover,
-.monogram a:visited {
-  color: c('black');
 }
 .title {
   font-size: 1.5em;
@@ -79,4 +69,4 @@ ol li ul {
 	font-size: .75em;
 	font-style: italic;
 	color: #a2a2a2;
-}
+} 

@@ -92,4 +92,12 @@
 	<body <?php body_class(); ?>>
     <a class="screen-reader-text" href="#pageContent">Jump to Page Content</a>
     
-		<?php get_template_part('inc/header');?>
+    <?php 
+    if ( is_front_page() ) : 
+      get_template_part('partials/header','home');
+    else : 
+      get_template_part('partials/header');
+    endif;
+    ?>
+
+    <main id="pageContent">

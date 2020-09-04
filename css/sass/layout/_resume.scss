@@ -1,4 +1,17 @@
-/*----------RESUME----------*/
+/*--------- RESUME ---------*/
+.resume-section {
+  h2 {
+    border-bottom: 1px solid c('black');
+  }
+}
+.resume-section-info__role {
+  margin-bottom: 0;
+}
+.resume-section-info__date-loc {
+  color: lighten(c('black'),10%);
+  font-size: $font__size--s;
+}
+
 .resume-block {
 	padding-left: 1em;
 	margin: 1em 0;

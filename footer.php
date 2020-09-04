@@ -16,7 +16,7 @@
 	<?php else : ?>
 	<footer>
 	<?php endif; ?>
-		<?php get_template_part('inc/footer'); ?>
+		<?php get_template_part('partials/footer'); ?>
 	</footer>
 
 <?php wp_footer(); ?>

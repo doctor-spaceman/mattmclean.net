@@ -4,7 +4,22 @@ const heroGraphic = document.querySelector('.hero-graphic__morph');
 function heroClickResponder(e) {
   let el = e.target;
   let typed;
-  const typedStrings = ['I only have time for coffee.', 'String 2', 'String 3'];
+  const typedStrings = [
+    'weeks crash by, unseeing', 
+    'festooned in metal', 
+    'in the limbo of a long sleep',
+    'life is a renegotiation',
+    'the sizes of infinity',
+    'thought without voice',
+    'clouds like a page-edge',
+    'the story spilt out',
+    'the earth, capped, touches light',
+    'watching atoms drift by',
+    'a steady pulling across',
+    'bookended by oceans',
+    'a dream unending',
+    'the fire-smoke of memories'
+  ];
   let typedString;
 
   // Don't allow subsequent clicks while the response is being displayed
@@ -28,9 +43,11 @@ function heroClickResponder(e) {
 
     // Re-enable click listener
     heroGraphic.addEventListener('click', heroClickResponder);
-  },2000);
+  },3000);
 }
-heroGraphic.addEventListener('click', heroClickResponder);
+if ( heroGraphic ) {
+  heroGraphic.addEventListener('click', heroClickResponder);
+}
 // END / Homepage hero interactive element
 
 
@@ -60,42 +77,21 @@ jQuery(document).ready( function($){
 	// Scroll down with chevron icon
 	$('a[href*=\\#]').click(function(event){
 		// Animate scroll to anchor location
-        $('html, body').animate({
-            scrollTop: $( $.attr(this, 'href') ).offset().top -50
-        }, 500);
+    $('html, body').animate({
+      scrollTop: $( $.attr(this, 'href') ).offset().top -50
+    }, 500);
     event.preventDefault();
-    });
+  });
     
-    //----------NAV BAR BEHAVIOR----------
-	var heroBottom = $('.hero').height() / 6; // point where I want style change to occur
-	var navStyle = function() {
-        var stopPosition = Math.round($(window).scrollTop()); // use rounding to improve performance
-    	var overlayStatus = $('.screen-overlay').css('display');
-    	
-    	// Change nav bar style when far enough down page and if mobile menu overlay is not active
-        if (stopPosition > heroBottom && overlayStatus == 'none') {
-            $('.nav-container').addClass('past-hero');
-        // Otherwise, don't change style
-        } else {
-            $('.nav-container').removeClass('past-hero');
-        }		
-	}
 
-	// On scroll
-	$(window).on('scroll', function() { navStyle(); } );
-	// On page load or refresh
-    $(window).load( function() { navStyle(); } );
-    
-    //----------MENU BEHAVIOR----------
+  //----------MENU BEHAVIOR----------
 	// Define how mobile menu is toggled
 	var toggleMenu = function () {
-	    $('#navIcon').toggleClass('open');
-	    $('.screen-overlay').toggle();
-	    $('.main-menu').toggleClass('mobile-menu');
+    $('#navIcon').toggleClass('open');
+    $('.screen-overlay').toggle();
+    $('.main-menu').toggleClass('mobile-menu');
 		$('.main-menu--vertical').toggleClass('mobile-menu');
 		$('.sidebar-nav-container').toggleClass('past-hero');
-	    // Check nav bar style
-	    navStyle();
 	}
 	// Enable mobile menu when clicking hamburger icon
 	$('#navIcon').click(function() { toggleMenu(); } );

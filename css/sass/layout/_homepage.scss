@@ -1,13 +1,14 @@
 #hero {
-  height: 60vh;
-  min-height: 400px;
+  height: 524px;
   padding: $navbarHeight + 20px $spacing * 2 $spacing $spacing * 2;
   box-sizing: border-box;
 
+  @include breakpoint--medium {
+    height: 460px;
+  }
   @include breakpoint--small {
-    height: 50vh;
-    min-height: 300px;
-    padding: $navbarHeight + 20px 0px 0px 0px;
+    height: 340px;
+    padding: $navbarHeight 0px 0px 0px;
   }
 }
 .hero-bg {
@@ -69,20 +70,14 @@
 }
 .hero-menu {
   height: 100%;
-  width: 424px;
   position: relative;
   z-index: 30;
-
-  @include breakpoint--small {
-    width: 252px;
-  }
 }
 .hero-menu-bar {
   box-sizing: border-box; 
   color: c('white');
   height: 100px;
-  width: 60vh;
-  min-width: 400px;
+  width: 524px;
   opacity: 1;
   padding: 0px 40px;
   position: absolute;
@@ -96,50 +91,74 @@
     animation-timing-function: linear;
   }
 
+  @include breakpoint--medium {
+    height: 80px;
+    width: 460px;
+  }
   @include breakpoint--small {
     height: 60px;
-    width: 50vh;
-    min-width: 300px;
+    width: 340px;
     transform: rotateZ(90deg) translateX(-30px) translateY(-60px);
 
     &:hover {
       animation-duration: .5s;
       animation-iteration-count: 1;
       animation-name: shakeZmobile;
-      animation-timing-function: linear;
+      animation-timing-function: linear; 
     }
   }
-
+  
   &:nth-child(1) {
     background-color: c('burgundy');
-    top: 5%;
+    top: 0;
     left: 0px;
   }
   &:nth-child(2) {
     background-color: c('magenta');
-    top: 15%;
+    top: 14%;
     left: 108px;
 
+    @include breakpoint--medium {
+      left: 88px;
+    }
     @include breakpoint--small {
       left: 64px;
     }
   }
   &:nth-child(3) {
     background-color: c('aqua');
-    top: 0;
+    top: 6%;
     left: 216px;
 
+    @include breakpoint--medium {
+      left: 176px;
+    }
     @include breakpoint--small {
       left: 128px;
     }
   }
   &:nth-child(4) {
     background-color: c('yellow');
-    top: 20%;
+    top: 26%;
     left: 324px;
 
+    @include breakpoint--medium {
+      left: 264px;
+    }
     @include breakpoint--small {
       left: 192px;
+    }
+  }
+  &:nth-child(5) {
+    background-color: c('dark-blue');
+    top: 20%;
+    left: 432px;
+
+    @include breakpoint--medium {
+      left: 352px;
+    }
+    @include breakpoint--small {
+      left: 256px;
     }
   }
 }
@@ -150,11 +169,15 @@
   letter-spacing: 1px;
   padding: 10px 0px;
   text-align: right;
-  text-transform: uppercase;
+  //text-transform: uppercase;
 
+  @include breakpoint--medium {
+    height: 80px;
+    font-size: 2.4rem;
+  }
   @include breakpoint--small {
     padding: 5px 0px;
-    font-size: 2.4rem;
+    font-size: $font__size--m;
   }
 }
 .hero-graphic {
@@ -200,6 +223,14 @@
       padding-right: 1em;
       text-align: right;
     }
+  }
+}
+
+#homepageIntro {
+  margin-top: 14rem;
+
+  @include breakpoint--small {
+    margin-top: 10rem;
   }
 }
 

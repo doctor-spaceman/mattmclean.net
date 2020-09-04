@@ -6,10 +6,14 @@ body {
   background-color: c('white');
   -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
 }
+body:not(.home) main {
+  margin-top: $navbarHeight + $navbarBannerHeight;
+}
 content {
   margin-top: 2em;
   line-height: 1.4em;
 }
+
 .grid {
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +25,10 @@ content {
   &--space {
     justify-content: space-between;
   }
+
+  @include breakpoint--small {
+    flex-direction: column;
+  }
 }
 .col-1-2 {
   width: 50%;
@@ -29,6 +37,7 @@ content {
     width: 100%;
   }
 }
+
 .wrapper {
   margin: 0 auto;
   padding: 0px $spacing * 2;
@@ -44,6 +53,14 @@ content {
   &--xlarge {
     @extend .wrapper;
     max-width: 800px;
+  }
+}
+
+.section {
+  padding: $spacing * 2 0;
+
+  &--s {
+    padding: $spacing / 2 0;
   }
 }
 

@@ -6,7 +6,7 @@ var heroGraphic = document.querySelector('.hero-graphic__morph');
 function heroClickResponder(e) {
   var el = e.target;
   var typed;
-  var typedStrings = ['I only have time for coffee.', 'String 2', 'String 3'];
+  var typedStrings = ['weeks crash by, unseeing', 'festooned in metal', 'in the limbo of a long sleep', 'life is a renegotiation', 'the sizes of infinity', 'thought without voice', 'clouds like a page-edge', 'the story spilt out', 'the earth, capped, touches light', 'watching atoms drift by', 'a steady pulling across', 'bookended by oceans', 'a dream unending', 'the fire-smoke of memories'];
   var typedString; // Don't allow subsequent clicks while the response is being displayed
 
   heroGraphic.removeEventListener('click', heroClickResponder);
@@ -24,10 +24,13 @@ function heroClickResponder(e) {
     el.classList.remove('hero-graphic__morph--clicked'); // Re-enable click listener
 
     heroGraphic.addEventListener('click', heroClickResponder);
-  }, 2000);
+  }, 3000);
 }
 
-heroGraphic.addEventListener('click', heroClickResponder); // END / Homepage hero interactive element
+if (heroGraphic) {
+  heroGraphic.addEventListener('click', heroClickResponder);
+} // END / Homepage hero interactive element
+
 
 jQuery(document).ready(function ($) {
   // Set hero height to browser height
@@ -56,29 +59,6 @@ jQuery(document).ready(function ($) {
       scrollTop: $($.attr(this, 'href')).offset().top - 50
     }, 500);
     event.preventDefault();
-  }); //----------NAV BAR BEHAVIOR----------
-
-  var heroBottom = $('.hero').height() / 6; // point where I want style change to occur
-
-  var navStyle = function navStyle() {
-    var stopPosition = Math.round($(window).scrollTop()); // use rounding to improve performance
-
-    var overlayStatus = $('.screen-overlay').css('display'); // Change nav bar style when far enough down page and if mobile menu overlay is not active
-
-    if (stopPosition > heroBottom && overlayStatus == 'none') {
-      $('.nav-container').addClass('past-hero'); // Otherwise, don't change style
-    } else {
-      $('.nav-container').removeClass('past-hero');
-    }
-  }; // On scroll
-
-
-  $(window).on('scroll', function () {
-    navStyle();
-  }); // On page load or refresh
-
-  $(window).load(function () {
-    navStyle();
   }); //----------MENU BEHAVIOR----------
   // Define how mobile menu is toggled
 
@@ -87,9 +67,7 @@ jQuery(document).ready(function ($) {
     $('.screen-overlay').toggle();
     $('.main-menu').toggleClass('mobile-menu');
     $('.main-menu--vertical').toggleClass('mobile-menu');
-    $('.sidebar-nav-container').toggleClass('past-hero'); // Check nav bar style
-
-    navStyle();
+    $('.sidebar-nav-container').toggleClass('past-hero');
   }; // Enable mobile menu when clicking hamburger icon
 
 
@@ -129,4 +107,3 @@ jQuery(document).ready(function ($) {
     });
   });
 });
-"use strict";

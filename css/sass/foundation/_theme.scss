@@ -1,0 +1,23 @@
+.wp-block-image {
+  position: relative;
+  
+  img {
+    position: relative;
+    z-index: 20;
+  }
+  &:after {
+    background-color: c('cream');
+    content: '';
+    display: block;
+    height: 50%;
+    width: 50%;
+    position: absolute;
+    top: -$spacing / 2;
+    left: -$spacing / 2;
+    z-index: 0;
+  }
+}
+
+.wp-block-column .wp-block-image {
+  margin: 0;
+}

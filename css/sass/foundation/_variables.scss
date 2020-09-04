@@ -1,37 +1,39 @@
 $spacing: 1.6rem;
 
-$navbarHeight: 60px;
+$navbarHeight: 48px;
+$navbarBannerHeight: 28px;
 
 $colors: (
-    'white': #ffffff,
-    'black': #363636,
-    'cream': #f2daac,
-    'yellow': #fbb33d,
-    'orange': #f4793d,
-    'pink': #ec3f98,
-    'magenta': #db1c45,
-    'burgundy': #7a133e,
-    'aqua': #03A696,
-    'teal': #025159
+  'white': #ffffff,
+  'black': #363636,
+  'cream': #f2daac,
+  'yellow': #fbb33d,
+  'orange': #f4793d,
+  'pink': #ec3f98,
+  'magenta': #db1c45,
+  'burgundy': #7a133e,
+  'aqua': #03A696,
+  'teal': #025159,
+  'dark-blue': #195973
 );
 
-$font--main: 'Archivo', 'Helvetica', sans-serif;
-$font--heading: 'Khand', 'Helvetica', sans-serif;
+$font--main: 'Archivo', 'Robot', sans-serif;
+$font--heading: 'Khand', 'Roboto Condensed', 'Trebuchet', sans-serif;
 
 $font__size: 100%; // 1rem = 16px (set by browser)
 $font__size--xl: 4.4rem;
 $font__size--l: 2.9rem;
 $font__size--m: 2rem;
 $font__size--base: 1.2rem; // 18px
-$font__size--s: 1.4rem;
-$font__size--xs: 1.1rem;
+$font__size--s: 1rem;
+$font__size--xs: .8rem;
 
 $font__weight: 400;
 $font__weight--l: 300;
 $font__weight--m: 500;
 $font__weight--b: 700;
 
-$breakpoint--small: 640px;
-$breakpoint--medium: 760px;
+$breakpoint--small: 599px;
+$breakpoint--medium: 782px;
 $breakpoint--medium-large: 880px;
 $breakpoint--large: 1000px;

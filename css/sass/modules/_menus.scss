@@ -1,10 +1,37 @@
 /*---------- NAVIGATION ----------*/
-#mainNav {
+#mainNavBar {
+  background-color: c('cream');
   position: fixed;
+  width: 100%;
   top: 0;
   z-index: 1000;
-  transition-duration: .25s;
 }
+.navbar-main-content {
+  height: $navbarHeight;
+}
+.navbar-main-content__brand,
+a.navbar-main-content__brand {
+  color: c('black');
+  text-decoration: none;
+}
+.navbar-main-content__menu {
+  color: c('black');
+  text-transform: uppercase;
+}
+.navbar-main-banner {
+  color: c('white');
+  font-size: $font__size--s;
+  height: $navbarBannerHeight;
+  
+  h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    justify-content: flex-start;
+    height: 100%;
+  }
+}
+
+
 
 .menu {
   list-style: none;

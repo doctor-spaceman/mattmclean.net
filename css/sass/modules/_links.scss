@@ -1,12 +1,12 @@
 /* Basic Link Styling */
 a:link,
 a:visited {
-    color: #ffffff;
-    text-decoration: none;
-    transition-duration: .25s;
+    color: c('black');
 }
 a:hover,
-a:active {color: #a2a2a2;}
+a:active {
+  color: c('pink');
+}
 
 /* Button Styling */
 .cta,
