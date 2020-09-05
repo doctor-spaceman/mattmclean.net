@@ -1,9 +1,67 @@
 /*--------- RESUME ---------*/
 .resume-section {
+  margin-bottom: $spacing * 2;
+  min-height: calc(100px + #{$spacing / 2} + #{$spacing});
+  position: relative; 
+
   h2 {
     border-bottom: 1px solid c('black');
   }
+
+  // Corner graphic element
+  // TODO: Make this a mixin?
+  &:before {
+    background-color: c('cream');
+    border-radius: $spacing / 2;
+    clip-path: polygon(
+      0px 0px,
+      100px 0px,
+      0px 100px,
+      0px 0px
+    );
+    content: '';
+    display: block;
+    position: absolute;
+    top: -$spacing / 2;
+    right: 0;
+    bottom: 0;
+    left: -$spacing / 2;
+    z-index: -10;
+  }
+  &:after {
+    background-color: c('cream');
+    border-radius: $spacing / 2;
+    clip-path: polygon(
+      calc(100px + #{$spacing / 4}) 0px,
+      calc(100px + #{$spacing / 4} + #{$spacing / 2}) 0px,
+      0px calc(100px + #{$spacing / 4} + #{$spacing / 2}),
+      0px calc(100px + #{$spacing / 4})
+    );
+    content: '';
+    display: block;
+    position: absolute;
+    top: -$spacing / 2;
+    right: 0;
+    bottom: 0;
+    left: -$spacing / 2;
+    z-index: -10;
+  }
 }
+.resume-section .wp-block-column {
+  p {
+    margin-bottom: 0;
+  }
+}
+.resume-section-info__employer {
+  font-size: 1.4rem; 
+  text-transform: uppercase;
+
+  a {
+    color: c('black');
+    text-decoration: none;
+  }
+}
+.resume-section-info__employer, 
 .resume-section-info__role {
   margin-bottom: 0;
 }
