@@ -282,7 +282,7 @@
 }
 
 @mixin between($min, $max) {
-  @media only screen and (max-width: $max) and (min-width: $min) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
       @content;
   }
 }

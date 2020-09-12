@@ -1,7 +1,6 @@
-$spacing: 1.6rem;
+$spacing: 1rem;
 
-$navbarHeight: 48px;
-$navbarBannerHeight: 28px;
+$navbarHeight: $spacing * 3;
 
 $colors: (
   'white': #ffffff,

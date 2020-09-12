@@ -9,47 +9,30 @@
   }
 
   // Corner graphic element
-  // TODO: Make this a mixin?
-  &:before {
-    background-color: c('cream');
-    border-radius: $spacing / 2;
-    clip-path: polygon(
-      0px 0px,
-      100px 0px,
-      0px 100px,
-      0px 0px
-    );
-    content: '';
-    display: block;
-    position: absolute;
-    top: -$spacing / 2;
-    right: 0;
-    bottom: 0;
-    left: -$spacing / 2;
-    z-index: -10;
-  }
-  &:after {
-    background-color: c('cream');
-    border-radius: $spacing / 2;
-    clip-path: polygon(
-      calc(100px + #{$spacing / 4}) 0px,
-      calc(100px + #{$spacing / 4} + #{$spacing / 2}) 0px,
-      0px calc(100px + #{$spacing / 4} + #{$spacing / 2}),
-      0px calc(100px + #{$spacing / 4})
-    );
-    content: '';
-    display: block;
-    position: absolute;
-    top: -$spacing / 2;
-    right: 0;
-    bottom: 0;
-    left: -$spacing / 2;
-    z-index: -10;
-  }
+  @include accent-graphic;
 }
 .resume-section .wp-block-column {
-  p {
+  margin-top: 0;
+
+  ul {
+    margin-top: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+  p, ul {
     margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+.resume-section__employer-list .wp-block-column:not(:last-child),
+.resume-section__skills-list .wp-block-column:not(:last-child) {
+  @include breakpoint--small {
+    padding-bottom: $spacing;
   }
 }
 .resume-section-info__employer {
@@ -60,6 +43,9 @@
     color: c('black');
     text-decoration: none;
   }
+  &:not(:first-of-type) {
+    padding-top: $spacing;
+  }
 }
 .resume-section-info__employer, 
 .resume-section-info__role {
@@ -69,43 +55,24 @@
   color: lighten(c('black'),10%);
   font-size: $font__size--s;
 }
+.resume-section__project-list {
+  font-size: $font__size--s;
+  line-height: 1.4;
 
-.resume-block {
-	padding-left: 1em;
-	margin: 1em 0;
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
-	-webkit-flex-wrap: wrap;
-	-ms-flex-wrap: wrap;
-	flex-wrap: wrap;
+  &--full {
+    p {
+      padding: $spacing;
+    }
+  }
 }
-.resume-block p {padding: 0; margin: 0;}
-.resume-block div {margin-top: 1em;}
-.resume-block ul {margin: .6em 1em;}
-.date {color: #a2a2a2; font-size: .85em;}
-.list-title {margin-left: 2.2em !important; text-transform: uppercase;}
-.project-list {margin-left: 3.6em !important;}
-.project-list,
-.content-panel ul,
-.content-panel ol {list-style-position: inside; margin: 1em 0;}
-.project-list li,
-.content-panel ul li,
-.content-panel ol li {margin-top: .25em; margin-bottom: .25em;}
-.project-list li {color: #a2a2a2;}
-.fa-li {color: #a2a2a2;}
-.flex-list {
-	display: -webkit-flex;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-flex-direction: column;
-	-ms-flex-direction: column;
-	flex-direction: column;
+#experience .resume-section__employer-list {
+  padding-top: $spacing;
 }
-.resume-block a:link,
-.resume-block a:visited {color: #ffffff !important;}
-.resume-block a:hover,
-.resume-block a:active {color: #a2a2a2 !important;}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /* IE10+ CSS styles go here */
+  .resume-section:before,
+  .resume-section:after {
+    background-color: transparent;
+  }
+}

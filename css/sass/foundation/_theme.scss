@@ -1,23 +1,52 @@
 .wp-block-image {
-  position: relative;
-  
+  margin: 0;
+
   img {
+    border-radius: .8rem;
     position: relative;
     z-index: 20;
   }
-  &:after {
-    background-color: c('cream');
-    content: '';
-    display: block;
-    height: 50%;
-    width: 50%;
-    position: absolute;
-    top: -$spacing / 2;
-    left: -$spacing / 2;
-    z-index: 0;
+}
+
+.wp-block-column {
+  margin-right: $spacing;
+  margin-left: $spacing;
+
+  @include breakpoint--small {
+    margin-top: $spacing;
+    margin-right: 0;
+    margin-left: 0;
+  }
+  &:first-child {
+    margin-left: 0;
+    
+    @include breakpoint--small {
+      margin-top: 0;
+    }
+  }
+  &:nth-child(2n) {
+    @include between(600px, 781px) {
+      margin-left: 0;
+      margin-right: 0;
+    }
+  }
+  &:last-child {
+    margin-right: 0;
+
+    @include between(600px, 781px) {
+      margin-left: 0;
+      margin-right: $spacing;
+    }
+  }
+  & > .wp-block-image {
+    margin-bottom: $spacing;
+    margin-top: 0;
   }
 }
 
-.wp-block-column .wp-block-image {
-  margin: 0;
+.corner {
+  position: relative;
+
+  // Corner graphic element
+  @include accent-graphic;
 }

@@ -1,32 +1,32 @@
 /*----------FOOTER----------*/
+// Primary Footer
 footer {
-  display: -webkit-flex;
-  display: -ms-flexbox;
+  background-color: c('cream');
+  border-top: 1px solid c('black');
   display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
   align-items: center;
-  height: 4em;
   margin-top: 4em;
-width: 100%;
-position: relative;
+  position: relative;
+  width: 100%;
 }
-.attribution {
-  font-size: .8em;
-  text-align: center;
-padding: 0 1em;
+.footer__attribution {
+  font-size: $font__size--xs;
+  text-align: right;
+}
+
+
+
+// Sidebar Layout Footer
+.sidebar-footer,
+.sidebar-footer--under-content {
+  position: fixed;
+}
+.sidebar-footer--under-content {
+  position: relative;
 }
 .sidebar-footer,
 .sidebar-footer--under-content {
-position: fixed;
+  bottom: 20px;
+  width: 100%;
+  z-index: 39;
 }
-.sidebar-footer--under-content {
-position: relative;
-}
-.sidebar-footer,
-.sidebar-footer--under-content {
-bottom: 20px;
-width: 100%;
-z-index: 39;
-}
-#footerSocial {font-size: 1.8em;}

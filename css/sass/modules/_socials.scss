@@ -1,0 +1,40 @@
+.social-icons {
+  .wp-block-group__inner-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    width: 100%;
+
+    &:hover {
+      .wp-block-image {
+        opacity: .5;
+      }
+    }
+    
+    .wp-block-image {
+      opacity: 1;
+      padding: 0 $spacing * 1.4;
+      max-width: $spacing * 3;
+      transition: opacity .2s ease;
+
+      @include between(600px, 781px) {
+        padding: 0 $spacing;
+      }
+
+      &:first-child {
+        padding-left: 0;
+      }
+      &:last-child {
+        padding-right: 0;
+      }
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+    
+    img {
+      border-radius: 0px;
+    }
+  }
+}

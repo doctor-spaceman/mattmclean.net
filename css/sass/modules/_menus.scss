@@ -1,6 +1,7 @@
 /*---------- NAVIGATION ----------*/
 #mainNavBar {
   background-color: c('cream');
+  border-bottom: 1px solid c('black');
   position: fixed;
   width: 100%;
   top: 0;
@@ -8,6 +9,7 @@
 }
 .navbar-main-content {
   height: $navbarHeight;
+  position: relative;
 }
 .navbar-main-content__brand,
 a.navbar-main-content__brand {
@@ -21,13 +23,19 @@ a.navbar-main-content__brand {
 .navbar-main-banner {
   color: c('white');
   font-size: $font__size--s;
-  height: $navbarBannerHeight;
+  padding: .25rem .5rem .25rem 3rem;
+  position: absolute;
+  bottom: $navbarHeight;
+  left: -$spacing;
+  transform: rotateZ(90deg);
+  transform-origin: bottom left;
   
   h1 {
     font-size: inherit;
     font-weight: inherit;
     justify-content: flex-start;
     height: 100%;
+    margin: 0;
   }
 }
 

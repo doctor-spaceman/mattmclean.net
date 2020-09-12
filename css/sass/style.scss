@@ -2,6 +2,7 @@
 @import 'utilities/queries';
 @import 'foundation/normalize';
 @import 'foundation/variables';
+@import 'utilities/mixins';
 
 /* Foundation */
 @import 'foundation/classes';
@@ -18,6 +19,7 @@
 /* Modules */
 @import 'modules/links';
 @import 'modules/menus';
+@import 'modules/socials';
 @import 'modules/header';
 @import 'modules/footer';
 @import 'modules/forms';

@@ -1,0 +1,38 @@
+@mixin accent-graphic {
+  &:before {
+    background-color: c('cream');
+    border-radius: 1.2rem;
+    clip-path: polygon(
+      0px 0px,
+      100px 0px,
+      0px 100px,
+      0px 0px
+    );
+    content: '';
+    display: block;
+    position: absolute;
+    top: -.8rem;
+    right: 0;
+    bottom: 0;
+    left: -.8rem;
+    z-index: -10;
+  }
+  &:after {
+    background-color: c('cream');
+    border-radius: 1.2rem;
+    clip-path: polygon(
+      calc(100px + #{$spacing / 2}) 0px,
+      calc(100px + #{$spacing / 2} + #{$spacing / 2}) 0px,
+      0px calc(100px + #{$spacing / 2} + #{$spacing / 2}),
+      0px calc(100px + #{$spacing / 2})
+    );
+    content: '';
+    display: block;
+    position: absolute;
+    top: -.8rem;
+    right: 0;
+    bottom: 0;
+    left: -.8rem;
+    z-index: -10;
+  }
+}

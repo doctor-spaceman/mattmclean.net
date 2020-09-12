@@ -8,17 +8,20 @@
 ?>
 			<div class="clearfix"></div>
 		</div>
-	</main>
-	<?php if ( is_page_template('page-photography.php') && ($post->post_parent) ) : //is a child page?>
-	<footer class="sidebar-footer--under-content">
-	<?php elseif ( is_page_template('page-photography.php') ) : ?>
-	<footer class="sidebar-footer">
-	<?php else : ?>
-	<footer>
-	<?php endif; ?>
-		<?php get_template_part('partials/footer'); ?>
+  </main>
+  <footer>
+  <?php 
+  if ( is_page_template('page-photography.php') ) : 
+    get_template_part('partials/footer','sidebar');
+  elseif ( is_front_page() ) :
+    get_template_part('partials/footer','home');
+  else : 
+    get_template_part('partials/footer');
+  endif; 
+  ?>		
 	</footer>
 
 <?php wp_footer(); ?>
+
 </body>
 </html>
