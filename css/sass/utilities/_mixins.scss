@@ -1,4 +1,6 @@
 @mixin accent-graphic {
+  position: relative;
+
   &:before {
     background-color: c('cream');
     border-radius: 1.2rem;
@@ -17,6 +19,7 @@
     left: -.8rem;
     z-index: -10;
   }
+  
   &:after {
     background-color: c('cream');
     border-radius: 1.2rem;
@@ -36,3 +39,23 @@
     z-index: -10;
   }
 }
+
+// @mixin slant-cutout {
+//   position: relative;
+//   &:after {
+//     background-color: c('white');
+//     clip-path: polygon(
+//       calc(100% - #{$spacing * 2}) 0px,
+//       calc(100% - #{$spacing * 2} - #{$spacing / 2}) 0px,
+//       calc(100% - #{$spacing * 4} - #{$spacing / 2}) 100%,
+//       calc(100% - #{$spacing * 4}) 100%
+//     );
+//     content: '';
+//     display: block;
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     height: 100%;
+//     width: 100%;
+//   }
+// }

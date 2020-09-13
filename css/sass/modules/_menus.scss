@@ -20,22 +20,44 @@ a.navbar-main-content__brand {
   color: c('black');
   text-transform: uppercase;
 }
-.navbar-main-banner {
+.navbar-main-banner,
+.navbar-main-banner--mobile {
   color: c('white');
   font-size: $font__size--s;
   padding: .25rem .5rem .25rem 3rem;
+
+  h1 {
+    font-size: inherit;
+    font-weight: inherit;
+    justify-content: flex-start;
+    height: 100%;
+  }
+}
+.navbar-main-banner {
+  display: block;
   position: absolute;
   bottom: $navbarHeight;
   left: -$spacing;
   transform: rotateZ(90deg);
   transform-origin: bottom left;
   
+  @include between(600px, 781px) {
+    left: -$spacing / 2;
+  }
+  @include breakpoint--small {
+    display: none;
+  }
+
   h1 {
-    font-size: inherit;
-    font-weight: inherit;
-    justify-content: flex-start;
-    height: 100%;
     margin: 0;
+  }
+}
+.navbar-main-banner--mobile {
+  display: none;
+  padding: .25rem 0;
+
+  @include breakpoint--small {
+    display: block;
   }
 }
 

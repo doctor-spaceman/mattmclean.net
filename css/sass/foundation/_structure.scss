@@ -8,6 +8,10 @@ body {
 }
 body:not(.home) main {
   margin-top: $navbarHeight;
+
+  @include breakpoint--small {
+    margin-top: calc(#{$navbarHeight} + #{$spacing} + (#{$spacing} / 2));
+  }
 }
 content {
   margin-top: 2em;

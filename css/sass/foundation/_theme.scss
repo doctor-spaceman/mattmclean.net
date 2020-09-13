@@ -17,6 +17,13 @@
     margin-right: 0;
     margin-left: 0;
   }
+  &:not(:first-child) {
+    margin-left: $spacing;
+
+    @include breakpoint--small {
+      margin-left: 0;
+    }
+  }
   &:first-child {
     margin-left: 0;
     
@@ -24,19 +31,20 @@
       margin-top: 0;
     }
   }
-  &:nth-child(2n) {
+  &:nth-child(2n) { // Every 2nd column
+    // Where the layout breaks to two columns
+    @include between(600px, 781px) {
+      margin-right: 0;
+    }
+  }
+  &:nth-child(3n) { // Every 3rd column
+    // Where the layout breaks to two columns
     @include between(600px, 781px) {
       margin-left: 0;
-      margin-right: 0;
     }
   }
   &:last-child {
     margin-right: 0;
-
-    @include between(600px, 781px) {
-      margin-left: 0;
-      margin-right: $spacing;
-    }
   }
   & > .wp-block-image {
     margin-bottom: $spacing;
@@ -45,8 +53,10 @@
 }
 
 .corner {
-  position: relative;
-
   // Corner graphic element
   @include accent-graphic;
+
+  &--cutout {
+    //@include slant-cutout;
+  }
 }

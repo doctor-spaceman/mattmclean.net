@@ -21,6 +21,12 @@
         'container_class' => 'main-menu'
       )); ?> 
     </div>
+    <div class="navbar-main-banner--mobile" 
+      <?php if ( get_field('page_color') ) : ?>style="background-color:<?php echo esc_html(get_field('page_color')); ?>;"<?php endif; ?>>
+        <h1 class="wrapper">
+          <?php the_title(); ?>
+        </h1>
+      </div>
   </div>
   <div class="screen-overlay"></div>
 </header>

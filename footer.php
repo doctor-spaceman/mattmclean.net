@@ -5,6 +5,9 @@
  * Contains the closing of the #content div and all content after
  *
  */
+
+$footerElements = get_field('footer_elements', 'option');
+
 ?>
 			<div class="clearfix"></div>
 		</div>
@@ -12,11 +15,11 @@
   <footer>
   <?php 
   if ( is_page_template('page-photography.php') ) : 
-    get_template_part('partials/footer','sidebar');
+    include( locate_template('partials/footer-sidebar.php', false, false) );
   elseif ( is_front_page() ) :
-    get_template_part('partials/footer','home');
+    include( locate_template('partials/footer-home.php', false, false) );
   else : 
-    get_template_part('partials/footer');
+    include( locate_template('partials/footer.php', false, false) );
   endif; 
   ?>		
 	</footer>

@@ -618,6 +618,10 @@ content {
 	margin-left: 1rem;
 }
 
+.wp-block-column:not(:first-child) {
+	margin-left: 1rem;
+}
+
 .wp-block-column:first-child {
 	margin-left: 0;
 }
@@ -1101,6 +1105,7 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label {
 	margin-bottom: 2rem;
 	min-height: calc(100px + 0.5rem + 1rem);
 	position: relative;
+	position: relative;
 }
 
 .resume-section h2 {
@@ -1321,10 +1326,25 @@ a.navbar-main-content__brand {
 	text-transform: uppercase;
 }
 
-.navbar-main-banner {
+.navbar-main-banner,
+.navbar-main-banner--mobile {
 	color: #ffffff;
 	font-size: 1rem;
 	padding: .25rem .5rem .25rem 3rem;
+}
+
+.navbar-main-banner h1,
+.navbar-main-banner--mobile h1 {
+	font-size: inherit;
+	font-weight: inherit;
+	-webkit-box-pack: start;
+	-ms-flex-pack: start;
+	justify-content: flex-start;
+	height: 100%;
+}
+
+.navbar-main-banner {
+	display: block;
 	position: absolute;
 	bottom: 3rem;
 	left: -1rem;
@@ -1335,13 +1355,12 @@ a.navbar-main-content__brand {
 }
 
 .navbar-main-banner h1 {
-	font-size: inherit;
-	font-weight: inherit;
-	-webkit-box-pack: start;
-	-ms-flex-pack: start;
-	justify-content: flex-start;
-	height: 100%;
 	margin: 0;
+}
+
+.navbar-main-banner--mobile {
+	display: none;
+	padding: .25rem 0;
 }
 
 .menu {
@@ -1564,6 +1583,12 @@ a.navbar-main-content__brand {
 	margin-left: .5em;
 }
 
+.social-icons {
+	background-color: #f2daac;
+	border-radius: 1rem;
+	padding: 1rem;
+}
+
 .social-icons .wp-block-group__inner-container {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -1581,19 +1606,10 @@ a.navbar-main-content__brand {
 }
 
 .social-icons .wp-block-group__inner-container .wp-block-image {
-	opacity: 1;
 	padding: 0 1.4rem;
-	max-width: 3rem;
+	max-width: 2.4rem;
 	-webkit-transition: opacity .2s ease;
 	transition: opacity .2s ease;
-}
-
-.social-icons .wp-block-group__inner-container .wp-block-image:first-child {
-	padding-left: 0;
-}
-
-.social-icons .wp-block-group__inner-container .wp-block-image:last-child {
-	padding-right: 0;
 }
 
 .social-icons .wp-block-group__inner-container .wp-block-image:hover {
@@ -1615,15 +1631,52 @@ header {
 footer {
 	background-color: #f2daac;
 	border-top: 1px solid #363636;
-	display: -webkit-box;
-	display: -ms-flexbox;
-	display: flex;
-	-webkit-box-align: center;
-	-ms-flex-align: center;
-	align-items: center;
 	margin-top: 4em;
 	position: relative;
 	width: 100%;
+}
+
+.footer {
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+}
+
+.footer__social ul {
+	-ms-flex-wrap: nowrap;
+	flex-wrap: nowrap;
+	list-style: none;
+	padding: 0;
+}
+
+.footer__social ul:hover li {
+	opacity: .5;
+}
+
+.footer__social ul li {
+	-webkit-transition: opacity .2s ease;
+	transition: opacity .2s ease;
+}
+
+.footer__social ul li a {
+	display: block;
+	padding: 0 0.5rem;
+}
+
+.footer__social ul li:first-child a {
+	padding-left: 0;
+}
+
+.footer__social ul li:last-child a {
+	padding-right: 0;
+}
+
+.footer__social ul li:hover {
+	opacity: 1;
+}
+
+.footer__social img {
+	width: 1.6rem;
+	height: auto;
 }
 
 .footer__attribution {
@@ -1990,13 +2043,15 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 @media only screen and (min-width: 600px) and (max-width: 781px) {
 
 .wp-block-column:nth-child(2n) {
-	margin-left: 0;
 	margin-right: 0;
 }
 
-.wp-block-column:last-child {
+.wp-block-column:nth-child(3n) {
 	margin-left: 0;
-	margin-right: 1rem;
+}
+
+.navbar-main-banner {
+	left: -0.5rem;
 }
 
 .social-icons .wp-block-group__inner-container .wp-block-image {
@@ -2367,6 +2422,10 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 
 @media only screen and (max-width: 599px) {
 
+body:not(.home) main {
+	margin-top: calc(3rem + 1rem + (1rem / 2));
+}
+
 .col-1-2 {
 	width: 100%;
 }
@@ -2380,6 +2439,10 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 .wp-block-column {
 	margin-top: 1rem;
 	margin-right: 0;
+	margin-left: 0;
+}
+
+.wp-block-column:not(:first-child) {
 	margin-left: 0;
 }
 
@@ -2447,6 +2510,21 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 .resume-section__employer-list .wp-block-column:not(:last-child),
 .resume-section__skills-list .wp-block-column:not(:last-child) {
 	padding-bottom: 1rem;
+}
+
+.navbar-main-banner {
+	display: none;
+}
+
+.navbar-main-banner--mobile {
+	display: block;
+}
+
+.footer {
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 }
 
 }

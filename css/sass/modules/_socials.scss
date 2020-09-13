@@ -1,4 +1,8 @@
 .social-icons {
+  background-color: c('cream');
+  border-radius: $spacing;
+  padding: $spacing;
+    
   .wp-block-group__inner-container {
     display: flex;
     flex-wrap: nowrap;
@@ -12,20 +16,12 @@
     }
     
     .wp-block-image {
-      opacity: 1;
       padding: 0 $spacing * 1.4;
-      max-width: $spacing * 3;
+      max-width: $spacing * 2.4;
       transition: opacity .2s ease;
 
       @include between(600px, 781px) {
         padding: 0 $spacing;
-      }
-
-      &:first-child {
-        padding-left: 0;
-      }
-      &:last-child {
-        padding-right: 0;
       }
 
       &:hover {

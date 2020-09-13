@@ -3,11 +3,52 @@
 footer {
   background-color: c('cream');
   border-top: 1px solid c('black');
-  display: flex;
-  align-items: center;
   margin-top: 4em;
   position: relative;
   width: 100%;
+}
+.footer {
+  flex-wrap: nowrap;
+  
+  @include breakpoint--small {
+    flex-direction: column;
+  }
+}
+.footer__social {
+  ul {
+    flex-wrap: nowrap;
+    list-style: none;
+    padding: 0;
+    
+    &:hover {
+      li {
+        opacity: .5;
+      }
+    }
+
+    li {
+      transition: opacity .2s ease;
+
+      a {
+        display: block;
+        padding: 0 $spacing / 2;
+      }
+  
+      &:first-child a {
+        padding-left: 0;
+      }
+      &:last-child a {
+        padding-right: 0;
+      }
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+  img {
+    width: $spacing * 1.6;
+    height: auto;
+  }
 }
 .footer__attribution {
   font-size: $font__size--xs;
