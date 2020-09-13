@@ -9,7 +9,7 @@ footer {
 }
 .footer {
   flex-wrap: nowrap;
-  
+
   @include breakpoint--small {
     flex-direction: column;
   }
@@ -53,6 +53,12 @@ footer {
 .footer__attribution {
   font-size: $font__size--xs;
   text-align: right;
+
+  p {
+    @include min($breakpoint--small) {
+      margin: 0;
+    }
+  }
 }
 
 

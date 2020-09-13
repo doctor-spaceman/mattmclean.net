@@ -1,5 +1,34 @@
 "use strict";
 
+//----------MENU BEHAVIOR----------
+window.addEventListener('DOMContentLoaded', function (event) {
+  var mainMenuToggle = document.querySelector('.navbar-main-content__menu');
+  var mainMenu = document.querySelector('nav.main-menu');
+  var mainMenuWidth = mainMenu.offsetWidth * -1;
+  mainMenu.style.right = mainMenuWidth.toString() + 'px';
+  mainMenuToggle.addEventListener('click', function (event) {
+    if (mainMenu.classList.contains('is-open')) {
+      mainMenu.classList.remove('is-open');
+      mainMenuToggle.textContent = 'Menu';
+    } else {
+      mainMenu.classList.add('is-open');
+      mainMenuToggle.textContent = 'Close';
+    }
+  });
+}); // Define how mobile menu is toggled
+// var toggleMenu = function () {
+//   $('#navIcon').toggleClass('open');
+//   $('.screen-overlay').toggle();
+//   $('.main-menu').toggleClass('mobile-menu');
+//   $('.main-menu--vertical').toggleClass('mobile-menu');
+//   $('.sidebar-nav-container').toggleClass('past-hero');
+// }
+// // Enable mobile menu when clicking hamburger icon
+// $('#navIcon').click(function() { toggleMenu(); } );
+// // Disable mobile menu when clicking anywhere
+// $('.screen-overlay').click(function() { toggleMenu(); } );
+"use strict";
+
 // Homepage hero interactive element
 var heroGraphic = document.querySelector('.hero-graphic__morph');
 
@@ -30,80 +59,3 @@ function heroClickResponder(e) {
 if (heroGraphic) {
   heroGraphic.addEventListener('click', heroClickResponder);
 } // END / Homepage hero interactive element
-
-
-jQuery(document).ready(function ($) {
-  // Set hero height to browser height
-  $('.hero').css('height', $(window).height()); // Re-set hero height to new browser height after window is resized.
-
-  $(window).resize(function () {
-    $('.hero').css('height', $(window).height());
-  }); // Hero height for iOS7 due to vh unit bugginess
-
-  var iOS = navigator.userAgent.match(/(iPod|iPhone|iPad)/);
-
-  if (iOS) {
-    var iosVhHeightBug = function iosVhHeightBug() {
-      var height = $(window).height();
-      $('.hero').css('min-height', height);
-    };
-
-    iosVhHeightBug();
-    $(window).bind('resize', iosVhHeightBug);
-  } // Scroll down with chevron icon
-
-
-  $('a[href*=\\#]').click(function (event) {
-    // Animate scroll to anchor location
-    $('html, body').animate({
-      scrollTop: $($.attr(this, 'href')).offset().top - 50
-    }, 500);
-    event.preventDefault();
-  }); //----------MENU BEHAVIOR----------
-  // Define how mobile menu is toggled
-
-  var toggleMenu = function toggleMenu() {
-    $('#navIcon').toggleClass('open');
-    $('.screen-overlay').toggle();
-    $('.main-menu').toggleClass('mobile-menu');
-    $('.main-menu--vertical').toggleClass('mobile-menu');
-    $('.sidebar-nav-container').toggleClass('past-hero');
-  }; // Enable mobile menu when clicking hamburger icon
-
-
-  $('#navIcon').click(function () {
-    toggleMenu();
-  }); // Disable mobile menu when clicking anywhere
-
-  $('.screen-overlay').click(function () {
-    toggleMenu();
-  }); // Remove mobile menu on window resize
-
-  var updateNavList;
-  $(window).resize(function () {
-    updateNavList = $('.main-menu ul').css('flex-direction');
-
-    if (updateNavList == 'row') {
-      $('#navIcon').removeClass('open');
-      $('.screen-overlay').hide();
-      $('.main-menu').removeClass('mobile-menu');
-    }
-
-    if ($(window).width() > 639 && $(window).height() > 499) {
-      $('.main-menu--vertical').removeClass('mobile-menu');
-      $('#navIcon').removeClass('open');
-      $('.screen-overlay').hide();
-    }
-  }); //--------CUSTOM VIDEO CONTENT---------
-  //https://github.com/zeusdeux/isInViewport
-
-  $(window).scroll(function () {
-    $('video').each(function () {
-      if ($(this).is(":in-viewport")) {
-        $(this)[0].play();
-      } else {
-        $(this)[0].pause();
-      }
-    });
-  });
-});
