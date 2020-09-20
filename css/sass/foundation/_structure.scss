@@ -26,6 +26,9 @@ content {
     align-items: center;
     justify-content: center;
   }
+  &--column {
+    flex-direction: column;
+  }
   &--space {
     justify-content: space-between;
   }

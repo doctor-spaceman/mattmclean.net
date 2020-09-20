@@ -2,15 +2,15 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   const mainMenuToggle = document.querySelector('.navbar-main-content__menu');
   const mainMenu = document.querySelector('nav.main-menu');
-  const mainMenuWidth = mainMenu.offsetWidth * -1;
-  mainMenu.style.right = mainMenuWidth.toString() + 'px';
 
   mainMenuToggle.addEventListener('click', (event) => {
     if ( mainMenu.classList.contains('is-open') ) {
       mainMenu.classList.remove('is-open');
+      mainMenu.classList.add('is-closed');
       mainMenuToggle.textContent = 'Menu';  
     } else {
       mainMenu.classList.add('is-open');
+      mainMenu.classList.remove('is-closed');
       mainMenuToggle.textContent = 'Close';
     }
   });

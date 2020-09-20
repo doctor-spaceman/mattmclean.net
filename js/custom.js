@@ -4,14 +4,14 @@
 window.addEventListener('DOMContentLoaded', function (event) {
   var mainMenuToggle = document.querySelector('.navbar-main-content__menu');
   var mainMenu = document.querySelector('nav.main-menu');
-  var mainMenuWidth = mainMenu.offsetWidth * -1;
-  mainMenu.style.right = mainMenuWidth.toString() + 'px';
   mainMenuToggle.addEventListener('click', function (event) {
     if (mainMenu.classList.contains('is-open')) {
       mainMenu.classList.remove('is-open');
+      mainMenu.classList.add('is-closed');
       mainMenuToggle.textContent = 'Menu';
     } else {
       mainMenu.classList.add('is-open');
+      mainMenu.classList.remove('is-closed');
       mainMenuToggle.textContent = 'Close';
     }
   });
