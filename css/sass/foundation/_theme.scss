@@ -1,3 +1,10 @@
+/*----- Gutenberg -----*/
+// Top level block group
+section > .wp-block-group {
+  padding-bottom: $spacing * 2;
+}
+
+// Image block type
 .wp-block-image {
   margin: 0;
 
@@ -8,15 +15,21 @@
   }
 }
 
+// Column block type
+.wp-block-columns {
+  margin-bottom: 0;
+}
 .wp-block-column {
   margin-right: $spacing;
   margin-left: $spacing;
+  margin-bottom: $spacing;
 
   @include breakpoint--small {
     margin-top: $spacing;
     margin-right: 0;
     margin-left: 0;
   }
+
   &:not(:first-child) {
     margin-left: $spacing;
 
@@ -61,6 +74,7 @@
   }
 }
 
+/*----- Color utilities -----*/
 .bg-burgundy { background-color: c('burgundy'); }
 .bg-magenta { background-color: c('magenta'); }
 .bg-aqua { background-color: c('aqua'); }

@@ -611,6 +611,12 @@ content {
 	margin-top: .5em;
 }
 
+/*----- Gutenberg -----*/
+
+section > .wp-block-group {
+	padding-bottom: 2rem;
+}
+
 .wp-block-image {
 	margin: 0;
 }
@@ -621,9 +627,14 @@ content {
 	z-index: 20;
 }
 
+.wp-block-columns {
+	margin-bottom: 0;
+}
+
 .wp-block-column {
 	margin-right: 1rem;
 	margin-left: 1rem;
+	margin-bottom: 1rem;
 }
 
 .wp-block-column:not(:first-child) {
@@ -671,6 +682,8 @@ content {
 	clip-path: polygon(calc(100px + 0.5rem) 0px, calc(100px + 0.5rem + 0.5rem) 0px, 0px calc(100px + 0.5rem + 0.5rem), 0px calc(100px + 0.5rem));
 }
 
+/*----- Color utilities -----*/
+
 .bg-burgundy {
 	background-color: #7a133e;
 }
@@ -700,6 +713,10 @@ content {
 }
 
 /*---------- TYPOGRAPHY ----------*/
+
+html {
+	font-size: 100%;
+}
 
 body {
 	color: #363636;
@@ -742,21 +759,21 @@ h6 {
 	letter-spacing: 1px;
 }
 
+.title a,
+.subtitle a {
+	color: #363636;
+	text-decoration: none;
+}
+
 .title {
-	font-size: 1.5em;
+	font-size: 1.4rem;
 	font-weight: 700;
-	text-align: center;
+	text-transform: uppercase;
 }
 
-.title > span {
-	font-size: .74em;
-}
-
-.subtitle {
-	font-size: .9em;
-	font-weight: 600;
-	text-align: center;
-	margin-top: .4em;
+.supplemental {
+	color: #504f4f;
+	font-size: 1rem;
 }
 
 h2.sec-header,
@@ -1132,14 +1149,9 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label {
 /*--------- RESUME ---------*/
 
 .resume-section {
-	margin-bottom: 2rem;
 	min-height: calc(100px + 0.5rem + 1rem);
 	position: relative;
 	position: relative;
-}
-
-.resume-section h2 {
-	border-bottom: 1px solid #363636;
 }
 
 .resume-section:before,
@@ -1166,63 +1178,64 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label {
 	clip-path: polygon(calc(100px + 0.5rem) 0px, calc(100px + 0.5rem + 0.5rem) 0px, 0px calc(100px + 0.5rem + 0.5rem), 0px calc(100px + 0.5rem));
 }
 
+.resume-section h2 {
+	border-bottom: 1px solid #363636;
+}
+
+.resume-section .title,
+.resume-section .subtitle {
+	margin-bottom: 0;
+}
+
+.resume-section ul {
+	margin-bottom: 0;
+	margin-top: 0;
+}
+
+.resume-section > .wp-block-group__inner-container > .wp-block-group {
+	padding-bottom: 2rem;
+}
+
+/* Resume Columns */
+
 .resume-section .wp-block-column {
 	margin-top: 0;
 }
 
-.resume-section .wp-block-column ul {
-	margin-top: 0;
-}
-
-.resume-section .wp-block-column ul a {
-	text-decoration: none;
-}
-
-.resume-section .wp-block-column p,
-.resume-section .wp-block-column ul {
+.resume-section .wp-block-column > p {
 	margin-bottom: 0;
 }
 
-.resume-section .wp-block-column p a,
-.resume-section .wp-block-column ul a {
+.resume-section .wp-block-column > p a {
 	text-decoration: none;
 }
 
-.resume-section-info__employer {
-	font-size: 1.4rem;
-	text-transform: uppercase;
+.resume-section .wp-block-column > ul {
+	display: block;
 }
 
-.resume-section-info__employer a {
-	color: #363636;
+/* Resume Lists */
+
+.resume-section ul {
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-wrap: wrap;
+	flex-wrap: wrap;
+	-webkit-box-pack: justify;
+	-ms-flex-pack: justify;
+	justify-content: space-between;
+}
+
+.resume-section ul li {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 calc(33% - (1rem * 3));
+	flex: 0 0 calc(33% - (1rem * 3));
+	padding: 0.25rem;
+}
+
+.resume-section ul a {
 	text-decoration: none;
-}
-
-.resume-section-info__employer:not(:first-of-type) {
-	padding-top: 1rem;
-}
-
-.resume-section-info__employer,
-.resume-section-info__role {
-	margin-bottom: 0;
-}
-
-.resume-section-info__date-loc {
-	color: #504f4f;
-	font-size: 1rem;
-}
-
-.resume-section__project-list {
-	font-size: 1rem;
-	line-height: 1.4;
-}
-
-.resume-section__project-list--full p {
-	padding: 1rem;
-}
-
-#experience .resume-section__employer-list {
-	padding-top: 1rem;
 }
 
 /*----------JOURNAL----------*/
@@ -1976,10 +1989,6 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 	padding: 2em;
 }
 
-.title {
-	font-size: 2em;
-}
-
 iframe:not(.mg_video_iframe):not(.exposure):not(.video) {
 	width: 450px;
 	height: 254px;
@@ -2092,6 +2101,12 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 
 @media only screen and (min-width: 600px) and (max-width: 781px) {
 
+.page .wrapper,
+.page .wrapper--large,
+.page .wrapper--xlarge {
+	padding: 0px 2rem 0px 2.5rem;
+}
+
 .wp-block-column:nth-child(2n) {
 	margin-right: 0;
 }
@@ -2166,10 +2181,6 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 .copy-panel {
 	padding: 3em;
 	border: .6em solid #fff;
-}
-
-.title {
-	font-size: 2.3em;
 }
 
 /*Resume*/
@@ -2274,10 +2285,6 @@ html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduc
 
 @media only screen and (min-width: 800px) {
 
-.title {
-	font-size: 3.4em;
-}
-
 .copy-panel {
 	border: .74em solid #fff;
 	border-radius: 3em;
@@ -2308,10 +2315,6 @@ blockquote {
 	display: inline;
 }
 
-.subtitle {
-	font-size: 1.4em;
-}
-
 .hero .social {
 	font-size: 1.5em;
 }
@@ -2328,14 +2331,6 @@ iframe:not(.exposure):not(.mg_video_iframe):not(.video) {
 
 }
 
-@media only screen and (min-width: 980px) {
-
-.title {
-	font-size: 4em;
-}
-
-}
-
 @media only screen and (min-width: 1074px) {
 
 .wrapper,
@@ -2344,17 +2339,9 @@ iframe:not(.exposure):not(.mg_video_iframe):not(.video) {
 	width: 900px;
 }
 
-.subtitle {
-	font-size: 1.8em;
-}
-
 }
 
 @media only screen and (min-width: 1200px) {
-
-.title {
-	font-size: 4.4em;
-}
 
 #footerSocial {
 	font-size: 2em;
@@ -2474,6 +2461,10 @@ body:not(.home) main {
 	margin-top: 0;
 }
 
+html {
+	font-size: 92%;
+}
+
 #hero {
 	height: 340px;
 	padding: 3rem 0px 0px 0px;
@@ -2531,9 +2522,10 @@ body:not(.home) main {
 	margin-top: 10rem;
 }
 
-.resume-section__employer-list .wp-block-column:not(:last-child),
-.resume-section__skills-list .wp-block-column:not(:last-child) {
-	padding-bottom: 1rem;
+.resume-section ul li {
+	-webkit-box-flex: 0;
+	-ms-flex: 0 0 calc(50% - (1rem * 2));
+	flex: 0 0 calc(50% - (1rem * 2));
 }
 
 .main-menu {

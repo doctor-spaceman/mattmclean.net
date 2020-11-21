@@ -13,7 +13,6 @@
 }
 @media only screen and (min-width: 500px) {
   .copy-panel {padding: 2em;}
-  .title {font-size: 2em;}
   iframe:not(.mg_video_iframe):not(.exposure):not(.video) {width: 450px; height: 254px;}
 }
 @media only screen and (min-width: 570px) and (min-height: 580px) {
@@ -129,7 +128,6 @@
   .content-item-title {font-size: 1.5em;}
   .mg_overlay_tit {font-size: 1.5em !important;}
   .copy-panel {padding: 3em; border: .6em solid #fff;}
-  .title {font-size: 2.3em;}
   /*Resume*/
   .flex-list,
   #interestsandskills > .resume-block,
@@ -205,7 +203,6 @@
   }
 }
 @media only screen and (min-width: 800px) {
-  .title {font-size: 3.4em;}
   .copy-panel {border: .74em solid #fff; border-radius: 3em;}
   /*Resume*/
   .flex-list li {
@@ -222,20 +219,16 @@
 }
 @media only screen and (min-width: 870px) {
   .hero ul li {display: inline;}
-  .subtitle {font-size: 1.4em;}
   .hero .social {font-size: 1.5em;}
   .mg_video_iframe {width: 100%; height: 100%;}
   iframe:not(.exposure):not(.mg_video_iframe):not(.video) {width: 420px; height: 236px;}	
 }
 @media only screen and (min-width: 980px) {
- .title {font-size: 4em;}
 }
 @media only screen and (min-width: 1074px) {
  .wrapper {width: 900px;}
- .subtitle {font-size: 1.8em;}
 }
 @media only screen and (min-width: 1200px) {
-  .title {font-size: 4.4em;}
   #footerSocial {font-size: 2em;}
   .wrapper--gallery .wrapper img {max-width: 60%;}
   html#ecwid_html body#ecwid_body .ecwid.ecwid-SingleProduct-v2.ecwid-SingleProduct-v2-centered.loaded {

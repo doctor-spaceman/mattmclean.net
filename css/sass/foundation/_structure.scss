@@ -57,6 +57,12 @@ content {
     @extend .wrapper;
     max-width: 800px;
   }
+
+  .page & {
+    @include between(600px, 781px) {
+      padding: 0px $spacing * 2 0px $spacing * 2.5;
+    }
+  }
 }
 
 .section {

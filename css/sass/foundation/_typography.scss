@@ -1,4 +1,12 @@
 /*---------- TYPOGRAPHY ----------*/
+html {
+  font-size: 100%; // 1rem = 16px (set by browser)
+
+  @include breakpoint--small {
+    font-size: 92%;
+  }
+}
+
 body {
   color: c('black');
   font-family: $font--main;
@@ -31,20 +39,25 @@ h1, h2, h3, h4, h5, h6 {
   font-family: $font--heading;
   letter-spacing: 1px;
 }
+.title, .subtitle {
+  a {
+    color: c('black');
+    text-decoration: none;
+  }
+}
 .title {
-  font-size: 1.5em;
+  font-size: 1.4rem;
   font-weight: 700;
-  text-align: center;
+  text-transform: uppercase; 
 }
-.title > span {
-  font-size: .74em;
+.supplemental {
+  color: lighten(c('black'),10%);
+  font-size: $font__size--s;
 }
-.subtitle {
-  font-size: .9em;
-  font-weight: 600;
-  text-align: center;
-  margin-top: .4em;
-}
+
+
+
+
 h2.sec-header,
 h3.sec-header {
   border-bottom: 3px solid #fff;

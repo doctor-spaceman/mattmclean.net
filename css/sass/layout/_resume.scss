@@ -1,72 +1,61 @@
 /*--------- RESUME ---------*/
 .resume-section {
-  margin-bottom: $spacing * 2;
+  // ensures enough room for corner graphic
   min-height: calc(100px + #{$spacing / 2} + #{$spacing});
   position: relative; 
+
+  // Corner graphic element
+  @include accent-graphic;
 
   h2 {
     border-bottom: 1px solid c('black');
   }
-
-  // Corner graphic element
-  @include accent-graphic;
+  .title, .subtitle {
+    margin-bottom: 0;
+  }
+  ul {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
 }
+.resume-section > .wp-block-group__inner-container > .wp-block-group {
+  padding-bottom: $spacing * 2;
+}
+
+/* Resume Columns */
 .resume-section .wp-block-column {
   margin-top: 0;
 
-  ul {
-    margin-top: 0;
-
-    a {
-      text-decoration: none;
-    }
-  }
-  p, ul {
+  & > p {
     margin-bottom: 0;
-
+  
     a {
       text-decoration: none;
     }
   }
-}
-.resume-section__employer-list .wp-block-column:not(:last-child),
-.resume-section__skills-list .wp-block-column:not(:last-child) {
-  @include breakpoint--small {
-    padding-bottom: $spacing;
+  // Lists inside a column are not flexed
+  & > ul {
+    display: block;
   }
 }
-.resume-section-info__employer {
-  font-size: 1.4rem; 
-  text-transform: uppercase;
 
+/* Resume Lists */
+.resume-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  li {
+    flex: 0 0 calc(33% - (#{$spacing} * 3));
+    padding: $spacing * .25;
+
+    @include breakpoint--small {
+      flex: 0 0 calc(50% - (#{$spacing} * 2));
+    }
+  }
   a {
-    color: c('black');
     text-decoration: none;
   }
-  &:not(:first-of-type) {
-    padding-top: $spacing;
-  }
-}
-.resume-section-info__employer, 
-.resume-section-info__role {
-  margin-bottom: 0;
-}
-.resume-section-info__date-loc {
-  color: lighten(c('black'),10%);
-  font-size: $font__size--s;
-}
-.resume-section__project-list {
-  font-size: $font__size--s;
-  line-height: 1.4;
-
-  &--full {
-    p {
-      padding: $spacing;
-    }
-  }
-}
-#experience .resume-section__employer-list {
-  padding-top: $spacing;
 }
 
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
