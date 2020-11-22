@@ -2,8 +2,9 @@
 /**
  * The main template file
  */
+?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
 <section class="wrapper">
 <?php 
@@ -14,5 +15,6 @@ if ( have_posts() ) :
   endwhile; 
 endif; 
 ?>
+</section>
 
 <?php get_footer(); ?>
