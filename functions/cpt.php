@@ -23,6 +23,7 @@
         'public' => true,
         'has_archive' => true,
         'menu_icon' => 'dashicons-portfolio',
+        'show_in_rest' => true
         )
         );
         register_post_type( 'resume-section',
