@@ -1,9 +1,14 @@
 /*---------- GENERAL ----------*/
+html, body {
+  height: 100%;
+}
 html {
   overflow-x: hidden;
 }
 body {
   background-color: c('white');
+  display: flex;
+  flex-direction: column;
   -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
 }
 body:not(.home) main {
@@ -13,9 +18,8 @@ body:not(.home) main {
     margin-top: calc(#{$navbarHeight} + #{$spacing} + (#{$spacing} / 2));
   }
 }
-content {
-  margin-top: 2em;
-  line-height: 1.4em;
+main {
+  flex: 1 0 auto;
 }
 
 .grid {

@@ -341,12 +341,24 @@ iframe:not(.mg_video_iframe):not(.exposure):not(.video) {
 
 /*---------- GENERAL ----------*/
 
+html,
+body {
+	height: 100%;
+}
+
 html {
 	overflow-x: hidden;
 }
 
 body {
 	background-color: #ffffff;
+	display: -webkit-box;
+	display: -ms-flexbox;
+	display: flex;
+	-webkit-box-orient: vertical;
+	-webkit-box-direction: normal;
+	-ms-flex-direction: column;
+	flex-direction: column;
 	-webkit-text-size-adjust: 100%;
 }
 
@@ -354,9 +366,10 @@ body:not(.home) main {
 	margin-top: 3rem;
 }
 
-content {
-	margin-top: 2em;
-	line-height: 1.4em;
+main {
+	-webkit-box-flex: 1;
+	-ms-flex: 1 0 auto;
+	flex: 1 0 auto;
 }
 
 .grid {
@@ -1686,6 +1699,8 @@ a.navbar-main-content__brand {
 footer {
 	background-color: #f2daac;
 	border-top: 1px solid #363636;
+	-ms-flex-negative: 0;
+	flex-shrink: 0;
 	margin-top: 4em;
 	position: relative;
 	width: 100%;
