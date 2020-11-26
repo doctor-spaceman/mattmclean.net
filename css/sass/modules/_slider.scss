@@ -101,6 +101,9 @@
 
 /* Rolodex */
 .rolodex {
+  transform: perspective(30rem) rotateY(25deg);
+  transform-origin: center left;
+
   .slick-slide {
     font-size: $font__size--xl;
     opacity: .3;
@@ -109,13 +112,21 @@
     transform-origin: center left;
     transition: opacity .1s ease, transform .1s ease;
 
-    // &.slick-cloned {
-    //   transition: opacity .1s ease, transform .1s ease;
-    // }
+    @include breakpoint--small {
+      font-size: $font__size--l;
+    }
+
     &.slick-current,
     &.slick-current-clone-animate {
       opacity: 1;
       transform: scale(1, 1);
     }
+  }
+
+  .slick-next {
+    margin-top: $spacing * 2;
+  }
+  .slick-prev {
+    margin-bottom: $spacing * 2;
   }
 }
