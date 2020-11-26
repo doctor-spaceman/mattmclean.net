@@ -106,7 +106,6 @@ gulp.task( 'styles', () => {
  *    6. Writes Sourcemaps for style-rtl.css
  *    7. Renames the CSS files with suffix .min.css
  *    8. Minifies the CSS file and generates style-rtl.min.css
- *    9. Injects CSS or reloads the browser via browserSync
  */
 gulp.task( 'stylesRTL', () => {
 	return gulp
@@ -280,9 +279,9 @@ gulp.task(
 	'watch',
 	gulp.parallel( 'styles', 'vendorsJS', 'customJS', /*'images',*/ () => {
 		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
-		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS', reload ) ); // Reload on vendorsJS file changes.
-		gulp.watch( config.watchJsCustom, gulp.series( 'customJS', reload ) ); // Reload on customJS file changes.
-		gulp.watch( config.imgSRC, gulp.series( 'images', reload ) ); // Reload on image file changes.
+		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS' ) ); // Reload on vendorsJS file changes.
+		gulp.watch( config.watchJsCustom, gulp.series( 'customJS' ) ); // Reload on customJS file changes.
+		gulp.watch( config.imgSRC, gulp.series( 'images' ) ); // Reload on image file changes.
 	})
 );
 

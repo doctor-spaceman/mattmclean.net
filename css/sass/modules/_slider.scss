@@ -1,4 +1,4 @@
-/* Slider */
+/* Slick Slider */
 
 .slick-slider {
   position: relative;
@@ -97,4 +97,25 @@
 }
 .slick-arrow.slick-hidden {
   display: none;
+}
+
+/* Rolodex */
+.rolodex {
+  .slick-slide {
+    font-size: $font__size--xl;
+    opacity: .3;
+    text-transform: uppercase;
+    transform: scale(0.6, 0.6);
+    transform-origin: center left;
+    transition: opacity .1s ease, transform .1s ease;
+
+    // &.slick-cloned {
+    //   transition: opacity .1s ease, transform .1s ease;
+    // }
+    &.slick-current,
+    &.slick-current-clone-animate {
+      opacity: 1;
+      transform: scale(1, 1);
+    }
+  }
 }

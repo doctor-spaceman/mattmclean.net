@@ -15,6 +15,14 @@ if ( have_posts() ) :
 endif; 
 ?>
 
+<div class="rolodex">
+  <div>Sketches</div>
+  <div>3D Modeling</div>
+  <div>Graphic Design</div>
+  <div>Retiforms</div>
+  <div>Marketing</div>
+</div>
+
 </section>
 
 <?php get_footer(); ?>
