@@ -7,13 +7,24 @@ window.addEventListener('DOMContentLoaded', (event) => {
     if ( mainMenu.classList.contains('is-open') ) {
       mainMenu.classList.remove('is-open');
       mainMenu.classList.add('is-closed');
-      mainMenuToggle.textContent = 'Menu';  
+      mainMenuToggle.textContent = 'Menu';
+
+      mainMenu.querySelectorAll('.menu-item').setAttribute('tabindex','-1');
     } else {
       mainMenu.classList.add('is-open');
       mainMenu.classList.remove('is-closed');
       mainMenuToggle.textContent = 'Close';
+
+      mainMenu.querySelectorAll('.menu-item').setAttribute('tabindex','0');
     }
   });
+
+  const svg = new Walkway({
+    selector: '#cube',
+    duration: 3000,
+  });
+  
+  svg.draw();
 });
 
 

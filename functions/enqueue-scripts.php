@@ -58,6 +58,11 @@ function site_scripts() {
     wp_enqueue_script('js-typed');
   endif;
 
+  if ( is_page_template('templates/portfolio.php') ) : 
+    wp_register_script('js-walkway', 'https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js', array('jquery'));
+    wp_enqueue_script('js-walkway');
+  endif;
+
   if ( file_exists(get_template_directory() . '/js/vendor.js') ) :
     if ( preg_match('/(staging-mm)/', get_site_url()) ) :
       wp_register_script('js-vendor', get_template_directory_uri() . '/js/vendor.min.js', array('jquery'), '', true);
