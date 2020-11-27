@@ -35,7 +35,7 @@ const gulp = require( 'gulp' ); // Gulp, of course.
 
 // CSS related plugins.
 const sass = require( 'gulp-sass' ); // Gulp plugin for Sass compilation.
-const csso = require('gulp-csso'); // Minifies CSS files.
+const csso = require( 'gulp-csso' ); // Minifies CSS files.
 const autoprefixer = require( 'gulp-autoprefixer' ); // Autoprefixing magic.
 const mmq = require( 'gulp-merge-media-queries' ); // Combine matching media queries into one.
 const rtlcss = require( 'gulp-rtlcss' ); // Generates RTL stylesheet.

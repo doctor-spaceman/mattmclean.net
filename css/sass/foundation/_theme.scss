@@ -65,6 +65,7 @@ section > .wp-block-group {
   }
 }
 
+/*----- Effects -----*/
 .corner {
   // Corner graphic element
   @include accent-graphic;
@@ -72,6 +73,15 @@ section > .wp-block-group {
   &--cutout {
     //@include slant-cutout;
   }
+}
+
+.skew--left {
+  transform: perspective(30rem) rotateY(15deg);
+  transform-origin: center left;
+}
+.skew--right {
+  transform: perspective(30rem) rotateY(-15deg);
+  transform-origin: center right;
 }
 
 /*----- Color utilities -----*/
@@ -82,3 +92,4 @@ section > .wp-block-group {
 .bg-pink { background-color: c('pink'); }
 .bg-yellow { background-color: c('yellow'); }
 .bg-dark-blue { background-color: c('dark-blue'); }
+

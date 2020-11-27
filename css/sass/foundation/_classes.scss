@@ -1,4 +1,3 @@
-/*Clear floats or elements that are out of flow*/
 .clearfix {
   content: ""; 
   display: table; 
@@ -18,20 +17,31 @@
 img {max-width: 100%; height: auto;}
 img.alignright,
 iframe.alignright,
-.wp-caption.alignright {float: right; margin: 0em 0 1em 1em;}
+.wp-caption.alignright {
+  float: right; 
+  margin: 0em 0 $spacing $spacing;
+}
 img.alignleft,
 iframe.alignleft,
-.wp-caption.alignleft {float: left; margin: 0em 1em 1em 0;}
+.wp-caption.alignleft {
+  float: left; 
+  margin: 0em $spacing $spacing 0;
+}
 img.aligncenter,
 iframe.aligncenter,
-.wp-caption.aligncenter {display: block; margin-left: auto; margin-right: auto;}
-.alignright {float: right;}
-.alignleft {float: left;}
-.aligncenter {display: block; margin-left: auto; margin-right: auto;}
-/*
-iframe:not(.mg_video_iframe):not(.exposure):not(.video) {
-	width: 330px;
-	height: 186px;
-    background: url('/mmclean/wp-content/themes/mmclean/img/ajax-loader-iframe.gif') no-repeat center center;   
+.wp-caption.aligncenter {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
 }
-*/
+.alignright {
+  float: right;
+}
+.alignleft {
+  float: left;
+}
+.aligncenter {
+  display: block; 
+  margin-left: auto; 
+  margin-right: auto;
+}
