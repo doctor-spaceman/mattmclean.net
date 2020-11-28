@@ -18,13 +18,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
       mainMenu.querySelectorAll('.menu-item').setAttribute('tabindex','0');
     }
   });
-
-  const svg = new Walkway({
-    selector: '#cube',
-    duration: 3000,
-  });
-  
-  svg.draw();
 });
 
 

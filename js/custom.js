@@ -17,11 +17,6 @@ window.addEventListener('DOMContentLoaded', function (event) {
       mainMenu.querySelectorAll('.menu-item').setAttribute('tabindex', '0');
     }
   });
-  var svg = new Walkway({
-    selector: '#cube',
-    duration: 3000
-  });
-  svg.draw();
 }); // Define how mobile menu is toggled
 // var toggleMenu = function () {
 //   $('#navIcon').toggleClass('open');
@@ -68,10 +63,10 @@ if (heroGraphic) {
 } // END / Homepage hero interactive element
 "use strict";
 
-$(function () {
-  var sliders = $('.slider'); // Vertical slider
+jQuery(function () {
+  var sliders = jQuery('.slider'); // Vertical slider
 
-  var verticalSliderLeft = $('.slider-vertical__left');
+  var verticalSliderLeft = jQuery('.slider-vertical__left');
   verticalSliderLeft.slick({
     arrows: true,
     asNavFor: '.slider-vertical__right',
@@ -85,7 +80,7 @@ $(function () {
     vertical: true,
     verticalSwiping: true
   });
-  var verticalSliderRight = $('.slider-vertical__right');
+  var verticalSliderRight = jQuery('.slider-vertical__right');
   verticalSliderRight.slick({
     arrows: false,
     autoplay: false,
@@ -94,6 +89,31 @@ $(function () {
     rows: 0,
     slidesToShow: 1,
     swipe: false
+  });
+  /**
+   * Supports svg drawing in a slider
+   * 
+   */
+
+  var svg;
+  var hasIcons = jQuery('#walkway.slider'); // If we know there will be icons, init Walkway on the first slide
+
+  if (hasIcons) {
+    var firstIcon = '#walkway svg:first-of-type';
+    svg = new Walkway({
+      selector: firstIcon,
+      duration: 3000
+    });
+    svg.draw();
+  }
+
+  verticalSliderRight.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    var activeSlideIcon = ".slick-slide[data-slick-index=\"".concat(nextSlide, "\"] svg");
+    svg = new Walkway({
+      selector: activeSlideIcon,
+      duration: 3000
+    });
+    svg.redraw();
   });
   /**
   * FIX JUMPING ANIMATION

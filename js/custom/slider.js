@@ -1,9 +1,9 @@
-$(function(){
+jQuery(function(){
   
-  var sliders = $('.slider');
+  const sliders = jQuery('.slider');
 
   // Vertical slider
-  var verticalSliderLeft = $('.slider-vertical__left');
+  const verticalSliderLeft = jQuery('.slider-vertical__left');
   verticalSliderLeft.slick({
     arrows: true,
     asNavFor: '.slider-vertical__right',
@@ -17,7 +17,7 @@ $(function(){
     vertical: true,
     verticalSwiping: true
   });
-  var verticalSliderRight = $('.slider-vertical__right');
+  const verticalSliderRight = jQuery('.slider-vertical__right');
   verticalSliderRight.slick({
     arrows: false,
     autoplay: false,
@@ -26,6 +26,32 @@ $(function(){
     rows: 0,
     slidesToShow: 1,
     swipe: false
+  });
+
+  /**
+   * Supports svg drawing in a slider
+   * 
+   */
+  let svg;
+  const hasIcons = jQuery('#walkway.slider');
+
+  // If we know there will be icons, init Walkway on the first slide
+  if ( hasIcons ) {
+    const firstIcon = '#walkway svg:first-of-type';
+    svg = new Walkway({
+      selector: firstIcon,
+      duration: 3000,
+    });
+    svg.draw();
+  }
+  
+  verticalSliderRight.on('beforeChange', function(event, slick, currentSlide, nextSlide){
+    const activeSlideIcon = `.slick-slide[data-slick-index="${nextSlide}"] svg`;
+    svg = new Walkway({
+      selector: activeSlideIcon,
+      duration: 3000,
+    });
+    svg.redraw();
   });
 
   /**
