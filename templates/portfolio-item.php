@@ -6,33 +6,21 @@
 <?php get_header(); ?>
 
 <section class="wrapper">
-  <?php 
-  if ( have_posts() ) : 
-    while ( have_posts() ) : 
-      the_post();
-      the_content();
-    endwhile; 
-  endif; 
-  ?>
 
   <div class="slider-vertical grid">
     <div class="col-1-2">
       <div class="slider slider-vertical__left skew--left">
       <?php 
-      // Query the children of this page
-      $args = array(
-        'post_parent' => $post->ID,
-        'post_type' => 'page',
-        'order' => 'ASC',
-        'orderby' => 'menu_order'
-      );
-      $child_pages = new WP_Query($args);
-
-      if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post(); 
+      if ( have_rows('content_group') ) : 
+        while ( have_rows('content_group') ) :
+          the_row();
+          $group_name = get_sub_field('group_name');
       ?>
-        <div><?php the_title(); ?></div>
+        <?php if ( $group_name ) : ?>
+        <div><?php echo esc_html($group_name); ?></div>
+        <?php endif; ?>
       <?php 
-      endwhile;
+        endwhile;
       endif; 
       ?>
       </div>
@@ -40,15 +28,18 @@
     <div class="col-1-2">
       <div class="slider slider-vertical__right">
       <?php 
-      if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post(); 
-      ?>
-        <div class="content">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
-          <p><?php echo get_the_excerpt(); ?></p>
-          <a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a>
-        </div>
-      <?php 
-      endwhile;
+      if ( have_rows('content_group') ) : 
+        while ( have_rows('content_group') ) :
+          the_row();
+          $content_group = get_row_layout();
+
+          // When you have the panel row name and there's a corresponding panel file
+          if ( $content_group && file_exists(get_template_part('partials/content-group', $content_group)) ) :
+
+          include(locate_template('partials/content-group-'.$content_group, false, false));
+
+          endif;
+        endwhile;
       endif; 
       ?>
       </div>  
