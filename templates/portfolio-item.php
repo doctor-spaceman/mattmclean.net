@@ -6,14 +6,22 @@
 <?php get_header(); ?>
 
 <section class="wrapper">
+  <div class="section">
+  <?php 
+  if ( have_posts() ) : 
+    while ( have_posts() ) : the_post();
+      the_content();
+    endwhile; 
+  endif; 
+  ?>
+  </div>
 
   <div class="slider-vertical grid">
-    <div class="col-1-2">
+    <div class="col-1-3">
       <div class="slider slider-vertical__left skew--left">
       <?php 
       if ( have_rows('content_group') ) : 
-        while ( have_rows('content_group') ) :
-          the_row();
+        while ( have_rows('content_group') ) : the_row();
           $group_name = get_sub_field('group_name');
       ?>
         <?php if ( $group_name ) : ?>
@@ -25,18 +33,16 @@
       ?>
       </div>
     </div>
-    <div class="col-1-2">
+    <div class="col-2-3">
       <div class="slider slider-vertical__right">
       <?php 
       if ( have_rows('content_group') ) : 
-        while ( have_rows('content_group') ) :
-          the_row();
+        while ( have_rows('content_group') ) : the_row();
           $content_group = get_row_layout();
 
-          // When you have the panel row name and there's a corresponding panel file
-          if ( $content_group && file_exists(get_template_part('partials/content-group', $content_group)) ) :
+          if ( $content_group && file_exists(locate_template('partials/content-group-'.$content_group.'.php')) ) :
 
-          include(locate_template('partials/content-group-'.$content_group, false, false));
+          include(locate_template('partials/content-group-'.$content_group.'.php'));
 
           endif;
         endwhile;

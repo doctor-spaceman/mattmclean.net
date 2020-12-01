@@ -98,7 +98,37 @@
 .slick-arrow.slick-hidden {
   display: none;
 }
+.slick-dots {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  list-style: none;
+  padding: $spacing 0;
 
+  li {
+    background-color: lighten(c('black'),10%);
+    border-radius: $spacing * .5;
+    height: $spacing * .5;
+    width: $spacing * .5;
+    margin: 0px $spacing * .25;
+    transition: all .1s ease;
+    transform-origin: center;
+
+    button {
+      visibility: hidden;
+    }
+
+    &.slick-active {
+      background-color: c('black');
+      transform: scale(125%);
+    }
+  }
+}
+
+ul.slider {
+  list-style: none;
+  padding: 0px;
+}
 /* Vertical Slider */
 .slider-vertical {
   &__left {
@@ -134,7 +164,6 @@
     height: 100%;
 
     .slick-slide {
-      border: 1px solid #000;
       box-sizing: border-box;
       min-height: 280px;
     }

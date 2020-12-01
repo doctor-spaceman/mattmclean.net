@@ -43,6 +43,7 @@ jQuery(function(){
     dots: true,
     fade: true,
     infinite: true,
+    lazyLoad: 'ondemand',
     rows: 0,
     slidesToShow: 1,
     swipe: false

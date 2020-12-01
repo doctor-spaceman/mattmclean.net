@@ -13,6 +13,7 @@
 /* Layout */
 @import 'layout/homepage';
 @import 'layout/portfolio';
+@import 'layout/portfolio-item';
 @import 'layout/resume';
 @import 'layout/journal';
 
@@ -24,3 +25,6 @@
 @import 'modules/footer';
 @import 'modules/forms';
 @import 'modules/slider';
+
+/* Content Groups */
+@import 'content-groups/gallery';

@@ -639,6 +639,10 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 /*what is this??*/
 .mg_item_content > br { display: none !important; }
 
+.page-template-portfolio-item .slider-vertical__left .slick-slide { font-size: 2rem; }
+
+@media only screen and (max-width: 599px) { .page-template-portfolio-item .slider-vertical__left .slick-slide { font-size: 1.2rem; } }
+
 /*--------- RESUME ---------*/
 .resume-section { min-height: calc(100px + 0.5rem + 1rem); position: relative; position: relative; }
 
@@ -983,6 +987,16 @@ div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; backg
 
 .slick-arrow.slick-hidden { display: none; }
 
+.slick-dots { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; -webkit-box-align: center; -ms-flex-align: center; align-items: center; list-style: none; padding: 1rem 0; }
+
+.slick-dots li { background-color: #504f4f; border-radius: 0.5rem; height: 0.5rem; width: 0.5rem; margin: 0px 0.25rem; -webkit-transition: all .1s ease; transition: all .1s ease; -webkit-transform-origin: center; transform-origin: center; }
+
+.slick-dots li button { visibility: hidden; }
+
+.slick-dots li.slick-active { background-color: #363636; -webkit-transform: scale(125%); transform: scale(125%); }
+
+ul.slider { list-style: none; padding: 0px; }
+
 /* Vertical Slider */
 .slider-vertical__left { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-transform: perspective(30rem) rotateY(25deg); transform: perspective(30rem) rotateY(25deg); }
 
@@ -994,7 +1008,7 @@ div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; backg
 
 .slider-vertical__right { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; }
 
-.slider-vertical__right .slick-slide { border: 1px solid #000; -webkit-box-sizing: border-box; box-sizing: border-box; min-height: 280px; }
+.slider-vertical__right .slick-slide { -webkit-box-sizing: border-box; box-sizing: border-box; min-height: 280px; }
 
 .slider-vertical .slick-arrow { background-color: #f2daac; border: 1px solid #363636; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; padding: 0; }
 
@@ -1015,5 +1029,7 @@ div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; backg
 #walkway.slider .slick-slide { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 #walkway.slider svg { width: 14rem; height: auto; }
+
+/* Content Groups */
 
 /*# sourceMappingURL=style.css.map */

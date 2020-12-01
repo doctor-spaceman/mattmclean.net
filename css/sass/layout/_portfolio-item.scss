@@ -1,0 +1,11 @@
+.page-template-portfolio-item {
+  .slider-vertical__left {
+    .slick-slide {
+      font-size: $font__size--m;
+
+      @include breakpoint--small {
+        font-size: $font__size--base;
+      }
+    }
+  }
+}

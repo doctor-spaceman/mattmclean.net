@@ -8,7 +8,7 @@ $gallery_name = get_sub_field('group_name');
 $gallery_desc = get_sub_field('group_description');
 ?>
 
-<div class="slider">
+<ul class="slider slider-<?php echo esc_attr($content_group); ?>">
 
 <?php
 if ( have_rows('gallery_images') ) : 
@@ -20,17 +20,13 @@ if ( have_rows('gallery_images') ) :
     $item_desc = get_sub_field('gallery_item_desc');
 ?>
 
-  <div>
-    <p><?php echo $gallery_name; ?></p>
-    <p><?php echo $gallery_desc; ?></p>
-    <p><?php echo $item_image['url']; ?></p>
-    <p><?php echo $item_name; ?></p>
-    <p><?php echo $item_desc; ?></p>
-  </div>
+  <li>
+    <img src="<?php echo $item_image['url']; ?>" alt="<?php echo $item_image['alt']; ?>"></img>
+  </li>
 
 <?php
   endwhile;
 endif; 
 ?>
 
-</div>
+</ul>
