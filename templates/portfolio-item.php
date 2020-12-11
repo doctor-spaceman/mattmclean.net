@@ -8,7 +8,7 @@
 <section class="wrapper wrapper--large">
   <?php if ( $post->post_parent ) : ?>
   <div class="section-return">
-    <a href="<?php echo get_the_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a> // <?php the_title(); ?>
+    <a href="<?php echo get_the_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a>  //  <?php the_title(); ?>
   </div>
   <?php endif; ?>
   <div class="section">

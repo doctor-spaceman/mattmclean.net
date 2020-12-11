@@ -5,7 +5,7 @@
 
 <?php get_header(); ?>
 
-<section class="wrapper">
+<section class="wrapper wrapper--large">
   <div class="section">
   <?php 
   if ( have_posts() ) : 
