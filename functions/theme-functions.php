@@ -11,9 +11,37 @@
     add_action( 'init', 'register_my_menus' );
     // END / Register menus
 
+    // Home menu walker
+    class Home_Stylized_Walker extends Walker_Nav_Menu {
+      function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+        $object = $item->object;
+        $type = $item->type;
+        $title = $item->title;
+        $permalink = $item->url;
+        $pageObj = get_page_by_title($title);
+        if ( get_field('page_color', $pageObj->ID) ) :
+          $color = get_field('page_color', $pageObj->ID);
+        else : 
+          $color = '#484848';
+        endif;
+
+        $output .= '
+          <li 
+            class="hero-menu-bar '.implode(" ", $item->classes).'" 
+            style="background-color: '.$color.';"
+          >
+            <a class="hero-menu-bar__link" href="'.$permalink.'">
+              <span class="hero-menu-bar__text">'.$title.'</span>
+            </a>
+          </li>
+        ';
+      }
+    }
+    // END / Home menu walker
+
     // Customize excerpt length
     function custom_excerpt_length( $length ) { 
-    return 15;
+      return 15;
     }
     add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); 
     // END / Customize excerpt length

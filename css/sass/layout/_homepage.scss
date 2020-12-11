@@ -69,17 +69,21 @@
   height: 100%;
 }
 .hero-menu {
+  color: c('white');
   height: 100%;
   position: relative;
   z-index: 30;
+
+  .menu {
+    height: 100%;
+    position: relative;
+  }
 }
 .hero-menu-bar {
   box-sizing: border-box; 
-  color: c('white');
   height: 100px;
   width: 524px;
   opacity: 1;
-  padding: 0px 40px;
   position: absolute;
   transform: rotateZ(90deg) translateX(-50px) translateY(-25px);
   transform-origin: center left;
@@ -109,12 +113,10 @@
   }
   
   &:nth-child(1) {
-    background-color: c('resume');
     top: 0;
     left: 0px;
   }
   &:nth-child(2) {
-    background-color: c('projects');
     top: 14%;
     left: 108px;
 
@@ -126,7 +128,6 @@
     }
   }
   &:nth-child(3) {
-    background-color: c('photography');
     top: 6%;
     left: 216px;
 
@@ -138,7 +139,6 @@
     }
   }
   &:nth-child(4) {
-    background-color: c('artwork');
     top: 26%;
     left: 324px;
 
@@ -150,7 +150,6 @@
     }
   }
   &:nth-child(5) {
-    background-color: c('journal');
     top: 20%;
     left: 432px;
 
@@ -162,7 +161,24 @@
     }
   }
 }
+.hero-menu-bar__link {
+  padding: 0px 40px;
+  text-decoration: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  &:active,
+  &:hover,
+  &:link,
+  &:visited {
+    color: c('white');
+  }
+}
 .hero-menu-bar__text {
+  display: block;
   font-size: 3rem;
   font-family: $font--heading;
   font-weight: 300;
