@@ -7,10 +7,12 @@
 .main-menu {
   font-size: $font__size--s;
   letter-spacing: 1px;
-  margin-right: $spacing * 2;
+  margin-right: $spacing;
   position: absolute;
   top: calc(#{$navbarHeight} + (#{$spacing} * .25) + 1px);
   right: 0;
+  visibility: hidden;
+  transform: translateX(100%);
 
   @include breakpoint--small {
     display: none;
@@ -19,7 +21,7 @@
 .main-menu li {
   color: c('white');
   margin-bottom: $spacing * .25;
-  opacity: 0;
+  visibility: hidden;
   text-align: right;
   transform: translateX(100%);
   
@@ -46,6 +48,7 @@
   &:nth-child(7) { animation-delay: .3s; }
   &:nth-child(8) { animation-delay: .35s; }
 }
+.main-menu.is-open, 
 .main-menu.is-open li {
   animation-name: slideInFromRight;  
   animation-duration: .1s;
@@ -53,8 +56,9 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
 }
+.main-menu.is-closed,
 .main-menu.is-closed li {
-  opacity: 1;
+  visibility: visible;
   transform: translateX(0px);
   animation-name: slideOutFromLeft;
   animation-duration: .1s;
@@ -62,24 +66,27 @@
   animation-iteration-count: 1;
   animation-timing-function: ease-in;
 }
+.main-menu.is-closed {
+  animation-delay: .35s;
+}
 
 @keyframes slideInFromRight {
   0% { 
-    opacity: 0;
+    visibility: hidden;
     transform: translateX(100%);
   }
   100% { 
-    opacity: 1;
+    visibility: visible;
     transform: translateX(0px);
   }
 }
 @keyframes slideOutFromLeft {
   0% { 
-    opacity: 1;
+    visibility: visible;
     transform: translateX(0px);
   }
   100% { 
-    opacity: 0;
+    visibility: hidden;
     transform: translateX(100%);
   }
 }

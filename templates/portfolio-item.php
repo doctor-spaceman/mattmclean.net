@@ -6,6 +6,7 @@
 <?php get_header(); ?>
 
 <section class="wrapper wrapper--large">
+  <a class="section-return">Back to <?php echo get_the_title($post->post_parent); ?></a>
   <div class="section">
   <?php 
   if ( have_posts() ) : 

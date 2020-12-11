@@ -60,6 +60,7 @@ main {
 }
 
 .wrapper {
+  box-sizing: border-box;
   margin: 0 auto;
   padding: 0px $spacing * 2;
 
@@ -67,20 +68,23 @@ main {
     padding: 0px $spacing;
   }
 
+  &--small {
+    padding: 0px $spacing;
+  }
   &--large {
-    @extend .wrapper;
-    max-width: 960px;
+    max-width: 1200px;
+    padding: 0px $spacing * 2 0px $spacing * 4;
   }
   &--xlarge {
-    @extend .wrapper;
-    max-width: 800px;
+    max-width: 1200px;
+    padding: 0px $spacing 0px $spacing * 3;
   }
 
-  .page & {
-    @include between(600px, 781px) {
-      padding: 0px $spacing * 2 0px $spacing * 2.5;
-    }
-  }
+  // .page & {
+  //   @include between(600px, 781px) {
+  //     padding: 0px $spacing * 2 0px $spacing * 2.5;
+  //   }
+  // }
 }
 
 .section {

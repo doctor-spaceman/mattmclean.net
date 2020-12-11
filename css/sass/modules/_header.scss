@@ -11,9 +11,13 @@ header {
   top: 0;
   z-index: 1000;
 }
+.navbar-container {
+  position: relative;
+}
 .navbar-main-content {
   height: $navbarHeight;
   position: relative;
+  width: 100%;
 }
 .navbar-main-content__brand,
 a.navbar-main-content__brand {
@@ -43,16 +47,14 @@ a.navbar-main-content__brand {
   }
 }
 .navbar-main-banner {
-  display: block;
+  // display: inline-block;
   position: absolute;
-  bottom: $navbarHeight;
-  left: -$spacing;
   transform: rotateZ(90deg);
-  transform-origin: bottom left;
+  transform-origin: top left;
   
-  @include between(600px, 781px) {
-    left: -$spacing / 2;
-  }
+  // @include between(600px, 781px) {
+  //   left: -$spacing / 2;
+  // }
   @include breakpoint--small {
     display: none;
   }
