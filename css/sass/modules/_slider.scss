@@ -122,13 +122,19 @@
       background-color: c('black');
       transform: scale(125%);
     }
+
+    &:hover {
+      
+    }
   }
 }
 
 ul.slider {
   list-style: none;
   padding: 0px;
+  width: auto;
 }
+
 /* Vertical Slider */
 .slider-vertical {
   &__left {

@@ -9,7 +9,6 @@
 $footerElements = get_field('footer_elements', 'option');
 
 ?>
-			<div class="clearfix"></div>
 		</div>
   </main>
   <footer>

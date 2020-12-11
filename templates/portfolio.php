@@ -39,7 +39,7 @@
       </div>
     </div>
     <div class="col-1-2">
-      <div id="walkway" class="slider slider-vertical__right skew--right">
+      <div id="walkway" class="slider slider-vertical__right">
       <?php 
       if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post(); 
       ?>

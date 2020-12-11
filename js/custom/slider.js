@@ -38,6 +38,7 @@ jQuery(function(){
   });
 
   jQuery('.page-template-portfolio-item .slider-vertical__right .slider').slick({
+    adaptiveHeight: true,
     arrows: false,
     autoplay: false,
     dots: true,
@@ -48,6 +49,10 @@ jQuery(function(){
     slidesToShow: 1,
     swipe: false
   });
+  // Refresh the right-side slider so it can recalculate 
+  // its width after its child slider has initialized.
+  jQuery('.slider-vertical__right').slick('refresh');
+
 
   /**
    * Supports svg drawing in a slider

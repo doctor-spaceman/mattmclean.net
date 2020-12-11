@@ -2,7 +2,7 @@
   <div class="hero-bg" style="background-image:url('<?php echo get_stylesheet_directory_uri().'/img/bw-landscape.jpg'; ?>');"></div>
     <div id="hero">
       <div class="hero-content wrapper wrapper--xlarge">
-        <nav class="hero-menu">
+        <nav class="hero-menu skew--left">
           <div class="hero-menu-bar">
             <div class="hero-menu-bar__text">
               Resume
