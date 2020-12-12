@@ -1,4 +1,4 @@
-<div class="wrapper grid grid--center grid--space footer">
+<div class="wrapper wrapper--large grid grid--center grid--space footer">
   <?php if ( $footerElements['footer_socials'] ) : ?>
   <div class="footer__social">
     <ul class="grid grid--center grid--space">

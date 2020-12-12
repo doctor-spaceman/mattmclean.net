@@ -50,7 +50,8 @@
         'menu' => 'Main Menu', 
         'menu_class' => 'menu grid grid--column',
         'container' => 'nav',
-        'container_class' => 'main-menu--mobile'
+        'container_class' => 'main-menu--mobile',
+        'walker' => new Menu_Stylized_Walker()
       )); 
       ?> 
   </div>
