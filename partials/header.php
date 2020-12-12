@@ -31,7 +31,8 @@
           'menu' => 'Main Menu', 
           'menu_class' => 'menu grid grid--column',
           'container' => 'nav',
-          'container_class' => 'main-menu'
+          'container_class' => 'main-menu',
+          'walker' => new Menu_Stylized_Walker()
         )); 
         ?> 
       </div>

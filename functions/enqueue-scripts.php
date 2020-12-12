@@ -58,7 +58,7 @@ function site_scripts() {
     wp_enqueue_script('js-typed');
   endif;
 
-  if ( is_page_template('templates/portfolio.php') ) : 
+  if ( is_front_page() || is_page_template('templates/portfolio.php') ) : 
     wp_register_script('js-walkway', 'https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js', array('jquery'));
     wp_enqueue_script('js-walkway');
   endif;

@@ -39,6 +39,34 @@
     }
     // END / Home menu walker
 
+    // Main menu walker
+    class Menu_Stylized_Walker extends Walker_Nav_Menu {
+      function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
+        $object = $item->object;
+        $type = $item->type;
+        $id = $item->id;
+        $title = $item->title;
+        $permalink = $item->url;
+        $pageObj = get_page_by_title($title);
+        if ( get_field('page_color', $pageObj->ID) ) :
+          $color = get_field('page_color', $pageObj->ID);
+        else : 
+          $color = '#484848';
+        endif;
+
+        $output .= '
+          <li 
+            id="menu-item-'.$id.'" 
+            class="'.implode(" ", $item->classes).'" 
+            style="background-color: '.$color.';"
+          >
+            <a href="'.$permalink.'">'.$title.'</a>
+          </li>
+        ';
+      }
+    }
+    // END / Main menu walker
+
     // Customize excerpt length
     function custom_excerpt_length( $length ) { 
       return 15;
