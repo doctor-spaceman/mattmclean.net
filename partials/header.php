@@ -1,23 +1,38 @@
 <header>
   <div id="mainNavBar">
+  
     <div class="navbar-container wrapper wrapper--xlarge">
+
       <div class="navbar-main-banner" 
       <?php 
-      if ( $post->post_parent && get_field('page_color', $post->post_parent) ) : 
-        $pageColor = get_field('page_color', $post->post_parent);
+      $page_color;
+      $posts_page_id = get_option('page_for_posts');
+      if ( is_home() ) : 
+        $page_color = get_field('page_color', $posts_page_id);
+      elseif ( $post->post_parent && get_field('page_color', $post->post_parent) ) : 
+        $page_color = get_field('page_color', $post->post_parent);
       elseif ( get_field('page_color') ) : 
-        $pageColor = get_field('page_color');
+        $page_color = get_field('page_color');
       endif; ?>
-      <?php if ( $pageColor ) : ?>
-        style="background-color:<?php echo esc_html($pageColor); ?>;"
+      <?php if ( !empty($page_color) ) : ?>
+        style="background-color:<?php echo esc_html($page_color); ?>;"
       <?php else : ?>
         style="background-color: #484848;"
       <?php endif; ?>
       >
         <h1>
-          <?php the_title(); ?>
+          <?php 
+          if ( is_home() ) : 
+            echo get_the_title($posts_page_id);
+          elseif ( is_404() ) : 
+            echo '404';
+          else :
+            the_title();
+          endif; 
+          ?>
         </h1>
       </div>
+
       <div class="navbar-main-content grid grid--center grid--space wrapper wrapper--small">
         <a class="navbar-main-content__brand" href="<?php bloginfo('url'); ?>">
           Matt McLean
@@ -55,5 +70,7 @@
       )); 
       ?> 
   </div>
+
   <div class="screen-overlay"></div>
+
 </header>

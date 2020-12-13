@@ -47,14 +47,10 @@ a.navbar-main-content__brand {
   }
 }
 .navbar-main-banner {
-  // display: inline-block;
   position: absolute;
   transform: rotateZ(90deg);
   transform-origin: top left;
-  
-  // @include between(600px, 781px) {
-  //   left: -$spacing / 2;
-  // }
+
   @include breakpoint--small {
     display: none;
   }

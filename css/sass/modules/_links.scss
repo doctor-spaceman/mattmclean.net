@@ -1,11 +1,11 @@
 /* Basic Link Styling */
 a:link,
 a:visited {
-    color: c('black');
+  color: c('black');
 }
 a:hover,
 a:active {
-  color: c('artwork');
+  color: lighten(c('black'),20%);
 }
 
 /* Other Links */

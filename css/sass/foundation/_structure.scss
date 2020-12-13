@@ -47,6 +47,9 @@ main {
 .col-1-3 {
   width: 33%;
 
+  @include breakpoint--medium {
+    width: 50%;
+  }
   @include breakpoint--small {
     width: 100%;
   }
@@ -73,7 +76,7 @@ main {
   }
   &--large {
     max-width: 1200px;
-    padding: 0px $spacing * 2 0px $spacing * 4;
+    padding: 0px $spacing * 2 0px $spacing * 5;
   }
   &--xlarge {
     max-width: 1200px;
@@ -99,7 +102,13 @@ main {
   padding: $spacing;
 }
 
+.card-container {
+  margin: 0px calc((#{$spacing} * 2) * -1);
 
+  @include breakpoint--small {
+    margin: 0px;
+  }
+}
 
 
 .sidebar-wrapper {
@@ -134,115 +143,3 @@ main {
   margin-top: 0; 
   padding-top: 5em;
 }
-.content-panel.has-grid { // Use when you know the page has a Media Grid
-  padding: 0 1em;
-} 
-.content-panel.row {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-}
-.content-panel .content-item:first-child {
-  /*Style first post in loop*/
-  width: 100%;
-}
-.content-item {
-  position: relative;
-  height: 200px;
-  padding-top: 16px;
-  width: 100%;
-  margin-bottom: 2em;	
-  border-top: .3em solid #7a133e;	
-}
-.content-item, .mgi_elems_wrap {
-  transition-duration: .25s;
-}
-#photoPortfolio .mgi_elems_wrap,
-#imageGrid .mgi_elems_wrap {
-  border-top:none; // Single images in a grid do not have a top border
-}
-.mgi_elems_wrap {
-  border-top: .3em solid #db1c45;
-}
-.mg_inl_text .mgi_elems_wrap {
-	border-top: .3em solid #363636 !important;
-}
-.content-item.post-block {
-  border-top: .3em solid #fbb33d;
-}
-.content-item a {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 10;
-  overflow: hidden;
-}
-.post-block a {
-	background: rgba(0,0,0,.2) !important;
-}
-.content-item a,
-.mgi_overlays {
-  /*Set bg for content items and Media Grid items*/
-  background: none;
-  background: rgba(0,0,0,0);
-}
-.mgi_overlays::before,
-.content-item a::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 11;  
-}
-.mgi_overlays::before,
-.content-item a::after {
-  // On hover, change background to this gradient by changing its opacity (see next rule)
-  background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.2)) !important;
-  opacity: 0;
-  transition: .5s !important;    
-}
-.mgi_overlays:hover::before,
-.content-item a:hover::after {
-  opacity: 1  !important;
-}
-/*Content item and media grid item link styling*/
-.content-item a:link,
-.content-item a:visited,
-.content-item a:hover {color: #ffffff !important;}
-.content-item:hover,
-.mgi_elems_wrap:hover {border-top: .3em solid #fff;}
-
-/*Other content item elements*/
-.mg_overlay_tit,
-.content-item-title,
-.content-item a > p,
-.post-date,
-.post-preview {
-  z-index: 12;
-  position: relative;
-}
-.content-item-title {
-  width: 100%;
-  text-align: center;
-  font-size: 1.1em;
-  font-weight: 700;
-  padding: .5em ;
-  background: #363636;
-  background: rgba(0,0,0,.3);
-  box-sizing: border-box;
-}
-.mg_overlay_tit {
-	display: block !important;
-	width: 100%;
-  text-align: center;
-  font-size: 1.1em !important;
-  font-weight: 700;
-  padding: .25em !important;
-  box-sizing: border-box !important;
-}
-.content-item a > p {margin-top: .5em;}

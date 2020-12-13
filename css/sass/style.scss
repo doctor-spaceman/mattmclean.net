@@ -11,7 +11,7 @@
 @import 'foundation/typography';
 
 /* Layout */
-@import 'layout/homepage';
+@import 'layout/frontpage';
 @import 'layout/portfolio';
 @import 'layout/portfolio-item';
 @import 'layout/resume';
@@ -25,6 +25,7 @@
 @import 'modules/socials';
 @import 'modules/forms';
 @import 'modules/slider';
+@import 'modules/content-card';
 
 /* Content Groups */
 @import 'content-groups/gallery';

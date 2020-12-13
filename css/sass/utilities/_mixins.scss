@@ -32,22 +32,36 @@
   }
 }
 
-// @mixin slant-cutout {
-//   position: relative;
-//   &:after {
-//     background-color: c('white');
-//     clip-path: polygon(
-//       calc(100% - #{$spacing * 2}) 0px,
-//       calc(100% - #{$spacing * 2} - #{$spacing / 2}) 0px,
-//       calc(100% - #{$spacing * 4} - #{$spacing / 2}) 100%,
-//       calc(100% - #{$spacing * 4}) 100%
-//     );
-//     content: '';
-//     display: block;
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     height: 100%;
-//     width: 100%;
-//   }
-// }
+@mixin accent-slant {
+  position: relative;
+
+  &:before, 
+  &:after {
+    background-color: c('cream');
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: $spacing * -.5;
+    width: 50%;
+    height: $spacing * 3;
+    z-index: -10;
+  }
+
+  &:before {
+    clip-path: polygon(
+      $spacing * 2 0px,
+      $spacing * 2.5 0px,
+      $spacing * .5 100%,
+      0px 100%
+    );
+  }
+  &:after {
+    clip-path: polygon(
+      $spacing * 3 0px,
+      $spacing * 3.5 0px,
+      $spacing * 1.5 100%,
+      $spacing 100%
+    );
+  }
+}

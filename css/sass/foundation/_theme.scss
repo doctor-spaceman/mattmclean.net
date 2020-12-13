@@ -70,8 +70,8 @@ section > .wp-block-group {
   // Corner graphic element
   @include accent-graphic;
 
-  &--cutout {
-    //@include slant-cutout;
+  &--slant {
+    @include accent-slant;
   }
 }
 
