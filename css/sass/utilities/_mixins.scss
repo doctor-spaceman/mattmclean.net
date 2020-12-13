@@ -58,10 +58,10 @@
   }
   &:after {
     clip-path: polygon(
+      $spacing * 2.75 0px,
       $spacing * 3 0px,
-      $spacing * 3.5 0px,
-      $spacing * 1.5 100%,
-      $spacing 100%
+      $spacing 100%,
+      $spacing *.75 100%
     );
   }
 }

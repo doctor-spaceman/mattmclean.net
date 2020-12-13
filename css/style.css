@@ -240,7 +240,7 @@ section > .wp-block-group { padding-bottom: 2rem; }
 
 .corner--slant:before { -webkit-clip-path: polygon(2rem 0px, 2.5rem 0px, 0.5rem 100%, 0px 100%); clip-path: polygon(2rem 0px, 2.5rem 0px, 0.5rem 100%, 0px 100%); }
 
-.corner--slant:after { -webkit-clip-path: polygon(3rem 0px, 3.5rem 0px, 1.5rem 100%, 1rem 100%); clip-path: polygon(3rem 0px, 3.5rem 0px, 1.5rem 100%, 1rem 100%); }
+.corner--slant:after { -webkit-clip-path: polygon(2.75rem 0px, 3rem 0px, 1rem 100%, 0.75rem 100%); clip-path: polygon(2.75rem 0px, 3rem 0px, 1rem 100%, 0.75rem 100%); }
 
 .skew--left { -webkit-transform: perspective(30rem) rotateY(15deg); transform: perspective(30rem) rotateY(15deg); -webkit-transform-origin: center left; transform-origin: center left; }
 

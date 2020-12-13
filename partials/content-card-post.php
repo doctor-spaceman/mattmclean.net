@@ -7,4 +7,9 @@
       <?php the_title(); ?>
     </h2>
   </a>
+  <?php if ( has_excerpt() ) : ?>
+  <p class="post__subtitle supplemental">
+    <?php echo get_the_excerpt(); ?>
+  </p>
+  <?php endif; ?>
 </div>
