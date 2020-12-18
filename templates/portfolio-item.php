@@ -7,18 +7,19 @@
 
 <section class="wrapper wrapper--large">
   <?php if ( $post->post_parent ) : ?>
-  <div class="section-return">
-    <a href="<?php echo get_the_permalink($post->post_parent); ?>"><?php echo get_the_title($post->post_parent); ?></a>  //  <?php the_title(); ?>
-  </div>
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <ol class="supplemental">
+      <li>
+        <a href="<?php echo get_the_permalink($post->post_parent); ?>"><?php echo  get_the_title($post->post_parent); ?></a>  
+      </li>
+      <li>
+        <?php echo '&nbsp;//&nbsp;'; ?><a href="<?php the_permalink(); ?>" aria-current="page"><?php the_title(); ?></a>
+      </li>
+    </ol>
+  </nav>
   <?php endif; ?>
   <div class="section">
-  <?php 
-  if ( have_posts() ) : 
-    while ( have_posts() ) : the_post();
-      the_content();
-    endwhile; 
-  endif; 
-  ?>
+    <?php the_content(); ?>
   </div>
 
   <div class="slider-vertical grid">

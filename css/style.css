@@ -117,6 +117,8 @@ img, figure { max-width: 100%; height: auto; }
 
 @media only screen and (max-width: 782px) { img, figure { width: 100%; } }
 
+figcaption { color: #504f4f; font-size: 0.8rem; }
+
 figure.alignright, img.alignright, iframe.alignright, .wp-caption.alignright { float: right; margin: 0em 0 1rem 1rem; }
 
 @media only screen and (max-width: 782px) { figure.alignright, img.alignright, iframe.alignright, .wp-caption.alignright { margin: 0 0 1rem 0 !important; } }
@@ -246,7 +248,7 @@ iframe { border: none; }
 
 .corner--slant { position: relative; }
 
-.corner--slant:before, .corner--slant:after { background-color: #EBDBB2; content: ''; display: block; position: absolute; top: 0; left: -0.5rem; width: 50%; height: 3rem; z-index: -10; }
+.corner--slant:before, .corner--slant:after { background-color: #EBDBB2; content: ''; display: block; position: absolute; top: 0; left: 0; width: 50%; height: 3rem; z-index: -10; }
 
 .corner--slant:before { -webkit-clip-path: polygon(2rem 0px, 2.5rem 0px, 0.5rem 100%, 0px 100%); clip-path: polygon(2rem 0px, 2.5rem 0px, 0.5rem 100%, 0px 100%); }
 
@@ -571,7 +573,7 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 
 .resume-section:after { -webkit-clip-path: polygon(calc(100px + 0.5rem) 0px, calc(100px + 0.5rem + 0.5rem) 0px, 0px calc(100px + 0.5rem + 0.5rem), 0px calc(100px + 0.5rem)); clip-path: polygon(calc(100px + 0.5rem) 0px, calc(100px + 0.5rem + 0.5rem) 0px, 0px calc(100px + 0.5rem + 0.5rem), 0px calc(100px + 0.5rem)); }
 
-.resume-section h2 { border-bottom: 1px solid #363636; }
+.resume-section h2 { border-bottom: 1px solid #363636; font-size: 2rem; }
 
 .resume-section .title { font-size: 1.4rem; }
 
@@ -579,9 +581,11 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 
 .resume-section ul { margin-bottom: 0; margin-top: 0; }
 
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { .resume-section:before, .resume-section:after { /* IE10+ CSS styles go here */ background-color: transparent; } }
+
 .resume-section > .wp-block-group__inner-container > .wp-block-group { padding-bottom: 2rem; }
 
-/* Resume Columns */
+/*---- Resume Columns ----*/
 .resume-section .wp-block-column { margin-top: 0; }
 
 .resume-section .wp-block-column > p { margin-bottom: 0; }
@@ -590,7 +594,7 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 
 .resume-section .wp-block-column > ul { display: block; }
 
-/* Resume Lists */
+/*---- Resume Lists ----*/
 .resume-section ul { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; }
 
 .resume-section ul li { -webkit-box-flex: 0; -ms-flex: 0 0 calc(33% - (1rem * 3)); flex: 0 0 calc(33% - (1rem * 3)); padding: 0.25rem; }
@@ -598,9 +602,6 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 @media only screen and (max-width: 599px) { .resume-section ul li { -webkit-box-flex: 0; -ms-flex: 0 0 calc(50% - (1rem * 2)); flex: 0 0 calc(50% - (1rem * 2)); } }
 
 .resume-section ul a { text-decoration: none; }
-
-@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) { /* IE10+ CSS styles go here */
-  .resume-section:before, .resume-section:after { background-color: transparent; } }
 
 /*----------JOURNAL----------*/
 .post__tags { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
@@ -681,8 +682,6 @@ a:link, a:visited { color: #363636; }
 a:hover, a:active { color: dimgray; }
 
 /* Other Links */
-.section-return { display: block; font-size: 1rem; margin-top: 1rem; text-transform: uppercase; }
-
 /* Button Styling */
 .cta, button.cta { background: #363636; color: #fff; cursor: pointer; text-transform: uppercase; padding: .5em; margin: .5em 0; display: inline-block; border: 2px solid #fff; }
 
@@ -754,7 +753,7 @@ a:hover, a:active { color: dimgray; }
     -webkit-transform: translateX(100%);
             transform: translateX(100%); } }
 
-/*Pagination*/
+/*---- Pagination ----*/
 .pagination { border-top: 1px solid #363636; margin-top: 2rem; padding-top: 4px; }
 
 .pagination p { margin: 0px; text-transform: uppercase; }
@@ -774,6 +773,11 @@ a:hover, a:active { color: dimgray; }
 .next-posts-link { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; margin-left: 1rem; text-align: right; }
 
 .next-posts-link svg { margin-left: 0.5rem; }
+
+/*---- Breadcrumbs ----*/
+.breadcrumb { display: block; margin-top: 1rem; text-transform: uppercase; }
+
+.breadcrumb ol { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; padding: 0px; }
 
 .main-menu--vertical li { margin: 0; font-size: 1em; }
 
@@ -973,5 +977,12 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 .content-card--post .post__date { font-size: 0.8rem; margin: 0px; text-align: right; text-transform: uppercase; }
 
 /* Content Groups */
+.content-group-informational h2.item-title { border-top: 1px solid #363636; }
+
+.content-group-informational .item-links { margin-bottom: 1rem; text-transform: uppercase; }
+
+.content-group-informational .item-links a { margin-right: 1rem; text-decoration: none; }
+
+.content-group-informational .item-links a svg { width: 1em; height: 1em; padding-left: 0.25rem; position: relative; top: 0.125rem; }
 
 /*# sourceMappingURL=style.css.map */

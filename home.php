@@ -44,17 +44,17 @@
   <nav class="pagination grid grid--space">
     <?php 
     // display older posts link
-    if ( get_next_posts_link( 'Older Entries', $posts_query->max_num_pages ) ) : ?>
+    if ( get_next_posts_link() ) : ?>
     <div class="prev-posts-link">
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-      <p><?php echo get_next_posts_link( 'Older Entries', $posts_query->max_num_pages ); ?></p>
+      <p><?php echo get_next_posts_link( 'Past', $posts_query->max_num_pages ); ?></p>
     </div>
     <?php endif; ?>
     <?php
     // display newer posts link
-    if ( get_previous_posts_link( 'Newer Entries' ) ) : ?>
+    if ( get_previous_posts_link() ) : ?>
     <div class="next-posts-link">
-      <p><?php echo get_previous_posts_link( 'Newer Entries' ); ?></p>
+      <p><?php echo get_previous_posts_link( 'Future' ); ?></p>
       <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
     </div>
     <?php endif; ?>

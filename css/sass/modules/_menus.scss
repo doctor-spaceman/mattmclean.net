@@ -92,7 +92,7 @@
 }
 
 
-/*Pagination*/
+/*---- Pagination ----*/
 .pagination {
   border-top: 1px solid c('black');
   margin-top: $spacing * 2;
@@ -141,9 +141,22 @@
     margin-left: $spacing * .5;
   }
 }
+// END / Pagination
 
 
+/*---- Breadcrumbs ----*/
+.breadcrumb {
+  display: block;
+  margin-top: 1rem;
+  text-transform: uppercase;
 
+  ol {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+  }
+}
+// END / Breadcrumbs
 
 
 

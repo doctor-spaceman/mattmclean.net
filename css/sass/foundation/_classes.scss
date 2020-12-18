@@ -23,6 +23,10 @@ figure {
     width: 100%;
   }
 }
+figcaption {
+  color: lighten(c('black'),10%);
+  font-size: $font__size--xs;
+}
 figure.alignright, 
 img.alignright,
 iframe.alignright,
