@@ -9,7 +9,7 @@ section > .wp-block-group {
   margin: 0;
 
   img {
-    border-radius: .8rem;
+    border-radius: .4rem;
     position: relative;
     z-index: 20;
   }
@@ -64,6 +64,12 @@ section > .wp-block-group {
     margin-top: 0;
   }
 }
+// END / Gutenberg
+
+iframe {
+  border: none;
+}
+
 
 /*----- Effects -----*/
 .corner {

@@ -1,5 +1,5 @@
 <header>
-  <div id="walkway" class="hero-outline" style="background-image:url('<?php echo get_stylesheet_directory_uri().'/img/outline-landscape.svg'; ?>');"></div>
+  <div class="hero-outline" style="background-image:url('<?php echo get_stylesheet_directory_uri().'/img/landscape-line.svg'; ?>');"></div>
   <div class="hero-bg" style="background-image:url('<?php echo get_stylesheet_directory_uri().'/img/landscape-color.png'; ?>');"></div>
   <div class="hero-graphic grid grid--center"></div>
   <div class="hero-graphic__morph">

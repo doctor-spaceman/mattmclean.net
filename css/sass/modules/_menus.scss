@@ -94,11 +94,17 @@
 
 /*Pagination*/
 .pagination {
+  border-top: 1px solid c('black');
   margin-top: $spacing * 2;
-}
-.pagination p {
-  margin: 0px;
-  text-transform: uppercase;
+  padding-top: 4px;
+  
+  p {
+    margin: 0px;
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+  }
 }
 .prev-posts-link, 
 .next-posts-link {
@@ -107,19 +113,29 @@
   margin-bottom: $spacing;
 
   svg {
-    width: $spacing;
-    height: $spacing;
+    align-self: flex-start;
+    padding-top: 2px;
+    width: 1em;
+    height: 1em;
+  }
+
+  @include breakpoint--small {
+    flex: 1 1 100%;
   }
 }
 .prev-posts-link {
+  justify-content: flex-start;
   margin-right: $spacing;
+  text-align: left;
 
   svg {
     margin-right: $spacing * .5;
   }
 }
 .next-posts-link {
+  justify-content: flex-end;
   margin-left: $spacing;
+  text-align: right;
   
   svg {
     margin-left: $spacing * .5;

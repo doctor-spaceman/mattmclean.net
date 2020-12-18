@@ -7,7 +7,7 @@
       <?php 
       $page_color;
       $posts_page_id = get_option('page_for_posts');
-      if ( is_home() ) : 
+      if ( is_home() || is_singular('post') ) : 
         $page_color = get_field('page_color', $posts_page_id);
       elseif ( $post->post_parent && get_field('page_color', $post->post_parent) ) : 
         $page_color = get_field('page_color', $post->post_parent);
@@ -20,17 +20,19 @@
         style="background-color: #484848;"
       <?php endif; ?>
       >
-        <h1>
-          <?php 
-          if ( is_home() ) : 
-            echo get_the_title($posts_page_id);
-          elseif ( is_404() ) : 
-            echo '404';
-          else :
-            the_title();
-          endif; 
-          ?>
-        </h1>
+        <?php if ( is_home() ) : ?>
+        <h1><?php echo get_the_title($posts_page_id); ?></h1>
+        <?php elseif ( is_singular('post') ) : ?>
+        <div>
+          <a href="<?php echo get_the_permalink($posts_page_id); ?>">
+            <?php echo get_the_title($posts_page_id); ?>
+          </a>
+        </div>
+        <?php elseif ( is_404() ) : ?>
+        <h1>404 Not Found</h1>
+        <?php else : ?>
+        <h1><?php the_title(); ?></h1>
+        <?php endif; ?>
       </div>
 
       <div class="navbar-main-content grid grid--center grid--space wrapper wrapper--small">

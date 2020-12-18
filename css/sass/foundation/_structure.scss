@@ -67,20 +67,24 @@ main {
   margin: 0 auto;
   padding: 0px $spacing * 2;
 
-  @include breakpoint--small {
-    padding: 0px $spacing;
-  }
-
   &--small {
     padding: 0px $spacing;
   }
   &--large {
     max-width: 1200px;
     padding: 0px $spacing * 2 0px $spacing * 5;
+
+    @include breakpoint--small {
+      padding: 0px $spacing * 2;
+    }
   }
   &--xlarge {
     max-width: 1200px;
     padding: 0px $spacing 0px $spacing * 3;
+
+    @include breakpoint--small {
+      padding: 0px $spacing * 2;
+    }
   }
 
   // .page & {

@@ -45,6 +45,14 @@ a.navbar-main-content__brand {
     justify-content: flex-start;
     height: 100%;
   }
+  a, 
+  a:active,
+  a:hover,
+  a:link,
+  a:visited {
+    color: c('white');
+    text-decoration: none;
+  }
 }
 .navbar-main-banner {
   position: absolute;
