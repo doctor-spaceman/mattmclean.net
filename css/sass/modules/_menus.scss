@@ -70,6 +70,14 @@
   animation-delay: .35s;
 }
 
+.main-menu--mobile {
+  display: none;
+
+  @include breakpoint--small {
+    display: block;
+  }
+}
+
 @keyframes slideInFromRight {
   0% { 
     visibility: hidden;
@@ -159,88 +167,19 @@
 // END / Breadcrumbs
 
 
-
-
-.main-menu--vertical li {
-	margin: 0;
-	font-size: 1em;
-}
-
-.main-menu--mobile {
-  display: none;
-
-  @include breakpoint--small {
-    display: block;
-  }
-}
-
-.mobile-menu {
-  display: block;
-  padding-top: 7em;
-  position: absolute;
-  left: 2em;
-  top: -4em;
-  padding-left: .5em;
-  border-left: .2em solid #fff;
-}
-.mobile-menu ul {
-  display: flex;
-  flex-direction: column;
-}
-.mobile-menu #menu-photo-menu li {
-  font-size: 1.2em;
-  margin-bottom: .5em;
-}
-.mobile-menu li {
-  font-size: 1.4em;
-  margin-bottom: 1.2em;
-}
-
-
-
-
-
-.main-menu--vertical a:link,
-.main-menu--vertical a:visited,
-.top-level .main-menu--vertical a:hover,
-.top-level .main-menu--vertical a:active {
-  color: #a2a2a2;
-  text-decoration: none;
-  transition-duration: .25s;
-}
-.main-menu--vertical a:hover,
-.main-menu--vertical a:active,
-.top-level .main-menu--vertical a:link,
-.top-level .main-menu--vertical a:visited {color: #fff;}
-
-.main-menu--vertical .menu-item-separator {
+/*---- Sidebar Menu ----*/
+.sidebar-menu .menu-item-separator {
 	padding-bottom: 1em;
 }
+// END / Sidebar Menu
 
-#navContainer {
-  position: fixed;
-  top: 0;
-  z-index: 50;
-  transition-duration: .25s;
-}
-.nav-container,
-.sidebar-nav-container {
-  height: 4em;
-  width: 100%;	
-}
-.past-hero {
-  background: #171717;
-  background: rgba(0,0,0,.6);
-	box-shadow:
-		0 10px 20px rgba(0,0,0,0.19),
-		0 6px 6px rgba(0,0,0,0.23);
-}
-.nav,
-.sidebar-nav {
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
-}
+
+
+
+
+
+
+
 .screen-overlay {
   display: none;
   position: fixed;
@@ -250,4 +189,3 @@
   background: rgba(0,0,0,.6);
   z-index: 40;
 }
-

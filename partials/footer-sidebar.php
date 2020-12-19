@@ -1,21 +1,37 @@
-<div <?php 
-  if ( is_page_template('page-photography.php') && ($post->post_parent) ) : //is a child page
-  echo 'class="sidebar-footer--under-content"'; 
-  elseif ( is_page_template('page-photography.php') ) : 
-  echo 'class="sidebar-footer"'; 
-  endif; ?>>
-  <div class ="attribution wrapper">
-      <div>
-          <ul id="footerSocial" class="social">
-          <?php 
-              if ( is_page_template('page-photography.php') ) : dynamic_sidebar('footer-social-photo');
-              else : dynamic_sidebar('footer-social');
-              endif;
-          ?>
-          </ul>
-      </div>
-      <div id="footerAttribution">
-          <?php dynamic_sidebar('footer-attribution'); ?>
-      </div>
+<footer 
+  <?php 
+  if ( $post->post_parent) : echo 'class="sidebar-footer--under-content"'; 
+  else : echo 'class="sidebar-footer"'; 
+  endif;
+  ?>
+>
+  <div class="wrapper wrapper--large grid grid--center grid--space footer">
+    <?php if ( $footerElements['footer_socials'] ) : ?>
+    <div class="footer__social">
+      <ul class="grid grid--center grid--space">
+      <?php foreach( $footerElements['footer_socials'] as $social ) : ?>
+        <li>
+          <?php if ( $social['social_link'] ) : ?>
+          <a href="<?php echo esc_url($social['social_link']) ?>">
+          <?php endif; ?>
+            <?php if ( $social['social_icon']['url'] ) : ?>
+            <img 
+            src="<?php echo esc_url($social['social_icon']['url']); ?>"
+            <?php if ( $social['social_icon']['alt'] ) : ?> 
+            alt="<?php echo esc_html($social['social_icon']['alt']); ?>"<?php endif; ?> />
+            <?php endif; ?>
+          <?php if ( $social['social_link'] ) : ?>
+          </a>
+          <?php endif; ?>
+        </li>
+      <?php endforeach; ?>
+      </ul>
+    </div>
+    <?php endif; ?>
+    <?php if ( $footerElements['footer_attribution'] ) : ?>
+    <div class="footer__attribution">
+      <?php echo $footerElements['footer_attribution']; ?>
+    </div>
+    <?php endif; ?>
   </div>
-</div>
+</footer>

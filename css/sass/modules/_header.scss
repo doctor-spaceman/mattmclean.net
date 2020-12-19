@@ -11,6 +11,12 @@ header {
   top: 0;
   z-index: 1000;
 }
+#sidebarNav {
+  background-color: c('cream');
+  border-right: 1px solid c('black');
+  height: 100vh;
+  z-index: 1000;
+}
 .navbar-container {
   position: relative;
 }

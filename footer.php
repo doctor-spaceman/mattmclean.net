@@ -11,17 +11,15 @@ $footerElements = get_field('footer_elements', 'option');
 ?>
 		</div>
   </main>
-  <footer>
   <?php 
-  if ( is_page_template('page-photography.php') ) : 
-    include( locate_template('partials/footer-sidebar.php', false, false) );
-  elseif ( is_front_page() ) :
+  if ( is_front_page() ) :
     include( locate_template('partials/footer-home.php', false, false) );
+  elseif ( is_page_template('templates/portfolio-sidebar.php') ) : 
+    include( locate_template('partials/footer-sidebar.php', false, false) );
   else : 
     include( locate_template('partials/footer.php', false, false) );
   endif; 
   ?>		
-	</footer>
 
 <?php wp_footer(); ?>
 

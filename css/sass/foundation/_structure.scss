@@ -10,12 +10,21 @@ body {
   display: flex;
   flex-direction: column;
   -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
-}
-body:not(.home) main {
-  margin-top: $navbarHeight;
 
-  @include breakpoint--small {
-    margin-top: calc(#{$navbarHeight} + #{$spacing} + (#{$spacing} / 2));
+  &:not(.home) main {
+    margin-top: $navbarHeight;
+  
+    @include breakpoint--small {
+      margin-top: calc(#{$navbarHeight} + #{$spacing} + (#{$spacing} / 2));
+    }
+  }
+
+  &.has-sidebar {
+    flex-direction: row;
+
+    main {
+      margin-top: 0px;
+    }
   }
 }
 main {
@@ -112,38 +121,4 @@ main {
   @include breakpoint--small {
     margin: 0px;
   }
-}
-
-
-.sidebar-wrapper {
-  margin: 0 auto;
-  width: 300px;
-}
-.wrapper--gallery {
-	margin-top: 4em;
-}
-
-/*Content Link Styling*/
-.content-panel a:link,
-.content-panel a:visited,
-.mg_item_content a:link,
-.mg_item_content a:visited {
-  color: #db1c45;
-  text-decoration: none;
-  transition-duration: .25s;
-}
-.content-panel a:hover,
-.content-panel a:active,
-.mg_item_content a:hover,
-.mg_item_content a:active {
-  color: #a2a2a2;
-}
-
-/*----------CONTENT-----------*/
-.content-panel {
-  margin-top: 2em;
-}
-#photoPortfolio .content-panel {
-  margin-top: 0; 
-  padding-top: 5em;
 }
