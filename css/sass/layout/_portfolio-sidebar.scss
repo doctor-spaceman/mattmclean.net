@@ -1,0 +1,26 @@
+.page-template-portfolio-sidebar #pageContent {
+  width: 100%;
+}
+.page-template-portfolio-sidebar .masonry {
+  opacity: 0;
+  width: 100%;
+  transition: opacity 2s ease;
+
+  &.loaded {
+    opacity: 1;
+  }
+  .grid-item,
+  .grid-sizer {
+    width: calc(33% - 16px);
+
+    @include breakpoint--medium {
+      width: calc(50% - 16px);
+    }
+    @include breakpoint--small {
+      width: 100%;
+    }
+  }
+  .grid-item {
+    margin-bottom: $spacing * .5;
+  }
+}

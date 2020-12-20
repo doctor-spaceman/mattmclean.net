@@ -1,31 +1,40 @@
-<section id="sidebarNav" class="grid grid--column grid--space">
-  <header>
-    <div class="navbar-container wrapper">
-      <div id="brand" class="monogram"><a href="<?php bloginfo('url'); ?>/photography/">MM</a>
-        <div class="monogram-sub"><a href="<?php bloginfo('url'); ?>/photography/">Photography</a></div>
-      </div>
-      <?php if ( $post->post_parent ) : //is a child page ?>
-      <nav id="mainNav" class="sidebar-nav sidebar-wrapper">
-      <?php else : ?>
-      <nav id="mainNav" class="sidebar-nav sidebar-wrapper top-level">
+<section id="sidebarNav" class="content content--m">
+  <div class="content grid grid--column">
+    <header>
+      <?php 
+      $sidebar_logo = get_field('sidebar_logo');
+      $sidebar_logo_parent = get_field('sidebar_logo', $post->post_parent);
+      if ( $sidebar_logo ) : ?>
+      <a href="<?php echo get_the_permalink(); ?>" title="Home">
+        <img 
+          class="brand" 
+          src="<?php echo $sidebar_logo['url']; ?>" alt="<?php echo $sidebar_log['alt']; ?>"
+        />
+      </a>
+      <?php elseif ( $sidebar_logo_parent ) : ?>
+      <a href="<?php echo get_the_permalink($post->post_parent); ?>" title="Home">
+        <img 
+          class="brand" 
+          src="<?php echo $sidebar_logo_parent['url']; ?>" alt="<?php echo $sidebar_logo_parent['alt']; ?>" 
+        />
+      </a>
       <?php endif; ?>
-        <div id="navIcon">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        
-        <?php
-        wp_nav_menu(
-        array(
-            'menu' => 'Photo Menu', 
-            'container_class' => 'sidebar-menu'
-        )); ?>
-      </nav>
-    </div>
-  </header>
+    </header>
+    <?php if ( $post->post_parent ) : //is a child page ?>
+    <nav id="mainNav" class="sidebar-nav sidebar-wrapper" style="flex: 1 0 auto;">
+    <?php else : ?>
+    <nav id="mainNav" class="sidebar-nav sidebar-wrapper top-level" style="flex: 1 0 auto;">
+    <?php endif; ?>
+      <?php
+      wp_nav_menu(
+      array(
+          'menu' => 'Photo Menu', 
+          'container_class' => 'sidebar-menu skew--left'
+      )); 
+      ?>
+    </nav>
 
-  <?php get_footer(); ?>
-  
+    <?php get_footer(); ?>
+
+  </div>
 </section>

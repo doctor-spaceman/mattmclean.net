@@ -12,6 +12,7 @@ footer {
 }
 .footer {
   flex-wrap: nowrap;
+  margin: $spacing auto;
 
   @include breakpoint--small {
     flex-direction: column;
@@ -21,6 +22,7 @@ footer {
   ul {
     flex-wrap: nowrap;
     list-style: none;
+    margin: 0;
     padding: 0;
     
     &:hover {
@@ -68,6 +70,10 @@ footer {
 
 /*---- Sidebar Footer ----*/
 .sidebar-footer {
-  border: none;
+  background-color: transparent;
+  
+}
+.sidebar-footer .footer__social {
+  margin-bottom: $spacing * .5;
 }
 // END / Sidebar Footer

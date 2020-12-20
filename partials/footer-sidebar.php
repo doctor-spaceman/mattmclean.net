@@ -1,12 +1,7 @@
-<footer 
-  <?php 
-  if ( $post->post_parent) : echo 'class="sidebar-footer--under-content"'; 
-  else : echo 'class="sidebar-footer"'; 
-  endif;
-  ?>
->
-  <div class="wrapper wrapper--large grid grid--center grid--space footer">
+<footer class="sidebar-footer sticky-footer">
+  <div class="grid grid--center grid--column grid--space footer">
     <?php if ( $footerElements['footer_socials'] ) : ?>
+      <!-- TODO: Option to show different socials than main site -->
     <div class="footer__social">
       <ul class="grid grid--center grid--space">
       <?php foreach( $footerElements['footer_socials'] as $social ) : ?>

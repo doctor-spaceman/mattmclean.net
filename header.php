@@ -23,9 +23,18 @@
 
 		<?php wp_head(); ?>
 
-	</head>
-
+  </head>
+  
+  <?php 
+  $background = false;
+  if ( has_post_thumbnail() ) : 
+    $background = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
+  endif; 
+  ?>
   <body 
+    <?php if ( is_page_template('templates/portfolio-sidebar.php') && $background ) : ?>
+    style="background: url('<?php echo $background[0]; ?>') center top / cover no-repeat;" 
+    <?php endif; ?>
     <?php if ( is_page_template('templates/portfolio-sidebar.php') ) : body_class('has-sidebar'); 
     else : body_class();
     endif; ?>
@@ -42,4 +51,6 @@
     endif;
     ?>
 
+    
     <main id="pageContent">
+    

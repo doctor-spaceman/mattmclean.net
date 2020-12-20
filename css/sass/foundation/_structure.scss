@@ -25,10 +25,15 @@ body {
     main {
       margin-top: 0px;
     }
+    .section {
+      padding-right: $spacing * 2;
+    }
   }
-}
-main {
-  flex: 1 0 auto;
+  &:not(.has-sidebar) {
+    main {
+      flex: 1 0 auto;
+    }
+  }
 }
 
 .grid {
@@ -112,7 +117,12 @@ main {
 }
 
 .content {
+  box-sizing: border-box;
   padding: $spacing;
+
+  &--m {
+    padding: $spacing * 2;
+  }
 }
 
 .card-container {

@@ -9,7 +9,6 @@
 $footerElements = get_field('footer_elements', 'option');
 
 ?>
-		</div>
   </main>
   <?php 
   if ( is_front_page() ) :
