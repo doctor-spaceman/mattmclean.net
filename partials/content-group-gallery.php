@@ -25,9 +25,9 @@ if ( have_rows('gallery_images') ) :
   <?php if ( $item_image ) : ?>
     <img src="<?php echo $item_image['url']; ?>" alt="<?php echo $item_image['alt']; ?>"></img>
   <?php elseif ( $item_iframe ) : ?>
-    <div class="slide-iframe">
+    <!--<div class="slide-iframe">-->
       <?php echo $item_iframe; ?>
-    </div>
+    <!--</div>-->
   <?php endif; ?>
   </li>
 

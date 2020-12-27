@@ -121,7 +121,7 @@ jQuery(function () {
     arrows: false,
     autoplay: false,
     dots: true,
-    fade: false,
+    fade: true,
     infinite: false,
     prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
     nextArrow: '<button type="button" class="slick-next" aria-label="Next"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
@@ -132,7 +132,18 @@ jQuery(function () {
   }); // Refresh the right-side slider so it can recalculate 
   // its width after its child slider has initialized.
 
-  jQuery('.slider-vertical__right').slick('refresh');
+  jQuery('.slider-vertical__right').slick('refresh'); // Refresh the right-side slider when the window 
+  // is resized, but only when resizing is complete.
+
+  var resizeTimer;
+  jQuery(window).on('resize', function (e) {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      //console.log('refresh');
+      //jQuery('iframe').attr('src', jQuery('iframe').attr('src'));
+      jQuery('.page-template-portfolio-item .slider-vertical__right .slider').slick('refresh'); // jQuery('.slider-vertical__right').slick('refresh');
+    }, 250);
+  });
   /**
    * Supports svg drawing in a slider
    * 

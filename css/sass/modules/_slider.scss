@@ -101,26 +101,27 @@
 
 // Dots
 .slick-dots {
-  border: 1px solid c('black');
   display: flex;
   align-items: center;
   flex-wrap: nowrap;
   justify-content: center;
   list-style: none;
+  margin-top: $spacing;
   padding: 0;
 
   li {
     background-color: lighten(c('black'),20%);
+    border: 1px solid c('black');
     cursor: pointer;
-    flex: 1 1 auto;
     height: $spacing * .75;
+    flex: 0 1 $spacing * 2;
     transition: all .1s ease;
 
     button {
       visibility: hidden;
     }
     &:not(:last-child) {
-      border-right: 1px solid c('black');
+      border-right: none;
     }
     &:hover {
       background-color: lighten(c('black'),10%);
@@ -215,22 +216,24 @@ ul.slider {
   .slick-prev {
     margin-bottom: $spacing * 2;
   }
+}
 
-  // Child slider
-  .slick-slider {
-    .slick-slider {
-      display: flex;
-      flex-direction: column;
-  
-      .slick-dots {
-        order: 0;  
-      }
-      .slick-list {
-        order: 1;
-      }
-    }
+/*
+.slider-gallery {
+  &:after {
+    background-color: #a2a2a2;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 150%;
+    height: 100%;
+
+    @extend .skew--right;
   }
 }
+*/
 
 #walkway.slider {
   .slick-slide {
