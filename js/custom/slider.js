@@ -39,11 +39,11 @@ jQuery(function(){
 
   jQuery('.page-template-portfolio-item .slider-vertical__right .slider').slick({
     adaptiveHeight: true,
-    arrows: true,
+    arrows: false,
     autoplay: false,
     dots: true,
-    fade: true,
-    infinite: true,
+    fade: false,
+    infinite: false,
     prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
     nextArrow: '<button type="button" class="slick-next" aria-label="Next"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
     lazyLoad: 'ondemand',

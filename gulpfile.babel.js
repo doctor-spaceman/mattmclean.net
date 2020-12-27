@@ -202,6 +202,47 @@ gulp.task( 'customJS', () => {
 });
 
 /**
+ * Task: `slickJS`.
+ *
+ * Concatenate and uglify custom JS scripts.
+ *
+ * This task does the following:
+ *     1. Gets the source folder for JS custom files
+ *     2. Concatenates all the files and generates custom.js
+ *     3. Renames the JS file with suffix .min.js
+ *     4. Uglifes/Minifies the JS file and generates custom.min.js
+ */
+gulp.task( 'slickJS', () => {
+	return gulp
+		.src( config.jsSlickSRC, { since: gulp.lastRun( 'slickJS' ) }) // Only run on changed files.
+		.pipe(
+			babel({
+				presets: [
+					[
+						'@babel/preset-env', // Preset to compile your modern JS to ES5.
+						{
+							targets: { browsers: config.BROWSERS_LIST } // Target browser list to support.
+						}
+					]
+				]
+			})
+		)
+		.pipe( remember( config.jsSlickSRC ) ) // Bring all files back to stream.
+		.pipe( concat( config.jsSlickFile + '.js' ) )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsSlickDestination ) )
+		.pipe(
+			rename({
+				basename: config.jsSlickFile,
+				suffix: '.min'
+			})
+		)
+		.pipe( uglify() )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsSlickDestination ) )
+});
+
+/**
  * Task: `images`.
  *
  * Minifies PNG, JPEG, GIF and SVG images.
@@ -277,12 +318,13 @@ gulp.task( 'translate', () => {
  */
 gulp.task(
 	'watch',
-	gulp.parallel( 'styles', 'vendorsJS', 'customJS', /*'images',*/ () => {
+	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'slickJS', /*'images',*/ () => {
 		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
 		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS' ) ); // Reload on vendorsJS file changes.
-		gulp.watch( config.watchJsCustom, gulp.series( 'customJS' ) ); // Reload on customJS file changes.
-		gulp.watch( config.imgSRC, gulp.series( 'images' ) ); // Reload on image file changes.
+    gulp.watch( config.watchJsCustom, gulp.series( 'customJS' ) ); // Reload on customJS file changes.
+    gulp.watch( config.watchJsSlick, gulp.series( 'slickJS' ) ); // Reload on slickJS file changes.
+		/* gulp.watch( config.imgSRC, gulp.series( 'images' ) ); // Reload on image file changes. */
 	})
 );
 
-gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', /*'images' */) );
+gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', 'slickJS', /*'images' */) );

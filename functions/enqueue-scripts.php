@@ -45,7 +45,7 @@ function site_scripts() {
   wp_enqueue_style('font-heading');
 
   // css
-  if ( preg_match('/(staging-mm)/', get_site_url()) ) :
+  if ( preg_match('/(staging-)/', get_site_url()) ) :
     wp_register_style('css-main', get_template_directory_uri() . '/css/style.css');
   else :
     wp_register_style('css-main', get_template_directory_uri() . '/css/style.min.css');
@@ -53,18 +53,31 @@ function site_scripts() {
   wp_enqueue_style('css-main');
 
   // js
+  // typed.js on homepage
   if ( is_front_page() ) : 
     wp_register_script('js-typed', 'https://cdn.jsdelivr.net/npm/typed.js@2.0.11', array('jquery'));
     wp_enqueue_script('js-typed');
   endif;
 
+  // slick.js on portfolio templates
+  if ( is_page_template('templates/portfolio.php') || is_page_template('templates/portfolio-item.php') ) : 
+    if ( preg_match('/(staging-)/', get_site_url()) ) :
+      wp_register_script('js-slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '', true);
+    else :
+      wp_register_script('js-slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true);
+    endif;
+    wp_enqueue_script('js-slick');
+  endif;
+
+  // walkway.js
   if ( is_front_page() || is_page_template('templates/portfolio.php') ) : 
     wp_register_script('js-walkway', 'https://cdn.jsdelivr.net/npm/walkway.js/src/walkway.min.js', array('jquery'));
     wp_enqueue_script('js-walkway');
   endif;
 
+  // other js
   if ( file_exists(get_template_directory() . '/js/vendor.js') ) :
-    if ( preg_match('/(staging-mm)/', get_site_url()) ) :
+    if ( preg_match('/(staging-)/', get_site_url()) ) :
       wp_register_script('js-vendor', get_template_directory_uri() . '/js/vendor.min.js', array('jquery'), '', true);
       wp_register_script('js-custom', get_template_directory_uri() . '/js/custom.js', array('js-vendor'), '', true);
     else :
@@ -74,7 +87,7 @@ function site_scripts() {
     wp_enqueue_script('js-vendor');
     wp_enqueue_script('js-custom');
   else :
-    if ( preg_match('/(staging-mm)/', get_site_url()) ) :
+    if ( preg_match('/(staging-)/', get_site_url()) ) :
       wp_register_script('js-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), '', true);
     else : 
       wp_register_script('js-custom', get_template_directory_uri() . '/js/custom.min.js', array('jquery'), '', true);
