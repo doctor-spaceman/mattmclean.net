@@ -33,9 +33,9 @@ module.exports = {
 	jsCustomFile: 'custom', // Compiled JS custom file name. Default set to custom i.e. custom.js.
 
 	// JS Slick options.
-	jsSlickSRC: './js/slick/*.js', // Path to JS slick slider scripts folder.
-	jsSlickDestination: './js/', // Path to place the compiled JS slick slider scripts file.
-	jsSlickFile: 'slick', // Compiled JS slick slider file name. Default set to custom i.e. slick.js.
+	jsSliderSRC: './js/slider/*.js', // Path to JS slider scripts folder.
+	jsSliderDestination: './js/', // Path to place the compiled JS slider scripts file.
+	jsSliderFile: 'slider', // Compiled JS slider file name. Default set to custom i.e. slider.js.
 
 	// Images options.
 	imgSRC: './img/raw/*', // Source folder of images which should be optimized and watched. You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
@@ -45,7 +45,7 @@ module.exports = {
 	watchStyles: './css/sass/**/*.scss', // Path to all *.scss files inside css folder and inside them.
 	watchJsVendor: './js/vendor/*.js', // Path to all vendor JS files.
   watchJsCustom: './js/custom/*.js', // Path to all custom JS files.
-  watchJsSlick: './js/slick/*.js', // Path to all custom JS files.
+  watchJsSlider: './js/slider/*.js', // Path to all custom JS files.
 	watchPhp: './**/*.php', // Path to all PHP files.
 
 	// Translation options.

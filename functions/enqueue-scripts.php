@@ -62,11 +62,11 @@ function site_scripts() {
   // slick.js on portfolio templates
   if ( is_page_template('templates/portfolio.php') || is_page_template('templates/portfolio-item.php') ) : 
     if ( preg_match('/(staging-)/', get_site_url()) ) :
-      wp_register_script('js-slick', get_template_directory_uri() . '/js/slick.js', array('jquery'), '', true);
+      wp_register_script('js-slider', get_template_directory_uri() . '/js/slider.js', array('jquery'), '', true);
     else :
-      wp_register_script('js-slick', get_template_directory_uri() . '/js/slick.min.js', array('jquery'), '', true);
+      wp_register_script('js-slider', get_template_directory_uri() . '/js/slider.min.js', array('jquery'), '', true);
     endif;
-    wp_enqueue_script('js-slick');
+    wp_enqueue_script('js-slider');
   endif;
 
   // walkway.js

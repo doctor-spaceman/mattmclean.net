@@ -202,7 +202,7 @@ gulp.task( 'customJS', () => {
 });
 
 /**
- * Task: `slickJS`.
+ * Task: `sliderJS`.
  *
  * Concatenate and uglify custom JS scripts.
  *
@@ -212,9 +212,9 @@ gulp.task( 'customJS', () => {
  *     3. Renames the JS file with suffix .min.js
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
-gulp.task( 'slickJS', () => {
+gulp.task( 'sliderJS', () => {
 	return gulp
-		.src( config.jsSlickSRC, { since: gulp.lastRun( 'slickJS' ) }) // Only run on changed files.
+		.src( config.jsSliderSRC, { since: gulp.lastRun( 'sliderJS' ) }) // Only run on changed files.
 		.pipe(
 			babel({
 				presets: [
@@ -227,19 +227,19 @@ gulp.task( 'slickJS', () => {
 				]
 			})
 		)
-		.pipe( remember( config.jsSlickSRC ) ) // Bring all files back to stream.
-		.pipe( concat( config.jsSlickFile + '.js' ) )
+		.pipe( remember( config.jsSliderSRC ) ) // Bring all files back to stream.
+		.pipe( concat( config.jsSliderFile + '.js' ) )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-		.pipe( gulp.dest( config.jsSlickDestination ) )
+		.pipe( gulp.dest( config.jsSliderDestination ) )
 		.pipe(
 			rename({
-				basename: config.jsSlickFile,
+				basename: config.jsSliderFile,
 				suffix: '.min'
 			})
 		)
 		.pipe( uglify() )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-		.pipe( gulp.dest( config.jsSlickDestination ) )
+		.pipe( gulp.dest( config.jsSliderDestination ) )
 });
 
 /**
@@ -318,13 +318,13 @@ gulp.task( 'translate', () => {
  */
 gulp.task(
 	'watch',
-	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'slickJS', /*'images',*/ () => {
+	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'sliderJS', /*'images',*/ () => {
 		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
 		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS' ) ); // Reload on vendorsJS file changes.
     gulp.watch( config.watchJsCustom, gulp.series( 'customJS' ) ); // Reload on customJS file changes.
-    gulp.watch( config.watchJsSlick, gulp.series( 'slickJS' ) ); // Reload on slickJS file changes.
+    gulp.watch( config.watchJsSlider, gulp.series( 'sliderJS' ) ); // Reload on sliderJS file changes.
 		/* gulp.watch( config.imgSRC, gulp.series( 'images' ) ); // Reload on image file changes. */
 	})
 );
 
-gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', 'slickJS', /*'images' */) );
+gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', 'sliderJS', /*'images' */) );

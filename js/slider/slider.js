@@ -24,7 +24,20 @@ jQuery(function(){
     rows: 0,
     slidesToShow: slidesToShow,
     vertical: true,
-    verticalSwiping: true
+    verticalSwiping: true,
+    responsive: [
+      {
+        breakpoint: 782,
+        settings: {
+          slidesToShow: 1,
+          vertical: false, 
+          verticalSwiping: false,
+        }
+      }
+      // You can unslick at a given breakpoint now by adding:
+      // settings: "unslick"
+      // instead of a settings object
+    ]
   });
 
   jQuery('.slider-vertical__right').slick({
@@ -54,19 +67,6 @@ jQuery(function(){
   // Refresh the right-side slider so it can recalculate 
   // its width after its child slider has initialized.
   jQuery('.slider-vertical__right').slick('refresh');
-
-  // Refresh the right-side slider when the window 
-  // is resized, but only when resizing is complete.
-  var resizeTimer;
-  jQuery(window).on('resize', function(e) {
-    clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(function() {
-      //console.log('refresh');
-      //jQuery('iframe').attr('src', jQuery('iframe').attr('src'));
-      jQuery('.page-template-portfolio-item .slider-vertical__right .slider').slick('refresh');
-      // jQuery('.slider-vertical__right').slick('refresh');
-    }, 250);
-  });
 
 
   /**
@@ -120,17 +120,17 @@ jQuery(function(){
 
     // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
     if (direction == 'duo') {  
-      $('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
+      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
 
-      $('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
+      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
     }
 
     if (direction == 'right') {  
-      $('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
+      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
     }
 
     if (direction == 'left') {
-      $('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
+      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
     }
   });
 
