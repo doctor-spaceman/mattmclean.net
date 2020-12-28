@@ -567,19 +567,21 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 
 .page-template-portfolio-item .slider-vertical__right .slider .slick-prev, .page-template-portfolio-item .slider-vertical__right .slider .slick-next { margin: 0px; }
 
-.page-template-portfolio-sidebar #pageContent { width: 100%; }
+.page-template-portfolio-sidebar #pageContent { background-color: #ffffff; width: 100%; }
 
 .page-template-portfolio-sidebar .masonry { opacity: 0; width: 100%; -webkit-transition: opacity 2s ease; transition: opacity 2s ease; }
 
 .page-template-portfolio-sidebar .masonry.loaded { opacity: 1; }
 
-.page-template-portfolio-sidebar .masonry .grid-item, .page-template-portfolio-sidebar .masonry .grid-sizer { width: calc(33% - ((16px * 2) / 3)); }
+.page-template-portfolio-sidebar .masonry .grid-item, .page-template-portfolio-sidebar .masonry .grid-sizer { width: calc(33% - ((16px * 2) * .333)); }
 
-@media only screen and (max-width: 782px) { .page-template-portfolio-sidebar .masonry .grid-item, .page-template-portfolio-sidebar .masonry .grid-sizer { width: calc(50% - (16px * 2)); } }
+@media only screen and (max-width: 1000px) { .page-template-portfolio-sidebar .masonry .grid-item, .page-template-portfolio-sidebar .masonry .grid-sizer { width: calc(50% - (16px / 2)); } }
 
-@media only screen and (max-width: 599px) { .page-template-portfolio-sidebar .masonry .grid-item, .page-template-portfolio-sidebar .masonry .grid-sizer { width: 100%; } }
+@media only screen and (max-width: 880px) { .page-template-portfolio-sidebar .masonry .grid-item, .page-template-portfolio-sidebar .masonry .grid-sizer { width: 100%; } }
 
 .page-template-portfolio-sidebar .masonry .grid-item { margin-bottom: 0.5rem; }
+
+.page-template-portfolio-sidebar .masonry .grid-item img { cursor: pointer; }
 
 /*--------- RESUME ---------*/
 .resume-section { min-height: calc(100px + 0.5rem + 1rem); position: relative; position: relative; }
@@ -621,21 +623,19 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 .resume-section ul a { text-decoration: none; }
 
 /* Modules */
-header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; position: relative; }
+header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; }
 
 #mainNavBar { background-color: #EBDBB2; border-bottom: 1px solid #363636; position: fixed; width: 100%; top: 0; z-index: 1000; }
 
-#sidebarNav { height: 100vh; min-width: 370px; z-index: 1000; }
+#sidebarNav { background-color: rgba(255, 255, 255, 0.7); border-right: 1px solid #363636; height: 100vh; min-width: 320px; }
 
-#sidebarNav header { border-bottom: 1px solid #363636; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; }
+#sidebarNav header { border-bottom: 1px solid #363636; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; width: 100%; }
 
-#sidebarNav > div { background: rgba(255, 255, 255, 0.8); border-radius: 1rem; height: 100%; }
+#sidebarNav > div { height: 100%; }
 
 #sidebarNav .brand { display: block; max-width: 120px; margin: 0 auto; padding-bottom: 1rem; }
 
-.page-child #sidebarNav { background: #EBDBB2; border-right: 1px solid #363636; }
-
-.page-child #sidebarNav > div { background: #fff; }
+.page-child #sidebarNav { background-color: #ffffff; }
 
 .navbar-container { position: relative; }
 
@@ -1044,6 +1044,14 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 .content-card--post .post__title { border-top: 1px solid #363636; margin: 0px; }
 
 .content-card--post .post__date { font-size: 0.8rem; margin: 0px; text-align: right; text-transform: uppercase; }
+
+.overlay { background-color: #ffffff; display: none; height: 100%; width: 100%; position: fixed; top: 0; left: 0; z-index: -1000; -webkit-transition: all 4s ease; transition: all 4s ease; }
+
+.overlay .grid { -ms-flex-line-pack: center; align-content: center; }
+
+.overlay.is-open { display: block; z-index: 1000; }
+
+.overlay .button--close { -ms-flex-item-align: end; align-self: flex-end; background-color: transparent; border: none; color: #363636; cursor: pointer; font-family: "Khand", "Arial Narrow", sans-serif; padding: 0; text-transform: uppercase; -webkit-appearance: none; }
 
 /* Content Groups */
 .content-group-informational h2.item-title { border-top: 1px solid #363636; }

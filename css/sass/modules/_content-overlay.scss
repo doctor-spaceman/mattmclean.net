@@ -1,0 +1,38 @@
+.overlay {
+  background-color: c('white');
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+  transition: all 4s ease;
+
+  .grid {
+    align-content: center;
+  }
+
+  &.is-open {
+    display: block;
+    z-index: 1000;
+  }
+
+  .button--close {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    color: c('black');
+    cursor: pointer;
+    font-family: $font--heading;
+    padding: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+  }
+}
+
+.overlay--image {
+  img {
+    //max-height: 66.66%;
+  }
+}

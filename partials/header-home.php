@@ -12,7 +12,7 @@
       array(
         'container' => 'nav',
         'container_class' => 'hero-menu skew--left',
-        'menu' => 'Main Menu', 
+        'theme_location' => 'main-menu',
         'walker' => new Home_Stylized_Walker()
       )); 
       ?>

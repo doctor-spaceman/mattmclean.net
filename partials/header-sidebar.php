@@ -1,5 +1,5 @@
 <section id="sidebarNav" class="content content--m">
-  <div class="content grid grid--column">
+  <div class="grid grid--column">
     <header>
       <?php 
       $sidebar_logo = get_field('sidebar_logo');
@@ -28,8 +28,9 @@
       <?php
       wp_nav_menu(
       array(
-          'menu' => 'Photo Menu', 
-          'container_class' => 'sidebar-menu skew--left'
+          //'menu' => 'Photo Menu', 
+          'theme_location' => 'sidebar-menu-photography',
+          'container_class' => 'sidebar-menu'
       )); 
       ?>
     </nav>

@@ -3,8 +3,9 @@
     function register_my_menus() {
     register_nav_menus(
         array(
-        'main-menu' => __( 'Main Menu' ),
-        'sidebar-menu' => __( 'Sidebar Menu' )
+        'main-menu' => __( 'Header' ),
+        'sidebar-menu' => __( 'Sidebar' ),
+        'sidebar-menu-photography' => __( 'Photography Sidebar' )
         )
     );
     }

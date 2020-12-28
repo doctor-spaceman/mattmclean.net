@@ -1,8 +1,9 @@
 header {
   font-family: $font--heading;
   color: c('black');
-  position: relative;
+  // position: relative;
 }
+
 #mainNavBar {
   background-color: c('cream');
   border-bottom: 1px solid c('black');
@@ -11,19 +12,20 @@ header {
   top: 0;
   z-index: 1000;
 }
+
 #sidebarNav {
+  background-color: rgba(255,255,255,.7);
+  border-right: 1px solid c('black');
   height: 100vh;
-  min-width: 370px;
-  z-index: 1000;
+  min-width: 320px;
 
   header {
     border-bottom: 1px solid c('black');
     font-family: $font--main;
     margin-bottom: $spacing * 2;
+    width: 100%;
   }
   & > div {
-    background: rgba(255,255,255,.8);
-    border-radius: $spacing;
     height: 100%;
   }
   .brand {
@@ -32,15 +34,12 @@ header {
     margin: 0 auto;
     padding-bottom: $spacing;
   }
-}
-.page-child #sidebarNav {
-  background: c('cream');
-  border-right: 1px solid c('black');
 
-  & > div {
-    background: #fff;
+  .page-child & {
+    background-color: c('white');
   }
 }
+
 .navbar-container {
   position: relative;
 }

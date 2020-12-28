@@ -45,12 +45,12 @@
     if ( is_front_page() ) : 
       get_template_part('partials/header','home');
     elseif ( is_page_template('templates/portfolio-sidebar.php') ) : 
+      get_template_part('partials/content-overlay', 'image');
       get_template_part('partials/header','sidebar');
     else : 
       get_template_part('partials/header');
     endif;
     ?>
 
-    
     <main id="pageContent">
     

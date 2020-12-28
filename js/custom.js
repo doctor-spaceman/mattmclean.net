@@ -20,6 +20,18 @@ window.addEventListener('DOMContentLoaded', function (event) {
       }
     });
   }
+  /*------ Content Overlay ------*/
+
+
+  var contentOverlay = document.querySelector('.overlay');
+
+  if (contentOverlay) {
+    var overlayClose = contentOverlay.querySelector('.button--close');
+    overlayClose.addEventListener('click', function (event) {
+      contentOverlay.classList.remove('is-open');
+      overlayClose.setAttribute('tabindex', '-1');
+    });
+  }
 }); // Define how mobile menu is toggled
 // var toggleMenu = function () {
 //   $('#navIcon').toggleClass('open');
@@ -77,5 +89,18 @@ jQuery(function () {
   portfolio_sidebar_grid.imagesLoaded(function () {
     portfolio_sidebar_grid.masonry('layout');
     portfolio_sidebar_grid.addClass('loaded');
+  });
+  $('.masonry img').on('click', function () {
+    var img_src = $(this).attr('data-full-url');
+    var img_alt = $(this).attr('alt');
+
+    if ($('.overlay')) {
+      $('.overlay img').attr('src', img_src);
+      $('.overlay img').attr('alt', img_alt);
+      $('.overlay').imagesLoaded(function () {
+        $('.overlay').addClass('is-open');
+        $('.overlay .button--close').attr('tabindex', '0');
+      });
+    }
   });
 });

@@ -1,4 +1,5 @@
 .page-template-portfolio-sidebar #pageContent {
+  background-color: c('white');
   width: 100%;
 }
 .page-template-portfolio-sidebar .masonry {
@@ -11,16 +12,20 @@
   }
   .grid-item,
   .grid-sizer {
-    width: calc(33% - ((16px * 2) / 3);
+    width: calc(33% - ((16px * 2) * .333));
 
-    @include breakpoint--medium {
-      width: calc(50% - (16px * 2));
+    @include breakpoint--large {
+      width: calc(50% - (16px / 2));
     }
-    @include breakpoint--small {
+    @include breakpoint--medium-large {
       width: 100%;
     }
   }
   .grid-item {
     margin-bottom: $spacing * .5;
+
+    img {
+      cursor: pointer;
+    }
   }
 }

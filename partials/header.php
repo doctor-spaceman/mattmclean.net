@@ -45,10 +45,10 @@
         <?php 
         wp_nav_menu(
         array(
-          'menu' => 'Main Menu', 
-          'menu_class' => 'menu grid grid--column',
           'container' => 'nav',
           'container_class' => 'main-menu',
+          'menu_class' => 'menu grid grid--column',
+          'theme_location' => 'main-menu',
           'walker' => new Menu_Stylized_Walker()
         )); 
         ?> 
@@ -74,7 +74,5 @@
       )); 
       ?> 
   </div>
-
-  <div class="screen-overlay"></div>
 
 </header>

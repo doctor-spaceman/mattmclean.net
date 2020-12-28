@@ -3,7 +3,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const mainMenuToggle = document.querySelector('.navbar-main-content__menu');
   const mainMenu = document.querySelector('nav.main-menu');
 
-
   if ( mainMenuToggle ) {
     mainMenuToggle.addEventListener('click', (event) => {
       if ( mainMenu.classList.contains('is-open') ) {
@@ -21,7 +20,20 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     });
   }
+
+  /*------ Content Overlay ------*/
+  const contentOverlay = document.querySelector('.overlay');
+
+  if ( contentOverlay ) {
+    const overlayClose = contentOverlay.querySelector('.button--close');
+
+    overlayClose.addEventListener('click', (event) => {
+      contentOverlay.classList.remove('is-open');
+      overlayClose.setAttribute('tabindex','-1');
+    });
+  }
 });
+
 
 
 
