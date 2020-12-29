@@ -294,6 +294,8 @@ h2, .h2 { font-size: 1.2rem; }
 
 .supplemental { color: #504f4f; font-size: 1rem; }
 
+.uppercase { text-transform: uppercase; }
+
 h2.sec-header, h3.sec-header { border-bottom: 3px solid #fff; margin-top: 1em; padding-bottom: .1em; }
 
 h3.sec-header { display: inline-block; margin-top: 0; }

@@ -21,6 +21,8 @@ Template Name: Portfolio Sidebar
     the_row();
 
     $image = get_sub_field('sidebar_gallery_image');
+    $image_name = get_sub_field('sidebar_gallery_image_name');
+    $image_desc = get_sub_field('sidebar_gallery_image_desc');
     $image_src = wp_get_attachment_image_url($image, 'medium');
     $image_src_full = wp_get_attachment_image_url($image, 'full');
     $image_srcset = wp_get_attachment_image_srcset($image, 'medium');
@@ -30,6 +32,7 @@ Template Name: Portfolio Sidebar
       (max-width: 1000px) 320px,
       100vw';
     $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
+    
     ?>
     <div class="grid-item">
       <img 
@@ -37,7 +40,9 @@ Template Name: Portfolio Sidebar
       src="<?php echo esc_url($image_src); ?>" 
       srcset="<?php echo esc_attr($image_srcset); ?>" 
       sizes="<?php echo $image_sizes; ?>" 
-      alt="<?php echo esc_attr($image_alt); ?>"
+      <?php if ( $image_alt ) : ?>alt="<?php echo esc_attr($image_alt); ?>"<?php endif; ?>
+      <?php if ( $image_name ) : ?>data-name="<?php echo esc_attr($image_name); ?>" <?php endif; ?>
+      <?php if ( $image_desc ) : ?>data-caption="<?php echo esc_attr($image_desc); ?>"<?php endif; ?>
       />
     </div>
    

@@ -22,14 +22,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
   }
 
   /*------ Content Overlay ------*/
-  const contentOverlay = document.querySelector('.overlay');
+  const overlay = document.querySelector('.overlay');
 
-  if ( contentOverlay ) {
-    const overlayClose = contentOverlay.querySelector('.button--close');
+  if ( overlay ) {
+    const overlayClose = overlay.querySelector('.button--close');
+    const overlayContents = overlay.querySelector('.overlay-content');
 
     overlayClose.addEventListener('click', (event) => {
-      contentOverlay.classList.remove('is-open');
+      overlay.classList.remove('is-open');
       overlayClose.setAttribute('tabindex','-1');
+      overlayContents.innerHTML = '';
     });
   }
 });
