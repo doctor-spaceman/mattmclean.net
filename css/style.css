@@ -631,7 +631,7 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 .resume-section ul a { text-decoration: none; }
 
 /* Modules */
-header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; }
+header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; position: relative; }
 
 #mainNavBar { background-color: #EBDBB2; border-bottom: 1px solid #363636; position: fixed; width: 100%; top: 0; z-index: 1000; }
 
