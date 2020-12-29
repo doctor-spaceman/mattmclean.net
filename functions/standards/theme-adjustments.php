@@ -11,6 +11,10 @@
   add_action( 'after_setup_theme', 'std_theme_setup' );
 // END / Theme Support
 
+// Application Passwords
+  add_filter( 'wp_is_application_passwords_available', '__return_false' );
+// END / Application Passwords
+
 // Disable Gutenberg default styles
 // function wps_deregister_styles() {
 //   wp_dequeue_style( 'wp-block-library' );
