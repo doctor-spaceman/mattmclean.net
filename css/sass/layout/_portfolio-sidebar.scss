@@ -1,6 +1,16 @@
-.page-template-portfolio-sidebar #pageContent {
-  background-color: c('white');
-  width: 100%;
+.page-template-portfolio-sidebar {
+  align-items: flex-start;
+
+  #pageContent {
+    width: 100%;
+  }
+}
+.page-template-portfolio-sidebar.page-child {
+  #pageContent {
+    background-color: c('white');
+    border-left: 1px solid c('black');
+    min-height: 100vh;
+  }
 }
 .page-template-portfolio-sidebar .masonry {
   opacity: 0;

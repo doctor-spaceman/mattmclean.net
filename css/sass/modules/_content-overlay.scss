@@ -7,7 +7,6 @@
   top: 0;
   left: 0;
   z-index: -1000;
-  transition: all 4s ease;
 
   .grid {
     align-content: center;
@@ -25,6 +24,7 @@
     color: c('black');
     cursor: pointer;
     font-family: $font--heading;
+    margin-bottom: $spacing * .5;
     padding: 0;
     text-transform: uppercase;
     -webkit-appearance: none;
@@ -33,6 +33,7 @@
 
 .overlay--image {
   img {
-    //max-height: 66.66%;
+    margin-bottom: $spacing * .5;
+    max-height: 70vh;
   }
 }

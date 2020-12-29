@@ -15,7 +15,6 @@ header {
 
 #sidebarNav {
   background-color: rgba(255,255,255,.7);
-  border-right: 1px solid c('black');
   height: 100vh;
   min-width: 320px;
 
@@ -24,9 +23,6 @@ header {
     font-family: $font--main;
     margin-bottom: $spacing * 2;
     width: 100%;
-  }
-  & > div {
-    height: 100%;
   }
   .brand {
     display: block;
