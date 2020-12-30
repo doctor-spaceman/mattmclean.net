@@ -11,6 +11,11 @@ header {
   width: 100%;
   top: 0;
   z-index: 1000;
+
+  @include breakpoint--small {
+    background-color: transparent;
+    border: none;
+  }
 }
 
 #sidebarNav {
@@ -38,17 +43,31 @@ header {
 
 .navbar-container {
   position: relative;
+
+  @include breakpoint--small {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    padding: 0px;
+  }
 }
 .navbar-main-content {
   height: $navbarHeight;
+  padding: 0px $spacing;
   position: relative;
   width: 100%;
+
+  @include breakpoint--small {
+    background-color: c('cream');
+    padding: 0 $spacing * 2;
+  }
 }
 .navbar-main-content__brand,
 a.navbar-main-content__brand {
   color: c('black');
   text-decoration: none;
 }
+
 .navbar-main-content__menu {
   background-color: transparent;
   border: none;
@@ -58,45 +77,39 @@ a.navbar-main-content__brand {
   text-transform: uppercase;
   -webkit-appearance: none;
 }
-.navbar-main-banner,
-.navbar-main-banner--mobile {
+
+.navbar-main-banner {
   color: c('white');
   font-size: $font__size--s;
+  letter-spacing: 1px;
   padding: .25rem .5rem .25rem 3rem;
+  position: absolute;
+  transform: rotateZ(90deg);
+  transform-origin: top left;
+
+  @include breakpoint--small {
+    border-bottom: 1px solid c('black');
+    order: 1;
+    padding: $spacing * .25 $spacing * 2;
+    position: unset;
+    transform: rotateZ(0deg);
+  }
 
   h1 {
     font-size: inherit;
     font-weight: inherit;
     justify-content: flex-start;
     height: 100%;
+    margin: 0;
   }
+
   a, 
   a:active,
   a:hover,
   a:link,
   a:visited {
     color: c('white');
-    text-decoration: none;
-  }
-}
-.navbar-main-banner {
-  position: absolute;
-  transform: rotateZ(90deg);
-  transform-origin: top left;
-
-  @include breakpoint--small {
-    display: none;
-  }
-
-  h1 {
-    margin: 0;
-  }
-}
-.navbar-main-banner--mobile {
-  display: none;
-  padding: .25rem 0;
-
-  @include breakpoint--small {
     display: block;
+    text-decoration: none;
   }
 }

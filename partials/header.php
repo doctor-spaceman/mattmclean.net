@@ -1,8 +1,6 @@
 <header>
   <div id="mainNavBar">
-  
     <div class="navbar-container wrapper wrapper--xlarge">
-
       <div class="navbar-main-banner" 
       <?php 
       $page_color;
@@ -21,7 +19,11 @@
       <?php endif; ?>
       >
         <?php if ( is_home() ) : ?>
-        <h1><?php echo get_the_title($posts_page_id); ?></h1>
+        <h1>
+          <a href="<?php echo get_the_permalink($posts_page_id); ?>">
+            <?php echo get_the_title($posts_page_id); ?>
+          </a>
+        </h1>
         <?php elseif ( is_singular('post') ) : ?>
         <div>
           <a href="<?php echo get_the_permalink($posts_page_id); ?>">
@@ -31,7 +33,11 @@
         <?php elseif ( is_404() ) : ?>
         <h1>404 Not Found</h1>
         <?php else : ?>
-        <h1><?php the_title(); ?></h1>
+        <h1>
+          <a href="<?php the_permalink(); ?>">
+            <?php the_title(); ?>
+          </a>
+        </h1>
         <?php endif; ?>
       </div>
 
@@ -42,7 +48,9 @@
         <button class="navbar-main-content__menu">
           Menu
         </button>
-        <?php 
+      </div>
+      
+      <?php 
         wp_nav_menu(
         array(
           'container' => 'nav',
@@ -52,27 +60,7 @@
           'walker' => new Menu_Stylized_Walker()
         )); 
         ?> 
-      </div>
     </div>
 
-    <div 
-      class="navbar-main-banner--mobile" 
-      <?php if ( get_field('page_color') ) : ?>style="background-color:<?php echo esc_html(get_field('page_color')); ?>;"<?php endif; ?>
-    >
-      <h1 class="wrapper">
-        <?php the_title(); ?>
-      </h1>
-    </div>
-    <?php 
-      wp_nav_menu(
-      array(
-        'menu' => 'Main Menu', 
-        'menu_class' => 'menu grid grid--column',
-        'container' => 'nav',
-        'container_class' => 'main-menu--mobile',
-        'walker' => new Menu_Stylized_Walker()
-      )); 
-      ?> 
-  </div>
 
 </header>

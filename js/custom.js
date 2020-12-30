@@ -11,12 +11,16 @@ window.addEventListener('DOMContentLoaded', function (event) {
         mainMenu.classList.remove('is-open');
         mainMenu.classList.add('is-closed');
         mainMenuToggle.textContent = 'Menu';
-        mainMenu.querySelectorAll('.menu-item').setAttribute('tabindex', '-1');
+        mainMenu.querySelectorAll('.menu-item').forEach(function (el) {
+          el.setAttribute('tabindex', '-1');
+        });
       } else {
         mainMenu.classList.add('is-open');
         mainMenu.classList.remove('is-closed');
         mainMenuToggle.textContent = 'Close';
-        mainMenu.querySelectorAll('.menu-item').setAttribute('tabindex', '0');
+        mainMenu.querySelectorAll('.menu-item').forEach(function (el) {
+          el.setAttribute('tabindex', '0');
+        });
       }
     });
   }
