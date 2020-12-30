@@ -17,6 +17,7 @@
       function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
         $object = $item->object;
         $type = $item->type;
+        $id = $item->ID;
         $title = $item->title;
         $permalink = $item->url;
         $pageObj = get_page_by_title($title);
@@ -28,6 +29,7 @@
 
         $output .= '
           <li 
+            id="menu-item-'.$id.'" 
             class="hero-menu-bar '.implode(" ", $item->classes).'" 
             style="background-color: '.$color.';"
           >
@@ -45,7 +47,7 @@
       function start_el(&$output, $item, $depth=0, $args=array(), $id = 0) {
         $object = $item->object;
         $type = $item->type;
-        $id = $item->id;
+        $id = $item->ID;
         $title = $item->title;
         $permalink = $item->url;
         $pageObj = get_page_by_title($title);
