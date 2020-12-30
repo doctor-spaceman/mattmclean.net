@@ -40,28 +40,18 @@
     background-color: c('cream');
     content: '';
     display: block;
+    height: $spacing * 3;
     position: absolute;
     top: 0;
-    left: 0;
-    width: 50%;
-    height: $spacing * 3;
+    transform: skew(-30deg);
     z-index: -10;
   }
-
   &:before {
-    clip-path: polygon(
-      $spacing * 2 0px,
-      $spacing * 2.5 0px,
-      $spacing * .5 100%,
-      0px 100%
-    );
+    left: $spacing;
+    width: $spacing * .5;
   }
   &:after {
-    clip-path: polygon(
-      $spacing * 2.75 0px,
-      $spacing * 3 0px,
-      $spacing 100%,
-      $spacing *.75 100%
-    );
+    left: calc(#{$spacing} + (#{$spacing} * .5) + (#{$spacing} * .25));
+    width: $spacing * .25;
   }
 }
