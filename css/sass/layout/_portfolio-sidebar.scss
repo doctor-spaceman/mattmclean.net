@@ -1,6 +1,10 @@
 .page-template-portfolio-sidebar {
   align-items: flex-start;
 
+  @include breakpoint--small {
+    align-items: stretch;
+  }
+
   #pageContent {
     width: 100%;
   }
@@ -10,7 +14,17 @@
     background-color: c('white');
     border-left: 1px solid c('black');
     min-height: 100vh;
+
+    @include breakpoint--small {
+      border: none;
+    }
   }
+}
+.page-template-portfolio-sidebar h1 {
+  font-family: $font--main;
+  font-weight: $font__weight;
+  letter-spacing: unset;
+  text-transform: uppercase;
 }
 .page-template-portfolio-sidebar .masonry {
   opacity: 0;

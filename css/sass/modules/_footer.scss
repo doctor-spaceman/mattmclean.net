@@ -71,7 +71,31 @@ footer {
 /*---- Sidebar Footer ----*/
 .sidebar-footer {
   background-color: transparent;
-  
+  display: block;
+
+  &--mobile {
+    display: none;
+  }
+}
+.page-child .sidebar-footer {
+  @include breakpoint--small {
+    display: none;
+  }
+
+  &--mobile {
+    border: none;
+    box-sizing: border-box;
+    padding: 0 $spacing * 2;
+
+    @include breakpoint--small {
+      display: block;
+    }
+
+    .footer {
+      border-top: 1px solid c('black');
+      padding-top: $spacing;
+    }
+  }
 }
 .sidebar-footer .footer__social {
   margin-bottom: $spacing * .5;

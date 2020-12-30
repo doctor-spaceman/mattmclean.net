@@ -29,7 +29,7 @@
     <?php endif; ?>
     <?php if ( $footerElements['footer_attribution'] ) : ?>
     <div class="footer__attribution">
-      <?php echo $footerElements['footer_attribution']; ?>
+      <?php echo apply_filters('the_content', $footerElements['footer_attribution']); ?>
     </div>
     <?php endif; ?>
   </div>

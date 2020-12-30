@@ -17,16 +17,14 @@
     />
   </a>
   <?php endif; ?>
+  <button class="navbar-main-content__menu">
+    Menu
+  </button>
 </header>
-<?php if ( $post->post_parent ) : //is a child page ?>
-<nav id="mainNav" class="sidebar-nav sidebar-wrapper" style="flex: 1 0 auto;">
-<?php else : ?>
-<nav id="mainNav" class="sidebar-nav sidebar-wrapper top-level" style="flex: 1 0 auto;">
-<?php endif; ?>
+<nav id="mainNav" class="sidebar-nav sidebar-wrapper">
   <?php
   wp_nav_menu(
   array(
-      //'menu' => 'Photo Menu', 
       'theme_location' => 'sidebar-menu-photography',
       'container_class' => 'sidebar-menu'
   )); 

@@ -10,29 +10,38 @@ body {
   display: flex;
   flex-direction: column;
   -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
+}
+body:not(.home) main {
+  margin-top: $navbarHeight;
 
-  &:not(.home) main {
-    margin-top: $navbarHeight;
+  @include breakpoint--small {
+    margin-top: calc(#{$navbarHeight} + #{$spacing} + (#{$spacing} / 2));
+  }
+}
+body.has-sidebar {
+  flex-direction: row;
   
+  &.page-child {
     @include breakpoint--small {
-      margin-top: calc(#{$navbarHeight} + #{$spacing} + (#{$spacing} / 2));
+      flex-direction: column;
     }
-  }
-
-  &.has-sidebar {
-    flex-direction: row;
 
     main {
-      margin-top: 0px;
-    }
-    .section {
-      padding-right: $spacing * 2;
+      @include breakpoint--small {
+        flex: 1 0 auto;
+      }
     }
   }
-  &:not(.has-sidebar) {
-    main {
-      flex: 1 0 auto;
-    }
+  main {
+    margin-top: 0px;
+  }
+  .section {
+    padding-right: $spacing * 2;
+  }
+}
+body:not(.has-sidebar) {
+  main {
+    flex: 1 0 auto;
   }
 }
 

@@ -27,17 +27,42 @@ header {
     border-bottom: 1px solid c('black');
     font-family: $font--main;
     margin-bottom: $spacing * 2;
+    padding-bottom: $spacing;
     width: 100%;
   }
   .brand {
     display: block;
     max-width: 120px;
     margin: 0 auto;
-    padding-bottom: $spacing;
+  }
+  .navbar-main-content__menu {
+    display: none;
+  }
+}
+.page-child #sidebarNav {
+  background-color: c('white');
+  padding-bottom: 0px;
+  
+  @include breakpoint--small {
+    width: 100%;
   }
 
-  .page-child & {
-    background-color: c('white');
+  header {
+    @include breakpoint--small {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  .brand {
+    @include breakpoint--small {
+      margin: 0px;
+      max-width: 84px;
+    }
+  }
+  .navbar-main-content__menu {
+    @include breakpoint--small {
+      display: block;
+    }
   }
 }
 

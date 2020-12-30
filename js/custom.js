@@ -1,29 +1,40 @@
 "use strict";
 
-//----------MENU BEHAVIOR----------
 window.addEventListener('DOMContentLoaded', function (event) {
-  var mainMenuToggle = document.querySelector('.navbar-main-content__menu');
+  /*------ Main Menu ------*/
+  var menuToggle = document.querySelector('.navbar-main-content__menu');
   var mainMenu = document.querySelector('nav.main-menu');
+  var sidebarMenu = document.querySelector('nav.sidebar-nav');
 
-  if (mainMenuToggle) {
-    mainMenuToggle.addEventListener('click', function (event) {
-      if (mainMenu.classList.contains('is-open')) {
-        mainMenu.classList.remove('is-open');
-        mainMenu.classList.add('is-closed');
-        mainMenuToggle.textContent = 'Menu';
-        mainMenu.querySelectorAll('.menu-item').forEach(function (el) {
-          el.setAttribute('tabindex', '-1');
-        });
-      } else {
-        mainMenu.classList.add('is-open');
-        mainMenu.classList.remove('is-closed');
-        mainMenuToggle.textContent = 'Close';
-        mainMenu.querySelectorAll('.menu-item').forEach(function (el) {
-          el.setAttribute('tabindex', '0');
-        });
+  if (menuToggle) {
+    menuToggle.addEventListener('click', function (event) {
+      if (mainMenu) {
+        toggleMenu(mainMenu);
+      }
+
+      if (sidebarMenu) {
+        toggleMenu(sidebarMenu);
       }
     });
   }
+
+  var toggleMenu = function toggleMenu(menu) {
+    if (menu.classList.contains('is-open')) {
+      menu.classList.remove('is-open');
+      menu.classList.add('is-closed');
+      menuToggle.textContent = 'Menu';
+      menu.querySelectorAll('.menu-item').forEach(function (el) {
+        el.setAttribute('tabindex', '-1');
+      });
+    } else {
+      menu.classList.add('is-open');
+      menu.classList.remove('is-closed');
+      menuToggle.textContent = 'Close';
+      menu.querySelectorAll('.menu-item').forEach(function (el) {
+        el.setAttribute('tabindex', '0');
+      });
+    }
+  };
   /*------ Content Overlay ------*/
 
 
@@ -38,18 +49,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
       overlayContents.innerHTML = '';
     });
   }
-}); // Define how mobile menu is toggled
-// var toggleMenu = function () {
-//   $('#navIcon').toggleClass('open');
-//   $('.screen-overlay').toggle();
-//   $('.main-menu').toggleClass('mobile-menu');
-//   $('.main-menu--vertical').toggleClass('mobile-menu');
-//   $('.sidebar-nav-container').toggleClass('past-hero');
-// }
-// // Enable mobile menu when clicking hamburger icon
-// $('#navIcon').click(function() { toggleMenu(); } );
-// // Disable mobile menu when clicking anywhere
-// $('.screen-overlay').click(function() { toggleMenu(); } );
+});
 "use strict";
 
 // Homepage hero interactive element

@@ -148,6 +148,10 @@ body:not(.home) main { margin-top: 3rem; }
 
 body.has-sidebar { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
 
+@media only screen and (max-width: 599px) { body.has-sidebar.page-child { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; } }
+
+@media only screen and (max-width: 599px) { body.has-sidebar.page-child main { -webkit-box-flex: 1; -ms-flex: 1 0 auto; flex: 1 0 auto; } }
+
 body.has-sidebar main { margin-top: 0px; }
 
 body.has-sidebar .section { padding-right: 2rem; }
@@ -573,9 +577,15 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 
 .page-template-portfolio-sidebar { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
 
+@media only screen and (max-width: 599px) { .page-template-portfolio-sidebar { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; } }
+
 .page-template-portfolio-sidebar #pageContent { width: 100%; }
 
 .page-template-portfolio-sidebar.page-child #pageContent { background-color: #ffffff; border-left: 1px solid #363636; min-height: 100vh; }
+
+@media only screen and (max-width: 599px) { .page-template-portfolio-sidebar.page-child #pageContent { border: none; } }
+
+.page-template-portfolio-sidebar h1 { font-family: "Archivo", "Roboto", "Tahoma", sans-serif; font-weight: 400; letter-spacing: unset; text-transform: uppercase; }
 
 .page-template-portfolio-sidebar .masonry { opacity: 0; width: 100%; -webkit-transition: opacity 2s ease; transition: opacity 2s ease; }
 
@@ -639,11 +649,21 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 #sidebarNav { background-color: rgba(255, 255, 255, 0.7); height: 100vh; min-width: 320px; }
 
-#sidebarNav header { border-bottom: 1px solid #363636; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; width: 100%; }
+#sidebarNav header { border-bottom: 1px solid #363636; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; padding-bottom: 1rem; width: 100%; }
 
-#sidebarNav .brand { display: block; max-width: 120px; margin: 0 auto; padding-bottom: 1rem; }
+#sidebarNav .brand { display: block; max-width: 120px; margin: 0 auto; }
 
-.page-child #sidebarNav { background-color: #ffffff; }
+#sidebarNav .navbar-main-content__menu { display: none; }
+
+.page-child #sidebarNav { background-color: #ffffff; padding-bottom: 0px; }
+
+@media only screen and (max-width: 599px) { .page-child #sidebarNav { width: 100%; } }
+
+@media only screen and (max-width: 599px) { .page-child #sidebarNav header { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; } }
+
+@media only screen and (max-width: 599px) { .page-child #sidebarNav .brand { margin: 0px; max-width: 84px; } }
+
+@media only screen and (max-width: 599px) { .page-child #sidebarNav .navbar-main-content__menu { display: block; } }
 
 .navbar-container { position: relative; }
 
@@ -696,7 +716,17 @@ footer { background-color: #EBDBB2; }
 @media only screen and (min-width: 599px) { .footer__attribution p { margin: 0; } }
 
 /*---- Sidebar Footer ----*/
-.sidebar-footer { background-color: transparent; }
+.sidebar-footer { background-color: transparent; display: block; }
+
+.sidebar-footer--mobile { display: none; }
+
+@media only screen and (max-width: 599px) { .page-child .sidebar-footer { display: none; } }
+
+.page-child .sidebar-footer--mobile { border: none; -webkit-box-sizing: border-box; box-sizing: border-box; padding: 0 2rem; }
+
+@media only screen and (max-width: 599px) { .page-child .sidebar-footer--mobile { display: block; } }
+
+.page-child .sidebar-footer--mobile .footer { border-top: 1px solid #363636; padding-top: 1rem; }
 
 .sidebar-footer .footer__social { margin-bottom: 0.5rem; }
 
@@ -783,6 +813,25 @@ a:hover, a:active { color: dimgray; }
     -webkit-transform: translateX(100%);
             transform: translateX(100%); } }
 
+/*---- Sidebar Menu ----*/
+.page-child .sidebar-nav { -webkit-transition: all .2s ease; transition: all .2s ease; }
+
+@media only screen and (max-width: 599px) { .page-child .sidebar-nav { border-bottom: 1px solid #363636; max-height: 0; opacity: 0; visibility: hidden; } }
+
+@media only screen and (max-width: 599px) { .page-child .sidebar-nav.is-open { max-height: 1200px; opacity: 1; padding-bottom: 2rem; visibility: visible; } }
+
+.sidebar-menu { font-size: 1.2rem; text-transform: uppercase; }
+
+.sidebar-menu .menu-item { margin-right: 2rem; padding: 0.5rem 0; }
+
+.sidebar-menu .menu-item a { text-decoration: none; }
+
+.page-child .sidebar-menu .menu-item:not(.current-menu-item) a, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:link, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:visited { color: #b6b5b5; }
+
+.page-child .sidebar-menu .menu-item:not(.current-menu-item) a:active, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:hover { color: #363636; }
+
+.page-child .sidebar-menu .menu-item.current-menu-item { font-size: 2rem; }
+
 /*---- Pagination ----*/
 .pagination { border-top: 1px solid #363636; margin-top: 2rem; padding-top: 4px; }
 
@@ -808,19 +857,6 @@ a:hover, a:active { color: dimgray; }
 .breadcrumb { display: block; margin-top: 1rem; text-transform: uppercase; }
 
 .breadcrumb ol { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; padding: 0px; }
-
-/*---- Sidebar Menu ----*/
-.sidebar-menu { font-size: 1.2rem; text-transform: uppercase; }
-
-.sidebar-menu .menu-item { margin-right: 2rem; padding: 0.5rem 0; }
-
-.sidebar-menu .menu-item a { text-decoration: none; }
-
-.page-child .sidebar-menu .menu-item:not(.current-menu-item) a, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:link, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:visited { color: #b6b5b5; }
-
-.page-child .sidebar-menu .menu-item:not(.current-menu-item) a:active, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:hover { color: #363636; }
-
-.page-child .sidebar-menu .menu-item.current-menu-item { font-size: 2rem; }
 
 .social-icons { background-color: #EBDBB2; border-radius: 1rem; padding: 1rem; }
 
