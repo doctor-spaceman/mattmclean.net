@@ -1,6 +1,4 @@
 jQuery(function(){
-  
-  var sliders = jQuery('.slider');
 
   // Vertical slider (Portfolio)
   var slidesLeft = jQuery('.slider-vertical__left > div');
@@ -29,7 +27,12 @@ jQuery(function(){
       {
         breakpoint: 782,
         settings: {
-          slidesToShow: 1,
+          centerMode: true,
+          centerPadding: '16px',
+          prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
+          nextArrow: '<button type="button" class="slick-next" aria-label="Next"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
+          rows: 0,
+          slidesToShow: 3,
           vertical: false, 
           verticalSwiping: false,
         }
@@ -95,11 +98,15 @@ jQuery(function(){
     });
   }
 
+  
   /**
   * FIX JUMPING ANIMATION
   * Set special animation class on first or last clone.
   * https://github.com/kenwheeler/slick/issues/3419
   */
+
+  var sliders = jQuery('.slider-vertical__left.slider');
+
   sliders.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
     var 
       direction,
@@ -135,7 +142,7 @@ jQuery(function(){
   });
 
   sliders.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-    $('.slick-current-clone-animate', sliders).removeClass('slick-current-clone-animate');
+    $('.slider-vertical__left .slick-current-clone-animate', sliders).removeClass('slick-current-clone-animate');
     //$('.slick-current-clone-animate', sliders).removeClass('slick-current-clone-animate');
   });
 

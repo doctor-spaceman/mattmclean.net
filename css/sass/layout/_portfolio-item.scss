@@ -1,13 +1,15 @@
 .page-template-portfolio-item .slider-vertical__left {
   .slick-slide {
     font-size: $font__size--m;
-
-    @include breakpoint--small {
+    
+    @include breakpoint--medium {
       font-size: $font__size--base;
     }
+    
   }
 }
 .page-template-portfolio-item .slider-vertical__right {
+  // Child slider
   .slider {
     margin: 0px;
     visibility: hidden;
