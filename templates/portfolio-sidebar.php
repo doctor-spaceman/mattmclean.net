@@ -30,11 +30,9 @@ Template Name: Portfolio Sidebar
       $image_src = wp_get_attachment_image_url($image, 'medium');
       $image_src_full = wp_get_attachment_image_url($image, 'full');
       $image_srcset = wp_get_attachment_image_srcset($image, 'medium');
-      $image_sizes = '
-        (max-width: 782px) 400px,
-        (max-width: 880px) 240px,
-        (max-width: 1000px) 320px,
-        100vw';
+      $image_sizes = '(min-width: 782px) 50vw,
+                      (min-width: 1000px) 33.3vw,
+                      100vw';
       $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
       
       ?>
