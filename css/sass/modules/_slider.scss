@@ -130,6 +130,8 @@
 
   li.slick-active {
     background-color: c('cream');
+    border: 1px solid c('black');
+    transform: scale(1.1);
   }
 }
 // END / Dots
@@ -142,19 +144,42 @@ ul.slider {
 
 /* Vertical Slider */
 .slider-vertical {
-  @include breakpoint--medium-large {
-    .col-1-3, 
-    .col-2-3 {
+  .col-1-3 {
+    .slider-vertical__left .slick-slide {
+      font-size: $font__size--m;
+    }
+    
+  }
+  .col-1-2 {
+    .slider-vertical__left .slick-slide {
+      font-size: $font__size--l;
+    }
+  }
+  .col-1-3, 
+  .col-1-2 {
+    .slider-vertical__left .slick-slide {
+      @include breakpoint--medium-large {
+        font-size: $font__size--m;
+      }
+      @include breakpoint--medium {
+        font-size: $font__size--base;
+      }
+    }
+  }
+  .col-1-3, 
+  .col-2-3 {
+    @include breakpoint--medium-large {
       width: 50%;
     }
   }
-  @include breakpoint--medium {
-    .col-1-2, 
-    .col-1-3, 
-    .col-2-3 {
+  .col-1-2, 
+  .col-1-3, 
+  .col-2-3 {
+    @include breakpoint--medium {
       width: 100%;
     }
   }
+  
   &__left {
     display: flex;
     flex-direction: column;
@@ -174,7 +199,6 @@ ul.slider {
     }
 
     .slick-slide {
-      font-size: $font__size--l;
       opacity: .4;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -185,10 +209,7 @@ ul.slider {
       white-space: nowrap;
   
       @include breakpoint--medium {
-        font-size: $font__size--base;
-        overflow: initial;
         text-align: center;
-        text-overflow: initial;
         transform-origin: center center;
         white-space: initial;
       }

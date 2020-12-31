@@ -115,7 +115,7 @@ a.navbar-main-content__brand {
   @include breakpoint--small {
     border-bottom: 1px solid c('black');
     order: 1;
-    padding: $spacing * .25 $spacing * 2;
+    padding: $spacing * .5 $spacing * 2 $spacing *.25 $spacing * 2;
     position: unset;
     transform: rotateZ(0deg);
   }
@@ -123,7 +123,6 @@ a.navbar-main-content__brand {
   h1 {
     font-size: inherit;
     font-weight: inherit;
-    justify-content: flex-start;
     height: 100%;
     margin: 0;
   }

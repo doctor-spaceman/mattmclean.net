@@ -1,9 +1,9 @@
 .page-template-portfolio-item .slider-vertical__left {
   .slick-slide {
-    font-size: $font__size--m;
+    // font-size: $font__size--m;
     
     @include breakpoint--medium {
-      font-size: $font__size--base;
+      // font-size: $font__size--base;
     }
     
   }

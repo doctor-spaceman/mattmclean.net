@@ -47,7 +47,7 @@
     text-decoration: none;
 
     @include breakpoint--small {
-      padding: $spacing * .25 0;
+      padding: $spacing * .5 0 $spacing * .25 0;
     }
   }
   a:link,
