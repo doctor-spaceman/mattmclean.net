@@ -42,9 +42,16 @@
       <div id="walkway" class="slider slider-vertical__right">
       <?php 
       if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post(); 
-      ?>
+        $section_icon = get_field('section_icon'); ?>
+
         <div class="content">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2px" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+        
+        <?php 
+        if ( $section_icon ) : 
+          $section_icon_url = $section_icon['url'];
+          echo file_get_contents($section_icon_url); 
+        endif; ?>
+
           <p><?php echo get_the_excerpt(); ?></p>
           <a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a>
         </div>

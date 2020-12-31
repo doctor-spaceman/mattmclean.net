@@ -497,9 +497,7 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 
 @media only screen and (max-width: 599px) { #hikeMap { height: 400px; } }
 
-.page-template-portfolio-item .slider-vertical__right .slider { margin: 0px; visibility: hidden; }
-
-.page-template-portfolio-item .slider-vertical__right .slider.slick-initialized { visibility: visible; }
+.page-template-portfolio-item .slider-vertical__right .slider { margin: 0px; }
 
 .page-template-portfolio-item .slider-vertical__right .slider .slick-slide img { margin: 0 auto; max-height: 540px; width: auto; }
 
@@ -939,7 +937,7 @@ div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; backg
 
 .slick-arrow.slick-hidden { display: none; }
 
-.slick-dots { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; list-style: none; margin-top: 1rem; padding: 0; }
+.slick-dots { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; height: 1.5rem; list-style: none; margin-top: 1rem; padding: 0; }
 
 .slick-dots li { background-color: dimgray; border: 1px solid #363636; cursor: pointer; height: 0.75rem; -webkit-box-flex: 0; -ms-flex: 0 1 2rem; flex: 0 1 2rem; -webkit-transition: all .1s ease; transition: all .1s ease; }
 
@@ -950,6 +948,10 @@ div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; backg
 .slick-dots li:hover { background-color: #504f4f; }
 
 .slick-dots li.slick-active { background-color: #EBDBB2; border: 1px solid #363636; -webkit-transform: scale(1.1); transform: scale(1.1); }
+
+.slider { visibility: hidden; }
+
+.slider.slick-initialized { visibility: visible; }
 
 ul.slider { list-style: none; padding: 0px; width: auto; }
 

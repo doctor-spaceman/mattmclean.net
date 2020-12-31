@@ -12,12 +12,6 @@
   // Child slider
   .slider {
     margin: 0px;
-    visibility: hidden;
-    // transition: visibility .2s ease;
-
-    &.slick-initialized {
-      visibility: visible;
-    }
 
     .slick-slide {
       img {

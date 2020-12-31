@@ -105,6 +105,7 @@
   align-items: center;
   flex-wrap: nowrap;
   justify-content: center;
+  height: $spacing * 1.5;
   list-style: none;
   margin-top: $spacing;
   padding: 0;
@@ -136,11 +137,20 @@
 }
 // END / Dots
 
+
+.slider {
+  visibility: hidden;
+
+  &.slick-initialized {
+    visibility: visible;
+  }
+}
 ul.slider {
   list-style: none;
   padding: 0px;
   width: auto;
 }
+
 
 /* Vertical Slider */
 .slider-vertical {

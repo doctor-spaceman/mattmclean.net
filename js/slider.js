@@ -2741,6 +2741,18 @@ jQuery(function () {
         vertical: false,
         verticalSwiping: false
       }
+    }, {
+      breakpoint: 599,
+      settings: {
+        centerMode: true,
+        centerPadding: '16px',
+        prevArrow: '<button type="button" class="slick-prev" aria-label="Previous"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
+        nextArrow: '<button type="button" class="slick-next" aria-label="Next"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
+        rows: 0,
+        slidesToShow: 1,
+        vertical: false,
+        verticalSwiping: false
+      }
     }]
   });
   jQuery('.slider-vertical__right').slick({
@@ -2794,11 +2806,8 @@ jQuery(function () {
     } else {
       // e.g., slide 0 to slide 6
       direction = nextSlide - currentSlide > 0 ? "left" : "right";
-    }
+    } // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
 
-    console.log(direction);
-    console.log(currentSlide);
-    console.log(nextSlide); // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
 
     if (direction == 'duo') {
       jQuery('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
@@ -2811,7 +2820,6 @@ jQuery(function () {
 
     if (direction == 'left') {
       jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
-      jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('look-at-me');
     }
   });
   sliders.on('afterChange', function (event, slick, currentSlide, nextSlide) {
@@ -2822,23 +2830,32 @@ jQuery(function () {
    * 
    */
 
-  var svg;
+  var svgFirst, svgActive;
   var hasIcons = jQuery('#walkway.slider'); // If we know there will be icons, init Walkway on the first slide
 
   if (hasIcons.length) {
     var firstIcon = '#walkway svg:first-of-type';
-    svg = new Walkway({
+    svgFirst = new Walkway({
       selector: firstIcon,
-      duration: 3000
+      duration: '3000',
+      easing: function easing(t) {
+        return t;
+      } // linear
+
     });
-    svg.draw();
+    svgFirst.draw(); // On slide change
+
     jQuery('.slider-vertical__right').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
       var activeSlideIcon = ".slick-slide[data-slick-index=\"".concat(nextSlide, "\"] svg");
-      svg = new Walkway({
+      svgActive = new Walkway({
         selector: activeSlideIcon,
-        duration: 3000
+        duration: '3000',
+        easing: function easing(t) {
+          return t;
+        } // linear
+
       });
-      svg.redraw();
+      svgActive.draw();
     });
   }
 });
