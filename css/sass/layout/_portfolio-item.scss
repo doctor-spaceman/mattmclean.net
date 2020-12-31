@@ -23,6 +23,7 @@
       img {
         margin: 0 auto;
         max-height: 540px;
+        width: auto;
 
         @include breakpoint--medium {
           max-height: 400px;

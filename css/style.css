@@ -567,7 +567,7 @@ html#ecwid_html body#ecwid_body div.ecwid-fieldEnvelope-label { color: #db1c45 !
 
 .page-template-portfolio-item .slider-vertical__right .slider.slick-initialized { visibility: visible; }
 
-.page-template-portfolio-item .slider-vertical__right .slider .slick-slide img { margin: 0 auto; max-height: 540px; }
+.page-template-portfolio-item .slider-vertical__right .slider .slick-slide img { margin: 0 auto; max-height: 540px; width: auto; }
 
 @media only screen and (max-width: 782px) { .page-template-portfolio-item .slider-vertical__right .slider .slick-slide img { max-height: 400px; } }
 
