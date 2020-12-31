@@ -2741,10 +2741,7 @@ jQuery(function () {
         vertical: false,
         verticalSwiping: false
       }
-    } // You can unslick at a given breakpoint now by adding:
-    // settings: "unslick"
-    // instead of a settings object
-    ]
+    }]
   });
   jQuery('.slider-vertical__right').slick({
     arrows: false,
@@ -2769,9 +2766,57 @@ jQuery(function () {
     slidesToShow: 1,
     swipe: false
   }); // Refresh the right-side slider so it can recalculate 
-  // its width after its child slider has initialized.
+  // its size after its child slider has initialized.
 
   jQuery('.slider-vertical__right').slick('refresh');
+  /**
+  * FIX JUMPING ANIMATION
+  * Set special animation class on first or last clone.
+  * https://github.com/kenwheeler/slick/issues/3419
+  */
+
+  var sliders = jQuery('.slider-vertical__left');
+  sliders.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+    var direction,
+        slideCountZeroBased = slick.slideCount - 1;
+
+    if (nextSlide == currentSlide) {
+      direction = "same";
+    } else if (Math.abs(nextSlide - currentSlide) == 1) {
+      // 1 or -1
+      if (slideCountZeroBased === 1) {
+        // If there's only two slides
+        direction = "duo";
+      } else {
+        // More than two slides
+        direction = nextSlide - currentSlide > 0 ? "right" : "left";
+      }
+    } else {
+      // e.g., slide 0 to slide 6
+      direction = nextSlide - currentSlide > 0 ? "left" : "right";
+    }
+
+    console.log(direction);
+    console.log(currentSlide);
+    console.log(nextSlide); // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
+
+    if (direction == 'duo') {
+      jQuery('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
+      jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
+    }
+
+    if (direction == 'right') {
+      jQuery('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
+    }
+
+    if (direction == 'left') {
+      jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
+      jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('look-at-me');
+    }
+  });
+  sliders.on('afterChange', function (event, slick, currentSlide, nextSlide) {
+    jQuery('.slick-current-clone-animate', sliders).removeClass('slick-current-clone-animate');
+  });
   /**
    * Supports svg drawing in a slider
    * 
@@ -2796,49 +2841,4 @@ jQuery(function () {
       svg.redraw();
     });
   }
-  /**
-  * FIX JUMPING ANIMATION
-  * Set special animation class on first or last clone.
-  * https://github.com/kenwheeler/slick/issues/3419
-  */
-
-
-  var sliders = jQuery('.slider-vertical__left.slider');
-  sliders.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-    var direction,
-        slideCountZeroBased = slick.slideCount - 1;
-
-    if (nextSlide == currentSlide) {
-      direction = "same";
-    } else if (Math.abs(nextSlide - currentSlide) == 1) {
-      // 1 or -1
-      if (slideCountZeroBased === 1) {
-        // If there's only two slides
-        direction = "duo";
-      } else {
-        // More than two slides
-        direction = nextSlide - currentSlide > 0 ? "right" : "left";
-      }
-    } else {
-      // e.g., slide 0 to slide 6
-      direction = nextSlide - currentSlide > 0 ? "left" : "right";
-    } // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
-
-
-    if (direction == 'duo') {
-      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
-      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
-    }
-
-    if (direction == 'right') {
-      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
-    }
-
-    if (direction == 'left') {
-      $('.slider-vertical__left .slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
-    }
-  });
-  sliders.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-    $('.slider-vertical__left .slick-current-clone-animate', sliders).removeClass('slick-current-clone-animate'); //$('.slick-current-clone-animate', sliders).removeClass('slick-current-clone-animate');
-  });
 });
