@@ -95,10 +95,6 @@ jQuery(function(){
       direction = (nextSlide - currentSlide > 0) ? "left" : "right";
     }
 
-    console.log(direction);
-    console.log(currentSlide);
-    console.log(nextSlide);
-
     // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
     if (direction == 'duo') {  
       jQuery('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
@@ -112,7 +108,6 @@ jQuery(function(){
 
     if (direction == 'left') {
       jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
-      jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('look-at-me');
     }
   });
 
