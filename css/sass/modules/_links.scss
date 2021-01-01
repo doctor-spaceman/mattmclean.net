@@ -1,4 +1,4 @@
-/* Basic Link Styling */
+/*---- Basic Link Styling ----*/
 a:link,
 a:visited {
   color: c('black');
@@ -8,35 +8,21 @@ a:active {
   color: lighten(c('black'),20%);
 }
 
-/* Other Links */
+/*---- Other Links ----*/
 
 
-/* Button Styling */
-.cta,
-button.cta {
-	background: #363636;
-	color: #fff;
+/*---- Button Styling ----*/
+.cta {
+	background-color: c('cream');
+	color: c('black');
 	cursor: pointer;
 	text-transform: uppercase;
 	padding: .5em;
 	margin: .5em 0;
 	display: inline-block;
-	border: 2px solid #fff;
-}
-.cta:hover,
-button.cta:hover {
-	color: #fbb33d;
-}
-
-/* Socials */
-.social {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-  font-size: 1.8em;
-  list-style: none;
-
-  li {
-    padding: 0 1em;
+	border: 1px solid c('black');
+  
+  &:hover {
+    background-color: darken(c('cream'), 10%);
   }
 }

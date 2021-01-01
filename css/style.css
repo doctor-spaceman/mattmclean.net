@@ -310,15 +310,8 @@ h2, .h2 { font-size: 1.2rem; }
 
 .uppercase { text-transform: uppercase; }
 
-h2.sec-header, h3.sec-header { border-bottom: 3px solid #fff; margin-top: 1em; padding-bottom: .1em; }
-
-h3.sec-header { display: inline-block; margin-top: 0; }
-
 /*nested lists*/
 ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
-
-/* Captions */
-.wp-caption-text { width: 90%; text-align: center; margin-top: 0; font-size: .75em; font-style: italic; color: #a2a2a2; }
 
 /* Layout */
 .home header { background-color: #aba594; border-bottom: 1px solid #363636; height: 524px; }
@@ -626,21 +619,16 @@ footer { background-color: #EBDBB2; }
 
 .sidebar-footer .footer__social { margin-bottom: 0.5rem; }
 
-/* Basic Link Styling */
+/*---- Basic Link Styling ----*/
 a:link, a:visited { color: #363636; }
 
 a:hover, a:active { color: dimgray; }
 
-/* Other Links */
-/* Button Styling */
-.cta, button.cta { background: #363636; color: #fff; cursor: pointer; text-transform: uppercase; padding: .5em; margin: .5em 0; display: inline-block; border: 2px solid #fff; }
+/*---- Other Links ----*/
+/*---- Button Styling ----*/
+.cta { background-color: #EBDBB2; color: #363636; cursor: pointer; text-transform: uppercase; padding: .5em; margin: .5em 0; display: inline-block; border: 1px solid #363636; }
 
-.cta:hover, button.cta:hover { color: #fbb33d; }
-
-/* Socials */
-.social { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: wrap; flex-wrap: wrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-size: 1.8em; list-style: none; }
-
-.social li { padding: 0 1em; }
+.cta:hover { background-color: #e0c88a; }
 
 /*---------- NAVIGATION ----------*/
 .menu { list-style: none; margin: 0; padding: 0; }
@@ -756,17 +744,17 @@ a:hover, a:active { color: dimgray; }
 
 .social-icons { border-top: 1px solid #363636; list-style: none; padding-top: 2rem; }
 
-.social-icons ul { -webkit-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; list-style: none; margin: 0px; padding: 0px; width: 100%; }
+.social-icons ul { -webkit-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; list-style: none; margin: 0 -0.25rem; padding: 0px; width: 100%; }
 
 .social-icons ul:hover li { opacity: .5; }
 
 .social-icons ul:hover li:hover { opacity: 1; }
 
-.social-icons li { max-width: 2.4rem; -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
+.social-icons li { max-width: 2.4rem; padding: 0 0.25rem; -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
 
-.social-icons li:not(:last-child) { padding-right: 0.5rem; }
+.social-icons img { border-radius: 0px; -webkit-transform: rotateZ(0deg); transform: rotateZ(0deg); }
 
-.social-icons img { border-radius: 0px; }
+.social-icons img:hover { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); -webkit-transform-origin: center center; transform-origin: center center; -webkit-transition: -webkit-transform .2s ease; transition: -webkit-transform .2s ease; transition: transform .2s ease; transition: transform .2s ease, -webkit-transform .2s ease; }
 
 /*-----Contact Form-----*/
 /*styling*/
