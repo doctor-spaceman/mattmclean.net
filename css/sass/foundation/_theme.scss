@@ -76,6 +76,9 @@ iframe {
   // Corner graphic element
   @include accent-graphic;
 
+  &--block {
+    @include accent-block;
+  }
   &--slant {
     @include accent-slant;
   }

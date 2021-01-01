@@ -194,9 +194,11 @@ body:not(.has-sidebar) main { -webkit-box-flex: 1; -ms-flex: 1 0 auto; flex: 1 0
 
 @media only screen and (max-width: 599px) { .wrapper--xlarge { padding: 0px 2rem; } }
 
-.section { padding: 2rem 0; }
+.section { padding: 1rem 0; }
 
 .section--s { padding: 0.5rem 0; }
+
+.section--l { padding: 2rem 0; }
 
 .content { -webkit-box-sizing: border-box; box-sizing: border-box; padding: 1rem; }
 
@@ -246,6 +248,10 @@ iframe { border: none; }
 
 .corner:after { -webkit-clip-path: polygon(calc(100px + 0.5rem) 0px, calc(100px + 0.5rem + 0.5rem) 0px, 0px calc(100px + 0.5rem + 0.5rem), 0px calc(100px + 0.5rem)); clip-path: polygon(calc(100px + 0.5rem) 0px, calc(100px + 0.5rem + 0.5rem) 0px, 0px calc(100px + 0.5rem + 0.5rem), 0px calc(100px + 0.5rem)); }
 
+.corner--block { position: relative; }
+
+.corner--block:after { background-color: #EBDBB2; content: ''; display: block; position: absolute; top: 0; left: 1rem; height: 100%; width: 2rem; -webkit-transform: skew(-30deg); transform: skew(-30deg); -webkit-transform-origin: left bottom; transform-origin: left bottom; z-index: -10; }
+
 .corner--slant { position: relative; }
 
 .corner--slant:before, .corner--slant:after { background-color: #EBDBB2; content: ''; display: block; height: 3rem; position: absolute; top: 0; -webkit-transform: skew(-30deg); transform: skew(-30deg); z-index: -10; }
@@ -279,9 +285,11 @@ body { color: #363636; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; f
 @media only screen and (max-width: 599px) { body { line-height: 1.3; } }
 
 /* Blockquote */
-blockquote { border-left: 4px solid #D97373; font-size: 125%; margin: 1rem 0; padding: 0 0 0 1rem; }
+blockquote { font-size: 125%; margin: 1rem 0; padding: 0 0.5rem; position: relative; }
 
-blockquote p { margin: 0; padding: 0; }
+blockquote:after { background-color: #EBDBB2; content: ''; display: block; position: absolute; top: 0; left: 1rem; height: 100%; width: 2rem; -webkit-transform: skew(-30deg); transform: skew(-30deg); -webkit-transform-origin: left bottom; transform-origin: left bottom; z-index: -10; }
+
+blockquote p { margin: 0; padding: 0; position: relative; z-index: 1; }
 
 p { margin-top: 0; }
 
@@ -394,61 +402,15 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 
 @media only screen and (max-width: 599px) { .hero-menu-bar__text { padding: 5px 0px; font-size: 2rem; } }
 
-#homepageIntro { margin-top: 14rem; }
+#homepageIntro { margin-top: 3rem; }
 
-@media only screen and (max-width: 599px) { #homepageIntro { margin-top: 10rem; } }
+@media only screen and (max-width: 782px) { #homepageIntro { margin-top: 8rem; } }
 
-@-webkit-keyframes sizzle { 0% { opacity: 0; }
-  33% { opacity: 0; }
-  34% { opacity: 1; }
-  35% { opacity: 0; }
-  40% { opacity: 0; }
-  41% { opacity: 1; }
-  55% { opacity: 1; }
-  56% { opacity: 0; }
-  66% { opacity: 0; }
-  67% { opacity: 1; }
-  68% { opacity: 0; }
-  80% { opacity: 0; }
-  81% { opacity: 1; }
-  82% { opacity: 0; }
-  83% { opacity: 1; }
-  84% { opacity: 0; }
-  100% { opacity: 0; } }
+#homepageIntro > .grid { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; text-align: right; }
 
-@keyframes sizzle { 0% { opacity: 0; }
-  33% { opacity: 0; }
-  34% { opacity: 1; }
-  35% { opacity: 0; }
-  40% { opacity: 0; }
-  41% { opacity: 1; }
-  55% { opacity: 1; }
-  56% { opacity: 0; }
-  66% { opacity: 0; }
-  67% { opacity: 1; }
-  68% { opacity: 0; }
-  80% { opacity: 0; }
-  81% { opacity: 1; }
-  82% { opacity: 0; }
-  83% { opacity: 1; }
-  84% { opacity: 0; }
-  100% { opacity: 0; } }
+@media only screen and (max-width: 599px) { #homepageIntro > .grid { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; text-align: left; } }
 
-@-webkit-keyframes fade { 0% { opacity: 0; }
-  5% { opacity: 0; }
-  37% { opacity: .5; }
-  50% { opacity: .5; }
-  63% { opacity: .5; }
-  95% { opacity: .25; }
-  100% { opacity: 0; } }
-
-@keyframes fade { 0% { opacity: 0; }
-  5% { opacity: 0; }
-  37% { opacity: .5; }
-  50% { opacity: .5; }
-  63% { opacity: .5; }
-  95% { opacity: .25; }
-  100% { opacity: 0; } }
+#homepageIntro p { margin: 0px; }
 
 @-webkit-keyframes shakeZ { 0% { -webkit-transform: rotateZ(90deg) translateX(-50px) translateY(-25px); transform: rotateZ(90deg) translateX(-50px) translateY(-25px); }
   15% { -webkit-transform: rotateZ(90.75deg) translateX(-50px) translateY(-25px); transform: rotateZ(90.75deg) translateX(-50px) translateY(-25px); }
@@ -792,19 +754,19 @@ a:hover, a:active { color: dimgray; }
 
 .breadcrumb ol { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; padding: 0px; }
 
-.social-icons { background-color: #EBDBB2; border-radius: 1rem; padding: 1rem; }
+.social-icons { border-top: 1px solid #363636; list-style: none; padding-top: 2rem; }
 
-.social-icons .wp-block-group__inner-container { display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; width: 100%; }
+.social-icons ul { -webkit-box-sizing: border-box; box-sizing: border-box; display: -webkit-box; display: -ms-flexbox; display: flex; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; list-style: none; margin: 0px; padding: 0px; width: 100%; }
 
-.social-icons .wp-block-group__inner-container:hover .wp-block-image { opacity: .5; }
+.social-icons ul:hover li { opacity: .5; }
 
-.social-icons .wp-block-group__inner-container .wp-block-image { padding: 0 1.4rem; max-width: 2.4rem; -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
+.social-icons ul:hover li:hover { opacity: 1; }
 
-@media only screen and (min-width: 600px) and (max-width: 781px) { .social-icons .wp-block-group__inner-container .wp-block-image { padding: 0 1rem; } }
+.social-icons li { max-width: 2.4rem; -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
 
-.social-icons .wp-block-group__inner-container .wp-block-image:hover { opacity: 1; }
+.social-icons li:not(:last-child) { padding-right: 0.5rem; }
 
-.social-icons .wp-block-group__inner-container img { border-radius: 0px; }
+.social-icons img { border-radius: 0px; }
 
 /*-----Contact Form-----*/
 /*styling*/

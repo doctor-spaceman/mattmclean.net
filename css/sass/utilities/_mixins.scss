@@ -55,3 +55,21 @@
     width: $spacing * .25;
   }
 }
+
+@mixin accent-block {
+  position: relative;
+
+  &:after {
+    background-color: c('cream');
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: $spacing;
+    height: 100%;
+    width: $spacing * 2;
+    transform: skew(-30deg);
+    transform-origin: left bottom;
+    z-index: -10;
+  }
+}

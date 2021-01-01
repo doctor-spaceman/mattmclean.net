@@ -1,36 +1,39 @@
 .social-icons {
-  background-color: c('cream');
-  border-radius: $spacing;
-  padding: $spacing;
-    
-  .wp-block-group__inner-container {
+  border-top: 1px solid c('black'); 
+  list-style: none;
+  padding-top: $spacing * 2;
+
+  ul {
+    box-sizing: border-box;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
     width: 100%;
 
     &:hover {
-      .wp-block-image {
+      li {
         opacity: .5;
-      }
-    }
-    
-    .wp-block-image {
-      padding: 0 $spacing * 1.4;
-      max-width: $spacing * 2.4;
-      transition: opacity .2s ease;
 
-      @include between(600px, 781px) {
-        padding: 0 $spacing;
+        &:hover {
+          opacity: 1;
+        }
       }
+    }
+  }
 
-      &:hover {
-        opacity: 1;
-      }
+  li {
+    max-width: $spacing * 2.4;
+    transition: opacity .2s ease;
+
+    &:not(:last-child) {
+      padding-right: $spacing * .5;
     }
-    
-    img {
-      border-radius: 0px;
-    }
+  }
+  
+  img {
+    border-radius: 0px;
   }
 }

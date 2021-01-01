@@ -121,10 +121,13 @@ body:not(.has-sidebar) {
 }
 
 .section {
-  padding: $spacing * 2 0;
+  padding: $spacing 0;
 
   &--s {
     padding: $spacing / 2 0;
+  }
+  &--l {
+    padding: $spacing * 2 0;
   }
 }
 
