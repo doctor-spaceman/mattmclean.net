@@ -36,9 +36,9 @@ if ( have_rows('gallery_images') ) :
     alt="<?php echo $item_image_alt; ?>" 
     />
   <?php elseif ( $item_iframe ) : ?>
-    <!--<div class="slide-iframe">-->
+    <div class="slide-iframe">
       <?php echo $item_iframe; ?>
-    <!--</div>-->
+    </div>
   <?php endif; ?>
   </li>
 

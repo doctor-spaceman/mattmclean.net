@@ -292,23 +292,6 @@ ul.slider {
   }
 }
 
-/*
-.slider-gallery {
-  &:after {
-    background-color: #a2a2a2;
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 150%;
-    height: 100%;
-
-    @extend .skew--right;
-  }
-}
-*/
-
 #walkway.slider {
   .slick-slide {
     display: flex;
