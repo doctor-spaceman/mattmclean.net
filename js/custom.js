@@ -1,5 +1,22 @@
 "use strict";
 
+jQuery(function () {
+  var icons = jQuery('.error404 #walkway svg');
+
+  if (icons.length) {
+    var svg = new Walkway({
+      selector: '.error404 #walkway svg',
+      duration: '1000',
+      easing: function easing(t) {
+        return t;
+      } // linear
+
+    });
+    svg.draw();
+  }
+});
+"use strict";
+
 window.addEventListener('DOMContentLoaded', function (event) {
   /*------ Main Menu ------*/
   var menuToggle = document.querySelector('.navbar-main-content__menu');

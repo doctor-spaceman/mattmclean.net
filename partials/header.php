@@ -7,7 +7,7 @@
       $posts_page_id = get_option('page_for_posts');
       if ( is_home() || is_singular('post') ) : 
         $page_color = get_field('page_color', $posts_page_id);
-      elseif ( $post->post_parent && get_field('page_color', $post->post_parent) ) : 
+      elseif ( !is_404() && $post->post_parent && get_field('page_color', $post->post_parent) ) : 
         $page_color = get_field('page_color', $post->post_parent);
       elseif ( get_field('page_color') ) : 
         $page_color = get_field('page_color');
