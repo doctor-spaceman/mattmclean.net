@@ -7,7 +7,7 @@
       $posts_page_id = get_option('page_for_posts');
       if ( is_home() || is_singular('post') ) : 
         $page_color = get_field('page_color', $posts_page_id);
-      elseif ( !is_404() && $post->post_parent && get_field('page_color', $post->post_parent) ) : 
+      elseif ( !is_404() && !is_search() && $post->post_parent && get_field('page_color', $post->post_parent) ) : 
         $page_color = get_field('page_color', $post->post_parent);
       elseif ( get_field('page_color') ) : 
         $page_color = get_field('page_color');
@@ -32,6 +32,8 @@
         </div>
         <?php elseif ( is_404() ) : ?>
         <h1>404 Not Found</h1>
+        <?php elseif ( is_search() ) : ?>
+        <h1>Search</h1>
         <?php else : ?>
         <h1>
           <a href="<?php the_permalink(); ?>">

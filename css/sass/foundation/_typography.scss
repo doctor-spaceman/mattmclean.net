@@ -53,6 +53,10 @@ h1, .h1 {
 h2, .h2 {
   font-size: $font__size--base;
 }
+h3, .h3 {
+  font-size: $font__size--s;
+  margin-bottom: 0px;
+}
 .title, .subtitle {
   a {
     color: c('black');

@@ -99,3 +99,20 @@ function heroClickResponder(e) {
 if (heroGraphic) {
   heroGraphic.addEventListener('click', heroClickResponder);
 } // END / Homepage hero interactive element
+"use strict";
+
+jQuery(function () {
+  var icons = jQuery('.search-no-results #walkway svg');
+
+  if (icons.length) {
+    var svg = new Walkway({
+      selector: '.search-no-results #walkway svg',
+      duration: '1000',
+      easing: function easing(t) {
+        return t;
+      } // linear
+
+    });
+    svg.draw();
+  }
+});

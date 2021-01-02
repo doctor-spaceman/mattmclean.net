@@ -13,14 +13,18 @@ a:active {
 
 /*---- Button Styling ----*/
 .cta {
-	background-color: c('cream');
+  background-color: c('cream');
+  border: 1px solid c('black');
+  box-sizing: border-box;
 	color: c('black');
-	cursor: pointer;
+  cursor: pointer;
+  display: inline-block;
+  font-size: $font__size--xs;
+  font-weight: $font__weight--b;
+  text-decoration: none;
 	text-transform: uppercase;
-	padding: .5em;
-	margin: .5em 0;
-	display: inline-block;
-	border: 1px solid c('black');
+	padding: $spacing * .5 $spacing;
+	margin: 0px;
   
   &:hover {
     background-color: darken(c('cream'), 10%);

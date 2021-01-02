@@ -302,6 +302,8 @@ h1, .h1 { font-size: 2rem; }
 
 h2, .h2 { font-size: 1.2rem; }
 
+h3, .h3 { font-size: 1rem; margin-bottom: 0px; }
+
 .title a, .subtitle a { color: #363636; text-decoration: none; }
 
 .title { font-size: 4.4rem; font-weight: 700; text-transform: uppercase; }
@@ -628,7 +630,7 @@ a:hover, a:active { color: dimgray; }
 
 /*---- Other Links ----*/
 /*---- Button Styling ----*/
-.cta { background-color: #EBDBB2; color: #363636; cursor: pointer; text-transform: uppercase; padding: .5em; margin: .5em 0; display: inline-block; border: 1px solid #363636; }
+.cta { background-color: #EBDBB2; border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px; }
 
 .cta:hover { background-color: #e0c88a; }
 
