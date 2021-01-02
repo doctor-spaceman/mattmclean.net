@@ -18,7 +18,7 @@
     </ol>
   </nav>
   <?php endif; ?>
-  <div class="section">
+  <div class="section--l">
     <?php the_content(); ?>
   </div>
 

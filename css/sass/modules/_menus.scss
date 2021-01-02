@@ -15,8 +15,9 @@
   transform: translateX(100%);
 
   @include breakpoint--small {
-    order: 2;
+    height: 0px;
     margin: 0px;
+    order: 2;
     position: unset;
   }
 }
@@ -71,6 +72,10 @@
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
   animation-timing-function: ease-out;
+
+  @include breakpoint--small {
+    height: unset;
+  }
 }
 .main-menu.is-closed,
 .main-menu.is-closed li {

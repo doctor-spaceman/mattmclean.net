@@ -12,7 +12,7 @@
 
 <div class="wrapper wrapper--large">
 
-  <div class="section">
+  <div class="section--l">
     <?php echo apply_filters( 'the_content', $posts_page->post_content ); ?>
   </div>
 

@@ -10,7 +10,7 @@
 
 <?php if ( have_posts() ) : ?>
 
-	<div>
+	<div class="section--l">
 		<h2>
 			<?php
 			printf(
@@ -19,10 +19,8 @@
 				'<span class="page-description search-term">' . esc_html( get_search_query() ) . '</span>'
 			);
 			?>
-		</h2>
-	</div>
-
-	<p>
+    </h2>
+    <p>
 		<?php
 		printf(
 			esc_html(
@@ -38,6 +36,8 @@
 		);
 		?>
 	</p>
+	</div>
+
 	<?php
 	while ( have_posts() ) :
     the_post();

@@ -11,7 +11,7 @@
 ?>
 
 <div class="wrapper wrapper--large">
-  <div class="section">
+  <div class="section--l">
     <p><?php echo 'Posts tagged with: "'; single_tag_title(); echo '"' ?></p>
   </div>
 
@@ -27,7 +27,7 @@
   </div>
   <?php else : ?>
 
-  <p class="section">Sorry, there is no content associated with that tag.</p>
+  <p class="section--l">Sorry, there is no content associated with that tag.</p>
   
   <?php endif; ?>
 

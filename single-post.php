@@ -8,7 +8,7 @@
 
 <article class="wrapper wrapper--large">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-  <div class="section">
+  <div class="section--l">
     <div class="content-card--post corner--slant">
       <p class="post__date">
         <?php echo get_the_date('m-d-y'); ?>

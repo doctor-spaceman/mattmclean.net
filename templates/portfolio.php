@@ -6,7 +6,7 @@
 <?php get_header(); ?>
 
 <section class="wrapper wrapper--large">
-  <div class="section">
+  <div class="section--l">
   <?php 
   if ( have_posts() ) : 
     while ( have_posts() ) : the_post();

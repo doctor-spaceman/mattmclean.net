@@ -144,7 +144,7 @@ body { background-color: #ffffff; display: -webkit-box; display: -ms-flexbox; di
 
 body:not(.home) main { margin-top: 3rem; }
 
-@media only screen and (max-width: 599px) { body:not(.home) main { margin-top: calc(3rem + 1rem + (1rem / 2)); } }
+@media only screen and (max-width: 599px) { body:not(.home) main { margin-top: calc(3rem + 1rem + 1rem + 1px); } }
 
 body.has-sidebar { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
 
@@ -639,7 +639,7 @@ a:hover, a:active { color: dimgray; }
 
 .main-menu { font-size: 1rem; letter-spacing: 1px; margin-right: 2rem; position: absolute; top: calc(3rem + (1rem * .25) + 1px); right: 0; visibility: hidden; -webkit-transform: translateX(100%); transform: translateX(100%); }
 
-@media only screen and (max-width: 599px) { .main-menu { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; margin: 0px; position: unset; } }
+@media only screen and (max-width: 599px) { .main-menu { height: 0px; margin: 0px; -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; position: unset; } }
 
 .main-menu li { color: #ffffff; margin-bottom: 0.25rem; visibility: hidden; text-align: right; -webkit-transform: translateX(100%); transform: translateX(100%); }
 
@@ -668,6 +668,8 @@ a:hover, a:active { color: dimgray; }
 .main-menu li:nth-child(8) { -webkit-animation-delay: .35s; animation-delay: .35s; }
 
 .main-menu.is-open, .main-menu.is-open li { -webkit-animation-name: slideInFromRight; animation-name: slideInFromRight; -webkit-animation-duration: .1s; animation-duration: .1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-iteration-count: 1; animation-iteration-count: 1; -webkit-animation-timing-function: ease-out; animation-timing-function: ease-out; }
+
+@media only screen and (max-width: 599px) { .main-menu.is-open, .main-menu.is-open li { height: unset; } }
 
 .main-menu.is-closed, .main-menu.is-closed li { visibility: visible; -webkit-transform: translateX(0px); transform: translateX(0px); -webkit-animation-name: slideOutFromLeft; animation-name: slideOutFromLeft; -webkit-animation-duration: .1s; animation-duration: .1s; -webkit-animation-fill-mode: forwards; animation-fill-mode: forwards; -webkit-animation-iteration-count: 1; animation-iteration-count: 1; -webkit-animation-timing-function: ease-in; animation-timing-function: ease-in; }
 
