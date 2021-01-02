@@ -6,7 +6,7 @@
 
 <?php get_header(); ?>
 
-<div class="wrapper wrapper--large">
+<section class="wrapper wrapper--large">
 
 <?php if ( have_posts() ) : ?>
 
@@ -63,7 +63,7 @@ else :
 
 <?php endif; ?>
 
-<?php if ( get_previous_posts_link() ||  get_next_posts_link() ) : ?>
+<?php if ($wp_query->max_num_pages > 1) : ?>
 
   <nav class="pagination grid grid--space">
     <div class="prev-posts-link">
@@ -86,6 +86,6 @@ else :
 
 <?php endif; ?>
 
-</div>
+</section>
 
 <?php get_footer(); ?>

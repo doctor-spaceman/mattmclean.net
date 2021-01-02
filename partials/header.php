@@ -5,7 +5,7 @@
       <?php 
       $page_color;
       $posts_page_id = get_option('page_for_posts');
-      if ( is_home() || is_singular('post') ) : 
+      if ( is_home() || is_singular('post') || is_tag() || is_category() ) : 
         $page_color = get_field('page_color', $posts_page_id);
       elseif ( !is_404() && !is_search() && $post->post_parent && get_field('page_color', $post->post_parent) ) : 
         $page_color = get_field('page_color', $post->post_parent);
@@ -18,7 +18,7 @@
         style="background-color: #484848;"
       <?php endif; ?>
       >
-        <?php if ( is_home() ) : ?>
+        <?php if ( is_home() || is_tag() || is_category() ) : ?>
         <h1>
           <a href="<?php echo get_the_permalink($posts_page_id); ?>">
             <?php echo get_the_title($posts_page_id); ?>
