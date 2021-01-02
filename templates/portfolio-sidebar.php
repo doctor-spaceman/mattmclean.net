@@ -41,7 +41,7 @@ Template Name: Portfolio Sidebar
         data-full-url="<?php echo esc_url($image_src_full); ?>" 
         src="<?php echo esc_url($image_src); ?>" 
         srcset="<?php echo esc_attr($image_srcset); ?>" 
-        sizes="<?php echo $image_sizes; ?>" 
+        sizes="<?php echo esc_attr($image_sizes); ?>" 
         <?php if ( $image_alt ) : ?>alt="<?php echo esc_attr($image_alt); ?>"<?php endif; ?>
         <?php if ( $image_name ) : ?>data-name="<?php echo esc_attr($image_name); ?>" <?php endif; ?>
         <?php if ( $image_desc ) : ?>data-caption="<?php echo esc_attr($image_desc); ?>"<?php endif; ?>
