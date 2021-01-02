@@ -146,10 +146,10 @@ gulp.task( 'vendorsJS', () => {
 	return gulp
 		.src( config.jsVendorSRC, { since: gulp.lastRun( 'vendorsJS' ) }) // Only run on changed files.
 		.pipe( remember( config.jsVendorSRC ) ) // Bring all files back to stream.
-		.pipe( concat( config.jsVendorFile + '.js' ) )
+		.pipe( concat( config.jsVendorFile + '.min.js' ) )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
 		.pipe( gulp.dest( config.jsVendorDestination ) )
-		.pipe(
+		/*.pipe(
 			rename({
 				basename: config.jsVendorFile,
 				suffix: '.min'
@@ -157,7 +157,8 @@ gulp.task( 'vendorsJS', () => {
 		)
 		.pipe( uglify() )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-		.pipe( gulp.dest( config.jsVendorDestination ) )
+    .pipe( gulp.dest( config.jsVendorDestination ) )
+    */
 });
 
 /**
@@ -243,6 +244,47 @@ gulp.task( 'sliderJS', () => {
 });
 
 /**
+ * Task: `masonryJS`.
+ *
+ * Concatenate and uglify custom JS scripts.
+ *
+ * This task does the following:
+ *     1. Gets the source folder for JS custom files
+ *     2. Concatenates all the files and generates custom.js
+ *     3. Renames the JS file with suffix .min.js
+ *     4. Uglifes/Minifies the JS file and generates custom.min.js
+ */
+gulp.task( 'masonryJS', () => {
+	return gulp
+		.src( config.jsMasonrySRC, { since: gulp.lastRun( 'masonryJS' ) }) // Only run on changed files.
+		.pipe(
+			babel({
+				presets: [
+					[
+						'@babel/preset-env', // Preset to compile your modern JS to ES5.
+						{
+							targets: { browsers: config.BROWSERS_LIST } // Target browser list to support.
+						}
+					]
+				]
+			})
+		)
+		.pipe( remember( config.jsMasonrySRC ) ) // Bring all files back to stream.
+		.pipe( concat( config.jsMasonryFile + '.js' ) )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsMasonryDestination ) )
+		.pipe(
+			rename({
+				basename: config.jsMasonryFile,
+				suffix: '.min'
+			})
+		)
+		.pipe( uglify() )
+		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
+		.pipe( gulp.dest( config.jsMasonryDestination ) )
+});
+
+/**
  * Task: `images`.
  *
  * Minifies PNG, JPEG, GIF and SVG images.
@@ -318,7 +360,7 @@ gulp.task( 'translate', () => {
  */
 gulp.task(
 	'watch',
-	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'sliderJS', /*'images',*/ () => {
+	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'sliderJS', 'masonryJS', /*'images',*/ () => {
 		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
 		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS' ) ); // Reload on vendorsJS file changes.
     gulp.watch( config.watchJsCustom, gulp.series( 'customJS' ) ); // Reload on customJS file changes.
@@ -327,4 +369,4 @@ gulp.task(
 	})
 );
 
-gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', 'sliderJS', /*'images' */) );
+gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', 'sliderJS', 'masonryJS', /*'images' */) );
