@@ -476,6 +476,8 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 
 .page-template-portfolio-sidebar #pageContent .content:not(.has-grid) { max-width: 900px; }
 
+@media only screen and (max-width: 880px) { .page-template-portfolio-sidebar #pageContent .content:not(.has-grid) img, .page-template-portfolio-sidebar #pageContent .content:not(.has-grid) figure { width: 100%; } }
+
 .page-template-portfolio-sidebar.page-child #pageContent { background-color: #ffffff; border-left: 1px solid #363636; min-height: 100vh; }
 
 @media only screen and (max-width: 599px) { .page-template-portfolio-sidebar.page-child #pageContent { border: none; } }
@@ -632,9 +634,9 @@ a:hover, a:active { color: dimgray; }
 
 /*---- Other Links ----*/
 /*---- Button Styling ----*/
-.cta { background-color: #EBDBB2; border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px; }
+.cta, #mc_embed_signup .button { background-color: #EBDBB2; border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px; }
 
-.cta:hover { background-color: #e0c88a; }
+.cta:hover, #mc_embed_signup .button:hover { background-color: #e0c88a; color: #363636; }
 
 /*---------- NAVIGATION ----------*/
 .menu { list-style: none; margin: 0; padding: 0; }
@@ -760,67 +762,6 @@ a:hover, a:active { color: dimgray; }
 
 .social-icons img:hover { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); -webkit-transform-origin: center center; transform-origin: center center; -webkit-transition: -webkit-transform .2s ease; transition: -webkit-transform .2s ease; transition: transform .2s ease; transition: transform .2s ease, -webkit-transform .2s ease; }
 
-/*-----Contact Form-----*/
-/*styling*/
-div.wpcf7 { margin: 1em 0; padding: 0; background: #363636; background: rgba(0, 0, 0, 0.3); }
-
-#wpcf7-f159-o1 { margin-top: 0; }
-
-/* When form is nested inside a section heading */
-div.wpcf7, .wpcf7-form { width: 100%; }
-
-.wpcf7-form { border-top: .3em solid #fff; padding: 1.2em 1.2em 0 1.2em; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
-#wpcf7-f159-o1 .wpcf7-form { border: none; }
-
-/* When form is nested inside a section heading */
-.wpcf7-form p, .wpcf7-form div, .wpcf7-form input[type=text], .wpcf7-form input[type=email], .wpcf7-form textarea { width: 100%; }
-
-.wpcf7-form input[type=text] { height: 2em; }
-
-.wpcf7-form textarea { resize: vertical; height: 160px; }
-
-.input-container p { height: 50px; }
-
-.input-container p, .input-container div { margin-top: 0; }
-
-/* / Submit button (assumes it's always the last input) */
-.input-container p:last-child { width: 100%; text-align: center; margin: 1em auto 0 auto; }
-
-.wpcf7-form input, .wpcf7-form textarea { font-family: 'Poppins', sans-serif; font-size: 1em; padding: 0 .5em; -webkit-box-sizing: border-box; box-sizing: border-box; }
-
-input[type=submit] { text-transform: uppercase; color: #ffffff; background: none; border-width: 2px 0px 0px 0px; border-style: solid; border-color: #ffffff; -webkit-transition-duration: .25s; transition-duration: .25s; }
-
-input[type=submit]:hover { color: #363636; background: #fbb33d; border-width: 2px 0px 0px 0px; border-style: solid; border-color: transparent; cursor: pointer; }
-
-input[type=checkbox] { margin-right: .5em; }
-
-input[type=checkbox] span { font-size: .9em; }
-
-input:focus, textarea:focus { outline: none; }
-
-.wpcf7-form label { visibility: hidden; position: relative; top: 1.8em; }
-
-.mailchimp-opt { padding-top: 1.8em; }
-
-.mc4wp-checkbox label { visibility: visible; position: inherit; }
-
-/*alerts*/
-div.wpcf7-response-output { -webkit-box-sizing: border-box; box-sizing: border-box; margin: 0 0 1em 0; padding: 0 0 0 .4em; color: #a2a2a2; display: inline-block; border: none; }
-
-div.wpcf7-validation-errors { position: relative; border-style: solid; border-width: 0 0 0 .2em; border-color: #fbb33d; }
-
-div.wpcf7-mail-sent-ok { position: relative; border-style: solid; border-width: 0 0 0 .2em; border-color: #ec3f98; }
-
-div.wpcf7-mail-sent-ng { position: relative; border-style: solid; border-width: 0 0 0 .2em; border-color: #db1c45; }
-
-div.wpcf7-spam-blocked { position: relative; border-style: solid; border-width: 0 0 0 .2em; border-color: #f4793d; }
-
-span.wpcf7-not-valid-tip { color: #db1c45; font-weight: 500; }
-
-/*ajax loader*/
-div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; background: url("./img/ajax-loader.gif") center center/contain; background-repeat: no-repeat; margin: 0; }
-
 /*---- Mailchimp ----*/
 #mc_embed_signup { -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 0.8rem; margin-top: 4rem; padding: 1rem; width: 100%; }
 
@@ -828,7 +769,7 @@ div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; backg
 
 .mc-field-group { display: inline-block; }
 
-#mc_embed_signup input.email { border: 1px solid #a2a2a2; color: #363636; background-color: #fff; -webkit-box-sizing: border-box; box-sizing: border-box; height: 2rem; padding: 0px 5px; display: inline-block; margin: 0; width: 350px; vertical-align: top; }
+#mc_embed_signup input.email { border: 1px solid #a2a2a2; background-color: #fff; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; display: inline-block; padding: 0.5rem 1rem; margin: 0px; vertical-align: top; width: 350px; }
 
 @media only screen and (max-width: 782px) { #mc_embed_signup input.email { width: 100%; margin-bottom: 5px; } }
 
@@ -839,8 +780,6 @@ div.wpcf7 .ajax-loader { width: 100%; height: .2em; padding: .5em 0 1em 0; backg
 #mc_embed_signup .clear { display: inline-block; }
 
 @media only screen and (max-width: 782px) { #mc_embed_signup .clear { display: block; width: 100%; } }
-
-#mc_embed_signup .button { background-color: #EBDBB2; border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; font-weight: 700; height: 2rem; line-height: 2rem; padding: 0 1rem; display: inline-block; margin: 0; -webkit-transition: background-color .1s ease; transition: background-color .1s ease; }
 
 @media only screen and (max-width: 880px) { #mc_embed_signup .button { width: 100%; margin-top: 0.5rem; } }
 

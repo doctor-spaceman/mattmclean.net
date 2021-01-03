@@ -10,6 +10,13 @@
     
     .content:not(.has-grid) {
       max-width: 900px;
+
+      img,
+      figure {
+        @include breakpoint--medium-large {
+          width: 100%;
+        }
+      }
     }
   }
 }

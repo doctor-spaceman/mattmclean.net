@@ -28,5 +28,6 @@ a:active {
   
   &:hover {
     background-color: darken(c('cream'), 10%);
+    color: c('black');
   }
 }

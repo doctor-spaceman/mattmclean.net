@@ -1,133 +1,3 @@
-/*-----Contact Form-----*/
-/*styling*/
-div.wpcf7 {
-	margin: 1em 0;
-	padding: 0;
-	background: #363636;
-    background: rgba(0,0,0,.3);
-}
-#wpcf7-f159-o1 {margin-top: 0;} /* When form is nested inside a section heading */
-div.wpcf7,
-.wpcf7-form {width: 100%;}
-.wpcf7-form {
-    border-top: .3em solid #fff;
-    padding: 1.2em 1.2em 0 1.2em;
-    box-sizing: border-box;
-}
-#wpcf7-f159-o1 .wpcf7-form {border: none;} /* When form is nested inside a section heading */
-.wpcf7-form p,
-.wpcf7-form div,
-.wpcf7-form input[type=text],
-.wpcf7-form input[type=email],
-.wpcf7-form textarea {width: 100%;}
-.wpcf7-form input[type=text] {height: 2em;}
-.wpcf7-form textarea {
-    resize: vertical;
-    height: 160px;
-}
-.input-container p {height: 50px;}
-.input-container p,
-.input-container div {margin-top: 0;}
-/* / Submit button (assumes it's always the last input) */
-.input-container p:last-child {
-	width: 100%;
-	text-align:center;
-	margin: 1em auto 0 auto;
-}
-.wpcf7-form input,
-.wpcf7-form textarea {
-    font-family: 'Poppins', sans-serif;
-    font-size: 1em;
-    padding: 0 .5em;
-    box-sizing: border-box;
-}
-input[type=submit] {
-    //font-size: 1.4em;
-    text-transform: uppercase;
-    color: #ffffff;
-    background: none;
-    border-width: 2px 0px 0px 0px;
-	border-style: solid;
-	border-color: #ffffff;
-    transition-duration: .25s;
-}
-input[type=submit]:hover {
-    color: #363636;
-    background: #fbb33d;
-    border-width: 2px 0px 0px 0px;
-	border-style: solid;
-	border-color: transparent;
-    cursor: pointer;
-}
-input[type=checkbox] {
-	margin-right: .5em;
-}
-input[type=checkbox] span {
-	font-size: .9em;
-}
-input:focus,
-textarea:focus {
-    outline: none;
-}
-.wpcf7-form label {
-	visibility: hidden;
-	position: relative;
-	top: 1.8em;
-}
-.mailchimp-opt {
-	padding-top: 1.8em;
-}
-.mc4wp-checkbox label {
-	visibility: visible;
-	position: inherit;
-}
-/*alerts*/
-div.wpcf7-response-output {
-    box-sizing: border-box;
-    margin: 0 0 1em 0;
-    padding: 0 0 0 .4em;
-    color: #a2a2a2;
-    display: inline-block;
-	border: none;
-}
-div.wpcf7-validation-errors {
-    position: relative;
-    border-style: solid;
-    border-width: 0 0 0 .2em;
-    border-color: #fbb33d;
-}
-div.wpcf7-mail-sent-ok {
-    position: relative;
-    border-style: solid;
-    border-width: 0 0 0 .2em;
-    border-color: #ec3f98;    
-}
-div.wpcf7-mail-sent-ng {
-    position: relative;
-    border-style: solid;
-    border-width: 0 0 0 .2em;
-    border-color: #db1c45;    
-}
-div.wpcf7-spam-blocked {
-    position: relative;
-    border-style: solid;
-    border-width: 0 0 0 .2em;
-    border-color: #f4793d;	
-}
-span.wpcf7-not-valid-tip {
-    color: #db1c45;
-    font-weight: 500;
-}
-/*ajax loader*/
-div.wpcf7 .ajax-loader {
-	width: 100%;
-	height: .2em;
-	padding: .5em 0 1em 0;
-	background: url('./img/ajax-loader.gif') center center / contain;
-	background-repeat: no-repeat;
-	margin: 0;
-}
-
 /*---- Mailchimp ----*/
 #mc_embed_signup {
   box-sizing: border-box;
@@ -137,26 +7,25 @@ div.wpcf7 .ajax-loader {
   width: 100%;
 }
 #mc_embed_signup form {
-  text-align:center; 
+  text-align: center; 
 }
 .mc-field-group { 
   display: inline-block;
 } 
 #mc_embed_signup input.email {
   border: 1px solid c('light-gray');
-  color: c('black');
   background-color: #fff; 
   box-sizing: border-box; 
-  height: $spacing * 2; 
-  padding: 0px 5px; 
+  color: c('black');
   display: inline-block; 
-  margin: 0; 
-  width: 350px; 
+  padding: $spacing * .5 $spacing;
+	margin: 0px; 
   vertical-align: top;
+  width: 350px;
 
   @include breakpoint--medium {
-    width:100%; 
-    margin-bottom:5px;
+    width: 100%; 
+    margin-bottom: 5px;
   }
 }
 #mc_embed_signup label {
@@ -181,18 +50,7 @@ div.wpcf7 .ajax-loader {
   }
 }
 #mc_embed_signup .button {
-  background-color: c('cream'); 
-  border: 1px solid c('black');
-  box-sizing:border-box; 
-  color: c('black');
-  cursor: pointer;
-  font-weight: $font__weight--b;
-  height: $spacing * 2; 
-  line-height: $spacing * 2; 
-  padding: 0 $spacing; 
-  display: inline-block; 
-  margin: 0; 
-  transition: background-color .1s ease;
+  @extend .cta;
 
   @include breakpoint--medium-large {
     width: 100%; 
