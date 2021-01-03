@@ -6,7 +6,10 @@ Template Name: Portfolio Sidebar
 
 <?php get_header(); ?>
 
-<div class="content content--m">
+<div 
+class="content 
+       content--m
+       <?php if ( have_rows('sidebar_gallery') ) : ?> has-grid<?php endif; ?>">
   <?php if ( $post->post_parent ) : ?>
   <h1><?php the_title(); ?></h1>
   <?php endif; ?>

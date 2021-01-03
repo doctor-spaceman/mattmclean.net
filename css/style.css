@@ -474,6 +474,8 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 
 .page-template-portfolio-sidebar #pageContent { width: 100%; }
 
+.page-template-portfolio-sidebar #pageContent .content:not(.has-grid) { max-width: 900px; }
+
 .page-template-portfolio-sidebar.page-child #pageContent { background-color: #ffffff; border-left: 1px solid #363636; min-height: 100vh; }
 
 @media only screen and (max-width: 599px) { .page-template-portfolio-sidebar.page-child #pageContent { border: none; } }

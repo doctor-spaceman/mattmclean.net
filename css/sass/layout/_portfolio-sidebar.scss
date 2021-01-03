@@ -7,6 +7,10 @@
 
   #pageContent {
     width: 100%;
+    
+    .content:not(.has-grid) {
+      max-width: 900px;
+    }
   }
 }
 .page-template-portfolio-sidebar.page-child {
