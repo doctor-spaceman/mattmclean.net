@@ -29,11 +29,11 @@
   // $wp_query = $posts_query;
   ?>
   <?php if ( $posts_query->have_posts() ) : ?>
-  <div class="grid grid--space card-container">
+  <section class="grid grid--space card-container">
     <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
       <?php get_template_part('partials/content-card','post'); ?>
     <?php endwhile; ?>
-  </div>
+  </section>
   <?php else : ?>
   <p class="section">Sorry, there are currently no posts. Check back soon!</p>
   <?php endif; ?>

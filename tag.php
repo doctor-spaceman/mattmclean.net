@@ -12,19 +12,19 @@
 
 <div class="wrapper wrapper--large">
   <div class="section--l">
-    <p><?php echo 'Posts tagged with: "'; single_tag_title(); echo '"' ?></p>
+    <h1><?php echo 'Posts tagged with: "'; single_tag_title(); echo '"' ?></h1>
   </div>
 
   <?php if (have_posts()) : ?>
   
-  <div class="grid grid--space card-container">
+  <section class="grid grid--space card-container">
     <?php while (have_posts()) : 
     the_post();
     
     get_template_part('partials/content-card','post'); 
     ?>
     <?php endwhile; ?>
-  </div>
+  </section>
   <?php else : ?>
 
   <p class="section--l">Sorry, there is no content associated with that tag.</p>
