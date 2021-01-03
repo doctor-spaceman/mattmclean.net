@@ -30,7 +30,7 @@ if ( have_rows('gallery_images') ) :
   <li>
   <?php if ( $item_image ) : ?>
     <img 
-    src="<?php echo $item_image_url; ?>" 
+    src="<?php echo $item_image_src; ?>" 
     srcset="<?php echo esc_attr($item_image_srcset); ?>" 
     sizes="<?php echo esc_attr($item_image_sizes); ?>" 
     alt="<?php echo $item_image_alt; ?>" 
