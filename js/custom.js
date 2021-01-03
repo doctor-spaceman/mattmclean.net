@@ -75,7 +75,7 @@ var heroGraphic = document.querySelector('.hero-graphic__morph');
 function heroClickResponder(e) {
   var el = e.target;
   var typed;
-  var typedStrings = ['weeks crash by, unseeing', 'festooned in metal', 'in the limbo of a long sleep', 'life is a renegotiation', 'the sizes of infinity', 'thought without voice', 'clouds like a page-edge', 'the story spilt out', 'the earth, capped, touches light', 'watching atoms drift by', 'a steady pulling across', 'bookended by oceans', 'a dream unending', 'the fire-smoke of memories'];
+  var typedStrings = ['/JK78/F45/U78/R348/J57/N454/K876/', '/THE/OWLS/ARE/NOT/WHAT/THEY/SEEM/', '/K78/B676/G565/C454/N669/H6776/', '/B789/W26/MN78/N78/H45/JK78/DF45/'];
   var typedString; // Don't allow subsequent clicks while the response is being displayed
 
   heroGraphic.removeEventListener('click', heroClickResponder);
