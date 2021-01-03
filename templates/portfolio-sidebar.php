@@ -28,7 +28,7 @@ Template Name: Portfolio Sidebar
       $image_name = get_sub_field('sidebar_gallery_image_name');
       $image_desc = get_sub_field('sidebar_gallery_image_desc');
       $image_src = wp_get_attachment_image_url($image, 'medium');
-      $image_src_full = wp_get_attachment_image_url($image, 'full');
+      $image_src_overlay = wp_get_attachment_image_url($image, 'large');
       $image_srcset = wp_get_attachment_image_srcset($image, 'medium');
       $image_sizes = '(min-width: 782px) 50vw,
                       (min-width: 1000px) 33.3vw,
@@ -38,7 +38,7 @@ Template Name: Portfolio Sidebar
       ?>
       <div class="grid-item">
         <img 
-        data-full-url="<?php echo esc_url($image_src_full); ?>" 
+        data-overlay="<?php echo esc_url($image_src_overlay); ?>" 
         src="<?php echo esc_url($image_src); ?>" 
         srcset="<?php echo esc_attr($image_srcset); ?>" 
         sizes="<?php echo esc_attr($image_sizes); ?>" 

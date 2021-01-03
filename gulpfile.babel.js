@@ -365,6 +365,7 @@ gulp.task(
 		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS' ) ); // Reload on vendorsJS file changes.
     gulp.watch( config.watchJsCustom, gulp.series( 'customJS' ) ); // Reload on customJS file changes.
     gulp.watch( config.watchJsSlider, gulp.series( 'sliderJS' ) ); // Reload on sliderJS file changes.
+    gulp.watch( config.watchJsMasonry, gulp.series( 'masonryJS' ) ); // Reload on sliderJS file changes.
 		/* gulp.watch( config.imgSRC, gulp.series( 'images' ) ); // Reload on image file changes. */
 	})
 );

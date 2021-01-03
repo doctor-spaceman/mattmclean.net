@@ -61,7 +61,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
     var overlayClose = overlay.querySelector('.button--close');
     var overlayContents = overlay.querySelector('.overlay-content');
     overlayClose.addEventListener('click', function (event) {
-      overlay.classList.remove('is-open');
+      overlay.classList.remove('is-open', 'loaded');
       overlayClose.setAttribute('tabindex', '-1');
       overlayContents.innerHTML = '';
     });
