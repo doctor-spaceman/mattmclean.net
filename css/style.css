@@ -634,7 +634,7 @@ a:hover, a:active { color: dimgray; }
 /*---- Button Styling ----*/
 .cta, #mc_embed_signup .button { background-color: #EBDBB2; border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px; }
 
-.cta:hover, #mc_embed_signup .button:hover { background-color: #e0c88a; color: #363636; }
+.cta:hover, #mc_embed_signup .button:hover { background-color: #f1e6ca; color: #363636; }
 
 /*---------- NAVIGATION ----------*/
 .menu { list-style: none; margin: 0; padding: 0; }
@@ -897,7 +897,9 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 
 #walkway.slider .slick-slide { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
-#walkway.slider svg { width: 14rem; height: auto; }
+#walkway.slider svg { width: 72%; height: auto; max-height: 360px; }
+
+#walkway.slider .section { text-align: center; }
 
 .content-card { margin: 0px 2rem 4rem 2rem; width: calc(33% - ((1rem * 2) * 2)); }
 

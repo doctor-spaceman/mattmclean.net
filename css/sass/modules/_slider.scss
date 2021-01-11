@@ -299,7 +299,11 @@ ul.slider {
     align-items: center;
   }
   svg {
-    width: 14rem;
+    width: 72%;
     height: auto;
+    max-height: 360px;
+  }
+  .section {
+    text-align: center;
   }
 }

@@ -27,7 +27,7 @@ a:active {
 	margin: 0px;
   
   &:hover {
-    background-color: darken(c('cream'), 10%);
+    background-color: lighten(c('cream'),6%);
     color: c('black');
   }
 }

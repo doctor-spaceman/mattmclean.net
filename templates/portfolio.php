@@ -43,17 +43,19 @@
       <?php 
       if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post(); 
         $section_icon = get_field('section_icon'); ?>
-
-        <div class="content">
         
+        <div>
+
         <?php 
         if ( $section_icon ) : 
           $section_icon_url = $section_icon['url'];
           echo file_get_contents($section_icon_url); 
         endif; ?>
-
-          <p><?php echo get_the_excerpt(); ?></p>
-          <a href="<?php the_permalink(); ?>">View <?php the_title(); ?></a>
+        
+          <div class="section">
+            <p><?php echo get_the_excerpt(); ?></p>
+            <a class="cta" href="<?php the_permalink(); ?>">View <?php the_title(); ?></a>
+          </div>
         </div>
       <?php 
       endwhile;
