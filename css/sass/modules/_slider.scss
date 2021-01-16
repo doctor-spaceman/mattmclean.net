@@ -209,6 +209,7 @@ ul.slider {
     }
 
     .slick-slide {
+      cursor: pointer;
       opacity: .4;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -302,6 +303,10 @@ ul.slider {
     width: 72%;
     height: auto;
     max-height: 360px;
+
+    path {
+      stroke-width: 1px;
+    }
   }
   .section {
     text-align: center;

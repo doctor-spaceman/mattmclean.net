@@ -865,7 +865,7 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 
 @media only screen and (max-width: 782px) { .slider-vertical__left .slick-track { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; } }
 
-.slider-vertical__left .slick-slide { opacity: .4; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; -webkit-transform: scale(0.6, 0.6); transform: scale(0.6, 0.6); -webkit-transform-origin: center left; transform-origin: center left; -webkit-transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, transform .1s ease; transition: opacity .1s ease, transform .1s ease, -webkit-transform .1s ease; white-space: nowrap; }
+.slider-vertical__left .slick-slide { cursor: pointer; opacity: .4; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; -webkit-transform: scale(0.6, 0.6); transform: scale(0.6, 0.6); -webkit-transform-origin: center left; transform-origin: center left; -webkit-transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, transform .1s ease; transition: opacity .1s ease, transform .1s ease, -webkit-transform .1s ease; white-space: nowrap; }
 
 @media only screen and (max-width: 782px) { .slider-vertical__left .slick-slide { text-align: center; -webkit-transform-origin: center center; transform-origin: center center; white-space: initial; } }
 
@@ -898,6 +898,8 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 #walkway.slider .slick-slide { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
 
 #walkway.slider svg { width: 72%; height: auto; max-height: 360px; }
+
+#walkway.slider svg path { stroke-width: 1px; }
 
 #walkway.slider .section { text-align: center; }
 
