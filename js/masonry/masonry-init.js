@@ -1,14 +1,16 @@
 jQuery(function() {
-  var portfolio_sidebar_grid = jQuery('.page-template-portfolio-sidebar.page-child .masonry');
+  var $portfolio_sidebar_grid = jQuery('.page-template-portfolio-sidebar.page-child .masonry');
 
-  portfolio_sidebar_grid.imagesLoaded(function() { 
-    portfolio_sidebar_grid.masonry({
-      columnWidth: '.grid-sizer',
-      gutter: 16,
-      itemSelector: '.grid-item',
-      percentPosition: true
-    });
-    portfolio_sidebar_grid.addClass('loaded');
+  var grid = $portfolio_sidebar_grid.masonry({
+    columnWidth: '.grid-sizer',
+    gutter: 16,
+    itemSelector: '.grid-item',
+    percentPosition: true
+  });
+
+  grid.imagesLoaded().progress(function() { 
+    grid.masonry('layout');
+    $portfolio_sidebar_grid.addClass('loaded');
   });
 
   jQuery('.masonry img').on('click', function() {
