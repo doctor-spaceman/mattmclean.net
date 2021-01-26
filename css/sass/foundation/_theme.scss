@@ -60,15 +60,11 @@ section > .wp-block-group {
     margin-right: 0;
   }
   & > .wp-block-image {
-    margin-bottom: $spacing;
+    margin-bottom: 0;
     margin-top: 0;
   }
 }
 // END / Gutenberg
-
-iframe {
-  border: none;
-}
 
 
 /*----- Effects -----*/

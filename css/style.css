@@ -117,6 +117,8 @@ img, figure { max-width: 100%; height: auto; }
 
 @media only screen and (max-width: 782px) { img, figure { width: 100%; } }
 
+figure { margin-bottom: 0px; }
+
 figcaption { color: #504f4f; font-size: 0.8rem; }
 
 figure.alignright, img.alignright, iframe.alignright, .wp-caption.alignright { float: right; margin: 0em 0 1rem 1rem; }
@@ -134,6 +136,8 @@ img.aligncenter, iframe.aligncenter, .wp-caption.aligncenter { display: block; m
 .alignleft { float: left; }
 
 .aligncenter { display: block; margin-left: auto; margin-right: auto; }
+
+iframe { border: none; }
 
 .responsive-iframe { height: 0; margin-bottom: 2rem; padding-bottom: 66.667%; position: relative; }
 
@@ -243,9 +247,7 @@ section > .wp-block-group { padding-bottom: 2rem; }
 
 .wp-block-column:last-child { margin-right: 0; }
 
-.wp-block-column > .wp-block-image { margin-bottom: 1rem; margin-top: 0; }
-
-iframe { border: none; }
+.wp-block-column > .wp-block-image { margin-bottom: 0; margin-top: 0; }
 
 /*----- Effects -----*/
 .corner { position: relative; }
@@ -320,7 +322,7 @@ h3, .h3 { font-size: 1rem; margin-bottom: 0px; }
 
 .uppercase { text-transform: uppercase; }
 
-/*nested lists*/
+/* Lists */
 ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 
 /* Layout */
@@ -459,6 +461,15 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 #hikeMap { width: 100%; height: 480px; }
 
 @media only screen and (max-width: 599px) { #hikeMap { height: 400px; } }
+
+/*---- Posts ----*/
+.single-post h2, .single-post .h2 { margin-top: 2rem; }
+
+.single-post ul, .single-post ol { list-style-position: inside; padding-left: 1rem; }
+
+.single-post ul li:not(:last-child), .single-post ol li:not(:last-child) { margin-bottom: .5em; }
+
+.single-post .responsive-iframe { margin-bottom: 0px; }
 
 .page-template-portfolio-item .slider-vertical__right .slider { margin: 0px; }
 
@@ -733,7 +744,7 @@ a:hover, a:active { color: dimgray; }
 .page-child .sidebar-menu .menu-item.current-menu-item { font-size: 2rem; }
 
 /*---- Pagination ----*/
-.pagination { border-top: 1px solid #363636; margin-top: 2rem; padding-top: 4px; }
+.pagination { border-top: 1px solid #363636; margin-top: 6rem; padding-top: 4px; }
 
 .pagination p { margin: 0px; text-transform: uppercase; }
 

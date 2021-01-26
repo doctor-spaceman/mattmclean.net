@@ -19,3 +19,21 @@
     height: 400px;
   }
 }
+
+/*---- Posts ----*/
+.single-post {
+  h2, .h2 {
+    margin-top: $spacing * 2;
+  }
+  ul, ol {
+    list-style-position: inside;
+    padding-left: $spacing;
+    
+    li:not(:last-child) {
+      margin-bottom: .5em;
+    }
+  }
+  .responsive-iframe {
+    margin-bottom: 0px;
+  }
+}
