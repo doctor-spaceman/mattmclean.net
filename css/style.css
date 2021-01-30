@@ -789,10 +789,6 @@ a:hover, a:active { color: dimgray; }
 
 .social-icons li { max-width: 2.4rem; padding: 0 0.25rem; -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
 
-.social-icons img { border-radius: 0px; -webkit-transform: rotateZ(0deg); transform: rotateZ(0deg); }
-
-.social-icons img:hover { -webkit-transform: rotateZ(360deg); transform: rotateZ(360deg); -webkit-transform-origin: center center; transform-origin: center center; -webkit-transition: -webkit-transform .2s ease; transition: -webkit-transform .2s ease; transition: transform .2s ease; transition: transform .2s ease, -webkit-transform .2s ease; }
-
 /*---- Mailchimp ----*/
 #mc_embed_signup { -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 0.8rem; margin-top: 4rem; padding: 1rem; width: 100%; }
 
