@@ -101,7 +101,7 @@
 
 // Dots
 .slick-dots {
-  display: flex;
+  display: flex !important;
   align-items: center;
   flex-wrap: nowrap;
   justify-content: center;
@@ -111,29 +111,51 @@
   padding: 0;
 
   li {
-    background-color: lighten(c('black'),20%);
     border: 1px solid c('black');
-    cursor: pointer;
     height: $spacing * .75;
     flex: 0 1 $spacing * 2;
+    position: relative;
+    transform: scale(1);
     //transition: all .1s ease;
 
     button {
-      visibility: hidden;
+      //visibility: hidden;
+      background-color: lighten(c('black'),20%);
+      border: none;
+      box-sizing: border-box;
+      cursor: pointer;
+      font-size: 0px;
+      padding: 0px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      -webkit-appearance: none;
+      
+      &:focus, &:hover {
+        background-color: lighten(c('black'),10%);
+      }
     }
+
+    &.slick-active {
+      border: 1px solid c('black');
+      transform: scale(1.1);
+            
+      button {
+        background-color: c('cream'); 
+        
+        &:focus, &:hover {
+          background-color: darken(c('cream'),4%);
+        }
+      }
+    }
+
     &:not(:last-child) {
       border-right: none;
     }
-    &:hover {
-      background-color: lighten(c('black'),10%);
-    }
   }
 
-  li.slick-active {
-    background-color: c('cream');
-    border: 1px solid c('black');
-    transform: scale(1.1);
-  }
 }
 // END / Dots
 
@@ -240,6 +262,12 @@ ul.slider {
     .slick-slide {
       box-sizing: border-box;
       min-height: 280px;
+
+      &:not(.slick-active) {
+        .slick-dots {
+          display: none !important;
+        }
+      }
     }
   }
   
