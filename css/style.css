@@ -109,7 +109,7 @@ template { display: none; }
 [hidden] { display: none; }
 
 /* Foundation */
-.clearfix { content: ""; display: table; clear: both; }
+.clearfix, .single-post .wp-block-group { content: ""; display: table; clear: both; }
 
 .hide-accessible, .main-menu li.current_page_item, .screen-reader-text { position: absolute; overflow: hidden; clip: rect(0 0 0 0); height: 1px; width: 1px; margin: -1px; padding: 0; border: 0; }
 
@@ -467,13 +467,21 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 @media only screen and (max-width: 599px) { #hikeMap { height: 400px; } }
 
 /*---- Posts ----*/
-.single-post h2, .single-post .h2 { margin-top: 2rem; }
+.single-post h2, .single-post .h2 { border-bottom: 1px solid #363636; border-right: 1px solid #363636; font-size: 1.4rem; margin-top: 2rem; padding-right: 2rem; }
+
+@media only screen and (max-width: 599px) { .single-post h2, .single-post .h2 { padding-right: 1rem; } }
 
 .single-post ul, .single-post ol { list-style-position: inside; padding-left: 1rem; }
 
 .single-post ul li:not(:last-child), .single-post ol li:not(:last-child) { margin-bottom: .5em; }
 
 .single-post .responsive-iframe { margin-bottom: 0px; }
+
+.single-post .wp-block-columns { margin: 1rem 0; padding: 0px; }
+
+.single-post .wp-block-columns .wp-block-column { margin-top: 1rem; margin-bottom: 1rem; }
+
+.single-post .wp-block-group { margin: 2rem 0; padding: 0px; }
 
 .single-post__footer { margin-top: 6rem; }
 
