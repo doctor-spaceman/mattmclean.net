@@ -115,7 +115,6 @@
     height: $spacing * .75;
     flex: 0 1 $spacing * 2;
     position: relative;
-    transform: scale(1);
     //transition: all .1s ease;
 
     button {
@@ -139,8 +138,7 @@
     }
 
     &.slick-active {
-      border: 1px solid c('black');
-      transform: scale(1.1);
+      height: $spacing;
             
       button {
         background-color: c('cream'); 
@@ -149,10 +147,16 @@
           background-color: darken(c('cream'),4%);
         }
       }
+
+      & + li {
+        border-left: none;
+      }
     }
 
-    &:not(:last-child) {
-      border-right: none;
+    &:not(.slick-active) {
+      &:not(:last-child) {
+        border-right: none;
+      }
     }
   }
 

@@ -863,19 +863,21 @@ a:hover, a:active { color: dimgray; }
 
 .slick-dots { display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: nowrap; flex-wrap: nowrap; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; height: 1.5rem; list-style: none; margin-top: 1rem; padding: 0; }
 
-.slick-dots li { border: 1px solid #363636; height: 0.75rem; -webkit-box-flex: 0; -ms-flex: 0 1 2rem; flex: 0 1 2rem; position: relative; -webkit-transform: scale(1); transform: scale(1); }
+.slick-dots li { border: 1px solid #363636; height: 0.75rem; -webkit-box-flex: 0; -ms-flex: 0 1 2rem; flex: 0 1 2rem; position: relative; }
 
 .slick-dots li button { background-color: dimgray; border: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer; font-size: 0px; padding: 0px; position: absolute; top: 0; left: 0; height: 100%; width: 100%; -webkit-appearance: none; }
 
 .slick-dots li button:focus, .slick-dots li button:hover { background-color: #504f4f; }
 
-.slick-dots li.slick-active { border: 1px solid #363636; -webkit-transform: scale(1.1); transform: scale(1.1); }
+.slick-dots li.slick-active { height: 1rem; }
 
 .slick-dots li.slick-active button { background-color: #EBDBB2; }
 
 .slick-dots li.slick-active button:focus, .slick-dots li.slick-active button:hover { background-color: #e7d3a2; }
 
-.slick-dots li:not(:last-child) { border-right: none; }
+.slick-dots li.slick-active + li { border-left: none; }
+
+.slick-dots li:not(.slick-active):not(:last-child) { border-right: none; }
 
 .slider { visibility: hidden; }
 
