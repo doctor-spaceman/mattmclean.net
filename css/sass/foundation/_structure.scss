@@ -97,7 +97,7 @@ body:not(.has-sidebar) {
     padding: 0px $spacing;
   }
   &--large {
-    max-width: 1200px;
+    max-width: 1024px;
     padding: 0px $spacing * 2 0px $spacing * 5;
 
     @include breakpoint--small {
@@ -105,7 +105,7 @@ body:not(.has-sidebar) {
     }
   }
   &--xlarge {
-    max-width: 1200px;
+    max-width: 1024px;
     padding: 0px $spacing 0px $spacing * 3;
 
     @include breakpoint--small {

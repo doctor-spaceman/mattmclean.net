@@ -9,9 +9,25 @@ section > .wp-block-group {
   margin: 0;
 
   img {
-    border-radius: .4rem;
+    //border-radius: .4rem;
     position: relative;
     z-index: 20;
+  }
+  .alignleft, 
+  .alignright,
+  .aligncenter {
+    margin-top: $spacing * .5;
+    margin-bottom: $spacing * .5;
+  }
+  .alignleft {
+    margin-right: $spacing;
+  }
+  .alignright {
+    margin-left: $spacing;
+  }
+  .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 

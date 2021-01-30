@@ -37,9 +37,9 @@ iframe.alignright,
   float: right; 
   margin: 0em 0 $spacing $spacing;
 
-  @include breakpoint--medium {
-    margin: 0 0 $spacing 0 !important;
-  }
+  // @include breakpoint--medium {
+  //   margin: 0 0 $spacing 0 !important;
+  // }
 }
 figure.alignleft, 
 img.alignleft,
@@ -48,16 +48,16 @@ iframe.alignleft,
   float: left; 
   margin: 0em $spacing $spacing 0;
 
-  @include breakpoint--medium {
-    margin: 0 0 $spacing 0 !important;
-  }
+  // @include breakpoint--medium {
+  //   margin: 0 0 $spacing 0 !important;
+  // }
 }
+figure.aligncenter,
 img.aligncenter,
 iframe.aligncenter,
 .wp-caption.aligncenter {
   display: block; 
-  margin-left: auto; 
-  margin-right: auto;
+  margin: $spacing auto;
 }
 .alignright {
   float: right;
