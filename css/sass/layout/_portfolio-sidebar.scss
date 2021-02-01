@@ -1,0 +1,66 @@
+.page-template-portfolio-sidebar {
+  align-items: flex-start;
+
+  @include breakpoint--small {
+    align-items: stretch;
+  }
+
+  #pageContent {
+    width: 100%;
+    
+    .content:not(.has-grid) {
+      max-width: 900px;
+
+      img,
+      figure {
+        @include breakpoint--medium-large {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+.page-template-portfolio-sidebar.page-child {
+  #pageContent {
+    background-color: c('white');
+    border-left: 1px solid c('black');
+    min-height: 100vh;
+
+    @include breakpoint--small {
+      border: none;
+    }
+  }
+}
+.page-template-portfolio-sidebar h1 {
+  font-family: $font--main;
+  font-weight: $font__weight;
+  letter-spacing: unset;
+  text-transform: uppercase;
+}
+.page-template-portfolio-sidebar .masonry {
+  opacity: 0;
+  width: 100%;
+  transition: opacity 1s ease;
+
+  &.loaded {
+    opacity: 1;
+  }
+  .grid-item,
+  .grid-sizer {
+    width: calc(33% - ((16px * 2) * .333));
+
+    @include breakpoint--large {
+      width: calc(50% - (16px / 2));
+    }
+    @include breakpoint--medium-large {
+      width: 100%;
+    }
+  }
+  .grid-item {
+    margin-bottom: $spacing * .5;
+
+    img {
+      cursor: pointer;
+    }
+  }
+}

@@ -8,6 +8,7 @@
   // Theme Functions
   require_once 'functions/enqueue-scripts.php'; // Theme scripts and styles
   require_once 'functions/theme-functions.php'; // Theme functions
+  //require_once 'functions/blocks.php';          // Gutenberg block types
   require_once 'functions/cpt.php';             // Custom post types
   require_once 'functions/shortcodes.php';      // Shortcodes
   // END / Theme Functions

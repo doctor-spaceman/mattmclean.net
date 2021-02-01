@@ -1,0 +1,114 @@
+/*----- Gutenberg -----*/
+// Top level block group
+section > .wp-block-group {
+  padding-bottom: $spacing * 2;
+}
+
+// Image block type
+.wp-block-image {
+  margin: 0;
+
+  img {
+    //border-radius: .4rem;
+    position: relative;
+    z-index: 20;
+  }
+  .alignleft, 
+  .alignright,
+  .aligncenter {
+    margin-top: $spacing * .5;
+    margin-bottom: $spacing * .5;
+  }
+  .alignleft {
+    margin-right: $spacing;
+  }
+  .alignright {
+    margin-left: $spacing;
+  }
+  .aligncenter {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+// Column block type
+.wp-block-columns {
+  margin-bottom: 0;
+}
+.wp-block-column {
+  margin-right: $spacing;
+  margin-left: $spacing;
+  margin-bottom: $spacing;
+
+  @include breakpoint--small {
+    margin-top: $spacing;
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  &:not(:first-child) {
+    margin-left: $spacing;
+
+    @include breakpoint--small {
+      margin-left: 0;
+    }
+  }
+  &:first-child {
+    margin-left: 0;
+    
+    @include breakpoint--small {
+      margin-top: 0;
+    }
+  }
+  &:nth-child(2n) { // Every 2nd column
+    // Where the layout breaks to two columns
+    @include between(600px, 781px) {
+      margin-right: 0;
+    }
+  }
+  &:nth-child(3n) { // Every 3rd column
+    // Where the layout breaks to two columns
+    @include between(600px, 781px) {
+      margin-left: 0;
+    }
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+  & > .wp-block-image {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+}
+// END / Gutenberg
+
+
+/*----- Effects -----*/
+.corner {
+  // Corner graphic element
+  @include accent-graphic;
+
+  &--block {
+    @include accent-block;
+  }
+  &--slant {
+    @include accent-slant;
+  }
+}
+
+.skew--left {
+  transform: perspective(30rem) rotateY(15deg);
+  transform-origin: center left;
+}
+.skew--right {
+  transform: perspective(30rem) rotateY(-15deg);
+  transform-origin: center right;
+}
+
+/*----- Color utilities -----*/
+.bg-photography { background-color: c('photography'); }
+.bg-artwork { background-color: c('artwork'); }
+.bg-projects { background-color: c('projects'); }
+.bg-journal { background-color: c('journal'); }
+.bg-resume { background-color: c('resume'); }
+

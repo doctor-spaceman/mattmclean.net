@@ -1,0 +1,234 @@
+/*---------- NAVIGATION ----------*/
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.main-menu {
+  font-size: $font__size--s;
+  letter-spacing: 1px;
+  margin-right: $spacing * 2;
+  position: absolute;
+  top: calc(#{$navbarHeight} + (#{$spacing} * .25) + 1px);
+  right: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+
+  @include breakpoint--small {
+    height: 0px;
+    margin: 0px;
+    order: 2;
+    position: unset;
+  }
+}
+.main-menu li {
+  color: c('white');
+  margin-bottom: $spacing * .25;
+  visibility: hidden;
+  text-align: right;
+  transform: translateX(100%);
+  
+  @include breakpoint--small {
+    padding-right: $spacing * 2;
+  }
+
+  &:first-child {
+    @include breakpoint--small {
+      margin-top: $spacing * .25;
+    }
+  }
+
+  &.current_page_item {
+    @extend .hide-accessible;
+  }
+
+  a {
+    display: block;
+    padding: $spacing * .25 $spacing * .5 $spacing * .25 $navbarHeight;
+    text-decoration: none;
+
+    @include breakpoint--small {
+      padding: $spacing * .5 0 $spacing * .25 0;
+    }
+  }
+  a:link,
+  a:visited,
+  a:hover,
+  a:active {
+    color: #ffffff;
+  }
+  &:nth-child(2) { animation-delay: .05s; }
+  &:nth-child(3) { animation-delay: .1s; }
+  &:nth-child(4) { animation-delay: .15s; }
+  &:nth-child(5) { animation-delay: .2s; }
+  &:nth-child(6) { animation-delay: .25s; }
+  &:nth-child(7) { animation-delay: .3s; }
+  &:nth-child(8) { animation-delay: .35s; }
+}
+.main-menu.is-open, 
+.main-menu.is-open li {
+  animation-name: slideInFromRight;  
+  animation-duration: .1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-out;
+
+  @include breakpoint--small {
+    height: unset;
+  }
+}
+.main-menu.is-closed,
+.main-menu.is-closed li {
+  visibility: visible;
+  transform: translateX(0px);
+  animation-name: slideOutFromLeft;
+  animation-duration: .1s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+}
+.main-menu.is-closed {
+  animation-delay: .35s;
+}
+
+@keyframes slideInFromRight {
+  0% { 
+    visibility: hidden;
+    transform: translateX(100%);
+  }
+  100% { 
+    visibility: visible;
+    transform: translateX(0px);
+  }
+}
+@keyframes slideOutFromLeft {
+  0% { 
+    visibility: visible;
+    transform: translateX(0px);
+  }
+  100% { 
+    visibility: hidden;
+    transform: translateX(100%);
+  }
+}
+
+
+/*---- Sidebar Menu ----*/
+.page-child .sidebar-nav {
+  transition: all .2s ease;
+
+  @include breakpoint--small {
+    border-bottom: 1px solid c('black');
+    max-height: 0;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.is-open {
+    @include breakpoint--small {
+      max-height: 1200px;
+      opacity: 1;
+      padding-bottom: $spacing * 2;
+      visibility: visible;
+    }
+  }
+}
+.sidebar-menu {
+  font-size: $font__size--base;
+  text-transform: uppercase;
+}
+.sidebar-menu .menu-item {
+  margin-right: $spacing * 2;
+  padding: $spacing * .5 0;
+
+  a {
+    text-decoration: none;
+  }
+}
+.sidebar-menu .menu-item-separator {
+	//padding-bottom: 1em;
+}
+.page-child .sidebar-menu .menu-item {
+  &:not(.current-menu-item) {
+    a, 
+    a:link,
+    a:visited {
+      color: lighten(c('black'), 50%);
+    }
+    a:active, 
+    a:hover, {
+      color: c('black');
+    }
+  }
+  
+  &.current-menu-item {
+    font-size: $font__size--m;
+  }
+}
+// END / Sidebar Menu
+
+
+/*---- Pagination ----*/
+.pagination {
+  border-top: 1px solid c('black');
+  padding-top: 4px;
+  
+  p {
+    margin: 0px;
+    text-transform: uppercase;
+  }
+  a {
+    text-decoration: none;
+  }
+}
+.prev-posts-link, 
+.next-posts-link {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing;
+
+  svg {
+    align-self: flex-start;
+    padding-top: 2px;
+    width: 1em;
+    height: 1em;
+  }
+
+  @include breakpoint--small {
+    flex: 1 1 100%;
+  }
+}
+.prev-posts-link {
+  justify-content: flex-start;
+  margin-right: $spacing;
+  text-align: left;
+
+  svg {
+    margin-right: $spacing * .5;
+  }
+}
+.next-posts-link {
+  justify-content: flex-end;
+  margin-left: $spacing;
+  text-align: right;
+  
+  svg {
+    margin-left: $spacing * .5;
+  }
+}
+// END / Pagination
+
+
+/*---- Breadcrumbs ----*/
+.breadcrumb {
+  display: block;
+  margin-top: 1rem;
+  text-transform: uppercase;
+
+  ol {
+    display: flex;
+    list-style: none;
+    padding: 0px;
+  }
+}
+// END / Breadcrumbs

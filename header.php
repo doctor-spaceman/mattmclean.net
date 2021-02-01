@@ -15,80 +15,41 @@
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
-	<?php if ( is_page_template('page-photography.php') ) : ?>
-    <link href="//cdn-images.mailchimp.com/embedcode/horizontal-slim-10_7.css" rel="stylesheet" type="text/css">
-		<style type="text/css">
-			#mc_embed_signup {
-				background: #363636;
-				background: rgba(0,0,0,.3);
-				clear: left;
-				width: auto;
-				border-top: .3em solid #fff;
-				padding: .5em 1em 1em 1em;
-				margin-bottom: 2em;
-			}
-			#mc_embed_signup input[type=email] {
-				border-radius: 0;
-			}
-			#mc_embed_signup input[type=submit] {
-				border-radius: 0;
-				font-weight: bold;
-				font-family: 'Montserrat', sans-serif;
-			}
-			#mc_embed_signup label {
-				font-weight: normal;
-			}
-		</style>
-	<?php endif; ?>
+    <!-- TODO -->
     <noscript>
       <style>
-        .hero {min-height: 100vh;}
-        #navContainer {
-          background: #171717;
-          background: rgba(0,0,0,.6);
-          box-shadow:
-            0 10px 20px rgba(0,0,0,0.19),
-            0 6px 6px rgba(0,0,0,0.23);
-        }
-        .current-menu-item {border-bottom: 2px solid #fff;}
-        #navIcon {display: none !important;}
-        .main-menu {
-          display: block !important;
-          width: 60%;
-        }
-        .main-menu ul {
-          display: -webkit-flex !important;
-          display: -ms-flexbox !important;
-          display: flex !important;
-          -webkit-flex-direction: row !important;
-          -ms-flex-direction: row !important;
-          flex-direction: row !important;
-          -webkit-flex-wrap: wrap;
-          -ms-flex-wrap: wrap;
-          flex-wrap: wrap;
-          -webkit-justify-content: space-between;
-          -ms-flex-pack: justify;
-          justify-content: space-between;			        
-        }
-        .main-menu li {
-            margin: 0 !important;
-            padding: .25em !important;
-            font-size: .8em !important;
-        }
-        .mg_grid_wrap:before {
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          padding: 4em;
-          content: 'Sorry! You must have Javascript enabled to see this content.';
-          text-align: center;
-          border-top: .3em solid #fff;
-          box-sizing: border-box;
-        }
       </style>
     </noscript>
-		<?php wp_head(); ?>
-	</head>
-	<body <?php body_class(); ?>>
 
-		<?php get_template_part('inc/header');?>
+		<?php wp_head(); ?>
+
+  </head>
+  
+  <?php 
+  $background = false;
+  if ( has_post_thumbnail() ) : 
+    $background = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'full', false, '' );
+  endif; 
+  ?>
+  <body 
+    <?php if ( is_page_template('templates/portfolio-sidebar.php') && $background ) : ?>
+    style="background: url('<?php echo $background[0]; ?>') center top / cover no-repeat;" 
+    <?php endif; ?>
+    <?php if ( is_page_template('templates/portfolio-sidebar.php') ) : body_class('has-sidebar'); 
+    else : body_class();
+    endif; ?>
+  >
+    <a class="screen-reader-text" href="#pageContent">Jump to Page Content</a>
+    
+    <?php 
+    if ( is_front_page() ) : 
+      get_template_part('partials/header','home');
+    elseif ( is_page_template('templates/portfolio-sidebar.php') ) : 
+      get_template_part('partials/header','sidebar');
+    else : 
+      get_template_part('partials/header');
+    endif;
+    ?>
+
+    <main id="pageContent">
+    

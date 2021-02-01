@@ -1,0 +1,23 @@
+.content-group-informational {
+  h2.item-title {
+    border-top: 1px solid c('black');
+  }
+  
+  .item-links {
+    margin-bottom: $spacing;
+    text-transform: uppercase;
+
+    a {
+      margin-right: $spacing;
+      text-decoration: none;
+      
+      svg {
+        width: 1em;
+        height: 1em;
+        padding-left: $spacing *.25;
+        position: relative;
+        top: $spacing * .125;
+      }
+    }
+  }
+}

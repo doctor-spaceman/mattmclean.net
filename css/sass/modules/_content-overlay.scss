@@ -1,0 +1,64 @@
+.overlay {
+  background-color: c('white');
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1000;
+
+  .grid {
+    align-content: center;
+  }
+
+  &.is-open {
+    display: block;
+    z-index: 1000;
+  }
+
+  .button--close {
+    align-self: flex-end;
+    background-color: transparent;
+    border: none;
+    color: c('black');
+    cursor: pointer;
+    font-family: $font--heading;
+    margin-bottom: $spacing * .5;
+    padding: 0;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+  }
+
+  #walkway {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+  &.loaded {
+    #walkway {
+      display: none;
+    }
+    img {
+      opacity: 1;
+      transition: opacity .2s ease;
+    }
+  }
+}
+
+.overlay-content {
+  min-height: 70vh;
+  width: 84vw;
+}
+
+.overlay--image {
+  img {
+    margin-bottom: $spacing * .5;
+    max-height: 70vh;
+    opacity: 0;
+  }
+}

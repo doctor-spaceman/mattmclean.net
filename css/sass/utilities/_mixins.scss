@@ -1,0 +1,75 @@
+@mixin accent-graphic {
+  position: relative;
+
+  &:before,
+  &:after {
+    background-color: c('cream');
+    content: '';
+    display: block;
+    position: absolute;
+    top: $spacing * -.8;
+    right: 0;
+    bottom: 0;
+    left: $spacing * -.8;
+    z-index: -10;
+  }
+  &:before {
+    border-radius: 1.2rem;
+    clip-path: polygon(
+      0px 0px,
+      100px 0px,
+      0px 100px,
+      0px 0px
+    );
+  }
+  &:after {
+    clip-path: polygon(
+      calc(100px + #{$spacing / 2}) 0px,
+      calc(100px + #{$spacing / 2} + #{$spacing / 2}) 0px,
+      0px calc(100px + #{$spacing / 2} + #{$spacing / 2}),
+      0px calc(100px + #{$spacing / 2})
+    );
+  }
+}
+
+@mixin accent-slant {
+  position: relative;
+
+  &:before, 
+  &:after {
+    background-color: c('cream');
+    content: '';
+    display: block;
+    height: $spacing * 3;
+    position: absolute;
+    top: 0;
+    transform: skew(-30deg);
+    z-index: -10;
+  }
+  &:before {
+    left: $spacing;
+    width: $spacing * .5;
+  }
+  &:after {
+    left: calc(#{$spacing} + (#{$spacing} * .5) + (#{$spacing} * .25));
+    width: $spacing * .25;
+  }
+}
+
+@mixin accent-block {
+  position: relative;
+
+  &:after {
+    background-color: c('cream');
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: $spacing;
+    height: 100%;
+    width: $spacing * 2;
+    transform: skew(-30deg);
+    transform-origin: left bottom;
+    z-index: -10;
+  }
+}

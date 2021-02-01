@@ -1,0 +1,73 @@
+/*--------- RESUME ---------*/
+.resume-section {
+  // ensures enough room for corner graphic
+  min-height: calc(100px + #{$spacing / 2} + #{$spacing});
+  position: relative; 
+
+  // Corner graphic element
+  @include accent-graphic;
+
+  h2 {
+    border-bottom: 1px solid c('black');
+    font-size: $font__size--m;
+  }
+  .title {
+    font-size: 1.4rem;
+  }
+  .title, .subtitle {
+    margin-bottom: 0;
+  }
+  ul {
+    margin-bottom: 0;
+    margin-top: 0;
+  }
+
+  &:before,
+  &:after {
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      /* IE10+ CSS styles go here */
+      background-color: transparent;
+    }
+  }
+}
+.resume-section > .wp-block-group__inner-container > .wp-block-group {
+  padding-bottom: $spacing * 2;
+}
+
+/*---- Resume Columns ----*/
+.resume-section .wp-block-column {
+  margin-top: 0;
+
+  & > p {
+    margin-bottom: 0;
+  
+    a {
+      text-decoration: none;
+    }
+  }
+  // Lists inside a column are not flexed
+  & > ul {
+    display: block;
+  }
+}
+// END / Resume Columns
+
+/*---- Resume Lists ----*/
+.resume-section ul {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  li {
+    flex: 0 0 calc(33% - (#{$spacing} * 3));
+    padding: $spacing * .25;
+
+    @include breakpoint--small {
+      flex: 0 0 calc(50% - (#{$spacing} * 2));
+    }
+  }
+  a {
+    text-decoration: none;
+  }
+}
+// END / Resume Lists

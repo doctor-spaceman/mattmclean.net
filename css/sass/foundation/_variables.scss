@@ -1,0 +1,35 @@
+$spacing: 1rem;
+
+$navbarHeight: $spacing * 3;
+
+$colors: (
+  'white': #ffffff,
+  'black': #363636,
+  'light-gray': #a2a2a2,
+  'cream': #EBDBB2,
+  'journal': #F2AA6B,
+  'artwork': #D97373,
+  'photography': #73556E,
+  'projects': #778E99,
+  'resume': #36738F
+);
+
+$font--main: 'Archivo', 'Roboto', 'Tahoma', sans-serif;
+$font--heading: 'Khand', 'Arial Narrow', sans-serif;
+
+$font__size--xl: 4.4rem;
+$font__size--l: 2.9rem;
+$font__size--m: 2rem;
+$font__size--base: 1.2rem; // 18px
+$font__size--s: 1rem;
+$font__size--xs: .8rem;
+
+$font__weight: 400;
+$font__weight--l: 300;
+$font__weight--m: 500;
+$font__weight--b: 700;
+
+$breakpoint--small: 599px;
+$breakpoint--medium: 782px;
+$breakpoint--medium-large: 880px;
+$breakpoint--large: 1000px;

@@ -2,43 +2,56 @@
 /**
  * The tag template file
  */
+?>
 
-get_header(); ?>
+<?php get_header(); ?>
 
-		<div class="wrapper">
-			<div class="content-panel row">
-			<?php if (have_posts()) : while (have_posts()) : the_post();
-				if ( has_post_thumbnail() ) : 
-					// use the featured image
-					$background = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); 
-				else : 
-					// use the fallback image
-					$background[0] = '/mmclean/wp-content/themes/mmclean/img/fallback.jpg';									
-				endif; ?>
-				<div class="content-item post-block" style="background: url('<?php echo $background[0]; ?>') no-repeat center center/cover;">
-					<a href="<?php the_permalink(); ?>">
-						<h3 class="content-item-title"><?php the_title(); ?></h3>
-						<div class="post-date"><em><?php echo get_the_date('F j, Y'); ?></em></div>
-						<div class="post-preview">
-							<?php
-							$contentToTrim = get_the_content();
-							$trimmedContent = wp_trim_words($contentToTrim, 15);
-							echo $trimmedContent;
-							?>
-						</div>
-					</a>
-				</div>
-			<?php endwhile; else : ?>
-				<p>Sorry, there is no content associated with that tag.</p>
-			<?php endif; ?>
-			</div>
-            <nav class="prev-next-posts">
-              <div class="prev-posts-link alignleft">
-                <p><?php echo get_next_posts_link( 'Older Entries' ); // display older posts link ?></p>
-              </div>
-              <div class="next-posts-link alignright">
-                <p><?php echo get_previous_posts_link( 'Newer Entries' ); // display newer posts link ?></p>
-              </div>
-            </nav>
+<?php 
+  $posts_page = get_post(get_option('page_for_posts'));
+?>
+
+<div class="wrapper wrapper--large">
+  <div class="section--l">
+    <h1><?php echo 'Posts tagged with: "'; single_tag_title(); echo '"' ?></h1>
+  </div>
+
+  <?php if (have_posts()) : ?>
+  
+  <section class="grid grid--space card-container">
+    <?php while (have_posts()) : 
+    the_post();
+    
+    get_template_part('partials/content-card','post'); 
+    ?>
+    <?php endwhile; ?>
+  </section>
+  <?php else : ?>
+
+  <p class="section--l">Sorry, there is no content associated with that tag.</p>
+  
+  <?php endif; ?>
+
+  <?php if ($wp_query->max_num_pages > 1) : ?>
+
+  <nav class="pagination grid grid--space">
+    <div class="prev-posts-link">
+    <?php 
+    // display previous page link
+    if ( get_previous_posts_link() ) : ?>  
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+      <p><?php echo get_previous_posts_link( 'Previous Page' ); ?></p>
+    <?php endif; ?>
+    </div>
+    <div class="next-posts-link">
+    <?php
+    // display next page link
+    if ( get_next_posts_link() ) : ?>
+      <p><?php echo get_next_posts_link( 'Next Page', $wp_query->max_num_pages ); ?></p>
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+    <?php endif; ?>   
+    </div>
+  </nav>
+
+  <?php endif; ?>
 
 <?php get_footer(); ?>
