@@ -162,6 +162,8 @@ body.has-sidebar { -webkit-box-orient: horizontal; -webkit-box-direction: normal
 
 body.has-sidebar main { margin-top: 0px; }
 
+@media only screen and (max-width: 599px) { body.has-sidebar main { margin-top: 0px; } }
+
 body.has-sidebar .section { padding-right: 2rem; }
 
 body:not(.has-sidebar) main { -webkit-box-flex: 1; -ms-flex: 1 0 auto; flex: 1 0 auto; }
@@ -332,6 +334,8 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 /* Layout */
 .home header { background-color: #aba594; border-bottom: 1px solid #363636; height: 524px; }
 
+.home h1 { margin-bottom: 0px; }
+
 #hero { height: 524px; padding: 4rem 2rem 1rem 2rem; -webkit-box-sizing: border-box; box-sizing: border-box; }
 
 @media only screen and (max-width: 782px) { #hero { height: 460px; } }
@@ -416,8 +420,6 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 #homepageIntro > .grid { -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; text-align: right; }
 
 @media only screen and (max-width: 599px) { #homepageIntro > .grid { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; text-align: left; } }
-
-#homepageIntro p { margin: 0px; }
 
 @-webkit-keyframes shakeZ { 0% { -webkit-transform: rotateZ(90deg) translateX(-50px) translateY(-25px); transform: rotateZ(90deg) translateX(-50px) translateY(-25px); }
   15% { -webkit-transform: rotateZ(90.75deg) translateX(-50px) translateY(-25px); transform: rotateZ(90.75deg) translateX(-50px) translateY(-25px); }
