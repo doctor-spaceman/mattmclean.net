@@ -34,6 +34,10 @@ body.has-sidebar {
   }
   main {
     margin-top: 0px;
+
+    @include breakpoint--small {
+      margin-top: 0px;
+    }
   }
   .section {
     padding-right: $spacing * 2;

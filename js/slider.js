@@ -2778,7 +2778,8 @@ jQuery(function () {
     lazyLoad: 'ondemand',
     rows: 0,
     slidesToShow: 1,
-    swipe: false
+    swipe: false // "true" doesn't play nicely with iframes
+
   }); // Refresh the right-side slider so it can recalculate 
   // its size after its child slider has initialized.
 
