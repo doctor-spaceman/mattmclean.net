@@ -336,6 +336,10 @@ ul.slider {
     height: auto;
     max-height: 360px;
 
+    @include breakpoint--medium {
+      width: 60%
+    }
+
     path {
       stroke-width: 1px;
     }
