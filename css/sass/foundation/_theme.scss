@@ -13,6 +13,14 @@ section > .wp-block-group {
     position: relative;
     z-index: 20;
   }
+  &.fixed {
+    figure {
+      width: unset;
+    }
+    img {
+      width: initial;
+    }
+  }
   .alignleft, 
   .alignright,
   .aligncenter {
