@@ -333,9 +333,9 @@ cite, .supplemental { color: #504f4f; font-size: 1rem; }
 .uppercase { text-transform: uppercase; }
 
 /*---- Lists ----*/
-article ul, article ol, main ul, main ol { padding-left: 2rem; }
+article ul, article ol, main ul, main ol, section ul, section ol { padding-left: 2rem; }
 
-article ul li:not(:last-child), article ol li:not(:last-child), main ul li:not(:last-child), main ol li:not(:last-child) { margin-bottom: .5em; }
+article ul li:not(:last-child), article ol li:not(:last-child), main ul li:not(:last-child), main ol li:not(:last-child), section ul li:not(:last-child), section ol li:not(:last-child) { margin-bottom: .5em; }
 
 ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 
