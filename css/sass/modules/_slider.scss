@@ -114,6 +114,7 @@
     border: 1px solid c('black');
     height: $spacing * .75;
     flex: 0 1 $spacing * 2;
+    margin-bottom: 0px !important;
     position: relative;
     transition: all .1s ease;
 

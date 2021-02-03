@@ -21,7 +21,7 @@ body {
 /* Blockquote */
 blockquote {
   font-size: 125%;
-  margin: $spacing 0;
+  margin: $spacing * 2 0;
   padding: 0 $spacing * .5;
 
   @include accent-block;
@@ -78,15 +78,21 @@ cite,
 }
 
 /*---- Lists ----*/
+article, main, section {
+  ul, 
+  ol {
+    padding-left: $spacing * 2;
+  
+    li:not(:last-child) {
+      margin-bottom: .5em;
+    }
+  }
+}
+
 // Nested
 ul li ul,
 ul li ol,
 ol li ol,
 ol li ul {
 	margin: .25em 0 .25em 1em !important;
-}
-
-ul, 
-ol {
-  padding-left: $spacing * 2;
 }
