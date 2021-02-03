@@ -33,13 +33,12 @@
       padding-right: $spacing;
     }
   }
-  ul, ol {
-    list-style-position: inside;
-    padding-left: $spacing;
-    
-    li:not(:last-child) {
-      margin-bottom: .5em;
-    }
+  h3, .h3 {
+    border-bottom: 1px solid c('black');
+    display: inline-block;
+    font-size: $font__size--base;
+    margin: 2em 0 1em 0;
+    width: 50%;
   }
   .responsive-iframe {
     margin-bottom: 0px;
@@ -65,4 +64,11 @@
 
 .single-post__footer {
   margin-top: $spacing * 6;
+}
+
+article ul,
+article ol {
+  li:not(:last-child) {
+    margin-bottom: .5em;
+  }
 }
