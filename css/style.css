@@ -305,7 +305,7 @@ body { color: #363636; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; f
 @media only screen and (max-width: 599px) { body { line-height: 1.3; } }
 
 /* Blockquote */
-blockquote { font-size: 125%; margin: 1rem 0; padding: 0 0.5rem; position: relative; }
+blockquote { font-size: 125%; margin: 2rem 0; padding: 0 0.5rem; position: relative; }
 
 blockquote:after { background-color: #EBDBB2; content: ''; display: block; position: absolute; top: 0; left: 1rem; height: 100%; width: 2rem; -webkit-transform: skew(-30deg); transform: skew(-30deg); -webkit-transform-origin: left bottom; transform-origin: left bottom; z-index: -10; }
 
