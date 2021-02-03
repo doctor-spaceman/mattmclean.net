@@ -104,7 +104,7 @@
   display: flex !important;
   align-items: center;
   flex-wrap: nowrap;
-  justify-content: center;
+  //justify-content: center;
   height: $spacing * 1.5;
   list-style: none;
   margin-top: $spacing;
@@ -115,10 +115,9 @@
     height: $spacing * .75;
     flex: 0 1 $spacing * 2;
     position: relative;
-    //transition: all .1s ease;
+    transition: all .1s ease;
 
     button {
-      //visibility: hidden;
       background-color: lighten(c('black'),20%);
       border: none;
       box-sizing: border-box;

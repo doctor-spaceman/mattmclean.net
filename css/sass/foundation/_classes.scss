@@ -79,7 +79,7 @@ iframe {
   margin-bottom: $spacing * 2;
   padding-bottom: 66.667%; // 6:4
   position: relative;
-  // overflow: hidden;
+  overflow: hidden;
 
   &--wide {
     padding-bottom: 56.25%; // 16:9
@@ -89,6 +89,7 @@ iframe {
   }
   
   iframe {
+    border: 0;
     position: absolute;
     top: 0;
     left: 0;
