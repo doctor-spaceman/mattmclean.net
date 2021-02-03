@@ -481,7 +481,7 @@ ul, ol { padding-left: 2rem; }
 
 .single-post h3, .single-post .h3 { border-bottom: 1px solid #363636; display: inline-block; font-size: 1.2rem; margin: 2em 0 1em 0; width: 50%; }
 
-.single-post .responsive-iframe { margin-bottom: 0px; }
+.single-post .responsive-iframe { margin-bottom: 1em; }
 
 .single-post .wp-block-columns { margin: 1rem 0; padding: 0px; }
 
