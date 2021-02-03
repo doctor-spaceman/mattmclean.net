@@ -643,7 +643,7 @@ footer { background-color: #EBDBB2; }
 
 .footer__social ul:hover li { opacity: .5; }
 
-.footer__social ul li { -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
+.footer__social ul li { margin-bottom: 0px; -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
 
 .footer__social ul li a { display: block; padding: 0 0.5rem; }
 
@@ -875,7 +875,7 @@ a:hover, a:active { color: dimgray; }
 
 .slick-dots { display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: nowrap; flex-wrap: nowrap; height: 1.5rem; list-style: none; margin-top: 1rem; padding: 0; }
 
-.slick-dots li { border: 1px solid #363636; height: 0.75rem; -webkit-box-flex: 0; -ms-flex: 0 1 2rem; flex: 0 1 2rem; position: relative; -webkit-transition: all .1s ease; transition: all .1s ease; }
+.slick-dots li { border: 1px solid #363636; height: 0.75rem; -webkit-box-flex: 0; -ms-flex: 0 1 2rem; flex: 0 1 2rem; margin-bottom: 0px !important; position: relative; -webkit-transition: all .1s ease; transition: all .1s ease; }
 
 .slick-dots li button { background-color: dimgray; border: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer; font-size: 0px; padding: 0px; position: absolute; top: 0; left: 0; height: 100%; width: 100%; -webkit-appearance: none; }
 
