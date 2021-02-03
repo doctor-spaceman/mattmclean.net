@@ -5,6 +5,7 @@
 
     .slick-slide {
       img {
+        margin-bottom: $spacing * .5;
         width: 100%;
 
         &.is-vertical {
