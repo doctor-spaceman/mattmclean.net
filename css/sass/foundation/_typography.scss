@@ -89,4 +89,8 @@ ol li ul {
 ul, 
 ol {
   padding-left: $spacing * 2;
+
+  li:not(:last-child) {
+    margin-bottom: .5em;
+  }
 }
