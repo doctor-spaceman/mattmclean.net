@@ -1,10 +1,4 @@
 .page-template-portfolio-sidebar {
-  align-items: flex-start;
-
-  @include breakpoint--small {
-    align-items: stretch;
-  }
-
   #pageContent {
     width: 100%;
     

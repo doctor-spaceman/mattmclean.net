@@ -511,10 +511,6 @@ article ul li:not(:last-child), article ol li:not(:last-child) { margin-bottom: 
 
 .page-template-portfolio-item .slider-vertical__right .slider .slick-prev, .page-template-portfolio-item .slider-vertical__right .slider .slick-next { margin: 0px; }
 
-.page-template-portfolio-sidebar { -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
-
-@media only screen and (max-width: 599px) { .page-template-portfolio-sidebar { -webkit-box-align: stretch; -ms-flex-align: stretch; align-items: stretch; } }
-
 .page-template-portfolio-sidebar #pageContent { width: 100%; }
 
 .page-template-portfolio-sidebar #pageContent .content:not(.has-grid) { max-width: 900px; }
@@ -595,7 +591,7 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 @media only screen and (max-width: 599px) { #mainNavBar { background-color: transparent; border: none; } }
 
-#sidebarNav { background-color: rgba(255, 255, 255, 0.7); min-height: 100vh; min-width: 320px; }
+#sidebarNav { background-color: rgba(255, 255, 255, 0.7); min-width: 320px; }
 
 #sidebarNav header { border-bottom: 1px solid #363636; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; padding-bottom: 1rem; width: 100%; }
 
