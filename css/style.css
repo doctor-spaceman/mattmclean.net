@@ -932,7 +932,7 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 
 .slider-vertical__left .slick-slide.slick-current, .slider-vertical__left .slick-slide.slick-current-clone-animate { opacity: 1; -webkit-transform: scale(1, 1); transform: scale(1, 1); }
 
-.slider-vertical__right { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; }
+.slider-vertical__right { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; width: 100%; }
 
 .slider-vertical__right .slick-slide { -webkit-box-sizing: border-box; box-sizing: border-box; min-height: 280px; }
 
@@ -948,7 +948,7 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 
 .slider-vertical .slick-arrow:active { background-color: #EBDBB2; border: 1px solid #363636; }
 
-.slider-vertical .slick-arrow svg { height: 2rem; width: auto; }
+.slider-vertical .slick-arrow svg { height: 2rem; min-width: 1rem; width: auto; }
 
 @media only screen and (max-width: 782px) { .slider-vertical .slick-arrow svg { -ms-flex-item-align: center; align-self: center; height: 1.5rem; } }
 
@@ -966,7 +966,7 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 
 #walkway.slider svg path { stroke-width: 1px; }
 
-#walkway.slider .section { text-align: center; }
+#walkway.slider .section { text-align: center; width: 100%; /* ie fix */ }
 
 .content-card { margin: 0px 2rem 4rem 2rem; width: calc(33% - ((1rem * 2) * 2)); }
 
