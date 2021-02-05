@@ -61,10 +61,21 @@ window.addEventListener('DOMContentLoaded', function (event) {
     var overlayClose = overlay.querySelector('.button--close');
     var overlayContents = overlay.querySelector('.overlay-content');
     overlayClose.addEventListener('click', function (event) {
+      closeOverlay();
+    });
+    document.addEventListener('keyup', function (event) {
+      if (overlay.classList.contains('is-open')) {
+        if (event.code.toLowerCase() === 'escape') {
+          closeOverlay();
+        }
+      }
+    });
+
+    var closeOverlay = function closeOverlay() {
       overlay.classList.remove('is-open', 'loaded');
       overlayClose.setAttribute('tabindex', '-1');
       overlayContents.innerHTML = '';
-    });
+    };
   }
 });
 "use strict";
