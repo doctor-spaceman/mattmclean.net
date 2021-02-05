@@ -262,6 +262,7 @@ ul.slider {
     display: flex;
     align-items: center;
     height: 100%;
+    width: 100%;
 
     .slick-slide {
       box-sizing: border-box;
@@ -301,6 +302,7 @@ ul.slider {
 
     svg {
       height: $spacing * 2;
+      min-width: $spacing;
       width: auto;
 
       @include breakpoint--medium {
@@ -346,5 +348,6 @@ ul.slider {
   }
   .section {
     text-align: center;
+    width: 100%; /* ie fix */
   }
 }

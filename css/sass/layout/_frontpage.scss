@@ -2,7 +2,6 @@
   header {
     background-color: #aba594;
     border-bottom: 1px solid c('black');
-    height: 524px;
   }
   h1 {
     margin-bottom: 0px;
@@ -10,14 +9,17 @@
 }
 #hero {
   height: 524px;
+  min-height: 524px; /* ie fix */
   padding: $navbarHeight + $spacing $spacing * 2 $spacing $spacing * 2;
   box-sizing: border-box;
 
   @include breakpoint--medium {
     height: 460px;
+    min-height: 460px; /* ie fix */
   }
   @include breakpoint--small {
     height: 340px;
+    min-height: 340px; /* ie fix */
     padding: $navbarHeight 0px 0px 0px;
   }
 }

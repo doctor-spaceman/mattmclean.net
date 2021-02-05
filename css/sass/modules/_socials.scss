@@ -3,6 +3,11 @@
   list-style: none;
   padding-top: $spacing * 2;
 
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    min-height: 1px;
+  }
+
   ul {
     box-sizing: border-box;
     display: flex;
@@ -18,5 +23,12 @@
     max-width: $spacing * 2.4;
     padding: 0 $spacing * .25;
     transition: opacity .2s ease;
+  }
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    img[src$=".svg"] {
+      width: 100%; 
+    }
   }
 }

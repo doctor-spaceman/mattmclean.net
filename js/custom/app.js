@@ -39,12 +39,23 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   /*------ Content Overlay ------*/
   const overlay = document.querySelector('.overlay');
-
+  
   if ( overlay ) {
     const overlayClose = overlay.querySelector('.button--close');
     const overlayContents = overlay.querySelector('.overlay-content');
 
     overlayClose.addEventListener('click', (event) => {
+      closeOverlay();
+    });
+    document.addEventListener('keyup', (event) => {
+      if ( overlay.classList.contains('is-open') ) {
+        if ( event.code.toLowerCase() === 'escape' ) {
+          closeOverlay();
+        }
+      }
+    });
+
+    const closeOverlay = (() => {
       overlay.classList.remove('is-open', 'loaded');
       overlayClose.setAttribute('tabindex','-1');
       overlayContents.innerHTML = '';

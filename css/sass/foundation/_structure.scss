@@ -46,6 +46,11 @@ body.has-sidebar {
 body:not(.has-sidebar) {
   main {
     flex: 1 0 auto;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      min-height: 1px;
+    }
   }
 }
 

@@ -1,5 +1,6 @@
 .overlay {
   background-color: c('white');
+  box-sizing: border-box;
   display: none;
   height: 100%;
   width: 100%;
@@ -8,12 +9,21 @@
   left: 0;
   z-index: -1000;
 
-  .grid {
+  > .grid {
     align-content: center;
+    align-items: center;
+    margin-top: $spacing;
+    padding: 0px;
+    
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      width: 100%; 
+    }
   }
 
   &.is-open {
-    display: block;
+    display: flex;
+    flex-direction: column;
     z-index: 1000;
   }
 
@@ -51,8 +61,9 @@
 }
 
 .overlay-content {
+  align-items: flex-start;
   min-height: 70vh;
-  width: 84vw;
+  max-width: 100%;
 }
 
 .overlay--image {
@@ -60,5 +71,10 @@
     margin-bottom: $spacing * .5;
     max-height: 70vh;
     opacity: 0;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      min-height: 100px;
+    }
   }
 }
