@@ -1,7 +1,4 @@
 /*---------- GENERAL ----------*/
-html, body {
-  height: 100%;
-}
 html {
   overflow-x: hidden;
 }
@@ -9,6 +6,7 @@ body {
   background-color: c('white');
   display: flex;
   flex-direction: column;
+  height: 100vh;
   -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
 }
 body:not(.home) main {

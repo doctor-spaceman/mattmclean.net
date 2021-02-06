@@ -100,11 +100,10 @@
 }
 
 // Dots
-.slick-dots {
+ul.slick-dots {
   display: flex !important;
   align-items: center;
   flex-wrap: nowrap;
-  //justify-content: center;
   height: $spacing * 1.5;
   list-style: none;
   margin-top: $spacing;

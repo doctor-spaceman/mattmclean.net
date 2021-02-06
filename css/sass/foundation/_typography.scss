@@ -78,18 +78,6 @@ cite,
 }
 
 /*---- Lists ----*/
-body:not(.home) {
-  article, main, section {
-    ul, 
-    ol {
-      padding-left: $spacing * 2;
-    
-      li:not(:last-child) {
-        margin-bottom: .5em;
-      }
-    }
-  }
-}
 
 // Nested
 ul li ul,

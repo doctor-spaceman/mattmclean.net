@@ -144,11 +144,9 @@ iframe { border: none; }
 .responsive-iframe iframe { border: 0; position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 
 /*---------- GENERAL ----------*/
-html, body { height: 100%; }
-
 html { overflow-x: hidden; }
 
-body { background-color: #ffffff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-text-size-adjust: 100%; }
+body { background-color: #ffffff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: 100vh; -webkit-text-size-adjust: 100%; }
 
 body:not(.home) main { margin-top: 3rem; }
 
@@ -335,10 +333,6 @@ cite, .supplemental { color: #504f4f; font-size: 1rem; }
 .uppercase { text-transform: uppercase; }
 
 /*---- Lists ----*/
-body:not(.home) article ul, body:not(.home) article ol, body:not(.home) main ul, body:not(.home) main ol, body:not(.home) section ul, body:not(.home) section ol { padding-left: 2rem; }
-
-body:not(.home) article ul li:not(:last-child), body:not(.home) article ol li:not(:last-child), body:not(.home) main ul li:not(:last-child), body:not(.home) main ol li:not(:last-child), body:not(.home) section ul li:not(:last-child), body:not(.home) section ol li:not(:last-child) { margin-bottom: .5em; }
-
 ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 
 /* Layout */
@@ -494,6 +488,8 @@ ul li ul, ul li ol, ol li ol, ol li ul { margin: .25em 0 .25em 1em !important; }
 .single-post .wp-block-group { margin: 2rem 0; padding: 0px; }
 
 .single-post__footer { margin-top: 6rem; }
+
+article ul, article ol { padding-left: 2rem; }
 
 article ul li:not(:last-child), article ol li:not(:last-child) { margin-bottom: .5em; }
 
@@ -879,23 +875,23 @@ a:hover, a:active { color: dimgray; }
 
 .slick-arrow.slick-hidden { display: none; }
 
-.slick-dots { display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: nowrap; flex-wrap: nowrap; height: 1.5rem; list-style: none; margin-top: 1rem; padding: 0; }
+ul.slick-dots { display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: nowrap; flex-wrap: nowrap; height: 1.5rem; list-style: none; margin-top: 1rem; padding: 0; }
 
-.slick-dots li { border: 1px solid #363636; height: 0.75rem; -webkit-box-flex: 0; -ms-flex: 0 1 2rem; flex: 0 1 2rem; margin-bottom: 0px !important; position: relative; -webkit-transition: all .1s ease; transition: all .1s ease; }
+ul.slick-dots li { border: 1px solid #363636; height: 0.75rem; -webkit-box-flex: 0; -ms-flex: 0 1 2rem; flex: 0 1 2rem; margin-bottom: 0px !important; position: relative; -webkit-transition: all .1s ease; transition: all .1s ease; }
 
-.slick-dots li button { background-color: dimgray; border: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer; font-size: 0px; padding: 0px; position: absolute; top: 0; left: 0; height: 100%; width: 100%; -webkit-appearance: none; }
+ul.slick-dots li button { background-color: dimgray; border: none; -webkit-box-sizing: border-box; box-sizing: border-box; cursor: pointer; font-size: 0px; padding: 0px; position: absolute; top: 0; left: 0; height: 100%; width: 100%; -webkit-appearance: none; }
 
-.slick-dots li button:focus, .slick-dots li button:hover { background-color: #504f4f; }
+ul.slick-dots li button:focus, ul.slick-dots li button:hover { background-color: #504f4f; }
 
-.slick-dots li.slick-active { height: 1rem; }
+ul.slick-dots li.slick-active { height: 1rem; }
 
-.slick-dots li.slick-active button { background-color: #EBDBB2; }
+ul.slick-dots li.slick-active button { background-color: #EBDBB2; }
 
-.slick-dots li.slick-active button:focus, .slick-dots li.slick-active button:hover { background-color: #e7d3a2; }
+ul.slick-dots li.slick-active button:focus, ul.slick-dots li.slick-active button:hover { background-color: #e7d3a2; }
 
-.slick-dots li.slick-active + li { border-left: none; }
+ul.slick-dots li.slick-active + li { border-left: none; }
 
-.slick-dots li:not(.slick-active):not(:last-child) { border-right: none; }
+ul.slick-dots li:not(.slick-active):not(:last-child) { border-right: none; }
 
 .slider { visibility: hidden; }
 
