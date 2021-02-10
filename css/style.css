@@ -146,13 +146,15 @@ iframe { border: none; }
 /*---------- GENERAL ----------*/
 html { overflow-x: hidden; }
 
-body { background-color: #ffffff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; height: 100vh; -webkit-text-size-adjust: 100%; }
+body { background-color: #ffffff; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-text-size-adjust: 100%; }
 
 body:not(.home) main { margin-top: 3rem; }
 
 @media only screen and (max-width: 599px) { body:not(.home) main { margin-top: calc(3rem + 1rem + 1rem + 1px); } }
 
-body.has-sidebar { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
+body.has-sidebar { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; min-height: 100vh; /* ie fix */ }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { body.has-sidebar { height: 100px; } }
 
 @media only screen and (max-width: 599px) { body.has-sidebar.page-child { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; } }
 
@@ -513,9 +515,7 @@ article ul li:not(:last-child), article ol li:not(:last-child) { margin-bottom: 
 
 @media only screen and (max-width: 880px) { .page-template-portfolio-sidebar #pageContent .content:not(.has-grid) img, .page-template-portfolio-sidebar #pageContent .content:not(.has-grid) figure { width: 100%; } }
 
-.page-template-portfolio-sidebar.page-child #pageContent { background-color: #ffffff; border-left: 1px solid #363636; min-height: 100vh; /* ie fix */ }
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .page-template-portfolio-sidebar.page-child #pageContent { height: 100px; } }
+.page-template-portfolio-sidebar.page-child #pageContent { background-color: #ffffff; border-left: 1px solid #363636; }
 
 @media only screen and (max-width: 599px) { .page-template-portfolio-sidebar.page-child #pageContent { border: none; } }
 

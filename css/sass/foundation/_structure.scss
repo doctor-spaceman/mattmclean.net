@@ -6,7 +6,6 @@ body {
   background-color: c('white');
   display: flex;
   flex-direction: column;
-  height: 100vh;
   -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
 }
 body:not(.home) main {
@@ -18,6 +17,12 @@ body:not(.home) main {
 }
 body.has-sidebar {
   flex-direction: row;
+  min-height: 100vh;
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    height: 100px;
+  }
   
   &.page-child {
     @include breakpoint--small {

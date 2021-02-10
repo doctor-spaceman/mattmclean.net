@@ -18,12 +18,6 @@
   #pageContent {
     background-color: c('white');
     border-left: 1px solid c('black');
-    min-height: 100vh;
-
-    /* ie fix */
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-      height: 100px;
-    }
 
     @include breakpoint--small {
       border: none;
