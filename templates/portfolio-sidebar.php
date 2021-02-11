@@ -6,6 +6,7 @@ Template Name: Portfolio Sidebar
 
 <?php get_header(); ?>
 
+<?php if ( $post->post_parent ) : ?>
 <div 
 class="content 
        content--m
@@ -71,5 +72,6 @@ class="content
     <?php endif; ?>
   </section>
 </div>
+<?php endif; ?>
 
 <?php get_footer(); ?>

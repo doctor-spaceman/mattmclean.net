@@ -6,7 +6,12 @@
 <html class="ie ie8" <? language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) & !(IE 8)]><!-->
-<html <? language_attributes(); ?>>
+<html 
+<? language_attributes(); ?>
+<?php if ( is_page_template('templates/portfolio-sidebar.php') ) : ?>
+class="has-sidebar"
+<?php endif; ?>
+>
 <!--<![endif]-->
 	<head>
 		<meta charset="UTF-8">

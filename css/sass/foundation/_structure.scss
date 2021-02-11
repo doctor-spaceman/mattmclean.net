@@ -1,6 +1,17 @@
 /*---------- GENERAL ----------*/
 html {
   overflow-x: hidden;
+
+  &.has-sidebar {
+    overflow-y: hidden;
+
+    @include breakpoint--small {
+      overflow-y: auto;
+    }
+  }
+}
+html, body {
+  height: 100%;
 }
 body {
   background-color: c('white');
@@ -21,10 +32,12 @@ body.has-sidebar {
 
   /* ie fix */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    height: 100px;
+    min-height: 100px;
   }
   
   &.page-child {
+    min-height: 0px;
+
     @include breakpoint--small {
       flex-direction: column;
     }
