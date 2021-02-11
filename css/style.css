@@ -241,9 +241,9 @@ section > .wp-block-group { padding-bottom: 2rem; }
 
 .wp-block-image .alignleft, .wp-block-image .alignright, .wp-block-image .aligncenter { margin-top: 0.5rem; margin-bottom: 0.5rem; }
 
-.wp-block-image .alignleft { margin-right: 1rem; }
+.wp-block-image .alignleft { margin-left: 0px; margin-right: 1.2rem; }
 
-.wp-block-image .alignright { margin-left: 1rem; }
+.wp-block-image .alignright { margin-left: 1.2rem; margin-right: 0px; }
 
 .wp-block-image .aligncenter { margin-left: auto; margin-right: auto; }
 

@@ -28,10 +28,12 @@ section > .wp-block-group {
     margin-bottom: $spacing * .5;
   }
   .alignleft {
-    margin-right: $spacing;
+    margin-left: 0px;
+    margin-right: $spacing * 1.2;
   }
   .alignright {
-    margin-left: $spacing;
+    margin-left: $spacing * 1.2;
+    margin-right: 0px;
   }
   .aligncenter {
     margin-left: auto;
