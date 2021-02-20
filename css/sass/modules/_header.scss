@@ -56,7 +56,8 @@ header {
   padding-bottom: 0px;
   
   @include breakpoint--small {
-    height: unset;
+    flex: 0 0 auto;
+    height: auto;
     width: 100%;
   }
 
