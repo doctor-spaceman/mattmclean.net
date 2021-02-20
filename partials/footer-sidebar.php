@@ -3,7 +3,6 @@
 <footer class="sticky-footer sidebar-footer sidebar-footer--mobile">
   <div class="grid grid--center grid--column grid--space footer">
     <?php if ( $footerElements['footer_socials'] ) : ?>
-      <!-- TODO: Option to show different socials than main site -->
     <div class="footer__social">
       <ul class="grid grid--center grid--space">
       <?php foreach( $footerElements['footer_socials'] as $social ) : ?>
