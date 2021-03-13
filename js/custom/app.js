@@ -1,7 +1,7 @@
 window.addEventListener('DOMContentLoaded', (event) => {
 
   /*------ Site Mode ------*/
-  const siteModeToggle = document.querySelector('.navbar-main-content__mode');
+  const siteModeToggle = document.querySelector('.navbar-main-content__mode button');
 
   siteModeToggle.addEventListener('click', function() {
     document.body.classList.toggle("site-mode--dark");
@@ -12,7 +12,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     }
     
     // Remember the user's preference
-    document.cookie = `site-mode=${siteMode}`;
+    document.cookie = `site-mode=${siteMode}; path=/`;
   });
 
   /*------ Main Menu ------*/

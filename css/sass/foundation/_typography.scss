@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  color: c('black');
+  color: var(--text-color);
   font-family: $font--main;
   font-size: $font__size--base;
   line-height: 1.2;
@@ -59,7 +59,7 @@ h3, .h3 {
 }
 .title, .subtitle {
   a {
-    color: c('black');
+    color: var(--text-color);
     text-decoration: none;
   }
 }
@@ -70,7 +70,7 @@ h3, .h3 {
 }
 cite, 
 .supplemental {
-  color: lighten(c('black'),10%);
+  color: var(--supplemental-color);
   font-size: $font__size--s;
 }
 .uppercase {

@@ -7,12 +7,39 @@ $colors: (
   'black': #363636,
   'light-gray': #a2a2a2,
   'cream': #EBDBB2,
+  'cream-dark': #cdbf9b,
   'journal': #F2AA6B,
   'artwork': #D97373,
   'photography': #73556E,
   'projects': #778E99,
   'resume': #36738F
 );
+
+body {
+  --accent-color: #EBDBB2;
+  --bg-color: ##ffffff;
+  --border-color: #363636;
+  --header-color: #EBDBB2;
+  --heading-color: #363636;
+  --home-bg-color: #aba594;
+  --text-color: #363636;
+  --supplemental-color: lighten(#363636,10%);
+  --link-color: #363636;
+  --link-hover-color: lighten(#363636,20%);
+
+  &.site-mode--dark {
+    --accent-color: #727068;
+    --bg-color: #363636;
+    --border-color: #e1dbd0;
+    --header-color: #cdbf9b;
+    --heading-color: #e1dbd0;
+    --home-bg-color: #727068;
+    --text-color: #dbd4c7;
+    --supplemental-color: #a2a2a2;
+    --link-color: #ffffff;
+    --link-hover-color: #a2a2a2;
+  }
+}
 
 $font--main: 'Archivo', 'Roboto', 'Tahoma', sans-serif;
 $font--heading: 'Khand', 'Arial Narrow', sans-serif;

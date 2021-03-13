@@ -5,7 +5,7 @@ header {
 }
 
 #mainNavBar {
-  background-color: c('cream');
+  background-color: var(--header-color);
   border-bottom: 1px solid c('black');
   position: fixed;
   width: 100%;
@@ -97,17 +97,19 @@ header {
   width: 100%;
 
   @include breakpoint--small {
-    background-color: c('cream');
+    background-color: var(--header-color);
     padding: 0 $spacing * 2;
   }
 }
 .navbar-main-content__brand,
-a.navbar-main-content__brand {
+a.navbar-main-content__brand,
+a:visited.navbar-main-content__brand {
   color: c('black');
   text-decoration: none;
 }
 
-.navbar-main-content__menu {
+.navbar-main-content__menu,
+.navbar-main-content__mode button {
   background-color: transparent;
   border: none;
   color: c('black');
@@ -115,6 +117,32 @@ a.navbar-main-content__brand {
   padding: 0;
   text-transform: uppercase;
   -webkit-appearance: none;
+}
+.navbar-main-content__mode {
+  margin-right: $spacing;
+
+  .navbar-main-content__mode-icon--light,
+  .navbar-main-content__mode-icon--dark {
+    height: 1em;
+    width: 1em;
+    padding-left: $spacing * .25;
+  }
+  
+  .navbar-main-content__mode-icon--light {
+    display: block;
+  }
+  .navbar-main-content__mode-icon--dark {
+    display: none;
+  }
+
+  body.site-mode--dark & {
+    .navbar-main-content__mode-icon--light {
+      display: none;
+    }
+    .navbar-main-content__mode-icon--dark {
+      display: block;
+    }
+  }
 }
 
 .navbar-main-banner {

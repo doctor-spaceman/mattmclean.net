@@ -1,19 +1,18 @@
 /*---- Basic Link Styling ----*/
 a:link,
 a:visited {
-  color: c('black');
+  color: var(--link-color);
 }
 a:hover,
 a:active {
-  color: lighten(c('black'),20%);
+  color: var(--link-hover-color);
 }
 
-/*---- Other Links ----*/
-
-
 /*---- Button Styling ----*/
-.cta {
-  background-color: c('cream');
+.cta,
+a.cta,
+a:visited.cta {
+  background-color: var(--header-color);
   border: 1px solid c('black');
   box-sizing: border-box;
 	color: c('black');

@@ -1,6 +1,6 @@
 .home {
   header {
-    background-color: #aba594;
+    background-color: var(--home-bg-color);
     border-bottom: 1px solid c('black');
   }
   h1 {

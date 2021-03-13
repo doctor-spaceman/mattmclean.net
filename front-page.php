@@ -13,6 +13,9 @@ $footerElements = get_field('footer_elements', 'option');
 <section id="homepageIntro" class="wrapper wrapper--large" aria-label="Homepage Intro">
   <div class="grid">
     <div class="col-1-2 content grid grid--column">
+      <button class="navbar-main-content__mode">
+        Mode
+      </button>
       <h1><?php echo 'Matt McLean'; ?></h1>
       <p class="supplemental"><?php echo '(he/him)'; ?></p>
       <?php if ( $footerElements['footer_socials'] ) : ?>

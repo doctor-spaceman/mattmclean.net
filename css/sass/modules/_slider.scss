@@ -140,7 +140,7 @@ ul.slick-dots {
       height: $spacing;
             
       button {
-        background-color: c('cream'); 
+        background-color: var(--header-color); 
         
         &:focus, &:hover {
           background-color: darken(c('cream'),4%);
@@ -276,7 +276,7 @@ ul.slider {
   }
   
   .slick-arrow {
-    background-color: c('cream');
+    background-color: var(--header-color);
     border: 1px solid c('black');
     cursor: pointer;
     display: flex;

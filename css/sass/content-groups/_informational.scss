@@ -1,6 +1,7 @@
 .content-group-informational {
   .item-title {
-    border-top: 1px solid c('black');
+    border-top: 1px solid var(--heading-color);
+    color: var(--heading-color);
   }
   
   .item-links {

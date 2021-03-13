@@ -1,7 +1,8 @@
 /*----------FOOTER----------*/
 /*---- Primary Footer ----*/
 footer {
-  background-color: c('cream');
+  background-color: var(--header-color);
+  color: c('black');
 }
 .sticky-footer {
   border-top: 1px solid c('black');
@@ -59,6 +60,10 @@ footer {
   font-size: $font__size--xs;
   text-align: right;
 
+  a,
+  a:visited {
+    color: c('black');
+  }
   p {
     @include min($breakpoint--small) {
       margin: 0;
