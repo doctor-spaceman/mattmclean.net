@@ -1,3 +1,10 @@
+<?php
+$siteMode = '';
+if (!empty($_COOKIE['site-mode']) && $_COOKIE['site-mode'] == 'dark') {
+  $siteMode = 'site-mode--dark';
+}
+?>
+
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <? language_attributes(); ?>>
@@ -41,8 +48,8 @@ class="has-sidebar"
     <?php if ( is_page_template('templates/portfolio-sidebar.php') && $background ) : ?>
     style="background: url('<?php echo $background[0]; ?>') center top / cover no-repeat;" 
     <?php endif; ?>
-    <?php if ( is_page_template('templates/portfolio-sidebar.php') ) : body_class('has-sidebar'); 
-    else : body_class();
+    <?php if ( is_page_template('templates/portfolio-sidebar.php') ) : body_class('has-sidebar ' . $siteMode); 
+    else : body_class($siteMode);
     endif; ?>
   >
     <a class="screen-reader-text" href="#pageContent">Jump to Page Content</a>
