@@ -54,6 +54,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
       menu.classList.remove('is-open');
       menu.classList.add('is-closed');
       menuToggle.textContent = 'Menu';
+      menuToggle.setAttribute('aria-label', 'Open main menu');
       menu.querySelectorAll('.menu-item').forEach(function (el) {
         el.setAttribute('tabindex', '-1');
       });
@@ -61,6 +62,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
       menu.classList.add('is-open');
       menu.classList.remove('is-closed');
       menuToggle.textContent = 'Close';
+      menuToggle.setAttribute('aria-label', 'Close main menu');
       menu.querySelectorAll('.menu-item').forEach(function (el) {
         el.setAttribute('tabindex', '0');
       });
