@@ -17,6 +17,7 @@ class="has-sidebar"
 		<meta charset="UTF-8">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.86">
+    <meta name="color-scheme" content="dark light">
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
