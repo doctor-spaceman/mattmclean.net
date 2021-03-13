@@ -49,6 +49,9 @@
         <a class="navbar-main-content__brand" href="<?php bloginfo('url'); ?>">
           Matt McLean
         </a>
+        <button class="navbar-main-content__mode">
+          Mode
+        </button>
         <button class="navbar-main-content__menu">
           Menu
         </button>

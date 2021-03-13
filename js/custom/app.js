@@ -1,4 +1,20 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+
+  /*------ Site Mode ------*/
+  const siteModeToggle = document.querySelector('.navbar-main-content__mode');
+
+  siteModeToggle.addEventListener('click', function() {
+    document.body.classList.toggle("site-mode--dark");
+
+    let siteMode = 'light';
+    if ( document.body.classList.contains("site-mode--dark") ) {
+      siteMode = 'dark';
+    }
+    
+    // Remember the user's preference
+    document.cookie = `site-mode=${siteMode}`;
+  });
+
   /*------ Main Menu ------*/
   const menuToggle = document.querySelector('.navbar-main-content__menu');
   const mainMenu = document.querySelector('nav.main-menu');

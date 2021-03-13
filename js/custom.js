@@ -18,7 +18,21 @@ jQuery(function () {
 "use strict";
 
 window.addEventListener('DOMContentLoaded', function (event) {
+  /*------ Site Mode ------*/
+  var siteModeToggle = document.querySelector('.navbar-main-content__mode');
+  siteModeToggle.addEventListener('click', function () {
+    document.body.classList.toggle("site-mode--dark");
+    var siteMode = 'light';
+
+    if (document.body.classList.contains("site-mode--dark")) {
+      siteMode = 'dark';
+    } // Remember the user's preference
+
+
+    document.cookie = "site-mode=".concat(siteMode);
+  });
   /*------ Main Menu ------*/
+
   var menuToggle = document.querySelector('.navbar-main-content__menu');
   var mainMenu = document.querySelector('nav.main-menu');
   var sidebarMenu = document.querySelector('nav.sidebar-nav');
