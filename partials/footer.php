@@ -6,14 +6,16 @@
       <?php foreach( $footerElements['footer_socials'] as $social ) : ?>
         <li>
           <?php if ( $social['social_link'] ) : ?>
-          <a href="<?php echo esc_url($social['social_link']) ?>">
+          <a 
+          href="<?php echo esc_url($social['social_link']) ?>"
+          <?php if ( $social['channel_name'] ) : ?>
+          aria-label="<?php echo esc_html($social['channel_name']); ?>"
           <?php endif; ?>
-            <?php if ( $social['social_icon']['url'] ) : ?>
-            <img 
-            src="<?php echo esc_url($social['social_icon']['url']); ?>"
-            <?php if ( $social['social_icon']['alt'] ) : ?> 
-            alt="<?php echo esc_html($social['social_icon']['alt']); ?>"<?php endif; ?> />
-            <?php endif; ?>
+          >
+          <?php endif; ?>
+            <?php if ( $social['social_icon']['url'] ) : 
+            echo file_get_contents($social['social_icon']['url']);
+            endif; ?>
           <?php if ( $social['social_link'] ) : ?>
           </a>
           <?php endif; ?>

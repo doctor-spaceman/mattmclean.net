@@ -3,6 +3,10 @@
 footer {
   background-color: var(--header-color);
   color: c('black');
+
+  .site-mode-toggle {
+    font-family: $font--heading;
+  }
 }
 .sticky-footer {
   border-top: 1px solid c('black');
@@ -51,8 +55,8 @@ footer {
       }
     }
   }
-  img {
-    width: $spacing * 1.6;
+  svg {
+    width: $spacing * 1.8;
     height: auto;
   }
 }

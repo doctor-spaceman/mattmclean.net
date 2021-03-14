@@ -1,5 +1,5 @@
 .social-icons {
-  border-top: 1px solid c('black'); 
+  border-top: 1px solid var(--border-color); 
   list-style: none;
   padding-top: $spacing * 2;
 
@@ -23,11 +23,18 @@
     max-width: $spacing * 2.4;
     padding: 0 $spacing * .25;
     transition: opacity .2s ease;
+
+    a {
+      display: block;
+    }
+    svg {
+      fill: var(--text-color);
+    }
   }
 
   /* ie fix */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    img[src$=".svg"] {
+    svg {
       width: 100%; 
     }
   }
