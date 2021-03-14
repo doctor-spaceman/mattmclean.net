@@ -126,13 +126,16 @@ a:visited.site-brand {
 .site-mode-toggle {
   margin-right: $spacing * 2;
 
+  button {
+    height: $font__size--base;
+  }
   .site-mode-toggle__icon--light,
   .site-mode-toggle__icon--dark {
     height: .9em;
-    width: .9em;
+    width: auto;
     padding-left: $spacing * .25;
+    padding-top: $spacing * .125;
   }
-  
   .site-mode-toggle__icon--light {
     display: block;
   }

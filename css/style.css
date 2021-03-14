@@ -643,7 +643,9 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 .site-mode-toggle { margin-right: 2rem; }
 
-.site-mode-toggle .site-mode-toggle__icon--light, .site-mode-toggle .site-mode-toggle__icon--dark { height: .9em; width: .9em; padding-left: 0.25rem; }
+.site-mode-toggle button { height: 1.2rem; }
+
+.site-mode-toggle .site-mode-toggle__icon--light, .site-mode-toggle .site-mode-toggle__icon--dark { height: .9em; width: auto; padding-left: 0.25rem; padding-top: 0.125rem; }
 
 .site-mode-toggle .site-mode-toggle__icon--light { display: block; }
 
@@ -665,6 +667,8 @@ body.site-mode--dark .site-mode-toggle .site-mode-toggle__icon--dark { display: 
 /*---- Primary Footer ----*/
 footer { background-color: var(--header-color); color: #363636; }
 
+footer .site-mode-toggle { font-family: "Khand", "Arial Narrow", sans-serif; }
+
 .sticky-footer { border-top: 1px solid #363636; -ms-flex-negative: 0; flex-shrink: 0; margin-top: 4em; position: relative; width: 100%; }
 
 .footer { -ms-flex-wrap: nowrap; flex-wrap: nowrap; margin: 1rem auto; }
@@ -685,7 +689,7 @@ footer { background-color: var(--header-color); color: #363636; }
 
 .footer__social ul li:hover { opacity: 1; }
 
-.footer__social img { width: 1.6rem; height: auto; }
+.footer__social svg { width: 1.8rem; height: auto; }
 
 .footer__attribution { font-size: 0.8rem; text-align: right; }
 
@@ -834,7 +838,7 @@ a:hover, a:active { color: var(--link-hover-color); }
 
 .breadcrumb ol { display: -webkit-box; display: -ms-flexbox; display: flex; list-style: none; padding: 0px; }
 
-.social-icons { border-top: 1px solid #363636; list-style: none; padding-top: 2rem; /* ie fix */ /* ie fix */ }
+.social-icons { border-top: 1px solid var(--border-color); list-style: none; padding-top: 2rem; /* ie fix */ /* ie fix */ }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .social-icons { min-height: 1px; } }
 
@@ -842,7 +846,11 @@ a:hover, a:active { color: var(--link-hover-color); }
 
 .social-icons li { max-width: 2.4rem; padding: 0 0.25rem; -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .social-icons img[src$=".svg"] { width: 100%; } }
+.social-icons li a { display: block; }
+
+.social-icons li svg { fill: var(--text-color); }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .social-icons svg { width: 100%; } }
 
 /*---- Mailchimp ----*/
 #mc_embed_signup { -webkit-box-sizing: border-box; box-sizing: border-box; font-size: 0.8rem; margin-top: 4rem; padding: 1rem; width: 100%; }
