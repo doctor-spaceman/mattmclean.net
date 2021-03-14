@@ -3,6 +3,31 @@
   display: table; 
   clear: both;
 }
+.skip-link {
+  align-self: center;
+  background-color: var(--header-color);
+  color: c('black');
+  font-size: $font__size--s;
+  margin-top: $spacing;
+  opacity: 0;
+  padding: $spacing * .25 $spacing;
+  position: absolute;
+  text-transform: uppercase;  
+  transform: translateY(-100%);
+  transition: opacity .2s ease;
+
+  &:focus {
+    opacity: 1;
+    transform: translateY(0%);
+    transition: opacity .2s ease;
+    z-index: 1000;
+  }
+}
+a.skip-link,
+a:visited.skip-link {
+  color: c('black');
+  text-decoration: none;
+}
 .sr-only,
 .hide-accessible,
 .screen-reader-text { 
