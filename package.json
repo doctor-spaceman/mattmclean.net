@@ -41,6 +41,5 @@
     "images": "gulp images",
     "clearCache": "gulp clearCache",
     "translate": "gulp translate"
-  },
-  "dependencies": {}
+  }
 }
