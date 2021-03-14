@@ -16,8 +16,8 @@
     text-decoration: none;
   }
   .post__title {
-    border-top: 1px solid c('black');
-    //font-size: $font__size--base;
+    border-top: 1px solid var(--heading-color);
+    color: var(--heading-color);
     margin: 0px;
   }
   .post__date {

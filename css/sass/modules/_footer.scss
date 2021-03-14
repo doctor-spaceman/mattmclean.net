@@ -81,6 +81,9 @@ footer {
   &--mobile {
     display: none;
   }
+  &.sticky-footer {
+    margin-top: $spacing * 2;
+  }
 }
 .page-child .sidebar-footer {
   @include breakpoint--small {

@@ -18,18 +18,20 @@ $colors: (
 body {
   --accent-color: #EBDBB2;
   --bg-color: ##ffffff;
+  --bg-color-sidebar: rgba(255,255,255,.7);
   --border-color: #363636;
   --header-color: #EBDBB2;
   --heading-color: #363636;
   --home-bg-color: #aba594;
   --text-color: #363636;
-  --supplemental-color: lighten(#363636,10%);
+  --supplemental-color: #707070;
   --link-color: #363636;
-  --link-hover-color: lighten(#363636,20%);
+  --link-hover-color: #707070;
 
   &.site-mode--dark {
     --accent-color: #727068;
     --bg-color: #363636;
+    --bg-color-sidebar: rgba(0,0,0,.7);
     --border-color: #e1dbd0;
     --header-color: #cdbf9b;
     --heading-color: #e1dbd0;

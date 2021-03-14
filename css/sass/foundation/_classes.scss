@@ -26,9 +26,7 @@ figure {
 }
 figure {
   margin-bottom: 0px;
-}
-figcaption {
-  color: lighten(c('black'),10%);
+  color: var(--supplemental-color);
   font-size: $font__size--xs;
 }
 figure.alignright, 

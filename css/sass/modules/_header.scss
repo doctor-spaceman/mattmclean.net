@@ -19,7 +19,7 @@ header {
 }
 
 #sidebarNav {
-  background-color: rgba(255,255,255,.7);
+  background-color: var(--bg-color-sidebar);
   min-width: 320px;
   height: 100vh;
 
@@ -49,6 +49,11 @@ header {
   }
   .navbar-main-content__menu {
     display: none;
+  }
+  .navbar-main-content__mode {
+    align-self: center;
+    font-size: $font__size--s;
+    margin-top: $spacing * 2;
   }
 }
 .page-child #sidebarNav {
