@@ -32,6 +32,7 @@
 }
 .slick-slider .slick-track,
 .slick-slider .slick-list {
+  height: 100%;
   -webkit-transform: translate3d(0, 0, 0);
   -moz-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
@@ -63,7 +64,6 @@
 }
 .slick-slide {
   float: left;
-  height: 100%;
   min-height: 1px;
   [dir="rtl"] & {
       float: right;

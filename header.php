@@ -1,8 +1,9 @@
 <?php
-$siteMode = '';
-if (!empty($_COOKIE['site-mode']) && $_COOKIE['site-mode'] == 'dark') {
+if (!empty($_COOKIE['site-mode']) && $_COOKIE['site-mode'] == 'dark') :
   $siteMode = 'site-mode--dark';
-}
+else :
+  $siteMode = '';
+endif;
 ?>
 
 <!DOCTYPE html>
@@ -52,7 +53,7 @@ class="has-sidebar"
     else : body_class($siteMode);
     endif; ?>
   >
-    <a class="screen-reader-text" href="#pageContent">Jump to Page Content</a>
+    <a class="skip-link" href="#pageContent">Jump to Page Content</a>
     
     <?php 
     if ( is_front_page() ) : 

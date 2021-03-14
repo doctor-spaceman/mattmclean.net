@@ -1,22 +1,22 @@
+/*------ Site Mode ------*/
+const siteModeToggle = document.querySelector('.site-mode-toggle button');
+
+siteModeToggle.addEventListener('click', function() {
+  document.body.classList.toggle("site-mode--dark");
+
+  let siteMode = 'light';
+  if ( document.body.classList.contains("site-mode--dark") ) {
+    siteMode = 'dark';
+  }
+  
+  // Remember the user's preference
+  document.cookie = `site-mode=${siteMode}; path=/`;
+});
+
+
 window.addEventListener('DOMContentLoaded', (event) => {
-
-  /*------ Site Mode ------*/
-  const siteModeToggle = document.querySelector('.navbar-main-content__mode button');
-
-  siteModeToggle.addEventListener('click', function() {
-    document.body.classList.toggle("site-mode--dark");
-
-    let siteMode = 'light';
-    if ( document.body.classList.contains("site-mode--dark") ) {
-      siteMode = 'dark';
-    }
-    
-    // Remember the user's preference
-    document.cookie = `site-mode=${siteMode}; path=/`;
-  });
-
   /*------ Main Menu ------*/
-  const menuToggle = document.querySelector('.navbar-main-content__menu');
+  const menuToggle = document.querySelector('.main-menu-toggle');
   const mainMenu = document.querySelector('nav.main-menu');
   const sidebarMenu = document.querySelector('nav.sidebar-nav')
 
