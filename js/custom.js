@@ -21,12 +21,7 @@ jQuery(function () {
 var siteModeToggle = document.querySelector('.site-mode-toggle button');
 siteModeToggle.addEventListener('click', function () {
   document.body.classList.toggle("site-mode--dark");
-  var siteMode = 'light';
-
-  if (document.body.classList.contains("site-mode--dark")) {
-    siteMode = 'dark';
-  } // Remember the user's preference
-
+  var siteMode = document.body.classList.contains("site-mode--dark") ? "dark" : "light"; // Remember the user's preference
 
   document.cookie = "site-mode=".concat(siteMode, "; path=/");
 });

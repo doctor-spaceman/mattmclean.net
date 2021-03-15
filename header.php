@@ -1,8 +1,10 @@
 <?php
-if (!empty($_COOKIE['site-mode']) && $_COOKIE['site-mode'] == 'dark') :
-  $siteMode = 'site-mode--dark';
-else :
-  $siteMode = '';
+// Site mode body class
+$siteMode = '';
+if ( !empty($_COOKIE['site-mode']) ) :
+  if ( $_COOKIE['site-mode'] == 'dark' ) :
+    $siteMode = 'site-mode--dark';
+  endif;
 endif;
 ?>
 

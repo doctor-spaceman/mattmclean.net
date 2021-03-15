@@ -24,7 +24,8 @@ $footerElements = get_field('footer_elements', 'option');
             <a 
             href="<?php echo esc_url($social['social_link']) ?>"
             <?php if ( $social['channel_name'] ) : ?>
-            aria-label="<?php echo esc_html($social['channel_name']); ?>"
+            aria-label="<?php echo esc_html($social['channel_name']); ?>" 
+            title="<?php echo esc_html($social['channel_name']); ?>"
             <?php endif; ?>
             >
             <?php endif; ?>

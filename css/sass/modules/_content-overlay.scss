@@ -1,5 +1,5 @@
 .overlay {
-  background-color: c('white');
+  background-color: var(--bg-color);
   box-sizing: border-box;
   display: none;
   height: 100%;
@@ -31,7 +31,7 @@
     align-self: flex-end;
     background-color: transparent;
     border: none;
-    color: c('black');
+    color: var(--link-color);
     cursor: pointer;
     font-family: $font--heading;
     margin-bottom: $spacing * .5;

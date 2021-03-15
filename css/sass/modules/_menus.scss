@@ -114,7 +114,7 @@
   transition: all .2s ease;
 
   @include breakpoint--small {
-    border-bottom: 1px solid c('black');
+    border-bottom: 1px solid var(--border-color);
     max-height: 0;
     opacity: 0;
     visibility: hidden;
@@ -149,11 +149,11 @@
     a, 
     a:link,
     a:visited {
-      color: lighten(c('black'), 50%);
+      color: var(--link-hover-color);
     }
     a:active, 
     a:hover, {
-      color: c('black');
+      color: var(--link-color);
     }
   }
   

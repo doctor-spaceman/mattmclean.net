@@ -86,7 +86,19 @@ footer {
     display: none;
   }
   &.sticky-footer {
+    border-top: 1px solid var(--border-color);
     margin-top: $spacing * 2;
+  }
+  .footer__attribution {
+    color: var(--text-color);
+
+    a {
+      color: var(--link-color);
+
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
   }
 }
 .page-child .sidebar-footer {
@@ -104,7 +116,7 @@ footer {
     }
 
     .footer {
-      border-top: 1px solid c('black');
+      border-top: 1px solid var(--border-color);
       padding-top: $spacing;
     }
   }

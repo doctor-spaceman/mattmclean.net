@@ -22,8 +22,8 @@
 }
 .page-template-portfolio-sidebar.page-child {
   #pageContent {
-    background-color: c('white');
-    border-left: 1px solid c('black');
+    background-color: var(--bg-color);
+    border-left: 1px solid var(--border-color);
     display: block;
     //height: 100%;
 
@@ -33,6 +33,7 @@
   }
 }
 .page-template-portfolio-sidebar h1 {
+  color: var(--heading-color);
   font-family: $font--main;
   font-weight: $font__weight;
   letter-spacing: unset;

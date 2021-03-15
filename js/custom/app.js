@@ -3,12 +3,8 @@ const siteModeToggle = document.querySelector('.site-mode-toggle button');
 
 siteModeToggle.addEventListener('click', function() {
   document.body.classList.toggle("site-mode--dark");
+  let siteMode = document.body.classList.contains("site-mode--dark") ? "dark" : "light"; 
 
-  let siteMode = 'light';
-  if ( document.body.classList.contains("site-mode--dark") ) {
-    siteMode = 'dark';
-  }
-  
   // Remember the user's preference
   document.cookie = `site-mode=${siteMode}; path=/`;
 });
