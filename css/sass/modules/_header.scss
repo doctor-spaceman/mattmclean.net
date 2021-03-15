@@ -126,6 +126,7 @@ a:visited.site-brand {
   border: none;
   color: c('black');
   cursor: pointer;
+  height: $font__size--base;
   padding: 0;
   text-transform: uppercase;
   -webkit-appearance: none;
@@ -134,9 +135,6 @@ a:visited.site-brand {
   margin-left: $spacing * 2;
 }
 .site-mode-toggle {
-  button {
-    height: $font__size--base;
-  }
   .site-mode-toggle__icon--light,
   .site-mode-toggle__icon--dark {
     height: .9em;

@@ -110,7 +110,7 @@ template { display: none; }
 
 body { --accent-color: #EBDBB2; --bg-color: #ffffff; --bg-color-sidebar: rgba(255,255,255,.7); --border-color: #363636; --header-color: #EBDBB2; --heading-color: #363636; --home-bg-color: #aba594; --text-color: #363636; --supplemental-color: #707070; --link-color: #363636; --link-hover-color: #707070; }
 
-body.site-mode--dark { --accent-color: #727068; --bg-color: #363636; --bg-color-sidebar: rgba(0,0,0,.7); --border-color: #e1dbd0; --header-color: #cdbf9b; --heading-color: #e1dbd0; --home-bg-color: #727068; --text-color: #dbd4c7; --supplemental-color: #a2a2a2; --link-color: #ffffff; --link-hover-color: #a2a2a2; }
+body.site-mode--dark { --accent-color: #727068; --bg-color: #363636; --bg-color-sidebar: rgba(0,0,0,.7); --border-color: #e1dbd0; --header-color: #cdbf9b; --heading-color: #e1dbd0; --home-bg-color: #727068; --text-color: #dbd4c7; --supplemental-color: #b0b0b0; --link-color: #ffffff; --link-hover-color: #a2a2a2; }
 
 /* Foundation */
 .clearfix, .single-post .wp-block-group { content: ""; display: table; clear: both; }
@@ -643,11 +643,9 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 .site-brand, a.site-brand, a:visited.site-brand { color: #363636; text-decoration: none; }
 
-.main-menu-toggle, .site-mode-toggle button { background-color: transparent; border: none; color: #363636; cursor: pointer; padding: 0; text-transform: uppercase; -webkit-appearance: none; }
+.main-menu-toggle, .site-mode-toggle button { background-color: transparent; border: none; color: #363636; cursor: pointer; height: 1.2rem; padding: 0; text-transform: uppercase; -webkit-appearance: none; }
 
 .main-menu-toggle { margin-left: 2rem; }
-
-.site-mode-toggle button { height: 1.2rem; }
 
 .site-mode-toggle .site-mode-toggle__icon--light, .site-mode-toggle .site-mode-toggle__icon--dark { height: .9em; width: auto; padding-left: 0.25rem; }
 
