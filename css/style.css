@@ -108,7 +108,7 @@ template { display: none; }
 /** Add the correct display in IE 10. */
 [hidden] { display: none; }
 
-body { --accent-color: #EBDBB2; --bg-color: #ffffff; --bg-color-sidebar: rgba(255,255,255,.7); --border-color: #363636; --header-color: #EBDBB2; --heading-color: #363636; --home-bg-color: #aba594; --text-color: #363636; --supplemental-color: #707070; --link-color: #363636; --link-hover-color: #707070; }
+body { --accent-color: #EBDBB2; --bg-color: #ffffff; --bg-color-sidebar: rgba(255,255,255,.7); --border-color: #363636; --header-color: #EBDBB2; --heading-color: #363636; --home-bg-color: #aba594; --text-color: #363636; --supplemental-color: #363636; --link-color: #363636; --link-hover-color: #707070; }
 
 body.site-mode--dark { --accent-color: #727068; --bg-color: #363636; --bg-color-sidebar: rgba(0,0,0,.7); --border-color: #e1dbd0; --header-color: #cdbf9b; --heading-color: #e1dbd0; --home-bg-color: #727068; --text-color: #dbd4c7; --supplemental-color: #b0b0b0; --link-color: #ffffff; --link-hover-color: #a2a2a2; }
 
@@ -1009,7 +1009,7 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 
 @media only screen and (max-width: 782px) { #walkway.slider svg { width: 60%; } }
 
-#walkway.slider svg path { stroke-width: 1px; }
+#walkway.slider svg path { stroke: var(--link-color); stroke-width: 1px; }
 
 #walkway.slider .section { text-align: center; width: 100%; /* ie fix */ }
 
