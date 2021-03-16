@@ -543,6 +543,8 @@ article ul li:not(:last-child), article ol li:not(:last-child) { margin-bottom: 
 
 .page-template-portfolio-item .slider-vertical__right .slider .slick-prev, .page-template-portfolio-item .slider-vertical__right .slider .slick-next { margin: 0px; }
 
+.page-template-portfolio-sidebar .skip-link { margin: 0px; left: 0; top: 0; }
+
 .page-template-portfolio-sidebar #pageContent { display: none; overflow-y: scroll; width: 100%; }
 
 @media only screen and (max-width: 599px) { .page-template-portfolio-sidebar #pageContent { overflow-y: initial; } }
@@ -635,15 +637,15 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav { background-color: rgba(255, 255, 255, 0.7); min-height: 100px; } }
 
-#sidebarNav header { border-bottom: 1px solid var(--border-color); font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; padding-bottom: 1rem; width: 100%; /* ie fix */ }
+#sidebarNav header { border-bottom: 1px solid var(--border-color); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; padding-bottom: 1rem; width: 100%; /* ie fix */ }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav header { border-bottom: 1px solid #363636; } }
 
-#sidebarNav .brand { display: block; max-width: 120px; margin: 0 auto; }
+#sidebarNav .brand { display: block; margin: 0 auto; }
 
-#sidebarNav .brand svg { fill: var(--link-color); /* ie fix */ }
+#sidebarNav .brand svg { fill: var(--link-color); width: 120px; /* ie fix */ }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav .brand svg { fill: #363636; width: 100%; } }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav .brand svg { fill: #363636; width: 120px; } }
 
 #sidebarNav .main-menu-toggle { color: var(--link-color); display: none; /* ie fix */ }
 
@@ -659,9 +661,11 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .page-child #sidebarNav { background-color: #ffffff; } }
 
-@media only screen and (max-width: 599px) { .page-child #sidebarNav header { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; } }
+@media only screen and (max-width: 599px) { .page-child #sidebarNav header { -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; } }
 
-@media only screen and (max-width: 599px) { .page-child #sidebarNav .brand { margin: 0px; max-width: 84px; } }
+@media only screen and (max-width: 599px) { .page-child #sidebarNav .brand { margin: 0px; } }
+
+@media only screen and (max-width: 599px) { .page-child #sidebarNav .brand svg { width: 84px; } }
 
 @media only screen and (max-width: 599px) { .page-child #sidebarNav .main-menu-toggle { display: block; } }
 

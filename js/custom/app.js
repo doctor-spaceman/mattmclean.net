@@ -35,7 +35,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       menuToggle.textContent = 'Menu';
       menuToggle.setAttribute('aria-label','Open main menu');
 
-      menu.querySelectorAll('.menu-item').forEach(el => {
+      menu.querySelectorAll('.menu-item a').forEach(el => {
         el.setAttribute('tabindex','-1');
       });
       
@@ -45,7 +45,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
       menuToggle.textContent = 'Close';
       menuToggle.setAttribute('aria-label','Close main menu');
 
-      menu.querySelectorAll('.menu-item').forEach(el => {
+      menu.querySelectorAll('.menu-item a').forEach(el => {
         el.setAttribute('tabindex','0');
       });
     }

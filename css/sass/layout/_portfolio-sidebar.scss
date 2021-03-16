@@ -1,4 +1,10 @@
 .page-template-portfolio-sidebar {
+  .skip-link {
+    margin: 0px;
+    left: 0;
+    top: 0;
+  }
+  
   #pageContent {
     display: none;
     overflow-y: scroll;

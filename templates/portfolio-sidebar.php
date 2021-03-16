@@ -42,6 +42,8 @@ class="content
       ?>
       <div class="grid-item">
         <img 
+        aria-label="View <?php echo esc_attr($image_name); ?>"
+        tabindex="0"
         data-overlay="<?php echo esc_url($image_src_overlay); ?>" 
         src="<?php echo esc_url($image_src); ?>" 
         srcset="<?php echo esc_attr($image_srcset); ?>" 
