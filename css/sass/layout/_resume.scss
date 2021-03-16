@@ -10,6 +10,11 @@
   h2 {
     border-bottom: 1px solid var(--border-color);
     font-size: $font__size--m;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-bottom: 1px solid c('black');
+    }
   }
   .title {
     font-size: 1.4rem;

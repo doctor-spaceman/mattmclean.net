@@ -2,10 +2,20 @@
 a:link,
 a:visited {
   color: var(--link-color);
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    color: c('black');
+  }
 }
 a:hover,
 a:active {
   color: var(--link-hover-color);
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    color: c('light-gray');
+  }
 }
 
 /*---- Button Styling ----*/
@@ -24,6 +34,11 @@ a:visited.cta {
 	text-transform: uppercase;
 	padding: $spacing * .5 $spacing;
 	margin: 0px;
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
+  }
   
   &:hover {
     background-color: lighten(c('cream'),6%);

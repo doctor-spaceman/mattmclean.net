@@ -16,6 +16,11 @@ header {
     background-color: transparent;
     border: none;
   }
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
+  }
 }
 
 #sidebarNav {
@@ -25,6 +30,7 @@ header {
 
   /* ie fix */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: rgba(255,255,255,.7);
     min-height: 100px;
   }
 
@@ -34,17 +40,23 @@ header {
     margin-bottom: $spacing * 2;
     padding-bottom: $spacing;
     width: 100%;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-bottom: 1px solid c('black');
+    }
   }
   .brand {
     display: block;
     max-width: 120px;
     margin: 0 auto;
 
-    /* ie fix */
     svg {
       fill: var(--link-color);
-
+      
+      /* ie fix */
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        fill: c('black');
         width: 100%; 
       }
     }
@@ -52,6 +64,11 @@ header {
   .main-menu-toggle {
     color: var(--link-color);
     display: none;
+    
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      color: c('black');
+    }
   }
   .site-mode-toggle {
     align-self: center;
@@ -71,6 +88,11 @@ header {
     flex: 0 0 auto;
     height: auto;
     width: 100%;
+  }
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('white');
   }
 
   header {
@@ -111,6 +133,11 @@ header {
   @include breakpoint--small {
     background-color: var(--header-color);
     padding: 0 $spacing * 2;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      background-color: c('cream');
+    }
   }
 }
 .site-brand,
@@ -135,6 +162,11 @@ a:visited.site-brand {
   margin-left: $spacing * 2;
 }
 .site-mode-toggle {
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    display: none;
+  }
+  
   .site-mode-toggle__icon--light,
   .site-mode-toggle__icon--dark {
     height: .9em;

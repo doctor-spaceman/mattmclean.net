@@ -5,6 +5,7 @@
 
   /* ie fix */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    border-top: 1px solid c('black');
     min-height: 1px;
   }
 
@@ -29,6 +30,11 @@
     }
     svg {
       fill: var(--text-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        fill: c('black');
+      }
     }
   }
 

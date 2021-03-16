@@ -140,6 +140,11 @@ ul.slick-dots {
             
       button {
         background-color: var(--header-color); 
+
+        /* ie fix */
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          background-color: c('cream');
+        }
         
         &:focus, &:hover {
           background-color: darken(c('cream'),4%);
@@ -282,6 +287,11 @@ ul.slider {
     justify-content: center;
     padding: 0;
 
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      background-color: c('cream');
+    }
+
     &:focus {
       outline: none;
 
@@ -343,6 +353,11 @@ ul.slider {
     path {
       stroke: var(--link-color);
       stroke-width: 1px;
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        stroke: c('black');
+      }
     }
   }
   .section {

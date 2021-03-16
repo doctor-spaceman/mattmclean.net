@@ -16,11 +16,16 @@
   transform: translateY(-100%);
   transition: opacity .2s ease;
 
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
+  }
+
   &:focus {
     opacity: 1;
     transform: translateY(0%);
     transition: opacity .2s ease;
-    z-index: 1000;
+    z-index: 2000;
   }
 }
 a.skip-link,
@@ -53,6 +58,11 @@ figure {
   margin-bottom: 0px;
   color: var(--supplemental-color);
   font-size: $font__size--xs;
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    color: c('black');
+  }
 }
 figure.alignright, 
 img.alignright,
@@ -60,10 +70,6 @@ iframe.alignright,
 .wp-caption.alignright {
   float: right; 
   margin: 0em 0 $spacing $spacing;
-
-  // @include breakpoint--medium {
-  //   margin: 0 0 $spacing 0 !important;
-  // }
 }
 figure.alignleft, 
 img.alignleft,
@@ -71,10 +77,6 @@ iframe.alignleft,
 .wp-caption.alignleft {
   float: left; 
   margin: 0em $spacing $spacing 0;
-
-  // @include breakpoint--medium {
-  //   margin: 0 0 $spacing 0 !important;
-  // }
 }
 figure.aligncenter,
 img.aligncenter,

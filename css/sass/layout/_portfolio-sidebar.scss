@@ -30,6 +30,12 @@
     @include breakpoint--small {
       border: none;
     }
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      background-color: c('white');
+      border-left: 1px solid c('black');
+    }
   }
 }
 .page-template-portfolio-sidebar h1 {
@@ -38,6 +44,11 @@
   font-weight: $font__weight;
   letter-spacing: unset;
   text-transform: uppercase;
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    color: c('black');
+  }
 }
 .page-template-portfolio-sidebar .masonry {
   opacity: 0;

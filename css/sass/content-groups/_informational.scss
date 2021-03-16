@@ -2,6 +2,12 @@
   .item-title {
     border-top: 1px solid var(--heading-color);
     color: var(--heading-color);
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-top: 1px solid c('black');
+      color: c('black');
+    }
   }
   
   .item-links {

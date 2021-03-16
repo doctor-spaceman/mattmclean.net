@@ -4,6 +4,11 @@ footer {
   background-color: var(--header-color);
   color: c('black');
 
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
+  }
+
   .site-mode-toggle {
     font-family: $font--heading;
   }
@@ -88,15 +93,35 @@ footer {
   &.sticky-footer {
     border-top: 1px solid var(--border-color);
     margin-top: $spacing * 2;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-top: 1px solid c('black');
+    }
   }
   .footer__attribution {
     color: var(--text-color);
 
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      color: c('black');
+    }
+
     a {
       color: var(--link-color);
 
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('black');
+      }
+
       &:hover {
         color: var(--link-hover-color);
+
+        /* ie fix */
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          color: c('light-gray');
+        }
       }
     }
   }
@@ -118,6 +143,11 @@ footer {
     .footer {
       border-top: 1px solid var(--border-color);
       padding-top: $spacing;
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        border-top: 1px solid c('black');
+      }
     }
   }
 }

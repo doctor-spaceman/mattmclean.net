@@ -118,6 +118,11 @@
     max-height: 0;
     opacity: 0;
     visibility: hidden;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-bottom: 1px solid c('black');
+    }
   }
 
   &.is-open {
@@ -150,10 +155,20 @@
     a:link,
     a:visited {
       color: var(--link-hover-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('light-gray');
+      }
     }
     a:active, 
     a:hover, {
       color: var(--link-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('black');
+      }
     }
   }
   
@@ -169,6 +184,11 @@
   border-top: 1px solid var(--border-color);
   padding-top: 4px;
   
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    border-top: 1px solid c('black');
+  }
+
   p {
     margin: 0px;
     text-transform: uppercase;
