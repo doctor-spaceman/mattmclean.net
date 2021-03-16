@@ -21,27 +21,32 @@
   }
 
   li {
-    max-width: $spacing * 2.4;
+    width: $spacing * 2.4;
     padding: 0 $spacing * .25;
     transition: opacity .2s ease;
 
     a {
       display: block;
+
+      &:hover {
+        svg {
+          fill: var(--link-hover-color);
+
+          /* ie fix */
+          @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+            fill: c('light-gray');
+          }
+        }
+      }
     }
     svg {
-      fill: var(--text-color);
+      fill: var(--link-color);
 
       /* ie fix */
       @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
         fill: c('black');
+        height: $spacing * 2.4;
       }
-    }
-  }
-
-  /* ie fix */
-  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    svg {
-      width: 100%; 
     }
   }
 }

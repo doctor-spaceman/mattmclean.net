@@ -63,6 +63,11 @@ footer {
   svg {
     width: $spacing * 1.8;
     height: auto;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      height: $spacing * 1.8;
+    }
   }
 }
 .footer__attribution {
