@@ -149,16 +149,6 @@ gulp.task( 'vendorsJS', () => {
 		.pipe( concat( config.jsVendorFile + '.min.js' ) )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
 		.pipe( gulp.dest( config.jsVendorDestination ) )
-		/*.pipe(
-			rename({
-				basename: config.jsVendorFile,
-				suffix: '.min'
-			})
-		)
-		.pipe( uglify() )
-		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-    .pipe( gulp.dest( config.jsVendorDestination ) )
-    */
 });
 
 /**
