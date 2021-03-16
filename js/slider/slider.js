@@ -54,7 +54,8 @@ jQuery(function(){
     ]
   });
 
-  jQuery('.slider-vertical__right:not(.adaptive-height)').slick({
+  // Right-side slider
+  var rightSideOptions = {
     adaptiveHeight: false,
     arrows: false,
     autoplay: false,
@@ -63,19 +64,15 @@ jQuery(function(){
     rows: 0,
     slidesToShow: 1,
     swipe: false
-  });
+  };
+  jQuery('.slider-vertical__right:not(.adaptive-height)').slick(rightSideOptions);
 
-  jQuery('.slider-vertical__right.adaptive-height').slick({
-    adaptiveHeight: true,
-    arrows: false,
-    autoplay: false,
-    fade: true,
-    infinite: true,
-    rows: 0,
-    slidesToShow: 1,
-    swipe: false
-  });
-
+  if (jQuery('.slider-vertical__right.adaptive-height')) {
+    rightSideOptions.adaptiveHeight = true;
+    jQuery('.slider-vertical__right.adaptive-height').slick(rightSideOptions);
+  }
+  
+  // Right-side slider within slider (content gallery)
   jQuery('.page-template-portfolio-item .slider-vertical__right .slider').slick({
     adaptiveHeight: true,
     arrows: false,
@@ -94,7 +91,6 @@ jQuery(function(){
   // its size after its child slider has initialized.
   if ( jQuery('.slider-vertical__right .slider.slick-slide') ) {
     jQuery('.slider-vertical__right').slick('refresh');
-    console.log('refreshed');
   }
 
   
