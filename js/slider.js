@@ -2792,15 +2792,12 @@ jQuery(function () {
   }); // Refresh the right-side slider so it can recalculate 
   // its size after its child slider has initialized.
 
-  if (jQuery('.slider-vertical__right .slider.slick-slide')) {
-    jQuery('.slider-vertical__right').slick('refresh');
-  }
+  jQuery('.slider-vertical__right').slick('refresh');
   /**
   * FIX JUMPING ANIMATION
   * Set special animation class on first or last clone.
   * https://github.com/kenwheeler/slick/issues/3419
   */
-
 
   var sliders = jQuery('.slider-vertical__left');
   sliders.on('beforeChange', function (event, slick, currentSlide, nextSlide) {

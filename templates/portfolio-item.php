@@ -1,6 +1,9 @@
 <?php 
 /* Template Name: Portfolio Item */ 
+?>
 
+<?php 
+$adaptiveHeight = get_field('adaptive_height');
 ?>
 
 <?php get_header(); ?>
@@ -40,7 +43,12 @@
       </div>
     </div>
     <div class="col-2-3">
-      <div class="slider slider-vertical__right adaptive-height">
+      <div 
+      class="
+        slider 
+        slider-vertical__right
+        <?php if ( $adaptiveHeight ) : ?>adaptive-height<?php endif; ?>
+      ">
       <?php 
       if ( have_rows('content_group') ) : 
         while ( have_rows('content_group') ) : the_row();

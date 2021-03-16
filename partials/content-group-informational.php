@@ -25,7 +25,7 @@ $item_content = get_sub_field('item_content');
       href="<?php echo esc_url($item_link_primary['url']); ?>" 
       target="<?php echo esc_attr($item_link_primary['target']); ?>"
     >
-      <?php echo esc_html($item_link_primary['title']); ?><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+      <?php echo esc_html($item_link_primary['title']); ?><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
     </a>
     <?php endif; ?>
     <?php if ( $item_link_secondary ) : ?>
@@ -33,7 +33,7 @@ $item_content = get_sub_field('item_content');
       href="<?php echo esc_url($item_link_secondary['url']); ?>" 
       target="<?php echo esc_attr($item_link_secondary['target']); ?>"
     >
-      <?php echo esc_html($item_link_secondary['title']); ?><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+      <?php echo esc_html($item_link_secondary['title']); ?><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
     </a>
     <?php endif; ?>
   </div>
