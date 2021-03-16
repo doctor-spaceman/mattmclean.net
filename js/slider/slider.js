@@ -54,7 +54,19 @@ jQuery(function(){
     ]
   });
 
-  jQuery('.slider-vertical__right').slick({
+  jQuery('.slider-vertical__right:not(.adaptive-height)').slick({
+    adaptiveHeight: false,
+    arrows: false,
+    autoplay: false,
+    fade: true,
+    infinite: true,
+    rows: 0,
+    slidesToShow: 1,
+    swipe: false
+  });
+
+  jQuery('.slider-vertical__right.adaptive-height').slick({
+    adaptiveHeight: true,
     arrows: false,
     autoplay: false,
     fade: true,

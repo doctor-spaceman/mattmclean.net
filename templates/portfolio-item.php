@@ -40,7 +40,7 @@
       </div>
     </div>
     <div class="col-2-3">
-      <div class="slider slider-vertical__right">
+      <div class="slider slider-vertical__right adaptive-height">
       <?php 
       if ( have_rows('content_group') ) : 
         while ( have_rows('content_group') ) : the_row();
