@@ -1,32 +1,38 @@
 "use strict";
 
-jQuery(function () {
-  var icons = jQuery('.error404 #walkway svg');
-
-  if (icons.length) {
-    var svg = new Walkway({
-      selector: '.error404 #walkway svg',
-      duration: '1000',
-      easing: function easing(t) {
-        return t;
-      } // linear
-
-    });
-    svg.draw();
-  }
-});
-"use strict";
-
-/*------ Site Mode ------*/
-var siteModeToggle = document.querySelector('.site-mode-toggle button');
-siteModeToggle.addEventListener('click', function () {
-  document.body.classList.toggle("site-mode--dark");
-  var siteMode = document.body.classList.contains("site-mode--dark") ? "dark" : "light"; // Remember the user's preference
-
-  document.cookie = "site-mode=".concat(siteMode, "; path=/");
-});
 window.addEventListener('DOMContentLoaded', function (event) {
+  /*------ Site Mode ------*/
+  var siteModeToggle = document.querySelector('.site-mode-toggle button');
+  themeCheck();
+  siteModeToggle.addEventListener('click', function () {
+    themeUpdate();
+  });
+
+  function themeCheck() {
+    if (localStorage.getItem('site-mode') !== null && localStorage.getItem('site-mode') === 'dark') {
+      document.body.classList.add("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
+    } else {
+      document.body.classList.remove("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
+      localStorage.removeItem('site-mode');
+    }
+  }
+
+  function themeUpdate() {
+    if (document.body.classList.contains('site-mode--dark') || localStorage.getItem('site-mode') === 'dark') {
+      document.body.classList.remove("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
+      localStorage.removeItem('site-mode');
+    } else {
+      document.body.classList.add("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
+      localStorage.setItem('site-mode', 'dark');
+    }
+  }
   /*------ Main Menu ------*/
+
+
   var menuToggle = document.querySelector('.main-menu-toggle');
   var mainMenu = document.querySelector('nav.main-menu');
   var sidebarMenu = document.querySelector('nav.sidebar-nav');
@@ -86,6 +92,23 @@ window.addEventListener('DOMContentLoaded', function (event) {
       overlayClose.setAttribute('tabindex', '-1');
       overlayContents.innerHTML = '';
     };
+  }
+});
+"use strict";
+
+jQuery(function () {
+  var icons = jQuery('.error404 #walkway svg');
+
+  if (icons.length) {
+    var svg = new Walkway({
+      selector: '.error404 #walkway svg',
+      duration: '1000',
+      easing: function easing(t) {
+        return t;
+      } // linear
+
+    });
+    svg.draw();
   }
 });
 "use strict";
