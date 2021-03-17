@@ -1,16 +1,42 @@
-/*------ Site Mode ------*/
-const siteModeToggle = document.querySelector('.site-mode-toggle button');
-
-siteModeToggle.addEventListener('click', function() {
-  document.body.classList.toggle("site-mode--dark");
-  let siteMode = document.body.classList.contains("site-mode--dark") ? "dark" : "light"; 
-
-  // Remember the user's preference
-  document.cookie = `site-mode=${siteMode}; path=/`;
-});
-
-
 window.addEventListener('DOMContentLoaded', (event) => {
+  /*------ Site Mode ------*/
+  const siteModeToggle = document.querySelector('.site-mode-toggle button');
+
+  themeCheck();
+
+  siteModeToggle.addEventListener('click', () => {
+    themeUpdate();  
+  });
+
+  function themeCheck() {
+    if ( 
+      localStorage.getItem('site-mode') !== null && 
+      localStorage.getItem('site-mode') === 'dark' 
+    ) {
+      document.body.classList.add("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
+    } else {
+      document.body.classList.remove("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
+      localStorage.removeItem('site-mode');
+    }
+  }
+
+  function themeUpdate() {
+    if ( 
+      document.body.classList.contains('site-mode--dark') || 
+      localStorage.getItem('site-mode') === 'dark' 
+    ) {
+      document.body.classList.remove("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
+      localStorage.removeItem('site-mode');
+    } else {
+      document.body.classList.add("site-mode--dark");
+      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
+      localStorage.setItem('site-mode', 'dark');
+    }
+  }
+
   /*------ Main Menu ------*/
   const menuToggle = document.querySelector('.main-menu-toggle');
   const mainMenu = document.querySelector('nav.main-menu');
