@@ -118,10 +118,15 @@
   transition: all .2s ease;
 
   @include breakpoint--small {
-    border-bottom: 1px solid c('black');
+    border-bottom: 1px solid var(--border-color);
     max-height: 0;
     opacity: 0;
     visibility: hidden;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-bottom: 1px solid c('black');
+    }
   }
 
   &.is-open {
@@ -142,7 +147,22 @@
   padding: $spacing * .5 0;
 
   a {
+    color: var(--link-color);
     text-decoration: none;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      color: c('black');
+    }
+
+    &:hover {
+      color: var(--link-hover-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('light-gray');
+      }
+    }
   }
 }
 .sidebar-menu .menu-item-separator {
@@ -153,11 +173,21 @@
     a, 
     a:link,
     a:visited {
-      color: lighten(c('black'), 50%);
+      color: var(--link-hover-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('light-gray');
+      }
     }
     a:active, 
     a:hover, {
-      color: c('black');
+      color: var(--link-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('black');
+      }
     }
   }
   
@@ -170,9 +200,14 @@
 
 /*---- Pagination ----*/
 .pagination {
-  border-top: 1px solid c('black');
+  border-top: 1px solid var(--border-color);
   padding-top: 4px;
   
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    border-top: 1px solid c('black');
+  }
+
   p {
     margin: 0px;
     text-transform: uppercase;

@@ -1,6 +1,27 @@
 window.addEventListener('DOMContentLoaded', (event) => {
+  /*------ Site Mode ------*/
+  const siteModeToggle = document.querySelector('.site-mode-toggle button');
+  const root = document.querySelector('html');
+
+  siteModeToggle.addEventListener('click', () => {
+    themeUpdate();  
+  });
+
+  function themeUpdate() {
+    if ( 
+      root.classList.contains('site-mode--dark') || 
+      localStorage.getItem('site-mode') === 'dark' 
+    ) {
+      root.classList.remove("site-mode--dark");
+      localStorage.removeItem('site-mode');
+    } else {
+      root.classList.add("site-mode--dark");
+      localStorage.setItem('site-mode', 'dark');
+    }
+  };
+
   /*------ Main Menu ------*/
-  const menuToggle = document.querySelector('.navbar-main-content__menu');
+  const menuToggle = document.querySelector('.main-menu-toggle');
   const mainMenu = document.querySelector('nav.main-menu');
   const sidebarMenu = document.querySelector('nav.sidebar-nav')
 
@@ -16,25 +37,47 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
-  var toggleMenu = function(menu) {
+  function toggleMenu(menu) {
     if ( menu.classList.contains('is-open') ) {
       menu.classList.remove('is-open');
       menu.classList.add('is-closed');
       menuToggle.textContent = 'Menu';
+      menuToggle.setAttribute('aria-label','Open main menu');
+      menuToggle.focus();
 
-      menu.querySelectorAll('.menu-item').forEach(el => {
+      menu.querySelectorAll('.menu-item a').forEach(el => {
         el.setAttribute('tabindex','-1');
       });
+      
     } else {
       menu.classList.add('is-open');
       menu.classList.remove('is-closed');
       menuToggle.textContent = 'Close';
+      menuToggle.setAttribute('aria-label','Close main menu');
 
-      menu.querySelectorAll('.menu-item').forEach(el => {
+      menu.querySelectorAll('.menu-item a').forEach(el => {
         el.setAttribute('tabindex','0');
       });
+
+      // Dismiss menu
+      document.addEventListener('keyup', (event) => {
+        if ( menu.classList.contains('is-open') ) {
+          if ( event.code.toLowerCase() === 'escape' ) {
+            toggleMenu(menu);
+          }
+        }
+      });
+
+      // Menu item tabbing circularity
+      const menuItemList = menu.querySelectorAll('.menu-item a');
+      console.log(menuItemList);
+      menuItemList[menuItemList.length - 1].addEventListener('focusout', (event) => {
+        if ( menu.classList.contains('is-open') ) {
+          menuItemList[0].focus();
+        }
+      });
     }
-  }
+  };
   
 
   /*------ Content Overlay ------*/
@@ -44,6 +87,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     const overlayClose = overlay.querySelector('.button--close');
     const overlayContents = overlay.querySelector('.overlay-content');
 
+    // Dismiss menu
     overlayClose.addEventListener('click', (event) => {
       closeOverlay();
     });
@@ -55,10 +99,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     });
 
-    const closeOverlay = (() => {
+    function closeOverlay() {
       overlay.classList.remove('is-open', 'loaded');
       overlayClose.setAttribute('tabindex','-1');
       overlayContents.innerHTML = '';
-    });
+    };
   }
 });

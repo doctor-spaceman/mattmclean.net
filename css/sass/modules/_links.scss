@@ -1,19 +1,29 @@
 /*---- Basic Link Styling ----*/
-a:link,
-a:visited {
-  color: c('black');
-}
-a:hover,
-a:active {
-  color: lighten(c('black'),20%);
-}
+main a:link,
+main a:visited {
+  color: var(--link-color);
 
-/*---- Other Links ----*/
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    color: c('black');
+  }
+}
+main a:hover,
+main a:active {
+  color: var(--link-hover-color);
 
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    color: c('light-gray');
+  }
+}
 
 /*---- Button Styling ----*/
-.cta {
-  background-color: c('cream');
+.cta,
+a.cta,
+a:link.cta,
+a:visited.cta {
+  background-color: var(--header-color);
   border: 1px solid c('black');
   box-sizing: border-box;
 	color: c('black');
@@ -25,9 +35,14 @@ a:active {
 	text-transform: uppercase;
 	padding: $spacing * .5 $spacing;
 	margin: 0px;
-  
-  &:hover {
-    background-color: lighten(c('cream'),6%);
-    color: c('black');
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
   }
+}  
+.cta:hover,
+a:hover.cta {
+  background-color: lighten(c('cream'),6%);
+  color: c('black');
 }

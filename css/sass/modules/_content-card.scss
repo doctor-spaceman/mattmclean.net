@@ -16,9 +16,15 @@
     text-decoration: none;
   }
   .post__title {
-    border-top: 1px solid c('black');
-    //font-size: $font__size--base;
+    border-top: 1px solid var(--heading-color);
+    color: var(--heading-color);
     margin: 0px;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-top: 1px solid c('black');
+      color: c('black');
+    }
   }
   .post__date {
     font-size: $font__size--xs;

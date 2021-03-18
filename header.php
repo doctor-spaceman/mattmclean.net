@@ -17,14 +17,23 @@ class="has-sidebar"
 		<meta charset="UTF-8">
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=0.86">
+    <meta name="color-scheme" content="dark light">
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
-    <!-- TODO -->
-    <noscript>
-      <style>
-      </style>
-    </noscript>
+    <script type="text/javascript">
+    var root = document.querySelector('html');
+    if ( 
+      localStorage.getItem('site-mode') !== null && 
+      localStorage.getItem('site-mode') === 'dark' 
+    ) {
+      root.classList.add("site-mode--dark");
+      localStorage.setItem('site-mode', 'dark');
+    } else {
+      root.classList.remove("site-mode--dark");
+      localStorage.removeItem('site-mode');
+    }
+    </script>
 
 		<?php wp_head(); ?>
 
@@ -44,7 +53,7 @@ class="has-sidebar"
     else : body_class();
     endif; ?>
   >
-    <a class="screen-reader-text" href="#pageContent">Jump to Page Content</a>
+    <a class="skip-link" href="#pageContent">Jump to Page Content</a>
     
     <?php 
     if ( is_front_page() ) : 

@@ -14,10 +14,15 @@ html, body {
   height: 100%;
 }
 body {
-  background-color: c('white');
+  background-color: var(--bg-color);
   display: flex;
   flex-direction: column;
   -webkit-text-size-adjust: 100%; // Don't zoom in on device rotate
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('white');
+  }
 }
 body:not(.home) main {
   margin-top: $navbarHeight;

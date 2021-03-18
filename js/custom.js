@@ -1,25 +1,27 @@
 "use strict";
 
-jQuery(function () {
-  var icons = jQuery('.error404 #walkway svg');
-
-  if (icons.length) {
-    var svg = new Walkway({
-      selector: '.error404 #walkway svg',
-      duration: '1000',
-      easing: function easing(t) {
-        return t;
-      } // linear
-
-    });
-    svg.draw();
-  }
-});
-"use strict";
-
 window.addEventListener('DOMContentLoaded', function (event) {
+  /*------ Site Mode ------*/
+  var siteModeToggle = document.querySelector('.site-mode-toggle button');
+  var root = document.querySelector('html');
+  siteModeToggle.addEventListener('click', function () {
+    themeUpdate();
+  });
+
+  function themeUpdate() {
+    if (root.classList.contains('site-mode--dark') || localStorage.getItem('site-mode') === 'dark') {
+      root.classList.remove("site-mode--dark");
+      localStorage.removeItem('site-mode');
+    } else {
+      root.classList.add("site-mode--dark");
+      localStorage.setItem('site-mode', 'dark');
+    }
+  }
+
+  ;
   /*------ Main Menu ------*/
-  var menuToggle = document.querySelector('.navbar-main-content__menu');
+
+  var menuToggle = document.querySelector('.main-menu-toggle');
   var mainMenu = document.querySelector('nav.main-menu');
   var sidebarMenu = document.querySelector('nav.sidebar-nav');
 
@@ -35,31 +37,58 @@ window.addEventListener('DOMContentLoaded', function (event) {
     });
   }
 
-  var toggleMenu = function toggleMenu(menu) {
+  function toggleMenu(menu) {
     if (menu.classList.contains('is-open')) {
       menu.classList.remove('is-open');
       menu.classList.add('is-closed');
       menuToggle.textContent = 'Menu';
-      menu.querySelectorAll('.menu-item').forEach(function (el) {
+      menuToggle.setAttribute('aria-label', 'Open main menu');
+      menuToggle.focus();
+      menu.querySelectorAll('.menu-item a').forEach(function (el) {
         el.setAttribute('tabindex', '-1');
       });
     } else {
       menu.classList.add('is-open');
       menu.classList.remove('is-closed');
       menuToggle.textContent = 'Close';
-      menu.querySelectorAll('.menu-item').forEach(function (el) {
+      menuToggle.setAttribute('aria-label', 'Close main menu');
+      menu.querySelectorAll('.menu-item a').forEach(function (el) {
         el.setAttribute('tabindex', '0');
+      }); // Dismiss menu
+
+      document.addEventListener('keyup', function (event) {
+        if (menu.classList.contains('is-open')) {
+          if (event.code.toLowerCase() === 'escape') {
+            toggleMenu(menu);
+          }
+        }
+      }); // Menu item tabbing circularity
+
+      var menuItemList = menu.querySelectorAll('.menu-item a');
+      console.log(menuItemList);
+      menuItemList[menuItemList.length - 1].addEventListener('focusout', function (event) {
+        if (menu.classList.contains('is-open')) {
+          menuItemList[0].focus();
+        }
       });
     }
-  };
-  /*------ Content Overlay ------*/
+  }
 
+  ;
+  /*------ Content Overlay ------*/
 
   var overlay = document.querySelector('.overlay');
 
   if (overlay) {
+    var closeOverlay = function closeOverlay() {
+      overlay.classList.remove('is-open', 'loaded');
+      overlayClose.setAttribute('tabindex', '-1');
+      overlayContents.innerHTML = '';
+    };
+
     var overlayClose = overlay.querySelector('.button--close');
-    var overlayContents = overlay.querySelector('.overlay-content');
+    var overlayContents = overlay.querySelector('.overlay-content'); // Dismiss menu
+
     overlayClose.addEventListener('click', function (event) {
       closeOverlay();
     });
@@ -70,12 +99,24 @@ window.addEventListener('DOMContentLoaded', function (event) {
         }
       }
     });
+    ;
+  }
+});
+"use strict";
 
-    var closeOverlay = function closeOverlay() {
-      overlay.classList.remove('is-open', 'loaded');
-      overlayClose.setAttribute('tabindex', '-1');
-      overlayContents.innerHTML = '';
-    };
+jQuery(function () {
+  var icons = jQuery('.error404 #walkway svg');
+
+  if (icons.length) {
+    var svg = new Walkway({
+      selector: '.error404 #walkway svg',
+      duration: '1000',
+      easing: function easing(t) {
+        return t;
+      } // linear
+
+    });
+    svg.draw();
   }
 });
 "use strict";

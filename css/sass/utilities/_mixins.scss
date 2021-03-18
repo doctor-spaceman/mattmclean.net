@@ -3,7 +3,7 @@
 
   &:before,
   &:after {
-    background-color: c('cream');
+    background-color: var(--accent-color);
     content: '';
     display: block;
     position: absolute;
@@ -37,7 +37,7 @@
 
   &:before, 
   &:after {
-    background-color: c('cream');
+    background-color: var(--accent-color);
     content: '';
     display: block;
     height: $spacing * 3;
@@ -60,7 +60,7 @@
   position: relative;
 
   &:after {
-    background-color: c('cream');
+    background-color: var(--accent-color);
     content: '';
     display: block;
     position: absolute;

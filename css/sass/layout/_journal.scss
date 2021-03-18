@@ -23,8 +23,9 @@
 /*---- Posts ----*/
 .single-post {
   h2, .h2 {
-    border-bottom: 1px solid c('black');
-    border-right: 1px solid c('black');
+    border-bottom: 1px solid var(--heading-color);
+    border-right: 1px solid var(--heading-color);
+    color: var(--heading-color);
     font-size: $spacing * 1.4;
     margin-top: $spacing * 2;
     padding-right: $spacing * 2;
@@ -32,13 +33,27 @@
     @include breakpoint--small {
       padding-right: $spacing;
     }
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-bottom: 1px solid c('black');
+      border-right: 1px solid c('black');
+      color: c('black');
+    }
   }
   h3, .h3 {
-    border-bottom: 1px solid c('black');
+    border-bottom: 1px solid var(--heading-color);
+    color: var(--heading-color);
     display: inline-block;
     font-size: $font__size--base;
     margin: 2em 0 1em 0;
     width: 50%;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-bottom: 1px solid c('black');
+      color: c('black');
+    }
   }
   .responsive-iframe {
     margin-bottom: 1em;

@@ -1,7 +1,12 @@
 .home {
   header {
-    background-color: #aba594;
+    background-color: var(--home-bg-color);
     border-bottom: 1px solid c('black');
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      background-color: c('cream-dark');
+    }
   }
   h1 {
     margin-bottom: 0px;
@@ -65,7 +70,7 @@
   z-index: 0;
 }
 .hero-graphic__morph {
-  background-color: c('journal');
+  background-color: #F2AA6B;
   border: 1px solid c('black');
   border-radius: 50%;
   cursor: pointer;

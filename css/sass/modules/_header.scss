@@ -5,7 +5,7 @@ header {
 }
 
 #mainNavBar {
-  background-color: c('cream');
+  background-color: var(--header-color);
   border-bottom: 1px solid c('black');
   position: fixed;
   width: 100%;
@@ -16,43 +16,74 @@ header {
     background-color: transparent;
     border: none;
   }
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
+  }
 }
 
 #sidebarNav {
-  background-color: rgba(255,255,255,.7);
+  background-color: var(--bg-color-sidebar);
   min-width: 320px;
   height: 100vh;
 
   /* ie fix */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: rgba(255,255,255,.7);
     min-height: 100px;
   }
 
   header {
-    border-bottom: 1px solid c('black');
+    border-bottom: 1px solid var(--border-color);
+    display: flex;
+    justify-content: center;
     font-family: $font--main;
     margin-bottom: $spacing * 2;
     padding-bottom: $spacing;
     width: 100%;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-bottom: 1px solid c('black');
+    }
   }
   .brand {
     display: block;
-    max-width: 120px;
     margin: 0 auto;
 
-    /* ie fix */
-    &[src$=".svg"] {
-    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-        width: 100%; 
+    svg {
+      fill: var(--link-color);
+      width: 120px;
+      
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        fill: c('black');
+        width: 120px;
       }
     }
   }
-  .navbar-main-content__menu {
+  .main-menu-toggle {
+    color: var(--link-color);
     display: none;
+    
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      color: c('black');
+    }
+  }
+  .site-mode-toggle {
+    align-self: center;
+    font-size: $font__size--s;
+    margin-top: $spacing * 2;
+
+    button {
+      color: var(--text-color);
+    }
   }
 }
 .page-child #sidebarNav {
-  background-color: c('white');
+  background-color: var(--bg-color);
   padding-bottom: 0px;
   
   @include breakpoint--small {
@@ -61,19 +92,27 @@ header {
     width: 100%;
   }
 
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('white');
+  }
+
   header {
     @include breakpoint--small {
-      display: flex;
       justify-content: space-between;
     }
   }
   .brand {
     @include breakpoint--small {
       margin: 0px;
-      max-width: 84px;
     }
   }
-  .navbar-main-content__menu {
+  .brand svg {
+    @include breakpoint--small {
+      width: 84px;
+    }
+  }
+  .main-menu-toggle {
     @include breakpoint--small {
       display: block;
     }
@@ -97,24 +136,64 @@ header {
   width: 100%;
 
   @include breakpoint--small {
-    background-color: c('cream');
+    background-color: var(--header-color);
     padding: 0 $spacing * 2;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      background-color: c('cream');
+    }
   }
 }
-.navbar-main-content__brand,
-a.navbar-main-content__brand {
+.site-brand,
+a.site-brand,
+a:visited.site-brand {
   color: c('black');
   text-decoration: none;
 }
 
-.navbar-main-content__menu {
+.main-menu-toggle,
+.site-mode-toggle button {
   background-color: transparent;
   border: none;
   color: c('black');
   cursor: pointer;
+  height: $font__size--base;
   padding: 0;
   text-transform: uppercase;
   -webkit-appearance: none;
+}
+.main-menu-toggle {
+  margin-left: $spacing * 2;
+}
+.site-mode-toggle {
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    display: none;
+  }
+  
+  .site-mode-toggle__icon--light,
+  .site-mode-toggle__icon--dark {
+    height: .9em;
+    width: auto;
+    padding-left: $spacing * .25;
+    //padding-top: $spacing * .125;
+  }
+  .site-mode-toggle__icon--light {
+    display: block;
+  }
+  .site-mode-toggle__icon--dark {
+    display: none;
+  }
+
+  :root.site-mode--dark & {
+    .site-mode-toggle__icon--light {
+      display: none;
+    }
+    .site-mode-toggle__icon--dark {
+      display: block;
+    }
+  }
 }
 
 .navbar-main-banner {

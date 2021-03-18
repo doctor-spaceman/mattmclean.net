@@ -1,7 +1,17 @@
 /*----------FOOTER----------*/
 /*---- Primary Footer ----*/
 footer {
-  background-color: c('cream');
+  background-color: var(--header-color);
+  color: c('black');
+
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
+  }
+
+  .site-mode-toggle {
+    font-family: $font--heading;
+  }
 }
 .sticky-footer {
   border-top: 1px solid c('black');
@@ -50,15 +60,34 @@ footer {
       }
     }
   }
-  img {
-    width: $spacing * 1.6;
+  svg, img {
     height: auto;
+    width: $spacing * 1.8;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      height: $spacing * 1.8;
+    }
+  }
+  svg {
+    fill: c('black');
+    height: auto;
+    width: $spacing * 1.8;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      fill: c('black');
+    }
   }
 }
 .footer__attribution {
   font-size: $font__size--xs;
   text-align: right;
 
+  a,
+  a:visited {
+    color: c('black');
+  }
   p {
     @include min($breakpoint--small) {
       margin: 0;
@@ -76,6 +105,51 @@ footer {
   &--mobile {
     display: none;
   }
+  &.sticky-footer {
+    border-top: 1px solid var(--border-color);
+    margin-top: $spacing * 2;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      border-top: 1px solid c('black');
+    }
+  }
+  .footer__social {
+    svg {
+      fill: var(--text-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        fill: c('black');
+      }
+    }
+  }
+  .footer__attribution {
+    color: var(--text-color);
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      color: c('black');
+    }
+
+    a {
+      color: var(--link-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('black');
+      }
+
+      &:hover {
+        color: var(--link-hover-color);
+
+        /* ie fix */
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          color: c('light-gray');
+        }
+      }
+    }
+  }
 }
 .page-child .sidebar-footer {
   @include breakpoint--small {
@@ -92,8 +166,13 @@ footer {
     }
 
     .footer {
-      border-top: 1px solid c('black');
+      border-top: 1px solid var(--border-color);
       padding-top: $spacing;
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        border-top: 1px solid c('black');
+      }
     }
   }
 }
