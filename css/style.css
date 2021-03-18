@@ -635,11 +635,11 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav { background-color: rgba(255, 255, 255, 0.7); min-height: 100px; } }
 
-#sidebarNav header { border-bottom: 1px solid var(--border-color); display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; padding-bottom: 1rem; width: 100%; /* ie fix */ }
+#sidebarNav header { border-bottom: 1px solid var(--border-color); color: var(--link-color); font-family: "Archivo", "Roboto", "Tahoma", sans-serif; margin-bottom: 2rem; padding-bottom: 1rem; width: 100%; /* ie fix */ }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav header { border-bottom: 1px solid #363636; } }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav header { border-bottom: 1px solid #363636; color: #363636; } }
 
-#sidebarNav .brand { display: block; margin: 0 auto; }
+#sidebarNav .brand { display: block; margin-right: 1rem; }
 
 #sidebarNav .brand svg { fill: var(--link-color); width: 120px; /* ie fix */ }
 
@@ -649,9 +649,7 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { #sidebarNav .main-menu-toggle { color: #363636; } }
 
-#sidebarNav .site-mode-toggle { -ms-flex-item-align: center; align-self: center; font-size: 1rem; margin-top: 2rem; }
-
-#sidebarNav .site-mode-toggle button { color: var(--text-color); }
+#sidebarNav .site-mode-toggle button { color: var(--link-color); }
 
 .page-child #sidebarNav { background-color: var(--bg-color); padding-bottom: 0px; /* ie fix */ }
 
