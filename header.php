@@ -21,6 +21,22 @@ class="has-sidebar"
 		<link rel="icon" type="image/png" href="/favicon-32x32.png" sizes="32x32" />
 		<link rel="icon" type="image/png" href="/favicon-16x16.png" sizes="16x16" />
 
+    <script type="text/javascript">
+    var root = document.querySelector('html');
+    if ( 
+      localStorage.getItem('site-mode') !== null && 
+      localStorage.getItem('site-mode') === 'dark' 
+    ) {
+      root.classList.add("site-mode--dark");
+      localStorage.setItem('site-mode', 'dark');
+      console.log('is dark mode');
+    } else {
+      root.classList.remove("site-mode--dark");
+      localStorage.removeItem('site-mode');
+      console.log('is light mode');
+    }
+    </script>
+
 		<?php wp_head(); ?>
 
   </head>

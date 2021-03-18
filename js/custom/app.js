@@ -1,41 +1,24 @@
 window.addEventListener('DOMContentLoaded', (event) => {
   /*------ Site Mode ------*/
   const siteModeToggle = document.querySelector('.site-mode-toggle button');
-
-  themeCheck();
+  const root = document.querySelector('html');
 
   siteModeToggle.addEventListener('click', () => {
     themeUpdate();  
   });
 
-  function themeCheck() {
-    if ( 
-      localStorage.getItem('site-mode') !== null && 
-      localStorage.getItem('site-mode') === 'dark' 
-    ) {
-      document.body.classList.add("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
-    } else {
-      document.body.classList.remove("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
-      localStorage.removeItem('site-mode');
-    }
-  }
-
   function themeUpdate() {
     if ( 
-      document.body.classList.contains('site-mode--dark') || 
+      root.classList.contains('site-mode--dark') || 
       localStorage.getItem('site-mode') === 'dark' 
     ) {
-      document.body.classList.remove("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
+      root.classList.remove("site-mode--dark");
       localStorage.removeItem('site-mode');
     } else {
-      document.body.classList.add("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
+      root.classList.add("site-mode--dark");
       localStorage.setItem('site-mode', 'dark');
     }
-  }
+  };
 
   /*------ Main Menu ------*/
   const menuToggle = document.querySelector('.main-menu-toggle');
@@ -54,7 +37,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
     });
   }
 
-  var toggleMenu = function(menu) {
+  function toggleMenu(menu) {
     if ( menu.classList.contains('is-open') ) {
       menu.classList.remove('is-open');
       menu.classList.add('is-closed');
@@ -75,7 +58,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
         el.setAttribute('tabindex','0');
       });
     }
-  }
+  };
   
 
   /*------ Content Overlay ------*/
@@ -96,10 +79,10 @@ window.addEventListener('DOMContentLoaded', (event) => {
       }
     });
 
-    const closeOverlay = (() => {
+    function closeOverlay() {
       overlay.classList.remove('is-open', 'loaded');
       overlayClose.setAttribute('tabindex','-1');
       overlayContents.innerHTML = '';
-    });
+    };
   }
 });

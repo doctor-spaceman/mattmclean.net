@@ -108,9 +108,9 @@ template { display: none; }
 /** Add the correct display in IE 10. */
 [hidden] { display: none; }
 
-body { --accent-color: #EBDBB2; --bg-color: #ffffff; --bg-color-sidebar: rgba(255,255,255,.7); --border-color: #363636; --header-color: #EBDBB2; --heading-color: #363636; --home-bg-color: #aba594; --text-color: #363636; --supplemental-color: #363636; --link-color: #363636; --link-hover-color: #707070; }
+:root { --accent-color: #EBDBB2; --bg-color: #ffffff; --bg-color-sidebar: rgba(255,255,255,.7); --border-color: #363636; --header-color: #EBDBB2; --heading-color: #363636; --home-bg-color: #aba594; --text-color: #363636; --supplemental-color: #363636; --link-color: #363636; --link-hover-color: #707070; }
 
-body.site-mode--dark { --accent-color: #727068; --bg-color: #363636; --bg-color-sidebar: rgba(0,0,0,.7); --border-color: #e1dbd0; --header-color: #cdbf9b; --heading-color: #e1dbd0; --home-bg-color: #727068; --text-color: #dbd4c7; --supplemental-color: #b0b0b0; --link-color: #ffffff; --link-hover-color: #a2a2a2; }
+:root.site-mode--dark { --accent-color: #727068; --bg-color: #363636; --bg-color-sidebar: rgba(0,0,0,.7); --border-color: #e1dbd0; --header-color: #cdbf9b; --heading-color: #e1dbd0; --home-bg-color: #727068; --text-color: #dbd4c7; --supplemental-color: #b0b0b0; --link-color: #ffffff; --link-hover-color: #a2a2a2; }
 
 /* Foundation */
 .clearfix, .single-post .wp-block-group { content: ""; display: table; clear: both; }
@@ -779,20 +779,20 @@ footer .site-mode-toggle { font-family: "Khand", "Arial Narrow", sans-serif; }
 .sidebar-footer .footer__social { margin-bottom: 0.5rem; }
 
 /*---- Basic Link Styling ----*/
-a:link, a:visited { color: var(--link-color); /* ie fix */ }
+main a:link, main a:visited { color: var(--link-color); /* ie fix */ }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { a:link, a:visited { color: #363636; } }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { main a:link, main a:visited { color: #363636; } }
 
-a:hover, a:active { color: var(--link-hover-color); /* ie fix */ }
+main a:hover, main a:active { color: var(--link-hover-color); /* ie fix */ }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { a:hover, a:active { color: #a2a2a2; } }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { main a:hover, main a:active { color: #a2a2a2; } }
 
 /*---- Button Styling ----*/
-.cta, #mc_embed_signup .button, a.cta, #mc_embed_signup a.button, a:visited.cta, #mc_embed_signup a.button:visited { background-color: var(--header-color); border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px; /* ie fix */ }
+.cta, #mc_embed_signup .button, a.cta, #mc_embed_signup a.button, a:link.cta, #mc_embed_signup a.button:link, a:visited.cta, #mc_embed_signup a.button:visited { background-color: var(--header-color); border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px; /* ie fix */ }
 
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .cta, #mc_embed_signup .button, a.cta, #mc_embed_signup a.button, a:visited.cta, #mc_embed_signup a.button:visited { background-color: #EBDBB2; } }
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .cta, #mc_embed_signup .button, a.cta, #mc_embed_signup a.button, a:link.cta, #mc_embed_signup a.button:link, a:visited.cta, #mc_embed_signup a.button:visited { background-color: #EBDBB2; } }
 
-.cta:hover, #mc_embed_signup .button:hover, a.cta:hover, #mc_embed_signup a.button:hover, a:visited.cta:hover, #mc_embed_signup a.button:visited:hover { background-color: #f1e6ca; color: #363636; }
+.cta:hover, #mc_embed_signup .button:hover, a:hover.cta, #mc_embed_signup a.button:hover { background-color: #f1e6ca; color: #363636; }
 
 /*---------- NAVIGATION ----------*/
 .menu { list-style: none; margin: 0; padding: 0; }
@@ -876,7 +876,13 @@ a:hover, a:active { color: var(--link-hover-color); /* ie fix */ }
 
 .sidebar-menu .menu-item { margin-right: 2rem; padding: 0.5rem 0; }
 
-.sidebar-menu .menu-item a { text-decoration: none; }
+.sidebar-menu .menu-item a { color: var(--link-color); text-decoration: none; /* ie fix */ }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .sidebar-menu .menu-item a { color: #363636; } }
+
+.sidebar-menu .menu-item a:hover { color: var(--link-hover-color); /* ie fix */ }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .sidebar-menu .menu-item a:hover { color: #a2a2a2; } }
 
 .page-child .sidebar-menu .menu-item:not(.current-menu-item) a, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:link, .page-child .sidebar-menu .menu-item:not(.current-menu-item) a:visited { color: var(--link-hover-color); /* ie fix */ }
 

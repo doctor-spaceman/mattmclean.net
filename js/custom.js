@@ -3,35 +3,23 @@
 window.addEventListener('DOMContentLoaded', function (event) {
   /*------ Site Mode ------*/
   var siteModeToggle = document.querySelector('.site-mode-toggle button');
-  themeCheck();
+  var root = document.querySelector('html');
   siteModeToggle.addEventListener('click', function () {
     themeUpdate();
   });
 
-  function themeCheck() {
-    if (localStorage.getItem('site-mode') !== null && localStorage.getItem('site-mode') === 'dark') {
-      document.body.classList.add("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
-    } else {
-      document.body.classList.remove("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
-      localStorage.removeItem('site-mode');
-    }
-  }
-
   function themeUpdate() {
-    if (document.body.classList.contains('site-mode--dark') || localStorage.getItem('site-mode') === 'dark') {
-      document.body.classList.remove("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Dark Mode');
+    if (root.classList.contains('site-mode--dark') || localStorage.getItem('site-mode') === 'dark') {
+      root.classList.remove("site-mode--dark");
       localStorage.removeItem('site-mode');
     } else {
-      document.body.classList.add("site-mode--dark");
-      siteModeToggle.setAttribute('aria-label', 'Enable Light Mode');
+      root.classList.add("site-mode--dark");
       localStorage.setItem('site-mode', 'dark');
     }
   }
-  /*------ Main Menu ------*/
 
+  ;
+  /*------ Main Menu ------*/
 
   var menuToggle = document.querySelector('.main-menu-toggle');
   var mainMenu = document.querySelector('nav.main-menu');
@@ -49,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
     });
   }
 
-  var toggleMenu = function toggleMenu(menu) {
+  function toggleMenu(menu) {
     if (menu.classList.contains('is-open')) {
       menu.classList.remove('is-open');
       menu.classList.add('is-closed');
@@ -67,13 +55,20 @@ window.addEventListener('DOMContentLoaded', function (event) {
         el.setAttribute('tabindex', '0');
       });
     }
-  };
-  /*------ Content Overlay ------*/
+  }
 
+  ;
+  /*------ Content Overlay ------*/
 
   var overlay = document.querySelector('.overlay');
 
   if (overlay) {
+    var closeOverlay = function closeOverlay() {
+      overlay.classList.remove('is-open', 'loaded');
+      overlayClose.setAttribute('tabindex', '-1');
+      overlayContents.innerHTML = '';
+    };
+
     var overlayClose = overlay.querySelector('.button--close');
     var overlayContents = overlay.querySelector('.overlay-content');
     overlayClose.addEventListener('click', function (event) {
@@ -86,12 +81,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
         }
       }
     });
-
-    var closeOverlay = function closeOverlay() {
-      overlay.classList.remove('is-open', 'loaded');
-      overlayClose.setAttribute('tabindex', '-1');
-      overlayContents.innerHTML = '';
-    };
+    ;
   }
 });
 "use strict";

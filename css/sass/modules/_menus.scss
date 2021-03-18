@@ -143,7 +143,22 @@
   padding: $spacing * .5 0;
 
   a {
+    color: var(--link-color);
     text-decoration: none;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      color: c('black');
+    }
+
+    &:hover {
+      color: var(--link-hover-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        color: c('light-gray');
+      }
+    }
   }
 }
 .sidebar-menu .menu-item-separator {
