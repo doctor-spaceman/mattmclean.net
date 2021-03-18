@@ -695,9 +695,9 @@ header { font-family: "Khand", "Arial Narrow", sans-serif; color: #363636; posit
 
 .site-mode-toggle .site-mode-toggle__icon--dark { display: none; }
 
-body.site-mode--dark .site-mode-toggle .site-mode-toggle__icon--light { display: none; }
+:root.site-mode--dark .site-mode-toggle .site-mode-toggle__icon--light { display: none; }
 
-body.site-mode--dark .site-mode-toggle .site-mode-toggle__icon--dark { display: block; }
+:root.site-mode--dark .site-mode-toggle .site-mode-toggle__icon--dark { display: block; }
 
 .navbar-main-banner { color: #ffffff; font-size: 1rem; letter-spacing: 1px; padding: .25rem .5rem .25rem 3rem; position: absolute; -webkit-transform: rotateZ(90deg); transform: rotateZ(90deg); -webkit-transform-origin: top left; transform-origin: top left; }
 
