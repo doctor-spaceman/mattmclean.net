@@ -29,11 +29,9 @@ class="has-sidebar"
     ) {
       root.classList.add("site-mode--dark");
       localStorage.setItem('site-mode', 'dark');
-      console.log('is dark mode');
     } else {
       root.classList.remove("site-mode--dark");
       localStorage.removeItem('site-mode');
-      console.log('is light mode');
     }
     </script>
 

@@ -43,6 +43,7 @@ window.addEventListener('DOMContentLoaded', function (event) {
       menu.classList.add('is-closed');
       menuToggle.textContent = 'Menu';
       menuToggle.setAttribute('aria-label', 'Open main menu');
+      menuToggle.focus();
       menu.querySelectorAll('.menu-item a').forEach(function (el) {
         el.setAttribute('tabindex', '-1');
       });
@@ -53,6 +54,22 @@ window.addEventListener('DOMContentLoaded', function (event) {
       menuToggle.setAttribute('aria-label', 'Close main menu');
       menu.querySelectorAll('.menu-item a').forEach(function (el) {
         el.setAttribute('tabindex', '0');
+      }); // Dismiss menu
+
+      document.addEventListener('keyup', function (event) {
+        if (menu.classList.contains('is-open')) {
+          if (event.code.toLowerCase() === 'escape') {
+            toggleMenu(menu);
+          }
+        }
+      }); // Menu item tabbing circularity
+
+      var menuItemList = menu.querySelectorAll('.menu-item a');
+      console.log(menuItemList);
+      menuItemList[menuItemList.length - 1].addEventListener('focusout', function (event) {
+        if (menu.classList.contains('is-open')) {
+          menuItemList[0].focus();
+        }
       });
     }
   }
@@ -70,7 +87,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
     };
 
     var overlayClose = overlay.querySelector('.button--close');
-    var overlayContents = overlay.querySelector('.overlay-content');
+    var overlayContents = overlay.querySelector('.overlay-content'); // Dismiss menu
+
     overlayClose.addEventListener('click', function (event) {
       closeOverlay();
     });
