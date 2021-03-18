@@ -65,7 +65,6 @@ window.addEventListener('DOMContentLoaded', function (event) {
       }); // Menu item tabbing circularity
 
       var menuItemList = menu.querySelectorAll('.menu-item a');
-      console.log(menuItemList);
       menuItemList[menuItemList.length - 1].addEventListener('focusout', function (event) {
         if (menu.classList.contains('is-open')) {
           menuItemList[0].focus();
