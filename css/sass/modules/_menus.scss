@@ -38,6 +38,10 @@
     }
   }
 
+  &.current_page_item {
+    @extend .hide-accessible;
+  }
+
   a {
     display: block;
     padding: $spacing * .25 $spacing * .5 $spacing * .25 $navbarHeight;

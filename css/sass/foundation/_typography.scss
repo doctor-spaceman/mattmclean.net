@@ -1,10 +1,6 @@
 /*---------- TYPOGRAPHY ----------*/
 html {
   font-size: 100%; // 1rem = 16px (set by browser)
-
-  @include breakpoint--small {
-    font-size: 92%;
-  }
 }
 
 body {

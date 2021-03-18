@@ -60,13 +60,23 @@ footer {
       }
     }
   }
-  svg {
-    width: $spacing * 1.8;
+  svg, img {
     height: auto;
+    width: $spacing * 1.8;
 
     /* ie fix */
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       height: $spacing * 1.8;
+    }
+  }
+  svg {
+    fill: c('black');
+    height: auto;
+    width: $spacing * 1.8;
+
+    /* ie fix */
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+      fill: c('black');
     }
   }
 }
@@ -102,6 +112,16 @@ footer {
     /* ie fix */
     @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
       border-top: 1px solid c('black');
+    }
+  }
+  .footer__social {
+    svg {
+      fill: var(--text-color);
+
+      /* ie fix */
+      @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        fill: c('black');
+      }
     }
   }
   .footer__attribution {

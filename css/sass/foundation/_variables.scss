@@ -9,11 +9,11 @@ $colors: (
   'cream': #EBDBB2,
   'cream-mid': #cdbf9b,
   'cream-dark': #aba594,
-  'journal': #F2AA6B,
+  'journal': #E39F63,
   'artwork': #D97373,
   'photography': #73556E,
-  'projects': #778E99,
-  'resume': #36738F
+  'projects': #5C7B8A,
+  'resume': #265C73
 );
 
 :root {
@@ -30,7 +30,7 @@ $colors: (
   --link-hover-color: #707070;
 
   &.site-mode--dark {
-    --accent-color: #727068;
+    --accent-color: #282828;
     --bg-color: #363636;
     --bg-color-sidebar: rgba(0,0,0,.7);
     --border-color: #e1dbd0;
