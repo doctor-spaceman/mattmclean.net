@@ -234,7 +234,7 @@ gulp.task( 'sliderJS', () => {
 });
 
 /**
- * Task: `masonryJS`.
+ * Task: `imageGridJS`.
  *
  * Concatenate and uglify custom JS scripts.
  *
@@ -244,9 +244,9 @@ gulp.task( 'sliderJS', () => {
  *     3. Renames the JS file with suffix .min.js
  *     4. Uglifes/Minifies the JS file and generates custom.min.js
  */
-gulp.task( 'masonryJS', () => {
+gulp.task( 'imageGridJS', () => {
 	return gulp
-		.src( config.jsMasonrySRC, { since: gulp.lastRun( 'masonryJS' ) }) // Only run on changed files.
+		.src( config.jsImageGridSRC, { since: gulp.lastRun( 'imageGridJS' ) }) // Only run on changed files.
 		.pipe(
 			babel({
 				presets: [
@@ -259,19 +259,19 @@ gulp.task( 'masonryJS', () => {
 				]
 			})
 		)
-		.pipe( remember( config.jsMasonrySRC ) ) // Bring all files back to stream.
-		.pipe( concat( config.jsMasonryFile + '.js' ) )
+		.pipe( remember( config.jsImageGridSRC ) ) // Bring all files back to stream.
+		.pipe( concat( config.jsImageGridFile + '.js' ) )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-		.pipe( gulp.dest( config.jsMasonryDestination ) )
+		.pipe( gulp.dest( config.jsImageGridDestination ) )
 		.pipe(
 			rename({
-				basename: config.jsMasonryFile,
+				basename: config.jsImageGridFile,
 				suffix: '.min'
 			})
 		)
 		.pipe( uglify() )
 		.pipe( lineec() ) // Consistent Line Endings for non UNIX systems.
-		.pipe( gulp.dest( config.jsMasonryDestination ) )
+		.pipe( gulp.dest( config.jsImageGridDestination ) )
 });
 
 /**
@@ -350,14 +350,14 @@ gulp.task( 'translate', () => {
  */
 gulp.task(
 	'watch',
-	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'sliderJS', 'masonryJS', /*'images',*/ () => {
+	gulp.parallel( 'styles', 'vendorsJS', 'customJS', 'sliderJS', 'imageGridJS', /*'images',*/ () => {
 		gulp.watch( config.watchStyles, gulp.parallel( 'styles' ) ); // Reload on SCSS file changes.
 		gulp.watch( config.watchJsVendor, gulp.series( 'vendorsJS' ) ); // Reload on vendorsJS file changes.
     gulp.watch( config.watchJsCustom, gulp.series( 'customJS' ) ); // Reload on customJS file changes.
     gulp.watch( config.watchJsSlider, gulp.series( 'sliderJS' ) ); // Reload on sliderJS file changes.
-    gulp.watch( config.watchJsMasonry, gulp.series( 'masonryJS' ) ); // Reload on sliderJS file changes.
+    gulp.watch( config.watchJsImageGrid, gulp.series( 'imageGridJS' ) ); // Reload on sliderJS file changes.
 		/* gulp.watch( config.imgSRC, gulp.series( 'images' ) ); // Reload on image file changes. */
 	})
 );
 
-gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', 'sliderJS', 'masonryJS', /*'images' */) );
+gulp.task('default', gulp.series( 'styles','vendorsJS', 'customJS', 'sliderJS', 'imageGridJS', /*'images' */) );
