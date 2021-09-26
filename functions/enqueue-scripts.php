@@ -58,16 +58,22 @@ function site_scripts() {
   if ( preg_match('/(staging-)/', get_site_url()) ) :
     wp_register_script('js-vendor', get_template_directory_uri() . '/js/vendor.min.js', array('jquery'), '', true);
     wp_register_script('js-slider', get_template_directory_uri() . '/js/slider.js', array('js-vendor'), '', true);
+    wp_register_script('js-image-grid', get_template_directory_uri() . '/js/image-grid.js', array('js-vendor'), '', true);
     wp_register_script('js-custom', get_template_directory_uri() . '/js/custom.js', array('js-vendor'), '', true);
   else :
     wp_register_script('js-vendor', get_template_directory_uri() . '/js/vendor.min.js', array('jquery'), '', true);
     wp_register_script('js-slider', get_template_directory_uri() . '/js/slider.min.js', array('js-vendor'), '', true);
+    wp_register_script('js-image-grid', get_template_directory_uri() . '/js/image-grid.min.js', array('js-vendor'), '', true);
     wp_register_script('js-custom', get_template_directory_uri() . '/js/custom.min.js', array('js-vendor'), '', true);
   endif;
 
   wp_enqueue_script('js-vendor');
+  // portfolio scripts
   if ( is_page_template('templates/portfolio.php') || is_page_template('templates/portfolio-item.php') ) : 
     wp_enqueue_script('js-slider');
+  endif;
+  if ( is_page_template('templates/portfolio-sidebar.php') ) : 
+    wp_enqueue_script('js-image-grid');
   endif;
   wp_enqueue_script('js-custom');
 }

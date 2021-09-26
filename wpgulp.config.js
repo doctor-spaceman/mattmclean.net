@@ -38,9 +38,9 @@ module.exports = {
   jsSliderFile: 'slider', // Compiled JS slider file name. Default set to custom i.e. slider.js.
   
   // JS Slick options.
-	jsMasonrySRC: './js/masonry/*.js', // Path to JS masonry scripts folder.
-	jsMasonryDestination: './js/', // Path to place the compiled JS masonry scripts file.
-	jsMasonryFile: 'masonry', // Compiled JS masonry file name. Default set to custom i.e. masonry.js.
+	jsImageGridSRC: './js/image-grid/*.js', // Path to JS image grid scripts folder.
+	jsImageGridDestination: './js/', // Path to place the compiled JS image grid scripts file.
+	jsImageGridFile: 'image-grid', // Compiled JS image grid file name. Default set to custom i.e. image-grid.js.
 
 	// Images options.
 	imgSRC: './img/raw/*', // Source folder of images which should be optimized and watched. You can also specify types e.g. raw/**.{png,jpg,gif} in the glob.
@@ -51,7 +51,7 @@ module.exports = {
 	watchJsVendor: './js/vendor/*.js', // Path to all vendor JS files.
   watchJsCustom: './js/custom/*.js', // Path to all custom JS files.
   watchJsSlider: './js/slider/*.js', // Path to all custom JS files.
-  watchJsMasonry: './js/masonry/*.js', // Path to all custom JS files.
+  watchJsImageGrid: './js/image-grid/*.js', // Path to all custom JS files.
 	watchPhp: './**/*.php', // Path to all PHP files.
 
 	// Translation options.
