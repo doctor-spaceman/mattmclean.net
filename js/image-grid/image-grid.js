@@ -41,11 +41,15 @@ window.addEventListener('DOMContentLoaded', function() {
               overlay.classList.add('loaded');
               
               if ( img_name ) {
-                overlay.querySelector('.overlay-content').insertAdjacentHTML('beforeend', '<div class="overlay-content__title uppercase">' + img_name + '</div>');
+                setTimeout(() => {
+                  overlay.querySelector('.overlay-content').insertAdjacentHTML('beforeend', '<div class="overlay-content__title uppercase">' + img_name + '</div>');
+                }, 100);
               }
         
               if ( img_desc ) {
-                overlay.querySelector('.overlay-content').insertAdjacentHTML('beforeend', '<p class="overlay-content__caption supplemental">' + img_desc + '</p>');
+                setTimeout(() => {
+                  overlay.querySelector('.overlay-content').insertAdjacentHTML('beforeend', '<p class="overlay-content__caption supplemental">' + img_desc + '</p>');
+                }, 100);
               }
             });
           }
