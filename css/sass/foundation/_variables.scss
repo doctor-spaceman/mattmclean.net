@@ -30,17 +30,17 @@ $colors: (
   --link-hover-color: #707070;
 
   &.site-mode--dark {
-    --accent-color: #282828;
+    --accent-color: #484848;
     --bg-color: #363636;
     --bg-color-sidebar: rgba(0,0,0,.7);
-    --border-color: #e1dbd0;
+    --border-color: #ffffff;
     --header-color: #cdbf9b;
-    --heading-color: #e1dbd0;
+    --heading-color: #ffffff;
     --home-bg-color: #727068;
     --text-color: #dbd4c7;
     --supplemental-color: #b0b0b0;
     --link-color: #ffffff;
-    --link-hover-color: #a2a2a2;
+    --link-hover-color: #ffffff;
   }
 }
 

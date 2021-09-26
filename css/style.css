@@ -110,7 +110,7 @@ template { display: none; }
 
 :root { --accent-color: #EBDBB2; --bg-color: #ffffff; --bg-color-sidebar: rgba(255,255,255,.7); --border-color: #363636; --header-color: #EBDBB2; --heading-color: #363636; --home-bg-color: #aba594; --text-color: #363636; --supplemental-color: #363636; --link-color: #363636; --link-hover-color: #707070; }
 
-:root.site-mode--dark { --accent-color: #282828; --bg-color: #363636; --bg-color-sidebar: rgba(0,0,0,.7); --border-color: #e1dbd0; --header-color: #cdbf9b; --heading-color: #e1dbd0; --home-bg-color: #727068; --text-color: #dbd4c7; --supplemental-color: #b0b0b0; --link-color: #ffffff; --link-hover-color: #a2a2a2; }
+:root.site-mode--dark { --accent-color: #484848; --bg-color: #363636; --bg-color-sidebar: rgba(0,0,0,.7); --border-color: #ffffff; --header-color: #cdbf9b; --heading-color: #ffffff; --home-bg-color: #727068; --text-color: #dbd4c7; --supplemental-color: #b0b0b0; --link-color: #ffffff; --link-hover-color: #ffffff; }
 
 /* Foundation */
 .clearfix, .single-post .wp-block-group { content: ""; display: table; clear: both; }
@@ -348,7 +348,7 @@ h2, .h2 { font-size: 1.2rem; }
 
 h3, .h3 { font-size: 1rem; margin-bottom: 0px; }
 
-.title a, .subtitle a { color: var(--text-color); text-decoration: none; /* ie fix */ }
+.title a, .subtitle a { color: var(--heading-color) !important; text-decoration: none; /* ie fix */ }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .title a, .subtitle a { color: #363636; } }
 
