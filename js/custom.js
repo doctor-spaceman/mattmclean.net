@@ -100,6 +100,13 @@ window.addEventListener('DOMContentLoaded', function (event) {
     });
     ;
   }
+  /*------ Portfolio Sidebar Image Grid Load ------*/
+
+
+  var portfolio_sidebar_grid = document.querySelector('.page-template-portfolio-sidebar.page-child .masonry');
+  imagesLoaded(portfolio_sidebar_grid, function () {
+    portfolio_sidebar_grid.classList.add('loaded');
+  });
 });
 "use strict";
 

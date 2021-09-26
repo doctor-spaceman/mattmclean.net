@@ -8,9 +8,11 @@ Template Name: Portfolio Sidebar
 
 <?php if ( $post->post_parent ) : ?>
 <div 
-class="content 
-       content--m
-       <?php if ( have_rows('sidebar_gallery') ) : ?> has-grid<?php endif; ?>">
+  class="
+    content 
+    content--m
+    <?php if ( have_rows('sidebar_gallery') ) : ?> has-grid<?php endif; ?>"
+>
   <?php if ( $post->post_parent ) : ?>
   <h1><?php the_title(); ?></h1>
   <?php endif; ?>
@@ -22,9 +24,7 @@ class="content
     ?>
 
     <?php if ( have_rows('sidebar_gallery') ) : ?>
-    <div class="masonry">
-      <div class="grid-sizer"></div>
-
+    <div class="grid grid--space masonry">
       <?php while ( have_rows('sidebar_gallery') ) :
       the_row();
 
@@ -42,18 +42,17 @@ class="content
       ?>
       <div class="grid-item">
         <img 
-        aria-label="View <?php echo esc_attr($image_name); ?>"
-        tabindex="0"
-        data-overlay="<?php echo esc_url($image_src_overlay); ?>" 
-        src="<?php echo esc_url($image_src); ?>" 
-        srcset="<?php echo esc_attr($image_srcset); ?>" 
-        sizes="<?php echo esc_attr($image_sizes); ?>" 
-        <?php if ( $image_alt ) : ?>alt="<?php echo esc_attr($image_alt); ?>"<?php endif; ?>
-        <?php if ( $image_name ) : ?>data-name="<?php echo esc_attr($image_name); ?>" <?php endif; ?>
-        <?php if ( $image_desc ) : ?>data-caption="<?php echo esc_attr($image_desc); ?>"<?php endif; ?>
+          loading="lazy"
+          tabindex="0"
+          src="<?php echo esc_url($image_src); ?>"
+          srcset="<?php echo esc_attr($image_srcset); ?>" 
+          sizes="<?php echo esc_attr($image_sizes); ?>" 
+          <?php if ( $image_alt ) : ?>alt="<?php echo esc_attr($image_alt); ?>"<?php endif; ?>
+          <?php if ( $image_src_overlay ) : ?>data-overlay="<?php echo esc_url($image_src_overlay); ?>" <?php endif; ?>
+          <?php if ( $image_name ) : ?>data-name="<?php echo esc_attr($image_name); ?>" <?php endif; ?>
+          <?php if ( $image_desc ) : ?>data-caption="<?php echo esc_attr($image_desc); ?>"<?php endif; ?>
         />
       </div>
-    
       <?php endwhile; ?>
     </div>
     <?php endif; ?>
