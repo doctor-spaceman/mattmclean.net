@@ -64,22 +64,32 @@
   &.loaded {
     opacity: 1;
   }
-  .grid-item,
-  .grid-sizer {
-    width: calc(33% - ((16px * 2) * .333));
-
-    @include breakpoint--large {
-      width: calc(50% - (16px / 2));
+  .grid-item {
+    height: 0;
+    margin-bottom: $spacing * 2;
+    overflow: hidden;
+    padding-bottom: calc(33% - ((32px * 2) * .333));
+    position: relative;
+    width: calc(33% - ((32px * 2) * .333));
+    
+    @include breakpoint--xlarge {
+      padding-bottom: calc(50% - (32px / 2));
+      width: calc(50% - (32px / 2));
     }
     @include breakpoint--medium-large {
+      padding-bottom: 100%;
       width: 100%;
     }
-  }
-  .grid-item {
-    margin-bottom: $spacing * .5;
 
     img {
       cursor: pointer;
+      object-fit: cover;
+      border: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 }
