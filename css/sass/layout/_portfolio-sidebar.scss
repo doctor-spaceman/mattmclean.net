@@ -65,12 +65,14 @@
     opacity: 1;
   }
   .grid-item {
+    cursor: zoom-in;
     height: 0;
     margin-bottom: $spacing * 2;
     overflow: hidden;
     padding-bottom: calc(33% - ((32px * 2) * .333));
     position: relative;
     width: calc(33% - ((32px * 2) * .333));
+    transition: opacity .2s ease;
     
     @include breakpoint--xlarge {
       padding-bottom: calc(50% - (32px / 2));
@@ -81,8 +83,11 @@
       width: 100%;
     }
 
+    &:hover {
+      opacity: .85;
+    }
+
     img {
-      cursor: pointer;
       object-fit: cover;
       border: 0;
       position: absolute;
