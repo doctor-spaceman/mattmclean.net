@@ -18,24 +18,28 @@
 
   <div class="slider-vertical grid">
     <div class="col-1-2">
-      <div class="slider slider-vertical__left skew--left">
-      <?php 
-      // Query the children of this page
-      $args = array(
-        'post_parent' => $post->ID,
-        'post_type' => 'page',
-        'order' => 'ASC',
-        'orderby' => 'menu_order'
-      );
-      $child_pages = new WP_Query($args);
+      <div class="swiper slider-vertical__left skew--left">
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-wrapper">
+        <?php 
+        // Query the children of this page
+        $args = array(
+          'post_parent' => $post->ID,
+          'post_type' => 'page',
+          'order' => 'ASC',
+          'orderby' => 'menu_order'
+        );
+        $child_pages = new WP_Query($args);
 
-      if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post(); 
-      ?>
-        <div><?php the_title(); ?></div>
-      <?php 
-      endwhile;
-      endif; 
-      ?>
+        if ( $child_pages->have_posts() ) : while ( $child_pages->have_posts() ) : $child_pages->the_post(); 
+        ?>
+          <div class="swiper-slide"><?php the_title(); ?></div>
+        <?php 
+        endwhile;
+        endif; 
+        ?>
+        </div>
+        <div class="swiper-button-next"></div>
       </div>
     </div>
     <div class="col-1-2">
