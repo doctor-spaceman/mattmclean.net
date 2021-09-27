@@ -1,8 +1,8 @@
-jQuery(function(){
-  var icons = jQuery('.search-no-results #walkway svg');
+document.addEventListener('DOMContentLoaded', () => {
+  const icons = document.querySelectorAll('.search-no-results #walkway svg');
 
   if ( icons.length ) {
-    var svg = new Walkway({
+    const svg = new Walkway({
       selector: '.search-no-results #walkway svg',
       duration: '1000',
       easing: t => t // linear

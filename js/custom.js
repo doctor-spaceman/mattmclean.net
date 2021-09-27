@@ -110,8 +110,8 @@ window.addEventListener('DOMContentLoaded', function (event) {
 });
 "use strict";
 
-jQuery(function () {
-  var icons = jQuery('.error404 #walkway svg');
+document.addEventListener('DOMContentLoaded', function () {
+  var icons = document.querySelectorAll('.error404 #walkway svg');
 
   if (icons.length) {
     var svg = new Walkway({
@@ -159,8 +159,8 @@ if (heroGraphic) {
 } // END / Homepage hero interactive element
 "use strict";
 
-jQuery(function () {
-  var icons = jQuery('.search-no-results #walkway svg');
+document.addEventListener('DOMContentLoaded', function () {
+  var icons = document.querySelectorAll('.search-no-results #walkway svg');
 
   if (icons.length) {
     var svg = new Walkway({
