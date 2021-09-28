@@ -6,15 +6,6 @@ window.addEventListener('DOMContentLoaded', () => {
   let slidesToShow = 3;
   let centerMode = true;
 
-  const initWalkway = (sel) => {
-    const icon = new Walkway({
-      selector: sel,
-      duration: '3000',
-      easing: t => t // linear
-    });
-    icon.draw();
-  };
-
   if ( leftSlides.length < 3 ) {
     centerMode = false;
   } else {
