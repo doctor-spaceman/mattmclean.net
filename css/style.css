@@ -565,11 +565,11 @@ article ul li:not(:last-child), article ol li:not(:last-child) { margin-bottom: 
 
 .page-template-portfolio-sidebar .masonry.loaded { opacity: 1; }
 
-.page-template-portfolio-sidebar .masonry .grid-item { width: calc(33% - ((16px * 2) * .333)); }
+.page-template-portfolio-sidebar .masonry .grid-item { cursor: -webkit-zoom-in; cursor: zoom-in; height: 0; margin-bottom: 2rem; overflow: hidden; padding-bottom: calc(33% - ((32px * 2) * .333)); position: relative; width: calc(33% - ((32px * 2) * .333)); -webkit-transition: opacity .2s ease; transition: opacity .2s ease; }
 
-@media only screen and (max-width: 1000px) { .page-template-portfolio-sidebar .masonry .grid-item { width: calc(50% - (16px / 2)); } }
+@media only screen and (max-width: 1200px) { .page-template-portfolio-sidebar .masonry .grid-item { padding-bottom: calc(50% - (32px / 2)); width: calc(50% - (32px / 2)); } }
 
-@media only screen and (max-width: 880px) { .page-template-portfolio-sidebar .masonry .grid-item { width: 100%; } }
+@media only screen and (max-width: 880px) { .page-template-portfolio-sidebar .masonry .grid-item { padding-bottom: 100%; width: 100%; } }
 
 .page-template-portfolio-sidebar .masonry .grid-item:hover { opacity: .85; }
 
