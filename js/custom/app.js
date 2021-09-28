@@ -109,4 +109,15 @@ window.addEventListener('DOMContentLoaded', (event) => {
   imagesLoaded(portfolio_sidebar_grid, function() {
     portfolio_sidebar_grid.classList.add('loaded');
   });
+
+  /*------ Draw SVG icons -------*/
+  // Draw svg icons
+  const initWalkway = (sel) => {
+    const icon = new Walkway({
+      selector: sel,
+      duration: '3000',
+      easing: t => t // linear
+    });
+    icon.draw();
+  };
 });
