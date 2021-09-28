@@ -27,41 +27,48 @@ $adaptiveHeight = get_field('adaptive_height');
 
   <div class="slider-vertical grid">
     <div class="col-1-3">
-      <div class="slider slider-vertical__left skew--left">
-      <?php 
-      if ( have_rows('content_group') ) : 
-        while ( have_rows('content_group') ) : the_row();
-          $group_name = get_sub_field('group_name');
-      ?>
-        <?php if ( $group_name ) : ?>
-        <div><?php echo esc_html($group_name); ?></div>
-        <?php endif; ?>
-      <?php 
-        endwhile;
-      endif; 
-      ?>
+      <div class="swiper slider-vertical__left skew--left">
+      <button type="button" class="swiper-button-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button>
+        <div class="swiper-wrapper">
+        <?php 
+        if ( have_rows('content_group') ) : 
+          while ( have_rows('content_group') ) : the_row();
+            $group_name = get_sub_field('group_name');
+        ?>
+          <?php if ( $group_name ) : ?>
+          <div class="swiper-slide"><?php echo esc_html($group_name); ?></div>
+          <?php endif; ?>
+        <?php 
+          endwhile;
+        endif; 
+        ?>
+        </div>
+        <button type="button" class="swiper-button-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
       </div>
     </div>
     <div class="col-2-3">
       <div 
       class="
-        slider 
+        swiper 
+        swiper-no-swiping 
         slider-vertical__right
         <?php if ( $adaptiveHeight ) : ?>adaptive-height<?php endif; ?>
       ">
-      <?php 
-      if ( have_rows('content_group') ) : 
-        while ( have_rows('content_group') ) : the_row();
-          $content_group = get_row_layout();
+        <div class="swiper-wrapper">
+        <?php 
+        if ( have_rows('content_group') ) : 
+          while ( have_rows('content_group') ) : the_row();
+            $content_group = get_row_layout();
 
-          if ( $content_group && file_exists(locate_template('partials/content-group-'.$content_group.'.php')) ) :
+            if ( $content_group && file_exists(locate_template('partials/content-group-'.$content_group.'.php')) ) :
 
-          include(locate_template('partials/content-group-'.$content_group.'.php'));
+            include(locate_template('partials/content-group-'.$content_group.'.php'));
 
-          endif;
-        endwhile;
-      endif; 
-      ?>
+            endif;
+          endwhile;
+        endif; 
+        ?>
+        </div>
       </div>  
     </div>
   </div>

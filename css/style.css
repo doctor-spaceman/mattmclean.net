@@ -1037,7 +1037,7 @@ main a:hover, main a:active { color: var(--link-hover-color); /* ie fix */ }
 .swiper-centered > .swiper-wrapper > .swiper-slide { scroll-snap-align: center center; }
 
 /* Swiper Navigation */
-.swiper-button-prev, .swiper-button-next { position: absolute; top: 50%; width: calc(44px / 44 * 27); height: 44px; margin-top: calc(0px - (44px / 2)); z-index: 10; cursor: pointer; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; /* &:after { font-family: swiper-icons; font-size: 44px; text-transform: none !important; letter-spacing: 0; text-transform: none; font-variant: initial; line-height: 1; } */ }
+.swiper-button-prev, .swiper-button-next { position: absolute; top: 50%; width: calc(44px / 44 * 27); height: 44px; margin-top: calc(0px - (44px / 2)); z-index: 10; cursor: pointer; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
 .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled { opacity: 0.35; cursor: auto; pointer-events: none; }
 
@@ -1047,6 +1047,61 @@ main a:hover, main a:active { color: var(--link-hover-color); /* ie fix */ }
 
 .swiper-button-lock { display: none; }
 
+/* Swiper Pagination */
+:root { --swiper-pagination-color: c('black'); --swiper-pagination-bullet-size: 8px; --swiper-pagination-bullet-width: 8px; --swiper-pagination-bullet-height: 8px; --swiper-pagination-bullet-inactive-color: #000; --swiper-pagination-bullet-inactive-opacity: 0.2; --swiper-pagination-bullet-opacity: 1; --swiper-pagination-bullet-horizontal-gap: 4px; --swiper-pagination-bullet-vertical-gap: 6px; }
+
+.swiper-pagination { position: absolute; text-align: center; -webkit-transition: 300ms opacity; transition: 300ms opacity; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); z-index: 10; }
+
+.swiper-pagination.swiper-pagination-hidden { opacity: 0; }
+
+/* Common Styles */
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal { bottom: 10px; left: 0; width: 100%; }
+
+/* Bullets */
+.swiper-pagination-bullets-dynamic { overflow: hidden; font-size: 0; }
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet { -webkit-transform: scale(0.33); transform: scale(0.33); position: relative; }
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active { -webkit-transform: scale(1); transform: scale(1); }
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-main { -webkit-transform: scale(1); transform: scale(1); }
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev { -webkit-transform: scale(0.66); transform: scale(0.66); }
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-prev-prev { -webkit-transform: scale(0.33); transform: scale(0.33); }
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next { -webkit-transform: scale(0.66); transform: scale(0.66); }
+
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active-next-next { -webkit-transform: scale(0.33); transform: scale(0.33); }
+
+.swiper-pagination-bullet { width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px)); height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px)); display: inline-block; border-radius: 50%; background: dimgray; opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2); }
+
+button.swiper-pagination-bullet { border: none; margin: 0; padding: 0; -webkit-box-shadow: none; box-shadow: none; -webkit-appearance: none; -moz-appearance: none; appearance: none; }
+
+.swiper-pagination-clickable .swiper-pagination-bullet { cursor: pointer; }
+
+.swiper-pagination-bullet:only-child { display: none !important; }
+
+.swiper-pagination-bullet-active { opacity: var(--swiper-pagination-bullet-opacity, 1); background: var(--header-color); }
+
+.swiper-vertical > .swiper-pagination-bullets, .swiper-pagination-vertical.swiper-pagination-bullets { right: 10px; top: 50%; -webkit-transform: translate3d(0px, -50%, 0); transform: translate3d(0px, -50%, 0); }
+
+.swiper-vertical > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-vertical.swiper-pagination-bullets .swiper-pagination-bullet { margin: var(--swiper-pagination-bullet-vertical-gap, 6px) 0; display: block; }
+
+.swiper-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic { top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 8px; }
+
+.swiper-vertical > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet, .swiper-pagination-vertical.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet { display: inline-block; -webkit-transition: 200ms top, 200ms -webkit-transform; transition: 200ms top, 200ms -webkit-transform; transition: 200ms transform, 200ms top; transition: 200ms transform, 200ms top, 200ms -webkit-transform; }
+
+.swiper-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet { margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px); }
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic { left: 50%; -webkit-transform: translateX(-50%); transform: translateX(-50%); white-space: nowrap; }
+
+.swiper-horizontal > .swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets.swiper-pagination-bullets-dynamic .swiper-pagination-bullet { -webkit-transition: 200ms left, 200ms -webkit-transform; transition: 200ms left, 200ms -webkit-transform; transition: 200ms transform, 200ms left; transition: 200ms transform, 200ms left, 200ms -webkit-transform; }
+
+.swiper-horizontal.swiper-rtl > .swiper-pagination-bullets-dynamic .swiper-pagination-bullet { -webkit-transition: 200ms right, 200ms -webkit-transform; transition: 200ms right, 200ms -webkit-transform; transition: 200ms transform, 200ms right; transition: 200ms transform, 200ms right, 200ms -webkit-transform; }
+
+.swiper-pagination-lock { display: none; }
+
 /* Swiper Fade */
 .swiper-fade.swiper-free-mode .swiper-slide { -webkit-transition-timing-function: ease-out; transition-timing-function: ease-out; }
 
@@ -1055,43 +1110,6 @@ main a:hover, main a:active { color: var(--link-hover-color); /* ie fix */ }
 .swiper-fade .swiper-slide .swiper-slide { pointer-events: none; }
 
 .swiper-fade .swiper-slide-active, .swiper-fade .swiper-slide-active .swiper-slide-active { pointer-events: auto; }
-
-/* Slick Slider */
-.slick-slider { position: relative; display: block; -webkit-box-sizing: border-box; box-sizing: border-box; -webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; -ms-touch-action: pan-y; touch-action: pan-y; -webkit-tap-highlight-color: transparent; }
-
-.slick-list { position: relative; overflow: hidden; display: block; margin: 0; padding: 0; }
-
-.slick-list:focus { outline: none; }
-
-.slick-list.dragging { cursor: pointer; cursor: hand; }
-
-.slick-slider .slick-track, .slick-slider .slick-list { -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
-
-.slick-track { position: relative; left: 0; top: 0; display: block; margin-left: auto; margin-right: auto; }
-
-.slick-track:before, .slick-track:after { content: ""; display: table; }
-
-.slick-track:after { clear: both; }
-
-.slick-loading .slick-track { visibility: hidden; }
-
-.slick-slide { float: left; min-height: 1px; display: none; }
-
-[dir="rtl"] .slick-slide { float: right; }
-
-.slick-slide img { display: block; }
-
-.slick-slide.slick-loading img { display: none; }
-
-.slick-slide.dragging img { pointer-events: none; }
-
-.slick-initialized .slick-slide { display: block; }
-
-.slick-loading .slick-slide { visibility: hidden; }
-
-.slick-vertical .slick-slide { display: block; height: auto; border: 1px solid transparent; }
-
-.slick-arrow.slick-hidden { display: none; }
 
 ul.slick-dots { display: -webkit-box !important; display: -ms-flexbox !important; display: flex !important; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -ms-flex-wrap: nowrap; flex-wrap: nowrap; height: 1.5rem; list-style: none; margin-top: 1rem; padding: 0; }
 
@@ -1113,13 +1131,13 @@ ul.slick-dots li.slick-active + li { border-left: none; }
 
 ul.slick-dots li:not(.slick-active):not(:last-child) { border-right: none; }
 
-.swiper { height: 400px; width: 100%; visibility: hidden; }
+.swiper { width: 100%; visibility: hidden; }
 
 @media only screen and (max-width: 782px) { .swiper { height: 1.5rem; } }
 
 .swiper.swiper-initialized { visibility: visible; }
 
-ul.slider { list-style: none; padding: 0px; width: auto; }
+ul.swiper-wrapper { list-style: none; padding: 0px; width: auto; }
 
 /* Vertical Slider */
 .slider-vertical .col-1-3 .slider-vertical__left .swiper-slide { font-size: 2rem; }
@@ -1138,7 +1156,7 @@ ul.slider { list-style: none; padding: 0px; width: auto; }
 
 @media only screen and (max-width: 782px) { .slider-vertical__left { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; margin-bottom: 3rem; -webkit-transform: perspective(0rem) rotateY(0deg); transform: perspective(0rem) rotateY(0deg); } }
 
-@media only screen and (max-width: 782px) { .slider-vertical__left .slick-track { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; } }
+.slider-vertical__left.swiper { height: 400px; }
 
 .slider-vertical__left .swiper-slide { cursor: pointer; opacity: .64; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; -webkit-transform: scale(0.6, 0.6); transform: scale(0.6, 0.6); -webkit-transform-origin: center left; transform-origin: center left; -webkit-transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, transform .1s ease; transition: opacity .1s ease, transform .1s ease, -webkit-transform .1s ease; white-space: nowrap; }
 

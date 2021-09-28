@@ -8056,18 +8056,6 @@ window.addEventListener('DOMContentLoaded', function () {
   var slidesToShow = 3;
   var centerMode = true;
 
-  var initWalkway = function initWalkway(sel) {
-    var icon = new Walkway({
-      selector: sel,
-      duration: '3000',
-      easing: function easing(t) {
-        return t;
-      } // linear
-
-    });
-    icon.draw();
-  };
-
   if (leftSlides.length < 3) {
     centerMode = false;
   } else {
@@ -8083,6 +8071,7 @@ window.addEventListener('DOMContentLoaded', function () {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev'
     },
+    slideToClickedSlide: true,
     slidesPerView: 1,
     slidesPerGroup: 1,
     spaceBetween: 16,
@@ -8101,7 +8090,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
   }); // Right-side slider
 
-  var rightSwiper;
+  var rightSwiper, rightSwiperAdaptive;
   var rightSideOptions = {
     autoHeight: false,
     centeredSlides: false,
@@ -8112,11 +8101,11 @@ window.addEventListener('DOMContentLoaded', function () {
     loop: true,
     slidesPerView: 1
   };
-  rightSwiper = new Swiper(document.querySelector('.slider-vertical__right:not(.adaptive-height)'), rightSideOptions);
+  rightSwiper = new Swiper('.slider-vertical__right:not(.adaptive-height)', rightSideOptions);
 
   if (document.querySelector('.slider-vertical__right.adaptive-height')) {
     rightSideOptions.autoHeight = true;
-    rightSwiper = new Swiper(document.querySelector('.slider-vertical__right.adaptive-height'), rightSideOptions);
+    rightSwiperAdaptive = new Swiper('.slider-vertical__right.adaptive-height', rightSideOptions);
   } // Control right with left
 
 
@@ -8132,90 +8121,22 @@ window.addEventListener('DOMContentLoaded', function () {
   if (hasIcons) {
     var firstIcon = '#walkway svg:first-of-type';
     initWalkway(firstIcon);
-  }
-}); // jQuery(function(){
-//   // Vertical slider (Portfolio)
-//   var slidesLeft = jQuery('.slider-vertical__left > div');
-//   var slidesToShow = 1;
-//   var centerMode = true;
-//   if ( slidesLeft.length < 3 ) {
-//     centerMode = false;
-//   } else {
-//     slidesToShow = 3;
-//   }
-//   jQuery('.slider-vertical__left').slick({
-//     arrows: true,
-//     asNavFor: '.slider-vertical__right',
-//     autoplay: false,
-//     centerMode: centerMode,
-//     focusOnSelect: true,
-//     infinite: true,
-//     prevArrow: '<button type="button" class="slick-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button>',
-//     nextArrow: '<button type="button" class="slick-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>',
-//     rows: 0,
-//     slidesToShow: slidesToShow,
-//     vertical: true,
-//     verticalSwiping: true,
-//     responsive: [
-//       {
-//         breakpoint: 782,
-//         settings: {
-//           centerMode: true,
-//           centerPadding: '16px',
-//           prevArrow: '<button type="button" class="slick-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
-//           nextArrow: '<button type="button" class="slick-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
-//           rows: 0,
-//           slidesToShow: 3,
-//           vertical: false, 
-//           verticalSwiping: false,
-//         }
-//       },
-//       {
-//         breakpoint: 599,
-//         settings: {
-//           centerMode: true,
-//           centerPadding: '16px',
-//           prevArrow: '<button type="button" class="slick-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
-//           nextArrow: '<button type="button" class="slick-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
-//           rows: 0,
-//           slidesToShow: 1,
-//           vertical: false, 
-//           verticalSwiping: false,
-//         }
-//       }
-//     ]
-//   });
-//   // Right-side slider
-//   var rightSideOptions = {
-//     adaptiveHeight: false,
-//     arrows: false,
-//     autoplay: false,
-//     fade: true,
-//     infinite: true,
-//     rows: 0,
-//     slidesToShow: 1,
-//     swipe: false
-//   };
-//   jQuery('.slider-vertical__right:not(.adaptive-height)').slick(rightSideOptions);
-//   if (jQuery('.slider-vertical__right.adaptive-height')) {
-//     rightSideOptions.adaptiveHeight = true;
-//     jQuery('.slider-vertical__right.adaptive-height').slick(rightSideOptions);
-//   }
-//   // Right-side slider within slider (content gallery)
-//   jQuery('.page-template-portfolio-item .slider-vertical__right .slider').slick({
-//     adaptiveHeight: true,
-//     arrows: false,
-//     autoplay: false,
-//     dots: true,
-//     fade: true,
-//     focusOnSelect: true,
-//     infinite: false,
-//     prevArrow: '<button type="button" class="slick-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
-//     nextArrow: '<button type="button" class="slick-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
-//     rows: 0,
-//     slidesToShow: 1,
-//     swipe: false // "true" doesn't play nicely with iframes
-//   });
-//   // Refresh the right-side slider so it can recalculate 
-//   // its size after its child slider has initialized.
-//   jQuery('.slider-vertical__right').slick('refresh');
+  } // Right-side slider within slider (content gallery)
+
+
+  var rightSwiperNested = new Swiper('.page-template-portfolio-item .slider-vertical__right .swiper', {
+    autoHeight: true,
+    nested: true,
+    pagination: {
+      clickable: true,
+      el: '.swiper-pagination',
+      type: 'bullets'
+    },
+    slidesPerView: 1
+  }); // rightSwiper.update();
+  // Refresh the right-side slider so it can recalculate 
+  // its size after its child slider has initialized.
+  // jQuery('.slider-vertical__right').slick('refresh');
+  // prevArrow: '<button type="button" class="slick-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
+  // nextArrow: '<button type="button" class="slick-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
+});
