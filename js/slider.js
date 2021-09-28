@@ -8049,10 +8049,24 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 "use strict";
 
 window.addEventListener('DOMContentLoaded', function () {
+  var rightSlider = document.querySelector('.slider-vertical__right');
   var leftSlider = document.querySelector('.slider-vertical__left');
   var leftSlides = leftSlider.querySelectorAll('.swiper-slide');
+  var hasIcons = document.querySelector('#walkway.swiper');
   var slidesToShow = 3;
   var centerMode = true;
+
+  var initWalkway = function initWalkway(sel) {
+    var icon = new Walkway({
+      selector: sel,
+      duration: '3000',
+      easing: function easing(t) {
+        return t;
+      } // linear
+
+    });
+    icon.draw();
+  };
 
   if (leftSlides.length < 3) {
     centerMode = false;
@@ -8107,8 +8121,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
   leftSwiper.on('slideChange', function () {
-    rightSwiper.slideToLoop(leftSwiper.realIndex);
-  });
+    rightSwiper.slideToLoop(leftSwiper.realIndex); // Init Walkway on slide change
+
+    if (hasIcons) {
+      var activeSlideIcon = ".swiper-slide[data-swiper-slide-index=\"".concat(leftSwiper.realIndex, "\"] svg");
+      initWalkway(activeSlideIcon);
+    }
+  }); // If we know there will be icons, init Walkway on the first slide
+
+  if (hasIcons) {
+    var firstIcon = '#walkway svg:first-of-type';
+    initWalkway(firstIcon);
+  }
 }); // jQuery(function(){
 //   // Vertical slider (Portfolio)
 //   var slidesLeft = jQuery('.slider-vertical__left > div');
@@ -8195,66 +8219,3 @@ window.addEventListener('DOMContentLoaded', function () {
 //   // Refresh the right-side slider so it can recalculate 
 //   // its size after its child slider has initialized.
 //   jQuery('.slider-vertical__right').slick('refresh');
-//   /**
-//   * FIX JUMPING ANIMATION
-//   * Set special animation class on first or last clone.
-//   * https://github.com/kenwheeler/slick/issues/3419
-//   */
-//   var sliders = jQuery('.slider-vertical__left');
-//   sliders.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-//     var 
-//       direction,
-//       slideCountZeroBased = slick.slideCount - 1;
-//     if (nextSlide == currentSlide) {
-//       direction = "same";
-//     } else if (Math.abs(nextSlide - currentSlide) == 1) { // 1 or -1
-//       if (slideCountZeroBased === 1) { // If there's only two slides
-//         direction = "duo";
-//       } else { // More than two slides
-//         direction = (nextSlide - currentSlide > 0) ? "right" : "left"; 
-//       }
-//     } else { // e.g., slide 0 to slide 6
-//       direction = (nextSlide - currentSlide > 0) ? "left" : "right";
-//     }
-//     // Add a temp CSS class for the slide animation (.slick-current-clone-animate)
-//     if (direction == 'duo') {  
-//       jQuery('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
-//       jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
-//     }
-//     if (direction == 'right') {  
-//       jQuery('.slick-cloned[data-slick-index="' + (nextSlide + slideCountZeroBased + 1) + '"]', sliders).addClass('slick-current-clone-animate');
-//     }
-//     if (direction == 'left') {
-//       jQuery('.slick-cloned[data-slick-index="' + (nextSlide - slideCountZeroBased - 1) + '"]', sliders).addClass('slick-current-clone-animate');
-//     }
-//   });
-//   sliders.on('afterChange', function (event, slick, currentSlide, nextSlide) {
-//     jQuery('.slick-current-clone-animate', sliders).removeClass('slick-current-clone-animate');
-//   });
-//   /**
-//    * Supports svg drawing in a slider
-//    * 
-//    */
-//   var svgFirst, svgActive;
-//   var hasIcons = jQuery('#walkway.slider');
-//   // If we know there will be icons, init Walkway on the first slide
-//   if ( hasIcons.length ) {
-//     var firstIcon = '#walkway svg:first-of-type';
-//     svgFirst = new Walkway({
-//       selector: firstIcon,
-//       duration: '3000',
-//       easing: t => t // linear
-//     });
-//     svgFirst.draw();
-//     // On slide change
-//     jQuery('.slider-vertical__right').on('beforeChange', function(event, slick, currentSlide, nextSlide){
-//       var activeSlideIcon = `.slick-slide[data-slick-index="${nextSlide}"] svg`;
-//       svgActive = new Walkway({
-//         selector: activeSlideIcon,
-//         duration: '3000',
-//         easing: t => t // linear
-//       });
-//       svgActive.draw();
-//     });
-//   }
-// });
