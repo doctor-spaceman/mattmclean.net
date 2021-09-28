@@ -107,22 +107,22 @@ window.addEventListener('DOMContentLoaded', function (event) {
   imagesLoaded(portfolio_sidebar_grid, function () {
     portfolio_sidebar_grid.classList.add('loaded');
   });
-  /*------ Draw SVG icons -------*/
-  // Draw svg icons
-
-
-  var initWalkway = function initWalkway(sel) {
-    var icon = new Walkway({
-      selector: sel,
-      duration: '3000',
-      easing: function easing(t) {
-        return t;
-      } // linear
-
-    });
-    icon.draw();
-  };
 });
+/*------ Draw SVG icons -------*/
+
+function initWalkway(sel) {
+  var icon = new Walkway({
+    selector: sel,
+    duration: '3000',
+    easing: function easing(t) {
+      return t;
+    } // linear
+
+  });
+  icon.draw();
+}
+
+;
 "use strict";
 
 document.addEventListener('DOMContentLoaded', function () {
