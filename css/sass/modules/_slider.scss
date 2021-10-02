@@ -215,11 +215,20 @@
   --swiper-pagination-bullet-vertical-gap: 6px;
 }
 .swiper-pagination {
-  position: absolute;
-  text-align: center;
+  // position: absolute;
+  // text-align: center;
   transition: 300ms opacity;
   transform: translate3d(0, 0, 0);
   z-index: 10;
+
+  display: flex !important;
+  align-items: center;
+  flex-wrap: nowrap;
+  height: $spacing * 1.5;
+  list-style: none;
+  margin-top: $spacing;
+  padding: 0;
+
   &.swiper-pagination-hidden {
     opacity: 0;
   }
@@ -229,7 +238,7 @@
 .swiper-pagination-custom,
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-bullets.swiper-pagination-horizontal {
-  bottom: 10px;
+  bottom: 0;
   left: 0;
   width: 100%;
 }
@@ -261,19 +270,20 @@
   }
 }
 .swiper-pagination-bullet {
-  width: var(--swiper-pagination-bullet-width, var(--swiper-pagination-bullet-size, 8px));
-  height: var(--swiper-pagination-bullet-height, var(--swiper-pagination-bullet-size, 8px));
-  display: inline-block;
-  border-radius: 50%;
-  background: lighten(c('black'),20%);
-  opacity: var(--swiper-pagination-bullet-inactive-opacity, 0.2);
-  @at-root button#{&} {
-    border: none;
-    margin: 0;
-    padding: 0;
-    box-shadow: none;
-    appearance: none;
+  background-color: lighten(c('black'),20%);
+  border: 1px solid c('black');
+  box-sizing: border-box;
+  cursor: pointer;
+  height: $spacing * .75;
+  flex: 0 1 $spacing * 2;
+  margin-bottom: 0px !important;
+  position: relative;
+  transition: all .1s ease;
+    
+  &:focus, &:hover {
+    background-color: lighten(c('black'),10%);
   }
+
   .swiper-pagination-clickable & {
     cursor: pointer;
   }
@@ -281,10 +291,29 @@
   &:only-child {
     display: none !important;
   }
+
+  &:not(.swiper-pagination-bullet-active) {
+    &:not(:last-child) {
+      border-right: none;
+    }
+  }
 }
 .swiper-pagination-bullet-active {
-  opacity: var(--swiper-pagination-bullet-opacity, 1);
-  background: var(--header-color); 
+  background-color: var(--header-color);
+  height: $spacing;
+  
+  /* ie fix */
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    background-color: c('cream');
+  }
+  
+  &:focus, &:hover {
+    background-color: darken(c('cream'),4%);
+  }
+
+  & + li {
+    border-left: none;
+  }
 }
 
 .swiper-vertical > .swiper-pagination-bullets,
@@ -308,9 +337,6 @@
 }
 .swiper-horizontal > .swiper-pagination-bullets,
 .swiper-pagination-horizontal.swiper-pagination-bullets {
-  .swiper-pagination-bullet {
-    margin: 0 var(--swiper-pagination-bullet-horizontal-gap, 4px);
-  }
   &.swiper-pagination-bullets-dynamic {
     left: 50%;
     transform: translateX(-50%);
@@ -335,13 +361,17 @@
     }
   }
   .swiper-slide {
+    opacity: 0 !important;
     pointer-events: none;
     transition-property: opacity;
+
     .swiper-slide {
       pointer-events: none;
     }
   }
   .swiper-slide-active {
+    opacity: 1 !important;
+
     &,
     & .swiper-slide-active {
       pointer-events: auto;
@@ -383,33 +413,6 @@ ul.slick-dots {
       
       &:focus, &:hover {
         background-color: lighten(c('black'),10%);
-      }
-    }
-
-    &.slick-active {
-      height: $spacing;
-            
-      button {
-        background-color: var(--header-color); 
-
-        /* ie fix */
-        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-          background-color: c('cream');
-        }
-        
-        &:focus, &:hover {
-          background-color: darken(c('cream'),4%);
-        }
-      }
-
-      & + li {
-        border-left: none;
-      }
-    }
-
-    &:not(.slick-active) {
-      &:not(:last-child) {
-        border-right: none;
       }
     }
   }
