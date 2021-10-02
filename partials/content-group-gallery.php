@@ -60,6 +60,6 @@ $gallery_desc = get_sub_field('group_description');
     endif; 
     ?>
     </ul>
-    <div class="swiper-pagination"></div>
+    <ul class="swiper-pagination"></ul>
   </div>
 </div>

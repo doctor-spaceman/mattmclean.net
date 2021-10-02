@@ -8126,8 +8126,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
   var rightSwiperNested = new Swiper('.page-template-portfolio-item .slider-vertical__right .swiper', {
     autoHeight: true,
+    effect: 'fade',
+    fadeEffect: {
+      crossFade: true
+    },
     nested: true,
     pagination: {
+      bulletElement: 'li',
       clickable: true,
       el: '.swiper-pagination',
       type: 'bullets'
