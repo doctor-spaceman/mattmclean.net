@@ -1,9 +1,18 @@
 "use strict";
 
 window.addEventListener('DOMContentLoaded', function () {
+  var portfolio_sidebar_grid = document.querySelector('.page-template-portfolio-sidebar.page-child .masonry');
   var images = document.querySelectorAll('.masonry img');
   var icons = document.querySelectorAll('#walkway');
   var overlay = document.querySelector('.overlay');
+  /*------ Portfolio Sidebar Image Grid Load ------*/
+
+  if (portfolio_sidebar_grid) {
+    imagesLoaded(portfolio_sidebar_grid, function () {
+      portfolio_sidebar_grid.classList.add('loaded');
+    });
+  }
+
   images.forEach(function (image) {
     image.addEventListener('click', function () {
       overlay.classList.add('is-open');

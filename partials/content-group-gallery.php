@@ -37,9 +37,7 @@ $gallery_desc = get_sub_field('group_description');
       <?php endif; ?>
       <?php if ( $item_image ) : ?>
         <img 
-        <?php if ( $item_image_is_vertical ) : ?>
-        class="is-vertical"
-        <?php endif; ?> 
+        class="item-image<?php if ( $item_image_is_vertical ) : ?> is-vertical<?php endif; ?>"
         src="<?php echo esc_url($item_image_src); ?>" 
         srcset="<?php echo esc_attr($item_image_srcset); ?>" 
         sizes="<?php echo esc_attr($item_image_sizes); ?>" 

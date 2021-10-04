@@ -390,6 +390,7 @@ ul.swiper-wrapper {
       white-space: nowrap;
   
       @include breakpoint--medium {
+        display: block;
         text-align: center;
         transform-origin: center center;
         white-space: initial;
@@ -411,12 +412,6 @@ ul.swiper-wrapper {
       box-sizing: border-box;
       min-height: 280px;
       width: 100%;
-
-      // &:not(.swiper-slide-active) {
-      //   .slick-dots {
-      //     display: none !important;
-      //   }
-      // }
     }
   }
   

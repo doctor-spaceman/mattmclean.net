@@ -1,9 +1,9 @@
 .page-template-portfolio-item .slider-vertical__right {
   // Child slider
-  .slider {
+  .swiper {
     margin: 0px;
 
-    .slick-slide {
+    .swiper-slide {
       img {
         margin-bottom: $spacing * .5;
         width: 100%;
@@ -25,8 +25,8 @@
       }
     }
 
-    .slick-prev,
-    .slick-next {
+    .swiper-button-prev,
+    .swiper-button-next {
       margin: 0px;
     }
   }
