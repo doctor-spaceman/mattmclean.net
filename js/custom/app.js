@@ -103,12 +103,6 @@ window.addEventListener('DOMContentLoaded', (event) => {
       overlayContents.innerHTML = '';
     };
   }
-
-  /*------ Portfolio Sidebar Image Grid Load ------*/
-  const portfolio_sidebar_grid = document.querySelector('.page-template-portfolio-sidebar.page-child .masonry');
-  imagesLoaded(portfolio_sidebar_grid, function() {
-    portfolio_sidebar_grid.classList.add('loaded');
-  });
 });
 
 /*------ Draw SVG icons -------*/
