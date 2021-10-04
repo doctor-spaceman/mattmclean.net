@@ -12,6 +12,7 @@ $item_content = get_sub_field('item_content');
 ?>
 
 <div class="
+  swiper-slide 
   content-group-<?php echo esc_attr($content_group); ?>
   <?php if ( $item_title ) : ?> corner--slant<?php endif; ?>
 ">

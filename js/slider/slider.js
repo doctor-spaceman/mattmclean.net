@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', () => {
   const rightSlider = document.querySelector('.slider-vertical__right');
-  const leftSlider = document.querySelector('.slider-vertical__left');
+  const leftSlider = document.querySelector('.slider-vertical__left .swiper');
   const leftSlides = leftSlider.querySelectorAll('.swiper-slide');
   const hasIcons = document.querySelector('#walkway.swiper');
   let slidesToShow = 3;
@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded', () => {
   if ( leftSlides.length < 3 ) {
     centerMode = false;
   } else {
-    slidesToShow = 7;
+    slidesToShow = 5;
   }
 
   // Left-side slider
@@ -24,7 +24,7 @@ window.addEventListener('DOMContentLoaded', () => {
     slideToClickedSlide: true,
     slidesPerView: 1,
     slidesPerGroup: 1, 
-    spaceBetween: 16,
+    // spaceBetween: 16,
     watchOverflow: true,
     breakpoints: {
       599: {

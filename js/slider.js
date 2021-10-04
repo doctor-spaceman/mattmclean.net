@@ -8050,7 +8050,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
 window.addEventListener('DOMContentLoaded', function () {
   var rightSlider = document.querySelector('.slider-vertical__right');
-  var leftSlider = document.querySelector('.slider-vertical__left');
+  var leftSlider = document.querySelector('.slider-vertical__left .swiper');
   var leftSlides = leftSlider.querySelectorAll('.swiper-slide');
   var hasIcons = document.querySelector('#walkway.swiper');
   var slidesToShow = 3;
@@ -8059,7 +8059,7 @@ window.addEventListener('DOMContentLoaded', function () {
   if (leftSlides.length < 3) {
     centerMode = false;
   } else {
-    slidesToShow = 7;
+    slidesToShow = 5;
   } // Left-side slider
 
 
@@ -8074,7 +8074,7 @@ window.addEventListener('DOMContentLoaded', function () {
     slideToClickedSlide: true,
     slidesPerView: 1,
     slidesPerGroup: 1,
-    spaceBetween: 16,
+    // spaceBetween: 16,
     watchOverflow: true,
     breakpoints: {
       599: {
