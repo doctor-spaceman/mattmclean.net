@@ -381,13 +381,9 @@ ul.swiper-wrapper {
       align-items: center;
       cursor: pointer;
       opacity: .64;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      text-transform: uppercase;
       transform: scale(0.6, 0.6);
       transform-origin: center left;
       transition: opacity .1s ease, transform .1s ease;
-      white-space: nowrap;
   
       @include breakpoint--medium {
         display: block;
@@ -399,6 +395,14 @@ ul.swiper-wrapper {
       &.swiper-slide-active {
         opacity: 1;
         transform: scale(1, 1);
+      }
+
+      p {
+        margin: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+        white-space: nowrap;
       }
     }
   }
