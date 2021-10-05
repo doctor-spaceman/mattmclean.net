@@ -1123,11 +1123,13 @@ ul.swiper-wrapper { list-style: none; padding: 0px; width: auto; }
 
 @media only screen and (max-width: 782px) { .slider-vertical__left { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; height: 1.5rem; margin-bottom: 3rem; padding: 0; -webkit-transform: perspective(0rem) rotateY(0deg); transform: perspective(0rem) rotateY(0deg); } }
 
-.slider-vertical__left .swiper-slide { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; cursor: pointer; opacity: .64; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; -webkit-transform: scale(0.6, 0.6); transform: scale(0.6, 0.6); -webkit-transform-origin: center left; transform-origin: center left; -webkit-transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, transform .1s ease; transition: opacity .1s ease, transform .1s ease, -webkit-transform .1s ease; white-space: nowrap; }
+.slider-vertical__left .swiper-slide { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; cursor: pointer; opacity: .64; -webkit-transform: scale(0.6, 0.6); transform: scale(0.6, 0.6); -webkit-transform-origin: center left; transform-origin: center left; -webkit-transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, -webkit-transform .1s ease; transition: opacity .1s ease, transform .1s ease; transition: opacity .1s ease, transform .1s ease, -webkit-transform .1s ease; }
 
 @media only screen and (max-width: 782px) { .slider-vertical__left .swiper-slide { display: block; text-align: center; -webkit-transform-origin: center center; transform-origin: center center; white-space: initial; } }
 
 .slider-vertical__left .swiper-slide.swiper-slide-active { opacity: 1; -webkit-transform: scale(1, 1); transform: scale(1, 1); }
+
+.slider-vertical__left .swiper-slide p { margin: 0; overflow: hidden; text-overflow: ellipsis; text-transform: uppercase; white-space: nowrap; }
 
 .slider-vertical__right { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; height: 100%; width: 100%; }
 

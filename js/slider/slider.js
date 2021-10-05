@@ -24,7 +24,6 @@ window.addEventListener('DOMContentLoaded', () => {
     slideToClickedSlide: true,
     slidesPerView: 1,
     slidesPerGroup: 1, 
-    // spaceBetween: 16,
     watchOverflow: true,
     breakpoints: {
       599: {
@@ -41,7 +40,7 @@ window.addEventListener('DOMContentLoaded', () => {
   });
 
   // Right-side slider
-  let rightSwiper, rightSwiperAdaptive;
+  let rightSwiper;
   let rightSideOptions = {
     autoHeight: false,
     centeredSlides: false,
@@ -57,7 +56,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if (document.querySelector('.slider-vertical__right.adaptive-height')) {
     rightSideOptions.autoHeight = true;
-    rightSwiperAdaptive = new Swiper('.slider-vertical__right.adaptive-height', rightSideOptions);
+    rightSwiper = new Swiper('.slider-vertical__right.adaptive-height', rightSideOptions);
   }
 
   // Control right with left

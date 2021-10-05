@@ -36,7 +36,9 @@ $adaptiveHeight = get_field('adaptive_height');
               $group_name = get_sub_field('group_name');
           ?>
             <?php if ( $group_name ) : ?>
-            <div class="swiper-slide"><?php echo esc_html($group_name); ?></div>
+            <div class="swiper-slide">
+              <p><?php echo esc_html($group_name); ?></p>
+            </div>
             <?php endif; ?>
           <?php 
             endwhile;
@@ -45,7 +47,7 @@ $adaptiveHeight = get_field('adaptive_height');
           </div>
         </div>
         <button type="button" class="swiper-button-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path></svg></button>
-      <button type="button" class="swiper-button-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
+        <button type="button" class="swiper-button-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg></button>
       </div>
     </div>
     <div class="col-2-3">
