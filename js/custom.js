@@ -103,11 +103,11 @@ window.addEventListener('DOMContentLoaded', function (event) {
 });
 /*------ Draw SVG icons -------*/
 
-function initWalkway(sel) {
+function initWalkway(sel, dur, timing) {
   var icon = new Walkway({
     selector: sel,
-    duration: '3000',
-    easing: function easing(t) {
+    duration: dur,
+    easing: timing ? timing : function (t) {
       return t;
     } // linear
 
@@ -122,15 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var icons = document.querySelectorAll('.error404 #walkway svg');
 
   if (icons.length) {
-    var svg = new Walkway({
-      selector: '.error404 #walkway svg',
-      duration: '1000',
-      easing: function easing(t) {
-        return t;
-      } // linear
-
-    });
-    svg.draw();
+    initWalkway('.error404 #walkway svg', '1000');
   }
 });
 "use strict";
@@ -171,14 +163,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var icons = document.querySelectorAll('.search-no-results #walkway svg');
 
   if (icons.length) {
-    var svg = new Walkway({
-      selector: '.search-no-results #walkway svg',
-      duration: '1000',
-      easing: function easing(t) {
-        return t;
-      } // linear
-
-    });
-    svg.draw();
+    initWalkway('.search-no-results #walkway svg', '1000');
   }
 });
