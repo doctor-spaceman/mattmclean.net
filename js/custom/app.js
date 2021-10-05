@@ -106,11 +106,11 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
 
 /*------ Draw SVG icons -------*/
-function initWalkway (sel) {
+function initWalkway (sel, dur, timing) {
   const icon = new Walkway({
     selector: sel,
-    duration: '3000',
-    easing: t => t // linear
+    duration: dur,
+    easing: timing ? timing : t => t // linear
   });
   icon.draw();
 };

@@ -5408,13 +5408,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
     if (hasIcons) {
       var activeSlideIcon = ".swiper-slide[data-swiper-slide-index=\"".concat(leftSwiper.realIndex, "\"] svg");
-      initWalkway(activeSlideIcon);
+      initWalkway(activeSlideIcon, '2500');
     }
   }); // If we know there will be icons, init Walkway on the first slide
 
   if (hasIcons) {
-    var firstIcon = '#walkway svg:first-of-type';
-    initWalkway(firstIcon);
+    initWalkway('#walkway svg:first-of-type', '2500');
   } // Right-side slider within slider (content gallery)
 
 
@@ -5432,10 +5431,5 @@ window.addEventListener('DOMContentLoaded', function () {
       type: 'bullets'
     },
     slidesPerView: 1
-  }); // rightSwiper.update();
-  // Refresh the right-side slider so it can recalculate 
-  // its size after its child slider has initialized.
-  // jQuery('.slider-vertical__right').slick('refresh');
-  // prevArrow: '<button type="button" class="slick-prev" aria-label="Previous Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
-  // nextArrow: '<button type="button" class="slick-next" aria-label="Next Item"><svg aria-hidden="true" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
+  });
 });
