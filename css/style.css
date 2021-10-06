@@ -527,7 +527,9 @@ article ul, article ol { padding-left: 2rem; }
 
 article ul li:not(:last-child), article ol li:not(:last-child) { margin-bottom: .5em; }
 
-.page-template-portfolio .slider-vertical__left { height: 400px; }
+.page-template-portfolio .slider-vertical__left { height: 360px; }
+
+@media only screen and (max-width: 782px) { .page-template-portfolio .slider-vertical__left { height: unset; } }
 
 .page-template-portfolio-item .slider-vertical__right .swiper { margin: 0px; }
 
