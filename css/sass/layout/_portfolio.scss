@@ -1,5 +1,9 @@
 .page-template-portfolio {
   .slider-vertical__left {
-    height: 400px;
+    height: 360px;
+
+    @include breakpoint--medium {
+      height: unset;
+    }
   }
 }
