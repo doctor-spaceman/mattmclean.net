@@ -1,8 +1,13 @@
 .page-template-portfolio {
   .slider-vertical__left {
-    height: 360px;
-
+    height: 400px;
+    
+    @include breakpoint--medium-large {
+      font-size: $font__size--m;
+      height: 360px;
+    }
     @include breakpoint--medium {
+      font-size: $font__size--base;
       height: unset;
     }
   }

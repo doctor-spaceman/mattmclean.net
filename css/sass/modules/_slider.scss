@@ -363,6 +363,14 @@ ul.swiper-wrapper {
       box-sizing: border-box;
       min-height: 280px;
       width: 100%;
+
+      &:not(.swiper-slide-active) {
+        visibility: hidden;
+
+        .swiper-pagination {
+          visibility: hidden;
+        }
+      }
     }
   }
   
