@@ -7,6 +7,8 @@
     add_theme_support( 'title-tag' );
     add_theme_support( 'widgets' );
     add_post_type_support( 'page', 'excerpt' );
+
+    remove_theme_support( 'widgets-block-editor' );
   }
   add_action( 'after_setup_theme', 'std_theme_setup' );
 // END / Theme Support
