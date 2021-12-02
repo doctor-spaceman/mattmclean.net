@@ -1,11 +1,11 @@
 <footer class="sticky-footer">
-  <div class="wrapper wrapper--large grid grid--center grid--space footer">
+  <div class="wrapper wrapper--large flex--center flex--space footer">
     <?php if ( $footerElements['footer_attribution'] ) : ?>
     <div class="footer__attribution">
       <?php echo $footerElements['footer_attribution']; ?>
     </div>
     <?php endif; ?>
-    <div class="grid grid--center site-mode-toggle">
+    <div class="flex--center site-mode-toggle">
       <button aria-label="Toggle dark mode">
         Mode:
       </button>

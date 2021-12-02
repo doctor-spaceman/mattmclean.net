@@ -11,13 +11,13 @@ $footerElements = get_field('footer_elements', 'option');
 <?php get_header(); ?>
 
 <section id="homepageIntro" class="wrapper wrapper--large" aria-label="Homepage Intro">
-  <div class="grid">
-    <div class="col-1-2 content grid grid--column">
+  <div class="flex">
+    <div class="col-1-2 content flex--column">
       <h1><?php echo 'Matt McLean'; ?></h1>
       <p class="supplemental"><?php echo '(he/him)'; ?></p>
       <?php if ( $footerElements['footer_socials'] ) : ?>
       <div class="section social-icons">
-        <ul class="grid grid--center grid--space">
+        <ul class="flex--center flex--space">
         <?php foreach( $footerElements['footer_socials'] as $social ) : ?>
           <li>
             <?php if ( $social['social_link'] ) : ?>

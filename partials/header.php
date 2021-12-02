@@ -45,12 +45,12 @@
         <?php endif; ?>
       </div>
 
-      <div class="navbar-main-content grid grid--center grid--space wrapper wrapper--small">
+      <div class="navbar-main-content flex--center flex--space wrapper wrapper--small">
         <a class="site-brand" href="<?php bloginfo('url'); ?>">
           Matt McLean
         </a>
-        <div class="grid">
-          <div class="grid grid--center site-mode-toggle">
+        <div class="flex">
+          <div class="flex--center site-mode-toggle">
             <button aria-label="Toggle dark mode">
               Mode:
             </button>
@@ -68,7 +68,7 @@
         array(
           'container' => 'nav',
           'container_class' => 'main-menu',
-          'menu_class' => 'menu grid grid--column',
+          'menu_class' => 'menu flex--column',
           'theme_location' => 'main-menu',
           'walker' => new Menu_Stylized_Walker()
         )); 

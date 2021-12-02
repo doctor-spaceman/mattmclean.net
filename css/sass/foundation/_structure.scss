@@ -75,21 +75,25 @@ body:not(.has-sidebar) {
   }
 }
 
-.grid {
+.flex {
   display: flex;
   flex-wrap: wrap;
 
   &--center {
+    @extend .flex;
     align-items: center;
     justify-content: center;
   }
   &--column {
+    @extend .flex;
     flex-direction: column;
   }
   &--nowrap {
+    @extend .flex;
     flex-wrap: nowrap;
   }
   &--space {
+    @extend .flex;
     justify-content: space-between;
   }
 }

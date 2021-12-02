@@ -1,8 +1,8 @@
 <footer class="sticky-footer">
-  <div class="wrapper wrapper--large grid grid--center grid--space footer">
+  <div class="wrapper wrapper--large flex--center flex--space footer">
     <?php if ( $footerElements['footer_socials'] ) : ?>
     <div class="footer__social">
-      <ul class="grid grid--center grid--space">
+      <ul class="flex--center flex--space">
       <?php foreach( $footerElements['footer_socials'] as $social ) : ?>
         <li>
           <?php if ( $social['social_link'] ) : ?>

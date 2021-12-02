@@ -24,7 +24,7 @@ Template Name: Portfolio Sidebar
     ?>
 
     <?php if ( have_rows('sidebar_gallery') ) : ?>
-    <div class="grid grid--space masonry">
+    <div class="grid">
       <?php while ( have_rows('sidebar_gallery') ) :
       the_row();
 

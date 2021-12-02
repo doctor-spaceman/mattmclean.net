@@ -55,7 +55,7 @@
 else : 
 ?>
 
-	<div id="walkway" class="section grid grid--column grid--center">
+	<div id="walkway" class="section flex--column flex--center">
     <svg width="200" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width=".25" d="M10 21h7a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v11m0 5l4.879-4.879m0 0a3 3 0 104.243-4.242 3 3 0 00-4.243 4.242z"></path></svg>
     <p style="text-align: center;">There are no results for your search.</p>
     <a class="cta" href="/">Return to home</a>
@@ -65,7 +65,7 @@ else :
 
 <?php if ($wp_query->max_num_pages > 1) : ?>
 
-  <nav class="pagination grid grid--space">
+  <nav class="pagination flex--space">
     <div class="prev-posts-link">
     <?php 
     // display previous page link

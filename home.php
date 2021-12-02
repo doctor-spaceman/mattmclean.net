@@ -29,7 +29,7 @@
   // $wp_query = $posts_query;
   ?>
   <?php if ( $posts_query->have_posts() ) : ?>
-  <section class="grid grid--space card-container">
+  <section class="flex--space card-container">
     <?php while ( $posts_query->have_posts() ) : $posts_query->the_post(); ?>
       <?php get_template_part('partials/content-card','post'); ?>
     <?php endwhile; ?>
@@ -41,7 +41,7 @@
   <?php 
   // check if the max number of pages is greater than 1  
   if ($posts_query->max_num_pages > 1) : ?>
-  <nav class="pagination grid grid--space">
+  <nav class="pagination flex--space">
     <?php 
     // display older posts link
     if ( get_next_posts_link() ) : ?>

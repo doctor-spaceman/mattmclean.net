@@ -4,11 +4,11 @@
 ?>
 
 <footer class="sidebar-footer sticky-footer">
-  <div class="grid grid--center grid--column grid--space footer">
+  <div class="flex--center flex--column flex--space footer">
     <?php if ( $sidebar_menu && $sidebar_menu == 'photo' ) : ?>
       <?php if ( $footerElements['footer_socials_alt1'] ) : ?>
     <div class="footer__social">
-      <ul class="grid grid--center grid--space">
+      <ul class="flex flex--center flex--space">
       <?php foreach( $footerElements['footer_socials_alt1'] as $social ) : ?>
         <li>
           <?php if ( $social['social_link'] ) : ?>
@@ -34,7 +34,7 @@
     <?php else : ?>
       <?php if ( $footerElements['footer_socials'] ) : ?>
     <div class="footer__social">
-      <ul class="grid grid--center grid--space">
+      <ul class="flex--center flex--space">
       <?php foreach( $footerElements['footer_socials'] as $social ) : ?>
         <li>
           <?php if ( $social['social_link'] ) : ?>

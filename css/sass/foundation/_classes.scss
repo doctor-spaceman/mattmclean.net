@@ -103,6 +103,7 @@ iframe {
   iframe {
     aspect-ratio: 6 / 4;
     margin-bottom: $spacing * 2;
+    width: 100%;
   }
   &--wide {
     iframe {
