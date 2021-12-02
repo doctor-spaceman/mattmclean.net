@@ -8,6 +8,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
   if ( leftSlides.length < 3 ) {
     centerMode = false;
+    slidesToShow = leftSlides.length;
   } else {
     slidesToShow = 5;
   }

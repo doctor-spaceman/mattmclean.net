@@ -5353,6 +5353,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   if (leftSlides.length < 3) {
     centerMode = false;
+    slidesToShow = leftSlides.length;
   } else {
     slidesToShow = 5;
   } // Left-side slider
