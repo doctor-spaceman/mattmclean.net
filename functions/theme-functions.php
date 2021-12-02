@@ -76,10 +76,3 @@ function custom_excerpt_length( $length ) {
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 ); 
 // END / Customize excerpt length
-
-// Update ajax-loader image
-add_filter('wpcf7_ajax_loader', 'my_wpcf7_ajax_loader');
-function my_wpcf7_ajax_loader () {
-    return  get_bloginfo('stylesheet_directory') . '/img/ajax-loader.gif';
-}
-// END / Update ajax-loader image
