@@ -40,19 +40,17 @@ Template Name: Portfolio Sidebar
       $image_alt = get_post_meta( $image, '_wp_attachment_image_alt', true );
       
       ?>
-      <div class="grid-item">
-        <img 
-          loading="lazy"
-          tabindex="0"
-          src="<?php echo esc_url($image_src); ?>"
-          srcset="<?php echo esc_attr($image_srcset); ?>" 
-          sizes="<?php echo esc_attr($image_sizes); ?>" 
-          <?php if ( $image_alt ) : ?>alt="<?php echo esc_attr($image_alt); ?>"<?php endif; ?>
-          <?php if ( $image_src_overlay ) : ?>data-overlay="<?php echo esc_url($image_src_overlay); ?>" <?php endif; ?>
-          <?php if ( $image_name ) : ?>data-name="<?php echo esc_attr($image_name); ?>" <?php endif; ?>
-          <?php if ( $image_desc ) : ?>data-caption="<?php echo esc_attr($image_desc); ?>"<?php endif; ?>
-        />
-      </div>
+      <img class="grid-item" 
+        loading="lazy"
+        tabindex="0"
+        src="<?php echo esc_url($image_src); ?>"
+        srcset="<?php echo esc_attr($image_srcset); ?>" 
+        sizes="<?php echo esc_attr($image_sizes); ?>" 
+        <?php if ( $image_alt ) : ?>alt="<?php echo esc_attr($image_alt); ?>"<?php endif; ?>
+        <?php if ( $image_src_overlay ) : ?>data-overlay="<?php echo esc_url($image_src_overlay); ?>" <?php endif; ?>
+        <?php if ( $image_name ) : ?>data-name="<?php echo esc_attr($image_name); ?>" <?php endif; ?>
+        <?php if ( $image_desc ) : ?>data-caption="<?php echo esc_attr($image_desc); ?>"<?php endif; ?>
+      />
       <?php endwhile; ?>
     </div>
     <?php endif; ?>
