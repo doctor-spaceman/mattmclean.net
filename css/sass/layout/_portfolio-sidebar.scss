@@ -56,7 +56,10 @@
     color: c('black');
   }
 }
-.page-template-portfolio-sidebar .masonry {
+.page-template-portfolio-sidebar .grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   opacity: 0;
   width: 100%;
   transition: opacity 1s ease;
@@ -67,17 +70,9 @@
   .grid-item {
     aspect-ratio: 1;
     cursor: zoom-in;
-    margin-bottom: $spacing;
     object-fit: cover;
-    width: calc(33% - ((16px * 2) * .333));
+    width: 100%;
     transition: opacity .2s ease;
-
-    @include breakpoint--xlarge {
-      width: calc(50% - (16px / 2));
-    }
-    @include breakpoint--medium-large {
-      width: 100%;
-    }
 
     &:hover {
       opacity: .85;

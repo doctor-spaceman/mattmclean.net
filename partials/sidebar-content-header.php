@@ -4,7 +4,7 @@ $sidebar_logo_link = $post->post_parent ? get_the_permalink($post->post_parent) 
 $sidebar_menu = $post->post_parent ? get_field('sidebar_menu_type', $post->post_parent) : get_field('sidebar_menu_type'); 
 ?>
 
-<header class="grid grid--space">
+<header class="flex--space">
   <?php if ( $sidebar_logo ) : ?>
   <a 
   aria-label="Home" 
@@ -17,8 +17,8 @@ $sidebar_menu = $post->post_parent ? get_field('sidebar_menu_type', $post->post_
     endif; ?>
   </a>
   <?php endif; ?>
-  <div class="grid grid--center">
-    <div class="grid grid--center site-mode-toggle">
+  <div class="flex--center">
+    <div class="flex--center site-mode-toggle">
       <button aria-label="Toggle dark mode">
         Mode:
       </button>

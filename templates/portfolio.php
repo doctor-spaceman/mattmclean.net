@@ -16,7 +16,7 @@
   ?>
   </div>
 
-  <div class="slider-vertical grid">
+  <div class="slider-vertical flex">
     <div class="col-1-2">
       <div class="slider-vertical__left skew--left">
         <div class="swiper">

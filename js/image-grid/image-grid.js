@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
-  const portfolio_sidebar_grid = document.querySelector('.page-template-portfolio-sidebar.page-child .masonry');
-  const images = document.querySelectorAll('.masonry img');
+  const portfolio_sidebar_grid = document.querySelector('.page-template-portfolio-sidebar.page-child .grid');
+  const images = document.querySelectorAll('.grid img');
   const icons = document.querySelectorAll('#walkway');
   const overlay = document.querySelector('.overlay');
 

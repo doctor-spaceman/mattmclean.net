@@ -25,7 +25,7 @@ $adaptiveHeight = get_field('adaptive_height');
     <?php the_content(); ?>
   </div>
 
-  <div class="slider-vertical grid">
+  <div class="slider-vertical flex">
     <div class="col-1-3">
       <div class="slider-vertical__left skew--left">
         <div class="swiper">

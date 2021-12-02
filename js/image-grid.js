@@ -1,8 +1,8 @@
 "use strict";
 
 window.addEventListener('DOMContentLoaded', function () {
-  var portfolio_sidebar_grid = document.querySelector('.page-template-portfolio-sidebar.page-child .masonry');
-  var images = document.querySelectorAll('.masonry img');
+  var portfolio_sidebar_grid = document.querySelector('.page-template-portfolio-sidebar.page-child .grid');
+  var images = document.querySelectorAll('.grid img');
   var icons = document.querySelectorAll('#walkway');
   var overlay = document.querySelector('.overlay');
   /*------ Portfolio Sidebar Image Grid Load ------*/

@@ -17,7 +17,7 @@
 
   <?php if (have_posts()) : ?>
   
-  <section class="grid grid--space card-container">
+  <section class="flex--space card-container">
     <?php while (have_posts()) : 
     the_post();
     
@@ -33,7 +33,7 @@
 
   <?php if ($wp_query->max_num_pages > 1) : ?>
 
-  <nav class="pagination grid grid--space">
+  <nav class="pagination flex--space">
     <div class="prev-posts-link">
     <?php 
     // display previous page link
