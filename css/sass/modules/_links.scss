@@ -34,7 +34,7 @@ a:visited.cta {
   text-decoration: none;
 	text-transform: uppercase;
 	padding: $spacing * .5 $spacing;
-	margin: 0px;
+	margin: 0px 0px $spacing 0px;
 
   /* ie fix */
   @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {

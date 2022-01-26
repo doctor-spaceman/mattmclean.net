@@ -790,7 +790,7 @@ main a:hover, main a:active { color: var(--link-hover-color); /* ie fix */ }
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { main a:hover, main a:active { color: #a2a2a2; } }
 
 /*---- Button Styling ----*/
-.cta, #mc_embed_signup .button, a.cta, #mc_embed_signup a.button, a:link.cta, #mc_embed_signup a.button:link, a:visited.cta, #mc_embed_signup a.button:visited { background-color: var(--header-color); border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px; /* ie fix */ }
+.cta, #mc_embed_signup .button, a.cta, #mc_embed_signup a.button, a:link.cta, #mc_embed_signup a.button:link, a:visited.cta, #mc_embed_signup a.button:visited { background-color: var(--header-color); border: 1px solid #363636; -webkit-box-sizing: border-box; box-sizing: border-box; color: #363636; cursor: pointer; display: inline-block; font-size: 0.8rem; font-weight: 700; text-decoration: none; text-transform: uppercase; padding: 0.5rem 1rem; margin: 0px 0px 1rem 0px; /* ie fix */ }
 
 @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) { .cta, #mc_embed_signup .button, a.cta, #mc_embed_signup a.button, a:link.cta, #mc_embed_signup a.button:link, a:visited.cta, #mc_embed_signup a.button:visited { background-color: #EBDBB2; } }
 
