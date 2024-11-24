@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <!--[if IE 7]>
-<html class="ie ie7" <? language_attributes(); ?>>
+<html class="ie ie7" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if IE 8]>
-<html class="ie ie8" <? language_attributes(); ?>>
+<html class="ie ie8" <?php language_attributes(); ?>>
 <![endif]-->
 <!--[if !(IE 7) & !(IE 8)]><!-->
 <html 
-<? language_attributes(); ?>
+<?php language_attributes(); ?>
 <?php if ( is_page_template('templates/portfolio-sidebar.php') ) : ?>
 class="has-sidebar"
 <?php endif; ?>
