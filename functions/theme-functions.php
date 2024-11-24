@@ -20,11 +20,25 @@ class Home_Stylized_Walker extends Walker_Nav_Menu {
     $id = $item->ID;
     $title = $item->title;
     $permalink = $item->url;
-    $pageObj = get_page_by_title($title);
-    if ( get_field('page_color', $pageObj->ID) ) :
-      $color = get_field('page_color', $pageObj->ID);
-    else : 
-      $color = '#484848';
+    $pageQuery = new WP_Query(
+      array(
+        'post_type'  => 'page',
+        'title'      => $title,
+      )
+    );
+
+    if ( ! empty( $pageQuery->post ) ) {
+      $pageObj = $pageQuery->post;
+    } else {
+      $pageObj = null;
+    }
+
+    if ( $pageObj ) :
+      if ( get_field('page_color', $pageObj->ID) ) :
+        $color = get_field('page_color', $pageObj->ID);
+      else : 
+        $color = '#484848';
+      endif;
     endif;
 
     $output .= '
@@ -50,11 +64,25 @@ class Menu_Stylized_Walker extends Walker_Nav_Menu {
     $id = $item->ID;
     $title = $item->title;
     $permalink = $item->url;
-    $pageObj = get_page_by_title($title);
-    if ( get_field('page_color', $pageObj->ID) ) :
-      $color = get_field('page_color', $pageObj->ID);
-    else : 
-      $color = '#484848';
+    $pageQuery = new WP_Query(
+      array(
+        'post_type'  => 'page',
+        'title'      => $title,
+      )
+    );
+
+    if ( ! empty( $pageQuery->post ) ) {
+      $pageObj = $pageQuery->post;
+    } else {
+      $pageObj = null;
+    }
+
+    if ( $pageObj ) :
+      if ( get_field('page_color', $pageObj->ID) ) :
+        $color = get_field('page_color', $pageObj->ID);
+      else : 
+        $color = '#484848';
+      endif;
     endif;
 
     $output .= '
