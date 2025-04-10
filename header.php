@@ -35,6 +35,9 @@ class="has-sidebar"
     }
     </script>
 
+    <script defer src="https://cloud.umami.is/script.js" data-website-id="27da0e03-8fb2-405d-9185-07cff3c07a5c"></script>
+    <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
+
 		<?php wp_head(); ?>
 
   </head>
